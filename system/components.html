@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Components — MIDAS AX Design System</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/system.css" />
+</head>
+<body>
+
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <span class="gnb__logo">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span style="font-size:20px">Design system</span>
+      </span>
+      <nav class="gnb__nav" aria-label="Global">
+        <a class="btn-text" href="#" target="_blank" rel="noopener">피그마 바로가기</a>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-grid page-grid--with-toc">
+
+    <aside class="snb" aria-label="System 네비게이션">
+      <div class="snb__inner">
+        <a class="snb__overview" href="../system.html">
+          <span>Overview</span>
+          <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+        </a>
+        <p class="snb__caption">System</p>
+        <ul class="snb__list">
+        <li><a class="snb__item" href="foundation.html">Foundation<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="layout.html">Layout<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="components.html" aria-current="page">Components<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#pill-button">Pill Button</a></li>
+        <li><a class="toc__item" href="#text-button">Text Button</a></li>
+        <li><a class="toc__item" href="#link-button">Link Button</a></li>
+        <li><a class="toc__item" href="#cards">Cards</a></li>
+        <li><a class="toc__item" href="#thumbnails">Thumbnails</a></li>
+        <li><a class="toc__item" href="#faq">FAQ</a></li>
+        <li><a class="toc__item" href="#badges">Do/Don't Badges</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <h1 class="page-content__title">Components</h1>
+      <div class="page-content__lead">
+        <p>실제 사용자 화면에 렌더되는 재사용 가능한 UI 블록.</p>
+        <p>모두 토큰 사용 → 라이트·다크 자동 적응. 썸네일 안에서만 쓰이는 demo 헬퍼 (chat, code-block 등) 는 제외됨.</p>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="sys-section" id="pill-button">
+        <h2 class="sys-section__title">Pill Button</h2>
+        <p class="sys-section__desc">Hero CTA · Figma 링크 등 핵심 액션. fill-normal bg + label-strong text, hover 시 inverse 색 반전. 3 사이즈 (LG / MD / SM) 지원.</p>
+
+        <h3 class="sys-h3">Sizes</h3>
+        <div class="sys-block">
+          <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
+            <a class="btn-pill" href="#">Large (Hero CTA)</a>
+            <a class="btn-pill btn-pill--md" href="#">Medium</a>
+            <a class="btn-pill btn-pill--sm" href="#">Small</a>
+          </div>
+        </div>
+
+        <table class="sys-table" style="margin-top:24px">
+          <thead><tr><th>사이즈</th><th>클래스</th><th>Padding</th><th>Font</th><th>실제 사용처</th></tr></thead>
+          <tbody>
+            <tr><td>LG (기본)</td><td><code>.btn-pill</code></td><td>16 / 24</td><td>16px / 500</td><td>Hero CTA (메인) · <code>.spec-section__media-cta</code> (Pattern hover) — 같은 사이즈</td></tr>
+            <tr><td>MD</td><td><code>.btn-pill--md</code></td><td>14 / 22</td><td>13px / 500</td><td><code>.gallery-card__cta</code> (Overview hover) — 같은 사이즈</td></tr>
+            <tr><td>SM</td><td><code>.btn-pill--sm</code></td><td>10 / 18</td><td>12px / 500</td><td>System GNB '피그마 바로가기' 버튼</td></tr>
+          </tbody>
+        </table>
+
+        <pre class="sys-code">&lt;a class="btn-pill" href="#"&gt;Large Label&lt;/a&gt;
+&lt;a class="btn-pill btn-pill--md" href="#"&gt;Medium Label&lt;/a&gt;
+&lt;a class="btn-pill btn-pill--sm" href="#"&gt;Small Label&lt;/a&gt;</pre>
+      </section>
+
+      <section class="sys-section" id="text-button">
+        <h2 class="sys-section__title">Text Button</h2>
+        <p class="sys-section__desc">배경 없는 텍스트 버튼. GNB nav 링크와 동일 스타일. 보조 액션 · 인라인 액션에 사용. hover 시 컬러만 label-alternative → label-strong 으로 진해짐.</p>
+
+        <div class="sys-block">
+          <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+            <a class="btn-text" href="#">피그마 바로가기</a>
+            <a class="btn-text" href="#">Get a start</a>
+            <a class="btn-text" href="#">Foundation</a>
+          </div>
+        </div>
+
+        <table class="sys-table" style="margin-top:24px">
+          <thead><tr><th>속성</th><th>값</th></tr></thead>
+          <tbody>
+            <tr><td>Padding</td><td>12 / 10</td></tr>
+            <tr><td>Font</td><td>15px / 600 / 0.144px letter-spacing</td></tr>
+            <tr><td>Color</td><td><code>label-alternative</code> → hover: <code>label-strong</code></td></tr>
+            <tr><td>실제 사용처</td><td>GNB nav links (<code>.gnb__nav a</code>) · System GNB '피그마 바로가기' (현재 적용)</td></tr>
+          </tbody>
+        </table>
+
+        <pre class="sys-code">&lt;a class="btn-text" href="#"&gt;Text Button&lt;/a&gt;</pre>
+      </section>
+
+      <section class="sys-section" id="link-button">
+        <h2 class="sys-section__title">Link Button</h2>
+        <p class="sys-section__desc">Get a start 페이지의 2-col 외부 링크 버튼. radius 12, outline 스타일.</p>
+
+        <div class="sys-block">
+          <div class="link-buttons">
+            <a class="link-button" href="#">피그마 시스템 바로가기</a>
+            <a class="link-button" href="#">GitHub 바로가기</a>
+          </div>
+        </div>
+
+        <pre class="sys-code">&lt;div class="link-buttons"&gt;
+  &lt;a class="link-button" href="#" target="_blank" rel="noopener"&gt;Label&lt;/a&gt;
+  &lt;a class="link-button" href="#" target="_blank" rel="noopener"&gt;Label&lt;/a&gt;
+&lt;/div&gt;</pre>
+      </section>
+
+      <section class="sys-section" id="cards">
+        <h2 class="sys-section__title">Gallery Card</h2>
+        <p class="sys-section__desc">Overview 페이지의 카드 그리드. 미디어 + 본문, hover 시 다크 overlay + CTA fade-in-up + 이미지 1.08 scale.</p>
+
+        <div class="sys-block" style="padding:24px">
+          <div style="max-width:280px">
+            <a class="gallery-card" href="#">
+              <div class="gallery-card__media">
+                <div class="card-demo">
+                  <div class="card-demo__swatches">
+                    <div style="background:#171719"></div>
+                    <div style="background:#3C78FF"></div>
+                    <div style="background:#00BF40"></div>
+                  </div>
+                </div>
+                <span class="gallery-card__cta">자세히 보기</span>
+              </div>
+              <div class="gallery-card__body">
+                <h3 class="gallery-card__title">Card Title</h3>
+                <p class="gallery-card__desc">Card description — 한 줄 또는 두 줄.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <pre class="sys-code">&lt;a class="gallery-card" href="..."&gt;
+  &lt;div class="gallery-card__media"&gt;
+    &lt;img src="..." alt="" /&gt;  &lt;!-- 또는 .card-demo 라이브 데모 --&gt;
+    &lt;span class="gallery-card__cta"&gt;자세히 보기&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="gallery-card__body"&gt;
+    &lt;h3 class="gallery-card__title"&gt;Title&lt;/h3&gt;
+    &lt;p class="gallery-card__desc"&gt;Description&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</pre>
+
+        <h2 class="sys-section__title" style="margin-top:80px">Pattern Card (Main Home)</h2>
+        <p class="sys-section__desc">메인 페이지의 Pattern 3-up 카드. p-card 클래스 사용. 그라데이션 미디어 + hover scale.</p>
+
+        <pre class="sys-code">&lt;a class="p-card" href="..."&gt;
+  &lt;div class="p-card__media"&gt;&lt;img src="..." alt="" /&gt;&lt;/div&gt;
+  &lt;div class="p-card__body"&gt;
+    &lt;h3 class="p-card__title"&gt;Title&lt;/h3&gt;
+    &lt;p class="p-card__desc"&gt;Description&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</pre>
+      </section>
+
+      <section class="sys-section" id="thumbnails">
+        <h2 class="sys-section__title">Image Thumbnails (Detail Pages)</h2>
+        <p class="sys-section__desc">Detail 페이지에서 사용하는 이미지 컨테이너 3 종.</p>
+
+        <table class="sys-table">
+          <thead><tr><th>클래스</th><th>높이</th><th>인터랙션</th><th>용도</th></tr></thead>
+          <tbody>
+            <tr><td><code>.spec-hero</code></td><td>427px</td><td>없음 (정적)</td><td>페이지 상단 큰 이미지</td></tr>
+            <tr><td><code>.spec-image</code></td><td>270px</td><td>없음 (정적)</td><td>Anatomy/Usage 일반 이미지 영역</td></tr>
+            <tr><td><code>.spec-section__media</code></td><td>370px</td><td>hover 다크 overlay + CTA</td><td>Pattern detail Figma 링크 카드</td></tr>
+          </tbody>
+        </table>
+
+        <pre class="sys-code">&lt;!-- 정적 이미지 영역 --&gt;
+&lt;div class="spec-hero"&gt;&lt;img src="..." alt="" /&gt;&lt;/div&gt;
+&lt;div class="spec-image"&gt;&lt;img src="..." alt="" /&gt;&lt;/div&gt;
+
+&lt;!-- 인터랙티브 Figma 링크 카드 --&gt;
+&lt;a class="spec-section__media" href="#"&gt;
+  &lt;img src="..." alt="" /&gt;
+  &lt;span class="spec-section__media-cta"&gt;피그마 링크 바로가기&lt;/span&gt;
+&lt;/a&gt;</pre>
+      </section>
+
+      <section class="sys-section" id="faq">
+        <h2 class="sys-section__title">FAQ Accordion</h2>
+        <p class="sys-section__desc">메인 페이지 FAQ. 클릭 시 grid-template-rows 트랜지션으로 부드러운 슬라이드 다운.</p>
+
+        <div class="sys-block" style="padding:0">
+          <div class="faq" style="padding:0 24px">
+            <div class="faq__item">
+              <button class="faq__summary" type="button" aria-expanded="false">
+                <span class="faq__q">FAQ 질문 예시</span>
+                <span class="faq__icon" aria-hidden="true">
+                  <svg viewBox="0 0 16 16"><path d="M8 0.5C8.55 0.5 9 0.95 9 1.5V7H14.5C15.05 7 15.5 7.45 15.5 8C15.5 8.55 15.05 9 14.5 9H9V14.5C9 15.05 8.55 15.5 8 15.5C7.45 15.5 7 15.05 7 14.5V9H1.5C0.95 9 0.5 8.55 0.5 8C0.5 7.45 0.95 7 1.5 7H7V1.5C7 0.95 7.45 0.5 8 0.5Z"/></svg>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <pre class="sys-code">&lt;div class="faq"&gt;
+  &lt;div class="faq__item"&gt;
+    &lt;button class="faq__summary" type="button" aria-expanded="false"&gt;
+      &lt;span class="faq__q"&gt;Question&lt;/span&gt;
+      &lt;span class="faq__icon"&gt;&lt;svg&gt;...&lt;/svg&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="faq__answer-wrap"&gt;
+      &lt;div&gt;&lt;p class="faq__answer"&gt;Answer&lt;/p&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </section>
+
+      <section class="sys-section" id="badges">
+        <h2 class="sys-section__title">Do / Don't Badges</h2>
+        <p class="sys-section__desc">Detail 페이지의 How to use 섹션에서 사용. 상태 컬러 + 아이콘 + 라벨.</p>
+
+        <div class="sys-block">
+          <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+            <span class="spec-badge spec-badge--do">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6 10.2l2.8 2.8L14 7.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+              </svg>Do
+            </span>
+            <span class="spec-badge spec-badge--dont">
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6.5 6.5l7 7M13.5 6.5l-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+              </svg>Don't
+            </span>
+          </div>
+        </div>
+
+        <pre class="sys-code">&lt;span class="spec-badge spec-badge--do"&gt;&lt;svg&gt;...&lt;/svg&gt;Do&lt;/span&gt;
+&lt;span class="spec-badge spec-badge--dont"&gt;&lt;svg&gt;...&lt;/svg&gt;Don't&lt;/span&gt;</pre>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">v 1.0</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

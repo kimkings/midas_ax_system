@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    /* FOUC 방지 — 스타일 적용 전에 data-theme 먼저 박기 */
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Color Scheme — MIDAS AX Design System</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="../pattern/index.html">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Foundation 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">Foundation</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="color-scheme.html" aria-current="page">Color Scheme<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dimension.html">Dimension<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="text.html">Text<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="effect.html">Effect<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#anatomy">Anatomy</a></li>
+        <li><a class="toc__item" href="#usage">Usage</a></li>
+        <li><a class="toc__item" href="#how-to-use">How to use</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <h1 class="page-content__title" data-reveal style="--i: 0">Color Scheme</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>AX 인터페이스는 사용자, AI, 시스템 세 주체의 발화와 상태를 시각적으로 구분해야 합니다. Color Scheme 은 의미 기반 토큰으로 이 구분을 만들고, 라이트/다크 모드에서 동일하게 작동하도록 설계되어 어떤 컨텍스트에서도 안정적인 정보 위계를 보장합니다.</p>
+      </div>
+      <hr class="page-content__divider" />
+
+      <div class="spec-hero" data-reveal style="--i: 2">
+        <div class="demo-frame">
+          <div class="demo-swatches">
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#171719"></div><span class="demo-swatch__label">Strong</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:rgba(46,47,51,0.88)"></div><span class="demo-swatch__label">Neutral</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:rgba(55,56,60,0.61)"></div><span class="demo-swatch__label">Alternative</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:rgba(55,56,60,0.28)"></div><span class="demo-swatch__label">Assistive</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#3C78FF"></div><span class="demo-swatch__label">Streaming</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#00BF40"></div><span class="demo-swatch__label">Positive</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#FF4242"></div><span class="demo-swatch__label">Negative</span></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="spec-section" id="anatomy">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Anatomy</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Label·Surface·Line·Fill·Status 다섯 카테고리로 분리되어 컴포넌트가 의미를 명확히 표현합니다. 모든 토큰은 라이트와 다크 두 모드에서 서로 매핑된 페어로 정의되어 컴포넌트는 별도 분기 없이 작동합니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2">
+        <div class="demo-frame">
+          <div class="demo-swatches">
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#171719"></div><span class="demo-swatch__label">label<br/>strong</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#F7F7F8"></div><span class="demo-swatch__label">surface<br/>subtle</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#1B1C1E"></div><span class="demo-swatch__label">surface<br/>elevated</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:#EAEBEC"></div><span class="demo-swatch__label">line<br/>solid</span></div>
+            <div class="demo-swatch"><div class="demo-swatch__chip" style="background:rgba(112,115,124,0.08)"></div><span class="demo-swatch__label">fill<br/>normal</span></div>
+          </div>
+        </div>
+        </div>
+        <ol class="spec-anatomy" data-reveal style="--i: 3">
+          <li>Label / Strong — 강조 텍스트</li>
+          <li>Label / Neutral — 본문 텍스트</li>
+          <li>Label / Alternative — 보조 텍스트</li>
+          <li>Label / Assistive — 비활성·메타</li>
+          <li>Surface / Background — 페이지</li>
+          <li>Surface / Elevated — AI 패널·카드</li>
+          <li>Line / Solid — 구분선</li>
+          <li>Fill / Normal — 호버·액티브 bg</li>
+          <li>Status / Positive — 완료·성공</li>
+          <li>Status / Negative — 오류·실패</li>
+        </ol>
+      </section>
+
+      <section class="spec-section" id="usage">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Usage</h2>
+
+        <div class="spec-subsection" data-reveal style="--i: 1">
+          <h3 class="spec-subsection__title">Mode Adaptation</h3>
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-mode-pair">
+              <div class="demo-mode-col demo-mode-col--light">
+                <span class="demo-mode-col__chip">Light</span>
+                <p class="demo-mode-col__title">AI 응답</p>
+                <p class="demo-mode-col__body">시맨틱 토큰으로 어떤 컴포넌트도 두 모드를 자연스럽게 지원합니다.</p>
+              </div>
+              <div class="demo-mode-col demo-mode-col--dark">
+                <span class="demo-mode-col__chip">Dark</span>
+                <p class="demo-mode-col__title">AI 응답</p>
+                <p class="demo-mode-col__body">시맨틱 토큰으로 어떤 컴포넌트도 두 모드를 자연스럽게 지원합니다.</p>
+              </div>
+            </div>
+          </div>
+          </div>
+          <p class="spec-subsection__caption">OS 설정 또는 사용자의 명시 선택에 따라 토큰의 실제 값이 자동 전환됩니다. 라이트 → 다크로 전환되더라도 컴포넌트는 토큰 이름만 참조하므로 동일한 의미·위계가 유지됩니다.</p>
+        </div>
+
+        <div class="spec-subsection" data-reveal style="--i: 2">
+          <h3 class="spec-subsection__title">AX Status Colors</h3>
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-status-row">
+              <span class="demo-status-pill demo-status-pill--streaming"><span class="demo-status-pill__dot"></span>Generating</span>
+              <span class="demo-status-pill demo-status-pill--success"><span class="demo-status-pill__dot"></span>Completed</span>
+              <span class="demo-status-pill demo-status-pill--error"><span class="demo-status-pill__dot"></span>Failed</span>
+            </div>
+          </div>
+          </div>
+          <p class="spec-subsection__caption">AI 응답 상태(생성 중·완료·오류)는 색으로 즉시 구분합니다. 사용자는 화면 변화만 보고도 시스템이 무엇을 하는지 알 수 있어야 합니다. 색은 항상 보조 시그널(아이콘·텍스트)과 함께 사용해 색맹·저시력 사용자도 정보를 잃지 않도록 합니다.</p>
+        </div>
+      </section>
+
+      <section class="spec-section" id="how-to-use">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">How to use</h2>
+
+        <div class="spec-subsection" data-reveal style="--i: 1">
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-mode-col demo-mode-col--light" style="max-width:280px">
+              <span class="demo-mode-col__chip">label-strong</span>
+              <p class="demo-mode-col__title">시맨틱 토큰 사용</p>
+              <p class="demo-mode-col__body">컴포넌트가 의미 토큰만 참조하면 모드 전환이 자동으로 작동합니다.</p>
+            </div>
+          </div>
+          </div>
+          <div class="spec-howto-meta">
+            <span class="spec-badge spec-badge--do">
+              <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6 10.2l2.8 2.8L14 7.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Do
+            </span>
+            <p class="spec-howto-caption">시맨틱 토큰(label-strong, surface-elevated)을 사용하여 의미와 모드 적응을 모두 보장합니다.</p>
+          </div>
+        </div>
+
+        <div class="spec-subsection" data-reveal style="--i: 2">
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-mode-col" style="background:#FFFFFF;border:1px solid #EAEBEC;max-width:280px;color:#171719">
+              <span class="demo-mode-col__chip" style="background:rgba(255,66,66,0.12);color:#FF4242">#171719 ← hardcoded</span>
+              <p class="demo-mode-col__title">Primitive 직접 사용</p>
+              <p class="demo-mode-col__body">다크 모드에선 검은 글씨가 그대로 남아 가독성이 깨집니다.</p>
+            </div>
+          </div>
+          </div>
+          <div class="spec-howto-meta">
+            <span class="spec-badge spec-badge--dont">
+              <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6.5 6.5l7 7M13.5 6.5l-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Don't
+            </span>
+            <p class="spec-howto-caption">Primitive 컬러(#171719)를 컴포넌트에서 직접 사용하지 않습니다. 다크 모드 적응이 깨집니다.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

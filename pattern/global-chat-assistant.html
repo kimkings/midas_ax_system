@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Global Chat Assistant — MIDAS AX Design System</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="index.html" aria-current="page">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Pattern 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">AGENTIC</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="global-chat-assistant.html" aria-current="page">Global Chat Assistant<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dedicated-agent-workspace.html">Dedicated Agent Workspace<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">CONTEXTUAL</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="contextual-agent-panel.html">Contextual Agent Panel<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="embedded-ai-elements.html">Embedded AI Elements<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BACKGROUND</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="background-task-monitor.html">Background Task Monitor<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BUILDER</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="agent-workflow-builder.html">Agent/Workflow Builder<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#overview">Overview</a></li>
+        <li><a class="toc__item" href="#basic-layout-structure">Basic Layout Structure</a></li>
+        <li><a class="toc__item" href="#variants">Variants</a></li>
+        <li><a class="toc__item" href="#interaction">Interaction</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <p class="page-content__eyebrow" data-reveal style="--i: 0">Pattern / Agentic</p>
+      <h1 class="page-content__title" data-reveal style="--i: 0">Global Chat Assistant</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>서비스 전역에서 사용자가 AI에게 질문하고 요청할 수 있는 공통 대화형 인터페이스입니다. 사용자는 현재 작업 흐름을 크게 벗어나지 않고 AI를 호출할 수 있으며, 질문, 요약, 분석, 생성 요청을 자연어로 입력합니다.</p>
+      </div>
+      <div class="spec-hero" data-reveal style="--i: 2"><img src="../assets/images/gca/gca-hero.png" alt="Global Chat Assistant 기본 대화 화면 목업" loading="lazy" /></div>
+      <div class="spec-figma-link" data-reveal style="--i: 3">
+        <a class="btn-pill btn-pill--md" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=0-1&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">피그마에서 보기 ↗</a>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="overview">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Overview</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Global Chat Assistant는 사용자가 서비스 전역에서 AI를 호출해 질문하거나 요청할 수 있는 공통 대화형 인터페이스입니다. 특정 화면이나 기능에만 종속되지 않고, 사용자가 필요할 때 언제든 AI에게 자연어로 질문하거나 업무 요청을 할 수 있습니다. 답변은 단순 텍스트일 수도 있고, 생성된 결과물, 현재 화면 맥락을 반영한 응답, 후속 액션으로 이어질 수도 있습니다. 이 패턴은 AI를 제품 전체에서 접근 가능한 공통 인터페이스로 제공할 때 적합합니다.</p>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 분류를 선택하는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 38%" /><col style="width: 62%" /></colgroup>
+            <thead><tr><th>선택 조건</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>서비스 어디서든 AI를 호출해야 한다</td><td>특정 화면에만 묶이지 않고, 사용자가 전역적으로 AI에게 질문하거나 요청해야 하는 경우</td></tr>
+              <tr><td>자연어 기반 대화가 핵심이다</td><td>버튼 클릭이나 고정된 플로우보다, 사용자가 직접 질문하고 후속 요청을 이어가는 경험이 중요한 경우</td></tr>
+              <tr><td>요청 범위가 다양하다</td><td>요약, 설명, 분석, 생성, 추천 등 여러 유형의 요청을 하나의 AI 진입점에서 처리해야 하는 경우</td></tr>
+              <tr><td>후속 대화가 이어질 가능성이 높다</td><td>첫 답변 이후 추가 질문, 조건 변경, 재생성, 구체화 요청이 자연스럽게 이어지는 경우</td></tr>
+              <tr><td>공통 AI 진입점이 필요하다</td><td>제품 내 여러 기능에서 동일한 AI Assistant를 호출하는 구조가 필요한 경우</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 템플릿을 사용하지 않는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 62%" /><col style="width: 38%" /></colgroup>
+            <thead><tr><th>선택하지 않는 경우</th><th>대신 고려할 패턴</th></tr></thead>
+            <tbody>
+              <tr><td>특정 작업이나 산출물을 완성하기 위한 전용 작업공간이 필요하다</td><td>Dedicated Agent Workspace</td></tr>
+              <tr><td>현재 화면을 유지한 채 측면에서 AI가 지속적으로 보조해야 한다</td><td>Contextual Agent Panel</td></tr>
+              <tr><td>선택한 텍스트나 입력 필드 근처에서만 짧게 AI가 개입하면 된다</td><td>Embedded AI Elements</td></tr>
+              <tr><td>사용자가 AI 작업의 진행 상태를 주로 확인해야 한다</td><td>Background Task Monitor</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Key Characteristics</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>진입 방식</td><td>전역 버튼, 플로팅 버튼, 헤더 아이콘, 단축키, 추천 질문</td></tr>
+              <tr><td>입력 방식</td><td>자연어 질문, 명령, 요청, 조건 입력</td></tr>
+              <tr><td>응답 방식</td><td>텍스트 답변, 구조화된 응답, 결과물 생성, 관련 액션 제안</td></tr>
+              <tr><td>컨텍스트 활용</td><td>현재 화면, 선택 객체, 문서, 데이터 등을 선택적으로 참조</td></tr>
+              <tr><td>사용자 흐름</td><td>질문 → 응답 → 후속 질문 → 재생성 또는 적용</td></tr>
+              <tr><td>주요 가치</td><td>제품 전반에서 일관된 AI 접근성과 대화형 문제 해결 제공</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">주요 예시 레퍼런스</h3>
+        <p class="spec-subsection__caption">실제 제품에서 Global Chat Assistant 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">ChatGPT</h3>
+        <p class="spec-subsection__caption">사용자가 하나의 전역 대화 화면에서 자연어로 질문하고, AI가 텍스트 답변·구조화된 응답·코드·파일 기반 답변 등을 제공합니다. 최근 대화 목록, 하단 고정 입력창, 파일 첨부, 모델 선택, 음성 입력 등 대화형 AI의 기본 레이아웃 요소를 폭넓게 갖추고 있습니다. Canvas 기능을 통해 단순 대화를 넘어 글쓰기·코딩 결과물을 별도 작업 영역에서 함께 다루는 구조도 제공합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-ref-chatgpt.png" alt="ChatGPT 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Microsoft 365 Copilot Chat</h3>
+        <p class="spec-subsection__caption">Microsoft 365 안에서 업무용 AI Chat으로 제공되며, 사용자가 자연어로 초안 작성, 요약, 분석, 아이디어 탐색 같은 업무 요청을 입력할 수 있습니다. 추천 프롬프트 카드와 업무 생산성 중심의 시작 화면을 제공해, 사용자가 무엇을 요청할 수 있는지 빠르게 파악하게 합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-ref-copilot.png" alt="Microsoft 365 Copilot Chat 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Sana.ai</h3>
+        <p class="spec-subsection__caption">기업 내부 지식과 연결된 AI Assistant로, 사용자가 제품 스펙, 정책, 업무 정보에 대해 질문하면 관련 지식 소스를 바탕으로 답변하고 출처를 함께 보여줍니다. 파일을 채팅에 직접 업로드하거나, 지식 소스를 선택해 응답 정확도를 높이는 구조를 제공해 지식 기반 Global Chat Assistant의 사례로 볼 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-ref-sana.png" alt="Sana.ai 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="basic-layout-structure">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Basic Layout Structure</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Global Chat Assistant는 사용자가 서비스 어디서든 AI를 호출하고 대화를 이어갈 수 있도록, 공통적인 대화 화면 구조를 가집니다. 하위 분기에 따라 Canvas나 Context Preview가 추가될 수 있지만, 기본 골격은 Sidebar, Conversation Area, Prompt Composer, Utility Actions로 구성됩니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2"><img src="../assets/images/gca/gca-layout.png" alt="Global Chat Assistant 기본 구조 (Sidebar · Conversation Area · Prompt Composer · Utility Actions)" loading="lazy" /></div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">레이아웃 원칙</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>원칙</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>대화 중심성</td><td>화면의 중심은 항상 사용자의 요청과 AI 응답이 오가는 대화 영역입니다.</td></tr>
+              <tr><td>전역 접근성</td><td>특정 업무 화면에 종속되지 않고, 서비스 공통 AI 진입점처럼 동작해야 합니다.</td></tr>
+              <tr><td>입력 지속성</td><td>사용자가 언제든 후속 질문을 입력할 수 있도록 Prompt Composer는 하단에 안정적으로 배치합니다.</td></tr>
+              <tr><td>맥락 확장성</td><td>필요에 따라 Canvas Panel이나 Context Preview가 확장될 수 있어야 합니다.</td></tr>
+              <tr><td>작업 연속성</td><td>최근 대화, 새 대화, 검색 기능을 통해 사용자가 이전 대화와 현재 작업을 이어갈 수 있어야 합니다.</td></tr>
+              <tr><td>액션 최소화</td><td>기본 화면에서는 대화를 방해하지 않도록 주요 액션만 노출하고, 보조 액션은 더보기나 하위 메뉴로 정리합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="variants">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Variants</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Global Chat Assistant는 응답 결과를 어디까지 다루는지, 현재 맥락을 얼마나 보여줘야 하는지에 따라 하위 UI가 나뉩니다.</p>
+      <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 24%" /><col style="width: 38%" /><col style="width: 38%" /></colgroup>
+            <thead><tr><th>하위 분기</th><th>한 줄 정의</th><th>선택 기준</th></tr></thead>
+            <tbody>
+              <tr><td>Chat Only</td><td>질문과 답변 중심의 기본 대화형 UI</td><td>별도 작업 영역이나 컨텍스트 미리보기가 필요 없을 때</td></tr>
+              <tr><td>Chat + Context Preview</td><td>AI가 참고하는 현재 화면이나 선택 객체를 함께 보여주는 UI</td><td>AI 답변이 현재 화면, 문서, 데이터 맥락에 의존할 때</td></tr>
+              <tr><td>Chat + Canvas Panel</td><td>대화 결과를 별도 영역에서 보고 편집하는 UI</td><td>AI 결과가 문서, 계획, 분석 결과처럼 산출물 형태일 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Chat Only</h3>
+        <p class="spec-subsection__caption">사용자가 질문하고 AI가 답변하는 가장 기본적인 전역 챗 UI로, 범용 질문, 간단한 설명, 빠른 요약, 짧은 추천에 적합합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-variant-chat-only.png" alt="Chat Only 변형 — 기본 대화형 UI" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Chat + Context Preview</h3>
+        <p class="spec-subsection__caption">AI가 답변에 참고하는 현재 화면, 선택 객체, 문서, 데이터를 함께 보여주는 UI로, AI 답변이 현재 화면이나 특정 데이터 맥락에 의존하는 경우 보조 패널을 활용합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-variant-context-preview.png" alt="Chat + Context Preview 변형 — 우측 컨텍스트 패널" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Chat + Canvas Panel</h3>
+        <p class="spec-subsection__caption">대화 영역과 결과 작업 영역이 함께 제공되는 UI로, AI가 생성한 결과물을 별도 영역에서 확인해야 하는 경우 사용합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-variant-canvas-panel.png" alt="Chat + Canvas Panel 변형 — 우측 캔버스 영역" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="interaction">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Interaction</h2>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Trigger - Global AI Call</h3>
+        <p class="spec-subsection__caption">사용자가 전역 버튼, 플로팅 버튼, 사이드바, 단축키 등을 통해 AI Assistant를 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-interaction-trigger.png" alt="Trigger — 전역 에이전트 호출 버튼" loading="lazy" /></div>
+        <p class="spec-image__description">전역 에이전트를 호출하는 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-interaction-trigger-space.png" alt="Trigger — 전용 공간 AI Assistant UI" loading="lazy" /></div>
+        <p class="spec-image__description">호출된 AI Assistant는 별도의 전용 공간(새 탭, 새 창 등)에 UI가 구성됩니다. UI는 자연어 기반 상호작용이 중심이 되는 형태입니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Input - Natural Language Request</h3>
+        <p class="spec-subsection__caption">사용자가 질문, 요청, 명령, 조건을 자연어로 입력합니다. 필요에 따라 파일, 현재 화면, 선택 객체 같은 맥락이 함께 포함될 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-interaction-input.png" alt="Input — 자연어 요청 입력" loading="lazy" /></div>
+        <p class="spec-image__description">사용자는 Composer와 상호작용하여 질문, 요청, 명령, 조건 등을 자연어로 입력합니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Output - Conversational Response</h3>
+        <p class="spec-subsection__caption">AI가 텍스트 답변, 요약, 추천, 분석 결과, 구조화된 응답 등을 대화 형태로 제공합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-interaction-output.png" alt="Output — 대화형 응답" loading="lazy" /></div>
+        <p class="spec-image__description">사용자의 요청사항에 따라 대화 기반의 응답을 제공합니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Follow up - Continue or Act</h3>
+        <p class="spec-subsection__caption">사용자는 후속 질문을 이어가거나, 응답을 복사·다시 생성·저장·적용하는 등 다음 행동을 수행합니다.</p>
+        <div class="spec-image"><img src="../assets/images/gca/gca-interaction-followup.png" alt="Follow up — 후속 질문 및 액션" loading="lazy" /></div>
+        <p class="spec-image__description">AI Assistant는 사용자의 요청 맥락에 따른 추천 후속 질문을 제공할 수 있습니다. 이와 별개로 사용자가 자연어로 후속 질문을 요청할 수 있습니다.</p>
+      </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

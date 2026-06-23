@@ -1,0 +1,109 @@
+/* ============================================
+   Tokens — Single source mapped from DESIGN-SYSTEM.md
+   Edit values here when the doc changes.
+   ============================================ */
+
+:root {
+  /* ---------- Layout ---------- */
+  --container-max:  1400px;
+  --padding-inline: 0;  /* 기본: 1400+ viewport는 여백 0 (margin-auto가 처리) */
+  --snb-width:      180px;
+  --toc-width:      160px;
+  --gnb-height:     72px;
+  --footer-height:  80px;
+  --section-gap:    60px;
+
+  /* ---------- Spacing ---------- */
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 40px;
+  --space-8: 60px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 24px;  /* card media block (Figma 실측치) */
+
+  /* ---------- Color — Text ---------- */
+  --color-label-strong:      #171719;  /* Figma material-dimmer / Woodsmoke */
+  --color-label-neutral:     rgba(46, 47, 51, 0.88);
+  --color-label-alternative: rgba(55, 56, 60, 0.61);
+  --color-label-assistive:   rgba(55, 56, 60, 0.28);
+
+  /* ---------- Color — Surface ---------- */
+  --color-background:         #FFFFFF;
+  --color-surface-elevated:   #FFFFFF;        /* 드롭다운/패널/카드 표면 */
+  --color-surface-subtle:     #F7F7F8;        /* spec-thumb, 카드 placeholder 등 */
+  --color-fill-normal:        rgba(112, 115, 124, 0.08);
+  --color-fill-hover:         rgba(23, 23, 25, 0.04);  /* SNB hover bg */
+  --color-fill-pressed:       rgba(23, 23, 25, 0.08);  /* SNB active+hover bg */
+  --color-inverse-background: #1B1C1E;
+  --color-inverse-label:      #F7F7F8;
+
+  /* ---------- Color — Line ---------- */
+  --color-line-solid:  #EAEBEC;
+  --color-line-subtle: rgba(112, 115, 124, 0.16);  /* GNB/검색 input 보더 */
+
+  /* ---------- Gradient overlay (페이지 그라데이션 등) ---------- */
+  --gradient-opacity:        1;
+  --gradient-blend-mode:     normal;
+
+  /* ---------- Color — Status ---------- */
+  --color-status-positive: #00BF40;
+  --color-status-negative: #FF4242;
+
+  /* ---------- Typography — Family ---------- */
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system,
+               BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+               sans-serif;
+  --font-display: "Poppins", var(--font-sans);  /* 로고 등 디스플레이 전용 */
+
+  /* ---------- Motion (System docs 와 일치) ---------- */
+  --duration-fast:   120ms;    /* 마이크로 인터랙션 (hover bg, focus ring) */
+  --duration-normal: 240ms;    /* 버튼·카드 hover, 메뉴 등장 */
+  --duration-slow:   400ms;    /* 패널·모달 등장, 페이지 전환 */
+  --easing-standard:   cubic-bezier(0.33, 1, 0.68, 1);  /* 기본 ease-out */
+  --easing-emphasized: cubic-bezier(0.22, 1, 0.36, 1);  /* 강조 등장 (Hero title) */
+}
+
+/* 1400 이하 해상도에서는 좌우 40px 여백 확보 */
+@media (max-width: 1400px) {
+  :root {
+    --padding-inline: 40px;
+  }
+}
+
+/* ============================================
+   Dark Theme — :root[data-theme="dark"] 활성화
+   - 컬러 토큰만 오버라이드 (레이아웃/타이포 동일)
+   - 그라데이션 PNG 등 시각 자산은 opacity/blend 조정
+   ============================================ */
+:root[data-theme="dark"] {
+  /* Text — Figma 115:6086 (Athens Gray / Bombay 88%) */
+  --color-label-strong:      #F7F7F8;        /* Athens Gray */
+  --color-label-neutral:     #C2C4C8;        /* Bombay 88% (semi-strong) */
+  --color-label-alternative: rgba(247, 247, 248, 0.61);
+  --color-label-assistive:   rgba(247, 247, 248, 0.28);
+
+  /* Surface — Figma: Cod Gray Shark (#121212 body) / Shark (#1B1C1E card) */
+  --color-background:         #121212;       /* Cod Gray */
+  --color-surface-elevated:   #1B1C1E;       /* Shark — 드롭다운/패널 (확실히 들어 올림) */
+  /* 카드 썸네일 bg — 라이트 모드 #F7F7F8 on #FFFFFF (≈3% diff) 와 동일한 미묘함
+     rgba 로 옅게 깔아서 body 위에 살짝만 떠 보이도록 */
+  --color-surface-subtle:     rgba(247, 247, 248, 0.03);
+  --color-fill-normal:        rgba(247, 247, 248, 0.08);
+  --color-fill-hover:         rgba(247, 247, 248, 0.06);
+  --color-fill-pressed:       rgba(247, 247, 248, 0.12);
+  --color-inverse-background: #F7F7F8;       /* 다크일 때 inverse는 밝게 */
+  --color-inverse-label:      #1B1C1E;
+
+  /* Line — Pale Sky (#70737C) 다양한 alpha */
+  --color-line-solid:  rgba(112, 115, 124, 0.22);  /* 22% (Pale Sky 21.96) */
+  --color-line-subtle: rgba(112, 115, 124, 0.16);
+
+  /* 그라데이션 — 다크에선 거의 안 보일 만큼만 은은하게 */
+  --gradient-opacity:    0.1;
+  --gradient-blend-mode: screen;
+}

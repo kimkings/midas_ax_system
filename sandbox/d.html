@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    document.documentElement.setAttribute("data-theme", "dark");
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Spark Studio · D · Glow Dark</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/sandbox.css" />
+  <link rel="stylesheet" href="../css/sandbox-d.css" />
+</head>
+<body class="sbd">
+
+  <!-- ============== 살아있는 블롭 (꿀렁이는 배경) ============== -->
+  <div class="sbd-blobs" aria-hidden="true">
+    <div class="sbd-blob sbd-blob--1"></div>
+    <div class="sbd-blob sbd-blob--2"></div>
+    <div class="sbd-blob sbd-blob--3"></div>
+    <div class="sbd-blob sbd-blob--4"></div>
+  </div>
+
+  <aside class="sb-switcher" aria-label="시안 전환">
+    <a class="sb-switcher__compare" href="index.html" aria-label="비교 갤러리로">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </a>
+    <a class="sb-switcher__item" href="a.html">A</a>
+    <a class="sb-switcher__item" href="b.html">B</a>
+    <a class="sb-switcher__item" href="c.html">C</a>
+    <span class="sb-switcher__div" aria-hidden="true"></span>
+    <a class="sb-switcher__item is-active" href="d.html" aria-current="page">D</a>
+    <a class="sb-switcher__item" href="e.html">E</a>
+    <a class="sb-switcher__item" href="f.html">F</a>
+  </aside>
+
+  <header class="gnb">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>Spark Studio · D</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a class="btn-text" href="index.html">← 시안 비교</a>
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="sbd-hero">
+      <div class="sbd-hero__eyebrow">New · Agent Builder v2</div>
+      <h1 class="sbd-hero__title">Build AI agents in<br/>minutes, not months.</h1>
+      <p class="sbd-hero__lead">노코드 비주얼 빌더로 AI 에이전트를 설계하고,<br/>실제 사용자 환경에 곧바로 배포하세요.</p>
+      <div class="sbd-hero__cta">
+        <a class="sbd-btn sbd-btn--primary" href="#pricing">무료로 시작하기 →</a>
+        <a class="sbd-btn" href="#demo">데모 영상 보기</a>
+      </div>
+    </section>
+
+    <section class="sbd-section" id="features">
+      <div class="sbd-section__head">
+        <div class="sbd-section__tag">Features</div>
+        <h2 class="sbd-section__title">왜 Spark Studio 인가요</h2>
+      </div>
+      <div class="sbd-features">
+        <article class="sbd-feature">
+          <div class="sbd-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <h3 class="sbd-feature__title">Visual Builder</h3>
+          <p class="sbd-feature__desc">드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요.</p>
+        </article>
+        <article class="sbd-feature">
+          <div class="sbd-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M6.5 6.5 9.8 9.8M17.5 6.5 14.2 9.8M6.5 17.5 9.8 14.2M17.5 17.5 14.2 14.2"/></svg>
+          </div>
+          <h3 class="sbd-feature__title">Multi-Model</h3>
+          <p class="sbd-feature__desc">Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요.</p>
+        </article>
+        <article class="sbd-feature">
+          <div class="sbd-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="sbd-feature__title">Production-Ready</h3>
+          <p class="sbd-feature__desc">SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbd-section" id="demo">
+      <div class="sbd-section__head">
+        <div class="sbd-section__tag">Demo</div>
+        <h2 class="sbd-section__title">5분 안에 동작하는 에이전트</h2>
+      </div>
+      <div class="sbd-demo">
+        <div class="sbd-demo__copy">
+          <h3>대화로 설명하면, 에이전트가 만들어집니다.</h3>
+          <p>"고객 문의에 응답하고 환불 정책을 안내하는 봇" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다.</p>
+          <ul class="sbd-demo__list">
+            <li>자연어로 에이전트 정의</li>
+            <li>실시간 테스트 환경 제공</li>
+            <li>한번 클릭으로 웹 · Slack · API 배포</li>
+          </ul>
+        </div>
+        <div class="sbd-chat" aria-hidden="true">
+          <div class="sbd-chat__head">
+            <div class="sbd-chat__avatar">S</div>
+            <div>
+              <div class="sbd-chat__title">Spark Assistant</div>
+              <div class="sbd-chat__status">● Online</div>
+            </div>
+          </div>
+          <div class="sbd-chat__msg sbd-chat__msg--bot">안녕하세요! 어떤 에이전트를 만들어볼까요?</div>
+          <div class="sbd-chat__msg sbd-chat__msg--user">고객 문의 자동응답 봇 만들어줘</div>
+          <div class="sbd-chat__msg sbd-chat__msg--bot">좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, FAQ DB 와 연결할까요?</div>
+          <div class="sbd-chat__msg sbd-chat__msg--user">좋아 그렇게 해줘</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sbd-section" id="pricing">
+      <div class="sbd-section__head">
+        <div class="sbd-section__tag">Pricing</div>
+        <h2 class="sbd-section__title">합리적인 요금제</h2>
+      </div>
+      <div class="sbd-pricing">
+        <article class="sbd-price">
+          <h3 class="sbd-price__name">Starter</h3>
+          <div class="sbd-price__amount"><strong>₩0</strong><span>/월</span></div>
+          <p class="sbd-price__desc">개인 프로젝트와 학습용으로 시작하기 좋습니다.</p>
+          <ul class="sbd-price__list">
+            <li>월 1,000회 메시지</li>
+            <li>에이전트 3개</li>
+            <li>커뮤니티 지원</li>
+          </ul>
+          <div class="sbd-price__cta"><a class="sbd-btn" href="#">무료로 시작</a></div>
+        </article>
+        <article class="sbd-price sbd-price--featured">
+          <span class="sbd-price__badge">Most Popular</span>
+          <h3 class="sbd-price__name">Pro</h3>
+          <div class="sbd-price__amount"><strong>₩39,000</strong><span>/월</span></div>
+          <p class="sbd-price__desc">소규모 팀과 본격적인 서비스 운영에 적합합니다.</p>
+          <ul class="sbd-price__list">
+            <li>월 100,000회 메시지</li>
+            <li>에이전트 무제한</li>
+            <li>Slack · API 배포</li>
+            <li>이메일 지원 (24h)</li>
+          </ul>
+          <div class="sbd-price__cta"><a class="sbd-btn sbd-btn--primary" href="#">Pro 시작하기</a></div>
+        </article>
+        <article class="sbd-price">
+          <h3 class="sbd-price__name">Enterprise</h3>
+          <div class="sbd-price__amount"><strong>맞춤</strong></div>
+          <p class="sbd-price__desc">대규모 조직과 고급 보안 요구사항을 위한 플랜.</p>
+          <ul class="sbd-price__list">
+            <li>메시지 무제한</li>
+            <li>SSO · SAML · SOC 2</li>
+            <li>전담 매니저</li>
+            <li>99.9% SLA 보장</li>
+          </ul>
+          <div class="sbd-price__cta"><a class="sbd-btn" href="#">문의하기</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbd-section" id="faq">
+      <div class="sbd-section__head">
+        <div class="sbd-section__tag">FAQ</div>
+        <h2 class="sbd-section__title">자주 묻는 질문</h2>
+      </div>
+      <div class="sbd-faq">
+        <article class="sbd-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbd-faq__summary">
+            <h3 class="sbd-faq__q">코딩을 전혀 몰라도 사용할 수 있나요?</h3>
+            <button class="sbd-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbd-faq__a">네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다.</p>
+        </article>
+        <article class="sbd-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbd-faq__summary">
+            <h3 class="sbd-faq__q">어떤 AI 모델을 지원하나요?</h3>
+            <button class="sbd-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbd-faq__a">Claude, GPT, Gemini, Mistral, Cohere, Ollama 까지 6종 이상의 모델을 지원합니다.</p>
+        </article>
+        <article class="sbd-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbd-faq__summary">
+            <h3 class="sbd-faq__q">우리 회사 데이터는 안전한가요?</h3>
+            <button class="sbd-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbd-faq__a">모든 데이터는 전송 · 저장 시 암호화되며, SOC 2 Type II 인증을 받았습니다.</p>
+        </article>
+        <article class="sbd-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbd-faq__summary">
+            <h3 class="sbd-faq__q">언제든 플랜을 변경할 수 있나요?</h3>
+            <button class="sbd-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbd-faq__a">언제든 업그레이드/다운그레이드가 가능하며, 변경 즉시 반영됩니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbd-section">
+      <div class="sbd-cta">
+        <h2>지금 바로 첫<br/>에이전트를 만들어보세요</h2>
+        <p>신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜</p>
+        <a class="sbd-btn sbd-btn--primary" href="#">무료로 시작하기 →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 Spark Studio (Sandbox)</span>
+      <span class="footer__badge">D · Glow Dark</span>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Spark Studio — 시안 비교 (Sandbox)</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Press+Start+2P&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+
+  <style>
+    /* ============ Comparison Gallery — 시안 비교 페이지 전용 ============ */
+    .sb-compare-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+    }
+    .sb-compare-hero h1 {
+      font-family: var(--font-display);
+      font-size: 56px;
+      font-weight: 600;
+      line-height: 1.15;
+      letter-spacing: -2px;
+      color: var(--color-label-strong);
+      margin: 0 0 20px;
+    }
+    .sb-compare-hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--color-label-neutral);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .sb-compare-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 60px 0 160px;
+    }
+    .sb-variant {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: var(--color-surface-elevated);
+      border: 1px solid var(--color-line-solid);
+      transition: transform var(--duration-normal) var(--easing-standard),
+                  box-shadow var(--duration-normal) var(--easing-standard);
+    }
+    .sb-variant:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(23, 23, 25, 0.10);
+    }
+    .sb-variant__preview {
+      aspect-ratio: 4 / 3;
+      position: relative;
+      overflow: hidden;
+    }
+    /* Variant A — Modern Minimal */
+    .sb-variant--a .sb-variant__preview {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F7F7F8 100%);
+    }
+    .sb-variant--a .sb-variant__preview::before {
+      content: "";
+      position: absolute;
+      top: 24%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 12px;
+      border-radius: 999px;
+      background: #1B1C1E;
+    }
+    .sb-variant--a .sb-variant__preview::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--color-fill-normal);
+    }
+    /* Variant B — Asymmetric / Left-aligned */
+    .sb-variant--b .sb-variant__preview {
+      background: linear-gradient(135deg, #FFFFFF 0%, #F7F7F8 100%);
+    }
+    .sb-variant--b .sb-variant__preview::before {
+      content: ""; position: absolute;
+      top: 22%; left: 12%;
+      width: 50%; height: 12px;
+      border-radius: 999px; background: #1B1C1E;
+    }
+    .sb-variant--b .sb-variant__preview::after {
+      content: ""; position: absolute;
+      top: 48%; left: 12%;
+      width: 36%; height: 8px;
+      border-radius: 999px; background: rgba(112, 115, 124, 0.32);
+    }
+    /* Variant C — Inverse Accent */
+    .sb-variant--c .sb-variant__preview { background: #1B1C1E; }
+    .sb-variant--c .sb-variant__preview::before {
+      content: ""; position: absolute;
+      top: 22%; left: 50%; transform: translateX(-50%);
+      width: 56%; height: 12px;
+      border-radius: 999px; background: #F7F7F8;
+    }
+    .sb-variant--c .sb-variant__preview::after {
+      content: ""; position: absolute;
+      top: 50%; left: 50%; transform: translateX(-50%);
+      width: 68%; height: 36px;
+      border-radius: 999px;
+      background: rgba(247, 247, 248, 0.08);
+      border: 1px solid rgba(247, 247, 248, 0.18);
+    }
+
+    /* Variant D — AI Wavy Dark */
+    .sb-variant--d .sb-variant__preview {
+      background:
+        radial-gradient(40% 60% at 25% 30%, rgba(60, 120, 255, 0.65), transparent 65%),
+        radial-gradient(40% 60% at 75% 70%, rgba(139, 92, 246, 0.55), transparent 65%),
+        radial-gradient(40% 50% at 50% 50%, rgba(93, 212, 255, 0.3), transparent 70%),
+        #06070D;
+    }
+    .sb-variant--d .sb-variant__preview::before {
+      content: ""; position: absolute;
+      top: 30%; left: 8%; right: 8%;
+      height: 80px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+    /* Variant E — Scroll Playground */
+    .sb-variant--e .sb-variant__preview {
+      background: #FAFAFB;
+      overflow: hidden;
+      position: relative;
+    }
+    .sb-variant--e .sb-variant__preview::before {
+      content: ""; position: absolute;
+      top: 16%; left: 8%; width: 70%; height: 28%;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #FF6BB5, #8B5CF6);
+      transform: rotate(-2deg);
+    }
+    .sb-variant--e .sb-variant__preview::after {
+      content: ""; position: absolute;
+      top: 38%; left: 14%; width: 70%; height: 28%;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #4F8EFF, #00C896);
+    }
+    /* Variant F — Pixel Kitsch */
+    .sb-variant--f .sb-variant__preview {
+      background: #FFEEF6;
+    }
+    .sb-variant--f .sb-variant__preview::before {
+      content: "★ NEW";
+      position: absolute;
+      top: 18%; left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      padding: 6px 12px;
+      background: #FFEE00;
+      border: 2px solid #1A1B2E;
+      box-shadow: 3px 3px 0 #1A1B2E;
+      font-family: "Press Start 2P", monospace;
+      font-size: 9px;
+      color: #1A1B2E;
+      letter-spacing: 1px;
+    }
+    .sb-variant--f .sb-variant__preview::after {
+      content: "SPARK";
+      position: absolute;
+      top: 45%; left: 50%;
+      transform: translateX(-50%);
+      font-family: "Press Start 2P", monospace;
+      font-size: 18px;
+      color: #1A1B2E;
+      text-shadow: 3px 3px 0 #FF1493;
+    }
+
+    /* Group label */
+    .sb-compare-group {
+      margin-bottom: 40px;
+    }
+    .sb-compare-group__head {
+      display: flex; align-items: baseline; gap: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--color-line-solid);
+      margin-bottom: 32px;
+    }
+    .sb-compare-group__title {
+      font-size: 22px; font-weight: 600;
+      letter-spacing: -0.4px;
+      color: var(--color-label-strong);
+      margin: 0;
+    }
+    .sb-compare-group__caption {
+      font-size: 14px;
+      color: var(--color-label-alternative);
+      margin: 0;
+    }
+    .sb-compare-grid { padding: 0 0 60px; }
+    .sb-variant__body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .sb-variant__tag {
+      display: inline-flex;
+      align-self: flex-start;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: var(--color-label-alternative);
+    }
+    .sb-variant__name {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+      color: var(--color-label-strong);
+      margin: 0;
+    }
+    .sb-variant__desc {
+      font-size: 14px;
+      line-height: 1.55;
+      color: var(--color-label-neutral);
+      margin: 0;
+      flex-grow: 1;
+    }
+    .sb-variant__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-label-strong);
+      letter-spacing: -0.1px;
+      margin-top: 4px;
+      transition: gap var(--duration-normal) var(--easing-standard);
+    }
+    .sb-variant:hover .sb-variant__cta {
+      gap: 10px;
+    }
+    .sb-variant__cta svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Comparison table */
+    .sb-compare-table {
+      margin-top: 0;
+      padding-bottom: 160px;
+    }
+    .sb-compare-table h2 {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -0.6px;
+      color: var(--color-label-strong);
+      margin: 0 0 24px;
+    }
+    .sb-compare-table table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .sb-compare-table th,
+    .sb-compare-table td {
+      padding: 16px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--color-line-solid);
+      color: var(--color-label-neutral);
+      vertical-align: top;
+    }
+    .sb-compare-table th {
+      color: var(--color-label-strong);
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--color-label-strong);
+    }
+    .sb-compare-table tr td:first-child {
+      color: var(--color-label-strong);
+      font-weight: 500;
+      width: 130px;
+    }
+    @media (max-width: 960px) {
+      .sb-compare-grid { grid-template-columns: 1fr; }
+      .sb-compare-hero h1 { font-size: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============== GNB ============== -->
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>Sandbox</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a class="btn-text" href="../index.html">← 시스템으로 돌아가기</a>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="sb-compare-hero">
+      <h1>Spark Studio<br/>시안 비교 (Sandbox)</h1>
+      <p>
+        동일한 콘텐츠로 만든 6가지 시안입니다. 시스템 안에서 만든 3가지(A/B/C)와
+        자유롭게 트렌디하게 표현한 3가지(D/E/F)를 비교해보세요.
+      </p>
+    </section>
+
+    <section class="sb-compare-group">
+      <div class="sb-compare-group__head">
+        <h2 class="sb-compare-group__title">System · 디자인 시스템 안</h2>
+        <p class="sb-compare-group__caption">토큰 / 컴포넌트 / 모션 모두 시스템 내부에서 표현</p>
+      </div>
+      <div class="sb-compare-grid">
+        <a class="sb-variant sb-variant--a" href="a.html">
+          <div class="sb-variant__preview" aria-hidden="true"></div>
+          <div class="sb-variant__body">
+            <span class="sb-variant__tag">Variant A</span>
+            <h3 class="sb-variant__name">Modern Minimal</h3>
+            <p class="sb-variant__desc">중앙정렬 균형, 부드러운 페이드 업, 화이트 베이스 SaaS 톤.</p>
+            <span class="sb-variant__cta">보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="sb-variant sb-variant--b" href="b.html">
+          <div class="sb-variant__preview" aria-hidden="true"></div>
+          <div class="sb-variant__body">
+            <span class="sb-variant__tag">Variant B</span>
+            <h3 class="sb-variant__name">Asymmetric</h3>
+            <p class="sb-variant__desc">좌측정렬 비대칭. 가로 row Features/Pricing, 순수 페이드인.</p>
+            <span class="sb-variant__cta">보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="sb-variant sb-variant--c" href="c.html">
+          <div class="sb-variant__preview" aria-hidden="true"></div>
+          <div class="sb-variant__body">
+            <span class="sb-variant__tag">Variant C</span>
+            <h3 class="sb-variant__name">Inverse Accent</h3>
+            <p class="sb-variant__desc"><code>--color-inverse-*</code> 적극 활용. Demo/CTA 전면 너비 배너. 정적.</p>
+            <span class="sb-variant__cta">보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="sb-compare-group">
+      <div class="sb-compare-group__head">
+        <h2 class="sb-compare-group__title">Free · 자유 표현</h2>
+        <p class="sb-compare-group__caption">시스템 무관, 트렌디한 시각언어와 인터랙션으로 자유롭게 표현</p>
+      </div>
+      <div class="sb-compare-grid">
+        <a class="sb-variant sb-variant--d" href="d.html">
+          <div class="sb-variant__preview" aria-hidden="true"></div>
+          <div class="sb-variant__body">
+            <span class="sb-variant__tag">Variant D</span>
+            <h3 class="sb-variant__name">AI Wavy Dark</h3>
+            <p class="sb-variant__desc">살아 숨쉬는 블롭이 꿀렁이며 블루↔퍼플 그라데이션이 비치는 다크. 노이즈 그레인 + 글래스모피즘.</p>
+            <span class="sb-variant__cta">보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="sb-variant sb-variant--e" href="e.html">
+          <div class="sb-variant__preview" aria-hidden="true"></div>
+          <div class="sb-variant__body">
+            <span class="sb-variant__tag">Variant E</span>
+            <h3 class="sb-variant__name">Scroll Playground</h3>
+            <p class="sb-variant__desc">섹션마다 다른 스크롤 인터랙션: Parallax · Pin&amp;Stack · Sticky Cross-fade · Horizontal Scroll.</p>
+            <span class="sb-variant__cta">보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="sb-variant sb-variant--f" href="f.html">
+          <div class="sb-variant__preview" aria-hidden="true"></div>
+          <div class="sb-variant__body">
+            <span class="sb-variant__tag">Variant F</span>
+            <h3 class="sb-variant__name">Pixel Kitsch</h3>
+            <p class="sb-variant__desc">픽셀 폰트(Press Start 2P) + Y2K 컬러 + 하드 픽셀 그림자 + 스티커 데코 + 흔들림 호버.</p>
+            <span class="sb-variant__cta">보기 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="sb-compare-table">
+      <h2>시안 비교표 — System vs Free</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>A · Minimal</th>
+            <th>B · Asymmetric</th>
+            <th>C · Inverse</th>
+            <th>D · AI Wavy</th>
+            <th>E · Scroll</th>
+            <th>F · Pixel</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>그룹</td>
+            <td>System</td>
+            <td>System</td>
+            <td>System</td>
+            <td>Free</td>
+            <td>Free</td>
+            <td>Free</td>
+          </tr>
+          <tr>
+            <td>핵심 기믹</td>
+            <td>fade-up</td>
+            <td>가로 row</td>
+            <td>inverse 섹션</td>
+            <td>꿀렁이는 블롭</td>
+            <td>스크롤 인터랙션</td>
+            <td>픽셀 + 스티커</td>
+          </tr>
+          <tr>
+            <td>타이포</td>
+            <td>Pretendard</td>
+            <td>Pretendard</td>
+            <td>Pretendard</td>
+            <td>그라데이션 텍스트</td>
+            <td>120px 디스플레이</td>
+            <td>Press Start 2P</td>
+          </tr>
+          <tr>
+            <td>주요 컬러</td>
+            <td>system 그대로</td>
+            <td>system 그대로</td>
+            <td>inverse 토큰</td>
+            <td>#3C78FF · #8B5CF6</td>
+            <td>핑크 · 퍼플 · 블루</td>
+            <td>핫핑크 · 시안 · 라임</td>
+          </tr>
+          <tr>
+            <td>인터랙션</td>
+            <td>fade-up</td>
+            <td>pure fade</td>
+            <td>정적</td>
+            <td>blob 꿀렁임</td>
+            <td>스크롤 4종 (parallax/stack/sticky/horizontal)</td>
+            <td>흔들림 + 회전</td>
+          </tr>
+          <tr>
+            <td>모서리</td>
+            <td>system</td>
+            <td>system</td>
+            <td>system</td>
+            <td>28-36px 둥근</td>
+            <td>32-48px 매우 둥근</td>
+            <td>0 (샤프)</td>
+          </tr>
+          <tr>
+            <td>레퍼런스</td>
+            <td>Apple/Stripe</td>
+            <td>Editorial</td>
+            <td>다크 SaaS</td>
+            <td>Linear, Vercel, OpenAI</td>
+            <td>Apple WWDC, Stripe.com</td>
+            <td>Y2K, 90s gaming</td>
+          </tr>
+          <tr>
+            <td>적합 케이스</td>
+            <td>엔터프라이즈</td>
+            <td>콘텐츠 중심</td>
+            <td>다크 톤 제품</td>
+            <td>AI/개발자 도구</td>
+            <td>인터랙티브 마케팅</td>
+            <td>크리에이티브 · 게임</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 Spark Studio (Sandbox)</span>
+      <span class="footer__badge">Compare</span>
+    </div>
+  </footer>
+
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

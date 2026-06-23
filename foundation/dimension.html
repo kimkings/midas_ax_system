@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    /* FOUC 방지 — 스타일 적용 전에 data-theme 먼저 박기 */
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dimension — MIDAS AX Design System</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="../pattern/index.html">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Foundation 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">Foundation</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="color-scheme.html">Color Scheme<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dimension.html" aria-current="page">Dimension<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="text.html">Text<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="effect.html">Effect<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#anatomy">Anatomy</a></li>
+        <li><a class="toc__item" href="#usage">Usage</a></li>
+        <li><a class="toc__item" href="#how-to-use">How to use</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <h1 class="page-content__title" data-reveal style="--i: 0">Dimension</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>AX 인터페이스는 짧은 액션 UI 와 긴 AI 응답이 같은 화면에 공존합니다. 8 배수 그리드의 통합 디멘션 시스템은 두 컨텍스트 모두에서 일정한 리듬을 만들고, 비례 관계로 컴포넌트가 자연스럽게 sm/md/lg 변형으로 확장됩니다.</p>
+      </div>
+      <hr class="page-content__divider" />
+
+      <div class="spec-hero" data-reveal style="--i: 2">
+        <div class="demo-frame">
+          <div class="demo-spacing">
+            <div class="demo-spacing__row"><span>Space 2</span><div class="demo-spacing__bar" style="width:8px"></div><span class="demo-spacing__val">8</span></div>
+            <div class="demo-spacing__row"><span>Space 3</span><div class="demo-spacing__bar" style="width:12px"></div><span class="demo-spacing__val">12</span></div>
+            <div class="demo-spacing__row"><span>Space 4</span><div class="demo-spacing__bar" style="width:16px"></div><span class="demo-spacing__val">16</span></div>
+            <div class="demo-spacing__row"><span>Space 5</span><div class="demo-spacing__bar" style="width:24px"></div><span class="demo-spacing__val">24</span></div>
+            <div class="demo-spacing__row"><span>Space 6</span><div class="demo-spacing__bar" style="width:40px"></div><span class="demo-spacing__val">40</span></div>
+            <div class="demo-spacing__row"><span>Space 7</span><div class="demo-spacing__bar" style="width:60px"></div><span class="demo-spacing__val">60</span></div>
+            <div class="demo-spacing__row"><span>Space 8</span><div class="demo-spacing__bar" style="width:96px"></div><span class="demo-spacing__val">96</span></div>
+          </div>
+        </div>
+      </div>
+
+      <section class="spec-section" id="anatomy">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Anatomy</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Space, Radius, Size 세 축이 모두 8의 배수 위에서 작동합니다. 컴포넌트 사이즈가 바뀌면 내부 padding 과 radius 가 비례로 따라가 자연스럽게 sm/md/lg 변형이 만들어집니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2">
+        <div class="demo-frame">
+          <div class="demo-radii">
+            <div class="demo-radius"><div class="demo-radius__box" style="border-radius:8px"></div><span class="demo-radius__label">SM · 8</span></div>
+            <div class="demo-radius"><div class="demo-radius__box" style="border-radius:12px"></div><span class="demo-radius__label">MD · 12</span></div>
+            <div class="demo-radius"><div class="demo-radius__box" style="border-radius:24px"></div><span class="demo-radius__label">LG · 24</span></div>
+            <div class="demo-radius"><div class="demo-radius__box" style="border-radius:99px"></div><span class="demo-radius__label">Pill · 99</span></div>
+          </div>
+        </div>
+        </div>
+        <ol class="spec-anatomy" data-reveal style="--i: 3">
+          <li>Space 2 — 8px (인라인 칩 내부)</li>
+          <li>Space 3 — 12px (버튼 vertical padding)</li>
+          <li>Space 4 — 16px (카드 내부 갭)</li>
+          <li>Space 5 — 24px (섹션 내부 갭)</li>
+          <li>Space 6 — 40px (블록 간 마진)</li>
+          <li>Space 8 — 96px (큰 섹션)</li>
+          <li>Radius SM — 8px (칩, 배지)</li>
+          <li>Radius MD — 12px (버튼, 카드)</li>
+          <li>Radius LG — 24px (AI 패널)</li>
+          <li>Pill — 99px (CTA, 상태)</li>
+        </ol>
+      </section>
+
+      <section class="spec-section" id="usage">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Usage</h2>
+
+        <div class="spec-subsection" data-reveal style="--i: 1">
+          <h3 class="spec-subsection__title">Content Density</h3>
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-frame__col">
+              <div class="demo-size-row">
+                <div class="demo-size-box demo-size-box--sm">SM</div>
+                <div class="demo-size-box demo-size-box--md">MD</div>
+                <div class="demo-size-box demo-size-box--lg">LG</div>
+              </div>
+              <span class="demo-frame__label">SM 8/12 · MD 12/16 · LG 16/24 (padding / radius)</span>
+            </div>
+          </div>
+          </div>
+          <p class="spec-subsection__caption">AX 응답이 빠르게 쌓이는 화면(채팅·로그·리스트)에선 compact 디멘션, 일반 폼·설정에선 comfortable 디멘션을 사용합니다. 같은 토큰 시스템 안에서 단계만 다르게 선택하여 둘이 자연스럽게 공존하도록 합니다.</p>
+        </div>
+
+        <div class="spec-subsection" data-reveal style="--i: 2">
+          <h3 class="spec-subsection__title">Proportional Scaling</h3>
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-frame__col">
+              <div class="demo-size-row">
+                <button class="demo-btn demo-btn--sm demo-btn--primary">작은 액션</button>
+                <button class="demo-btn demo-btn--primary">기본 액션</button>
+                <button class="demo-btn demo-btn--lg demo-btn--primary">강조 액션</button>
+              </div>
+              <span class="demo-frame__label">컴포넌트가 커질수록 padding·radius 비례 증가</span>
+            </div>
+          </div>
+          </div>
+          <p class="spec-subsection__caption">사이즈가 커지면 padding 과 radius 가 같은 비율로 증가합니다. SM 컴포넌트는 작은 radius, LG 컴포넌트는 큰 radius. 비례가 깨지면 카드와 그 안의 chip 이 같은 radius 를 갖는 어색한 화면이 됩니다.</p>
+        </div>
+      </section>
+
+      <section class="spec-section" id="how-to-use">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">How to use</h2>
+
+        <div class="spec-subsection" data-reveal style="--i: 1">
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-radii">
+              <div class="demo-radius"><div class="demo-radius__box" style="border-radius:8px"></div><span class="demo-radius__label">SM 8</span></div>
+              <div class="demo-radius"><div class="demo-radius__box" style="border-radius:12px"></div><span class="demo-radius__label">MD 12</span></div>
+              <div class="demo-radius"><div class="demo-radius__box" style="border-radius:24px"></div><span class="demo-radius__label">LG 24</span></div>
+            </div>
+          </div>
+          </div>
+          <div class="spec-howto-meta">
+            <span class="spec-badge spec-badge--do">
+              <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6 10.2l2.8 2.8L14 7.6" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Do
+            </span>
+            <p class="spec-howto-caption">토큰화된 dimension 값(--space-4, --radius-md)을 사용해 비례 관계를 자동으로 유지합니다.</p>
+          </div>
+        </div>
+
+        <div class="spec-subsection" data-reveal style="--i: 2">
+          <div class="spec-image">
+          <div class="demo-frame">
+            <div class="demo-radii">
+              <div class="demo-radius"><div class="demo-radius__box" style="border-radius:10px"></div><span class="demo-radius__label">10px ←</span></div>
+              <div class="demo-radius"><div class="demo-radius__box" style="border-radius:14px"></div><span class="demo-radius__label">14px ←</span></div>
+              <div class="demo-radius"><div class="demo-radius__box" style="border-radius:18px"></div><span class="demo-radius__label">18px ←</span></div>
+            </div>
+          </div>
+          </div>
+          <div class="spec-howto-meta">
+            <span class="spec-badge spec-badge--dont">
+              <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" fill="currentColor"/>
+                <path d="M6.5 6.5l7 7M13.5 6.5l-7 7" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              Don't
+            </span>
+            <p class="spec-howto-caption">10, 14, 18 같은 비표준 값을 임의로 쓰지 않습니다. 다른 컴포넌트와의 정렬·비례가 깨집니다.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    document.documentElement.setAttribute("data-theme", "light");
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Spark Studio · E · Scroll Playground</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/sandbox.css" />
+  <link rel="stylesheet" href="../css/sandbox-e.css" />
+</head>
+<body class="sbe">
+
+  <aside class="sb-switcher" aria-label="시안 전환">
+    <a class="sb-switcher__compare" href="index.html" aria-label="비교 갤러리로">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </a>
+    <a class="sb-switcher__item" href="a.html">A</a>
+    <a class="sb-switcher__item" href="b.html">B</a>
+    <a class="sb-switcher__item" href="c.html">C</a>
+    <span class="sb-switcher__div" aria-hidden="true"></span>
+    <a class="sb-switcher__item" href="d.html">D</a>
+    <a class="sb-switcher__item is-active" href="e.html" aria-current="page">E</a>
+    <a class="sb-switcher__item" href="f.html">F</a>
+  </aside>
+
+  <header class="gnb">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>Spark Studio · E</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a class="btn-text" href="index.html">← 시안 비교</a>
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ Hero — Parallax Depth ============ -->
+    <section class="sbe-hero" id="hero">
+      <div class="sbe-hero__bg" data-parallax="0.3">
+        <div class="sbe-hero__bg-blob sbe-hero__bg-blob--1"></div>
+        <div class="sbe-hero__bg-blob sbe-hero__bg-blob--2"></div>
+        <div class="sbe-hero__bg-blob sbe-hero__bg-blob--3"></div>
+      </div>
+      <div class="sbe-hero__inner" data-parallax="0.15">
+        <div class="sbe-hero__eyebrow">✨ New · Agent Builder v2</div>
+        <h1 class="sbe-hero__title">Build AI agents<br/>in <em>minutes</em>.</h1>
+        <p class="sbe-hero__lead">노코드 비주얼 빌더로 AI 에이전트를 설계하고,<br/>실제 사용자 환경에 곧바로 배포하세요.</p>
+        <div class="sbe-hero__cta">
+          <a class="sbe-btn sbe-btn--primary" href="#pricing">무료로 시작하기 →</a>
+          <a class="sbe-btn sbe-btn--ghost" href="#demo">데모 영상 보기</a>
+        </div>
+        <div class="sbe-scroll-hint">Scroll ↓</div>
+      </div>
+    </section>
+
+    <!-- ============ Features — Pin & Stack ============ -->
+    <section class="sbe-features-section" id="features">
+      <div class="sbe-section__head">
+        <div class="sbe-section__tag">Features</div>
+        <h2 class="sbe-section__title">왜 Spark Studio<br/>인가요</h2>
+      </div>
+      <div class="sbe-features">
+        <article class="sbe-feature">
+          <div class="sbe-feature__num">01</div>
+          <div class="sbe-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+          </div>
+          <div class="sbe-feature__body">
+            <h3 class="sbe-feature__title">Visual<br/>Builder</h3>
+            <p class="sbe-feature__desc">드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요. 복잡한 분기와 도구 호출도 시각적으로 한눈에.</p>
+          </div>
+        </article>
+        <article class="sbe-feature">
+          <div class="sbe-feature__num">02</div>
+          <div class="sbe-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M6.5 6.5 9.8 9.8M17.5 6.5 14.2 9.8M6.5 17.5 9.8 14.2M17.5 17.5 14.2 14.2"/></svg>
+          </div>
+          <div class="sbe-feature__body">
+            <h3 class="sbe-feature__title">Multi-<br/>Model</h3>
+            <p class="sbe-feature__desc">Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요. 태스크별로 최적의 모델을 자동 선택할 수도 있습니다.</p>
+          </div>
+        </article>
+        <article class="sbe-feature">
+          <div class="sbe-feature__num">03</div>
+          <div class="sbe-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <div class="sbe-feature__body">
+            <h3 class="sbe-feature__title">Production-<br/>Ready</h3>
+            <p class="sbe-feature__desc">SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요. 실험에서 운영까지 끊김 없이.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ Demo — Sticky + Cross-fade ============ -->
+    <section class="sbe-section" id="demo">
+      <div class="sbe-section__head">
+        <div class="sbe-section__tag">Demo</div>
+        <h2 class="sbe-section__title">5분 안에 동작하는<br/>에이전트</h2>
+      </div>
+      <div class="sbe-demo-section">
+        <div class="sbe-demo-track">
+          <div class="sbe-demo__sticky">
+            <h3>대화로 설명하면,<br/>에이전트가 만들어집니다.</h3>
+            <p>"고객 문의에 응답하고 환불 정책을 안내하는 봇" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다.</p>
+            <p>스크롤하면서 각 단계를 확인하세요 ↓</p>
+            <div class="sbe-demo__progress">
+              <span class="sbe-demo__dot is-active" data-step="0"></span>
+              <span class="sbe-demo__dot" data-step="1"></span>
+              <span class="sbe-demo__dot" data-step="2"></span>
+            </div>
+          </div>
+          <div class="sbe-demo__panels">
+            <div class="sbe-demo__panel" data-step="0">
+              <h4>1. 첫 인사</h4>
+              <div class="sbe-chat">
+                <div class="sbe-chat__msg sbe-chat__msg--bot">안녕하세요! 어떤 에이전트를 만들어볼까요?</div>
+                <div class="sbe-chat__msg sbe-chat__msg--user">고객 문의 자동응답 봇 만들어줘</div>
+              </div>
+            </div>
+            <div class="sbe-demo__panel" data-step="1">
+              <h4>2. 구조 제안</h4>
+              <div class="sbe-chat">
+                <div class="sbe-chat__msg sbe-chat__msg--bot">좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, FAQ DB 와 연결할까요?</div>
+                <div class="sbe-chat__msg sbe-chat__msg--user">좋아 그렇게 해줘</div>
+              </div>
+            </div>
+            <div class="sbe-demo__panel" data-step="2">
+              <h4>3. 배포 완료</h4>
+              <div class="sbe-chat">
+                <div class="sbe-chat__msg sbe-chat__msg--bot">에이전트가 생성됐어요. Slack · 웹 위젯 · API 어디로 배포할까요?</div>
+                <div class="sbe-chat__msg sbe-chat__msg--user">Slack 으로 배포</div>
+                <div class="sbe-chat__msg sbe-chat__msg--bot">완료! 🎉</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Pricing — Horizontal Scroll ============ -->
+    <section id="pricing">
+      <div class="sbe-pricing-section">
+        <div class="sbe-pricing-pin">
+          <div class="sbe-pricing__head">
+            <div class="sbe-section__tag">Pricing</div>
+            <h2 class="sbe-section__title">합리적인 요금제</h2>
+            <div class="sbe-pricing-indicator">
+              <span class="sbe-pricing-indicator__dot is-active" data-card="0"></span>
+              <span class="sbe-pricing-indicator__dot" data-card="1"></span>
+              <span class="sbe-pricing-indicator__dot" data-card="2"></span>
+            </div>
+          </div>
+          <div class="sbe-pricing-track">
+            <article class="sbe-price">
+              <h3 class="sbe-price__name">Starter</h3>
+              <div class="sbe-price__amount"><strong>₩0</strong><span>/월</span></div>
+              <p class="sbe-price__desc">개인 프로젝트와 학습용으로 시작하기 좋습니다.</p>
+              <ul class="sbe-price__list">
+                <li>월 1,000회 메시지</li>
+                <li>에이전트 3개</li>
+                <li>커뮤니티 지원</li>
+              </ul>
+              <div class="sbe-price__cta"><a class="sbe-btn sbe-btn--ghost" href="#">무료로 시작</a></div>
+            </article>
+            <article class="sbe-price sbe-price--featured">
+              <span class="sbe-price__badge">Most Popular</span>
+              <h3 class="sbe-price__name">Pro</h3>
+              <div class="sbe-price__amount"><strong>₩39,000</strong><span>/월</span></div>
+              <p class="sbe-price__desc">소규모 팀과 본격적인 서비스 운영에 적합합니다.</p>
+              <ul class="sbe-price__list">
+                <li>월 100,000회 메시지</li>
+                <li>에이전트 무제한</li>
+                <li>Slack · API 배포</li>
+                <li>이메일 지원 (24h)</li>
+              </ul>
+              <div class="sbe-price__cta"><a class="sbe-btn sbe-btn--primary" href="#">Pro 시작하기</a></div>
+            </article>
+            <article class="sbe-price">
+              <h3 class="sbe-price__name">Enterprise</h3>
+              <div class="sbe-price__amount"><strong>맞춤</strong></div>
+              <p class="sbe-price__desc">대규모 조직과 고급 보안 요구사항을 위한 플랜.</p>
+              <ul class="sbe-price__list">
+                <li>메시지 무제한</li>
+                <li>SSO · SAML · SOC 2</li>
+                <li>전담 매니저</li>
+                <li>99.9% SLA 보장</li>
+              </ul>
+              <div class="sbe-price__cta"><a class="sbe-btn sbe-btn--ghost" href="#">문의하기</a></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="sbe-section" id="faq">
+      <div class="sbe-section__head">
+        <div class="sbe-section__tag">FAQ</div>
+        <h2 class="sbe-section__title">자주 묻는 질문</h2>
+      </div>
+      <div class="sbe-faq">
+        <article class="sbe-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbe-faq__summary">
+            <h3 class="sbe-faq__q">코딩을 전혀 몰라도 사용할 수 있나요?</h3>
+            <button class="sbe-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbe-faq__a">네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다.</p>
+        </article>
+        <article class="sbe-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbe-faq__summary">
+            <h3 class="sbe-faq__q">어떤 AI 모델을 지원하나요?</h3>
+            <button class="sbe-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbe-faq__a">Claude, GPT, Gemini, Mistral, Cohere, Ollama 까지 6종 이상의 모델을 지원합니다.</p>
+        </article>
+        <article class="sbe-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbe-faq__summary">
+            <h3 class="sbe-faq__q">우리 회사 데이터는 안전한가요?</h3>
+            <button class="sbe-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbe-faq__a">모든 데이터는 전송 · 저장 시 암호화되며, SOC 2 Type II 인증을 받았습니다.</p>
+        </article>
+        <article class="sbe-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbe-faq__summary">
+            <h3 class="sbe-faq__q">언제든 플랜을 변경할 수 있나요?</h3>
+            <button class="sbe-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbe-faq__a">언제든 업그레이드/다운그레이드가 가능하며, 변경 즉시 반영됩니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbe-section">
+      <div class="sbe-cta">
+        <div class="sbe-cta__inner">
+          <h2>지금 바로 첫<br/>에이전트를 만들어보세요</h2>
+          <p>신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜</p>
+          <a class="sbe-btn sbe-btn--ghost" href="#">무료로 시작하기 →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 Spark Studio (Sandbox)</span>
+      <span class="footer__badge">E · Scroll Playground</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ============= Parallax (Hero) ============= */
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    function updateParallax() {
+      const scrollY = window.scrollY;
+      parallaxEls.forEach(el => {
+        const speed = parseFloat(el.dataset.parallax);
+        el.style.transform = `translateY(${scrollY * speed}px)`;
+      });
+    }
+    window.addEventListener('scroll', updateParallax, { passive: true });
+
+    /* ============= Demo Cross-fade Progress Dots ============= */
+    const demoPanels = document.querySelectorAll('.sbe-demo__panel');
+    const demoDots = document.querySelectorAll('.sbe-demo__dot');
+    const demoObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const step = entry.target.dataset.step;
+          demoDots.forEach(d => d.classList.toggle('is-active', d.dataset.step === step));
+        }
+      });
+    }, { threshold: 0.6 });
+    demoPanels.forEach(p => demoObserver.observe(p));
+
+    /* ============= Horizontal Pricing Scroll ============= */
+    const pricingSection = document.querySelector('.sbe-pricing-section');
+    const pricingTrack = document.querySelector('.sbe-pricing-track');
+    const pricingDots = document.querySelectorAll('.sbe-pricing-indicator__dot');
+
+    function updatePricingScroll() {
+      if (!pricingSection || !pricingTrack) return;
+      const rect = pricingSection.getBoundingClientRect();
+      const sectionHeight = pricingSection.offsetHeight;
+      const winHeight = window.innerHeight;
+      // progress 0~1 — 섹션이 viewport 에 sticky 잡혀있는 동안
+      const scrolled = -rect.top;
+      const maxScroll = sectionHeight - winHeight;
+      let progress = Math.max(0, Math.min(1, scrolled / maxScroll));
+
+      // 가로 이동 거리
+      const trackWidth = pricingTrack.scrollWidth;
+      const viewWidth = window.innerWidth;
+      const maxX = Math.max(0, trackWidth - viewWidth);
+      pricingTrack.style.transform = `translateX(${-progress * maxX}px)`;
+
+      // 활성 dot
+      const activeIdx = Math.min(2, Math.floor(progress * 3));
+      pricingDots.forEach((d, i) => d.classList.toggle('is-active', i === activeIdx));
+    }
+    window.addEventListener('scroll', updatePricingScroll, { passive: true });
+    window.addEventListener('resize', updatePricingScroll);
+    updatePricingScroll();
+  </script>
+
+</body>
+</html>

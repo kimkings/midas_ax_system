@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent/Workflow Builder — MIDAS AX Design System</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="index.html" aria-current="page">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Pattern 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">AGENTIC</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="global-chat-assistant.html">Global Chat Assistant<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dedicated-agent-workspace.html">Dedicated Agent Workspace<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">CONTEXTUAL</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="contextual-agent-panel.html">Contextual Agent Panel<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="embedded-ai-elements.html">Embedded AI Elements<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BACKGROUND</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="background-task-monitor.html">Background Task Monitor<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BUILDER</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="agent-workflow-builder.html" aria-current="page">Agent/Workflow Builder<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#overview">Overview</a></li>
+        <li><a class="toc__item" href="#basic-layout-structure">Basic Layout Structure</a></li>
+        <li><a class="toc__item" href="#variants">Variants</a></li>
+        <li><a class="toc__item" href="#interaction">Interaction</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <p class="page-content__eyebrow" data-reveal style="--i: 0">Pattern / Builder</p>
+      <h1 class="page-content__title" data-reveal style="--i: 0">Agent/Workflow Builder</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 역할·지시문·지식·도구·권한을 설정하거나 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다.</p>
+      </div>
+      <div class="spec-hero" data-reveal style="--i: 2"><img src="../assets/images/awb/awb-hero.png" alt="Agent/Workflow Builder 기본 화면 목업" loading="lazy" /></div>
+      <div class="spec-figma-link" data-reveal style="--i: 3">
+        <a class="btn-pill btn-pill--md" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=2002-4366&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">피그마에서 보기 ↗</a>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="overview">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Overview</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Builder는 사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 사용자는 AI에게 단순히 질문하는 것이 아니라, 에이전트의 역할, 지시문, 지식 범위, 도구, 권한을 설정하거나, 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다. 이 패턴에서 AI는 즉시 응답하는 대화 상대라기보다, 사용자가 정의한 규칙과 흐름에 따라 실행되는 구성 대상입니다. 이 패턴은 제품 안에서 사용자가 반복 업무를 자동화하거나, 특정 목적에 맞는 에이전트를 생성하고 관리해야 할 때 적합합니다.</p>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 분류를 선택하는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 38%" /><col style="width: 62%" /></colgroup>
+            <thead><tr><th>선택 조건</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>사용자가 에이전트의 역할을 직접 설정해야 한다</td><td>특정 업무를 수행하는 AI의 이름, 목적, 역할, 응답 방식, 지식 범위를 사용자가 정의해야 하는 경우</td></tr>
+              <tr><td>지시문과 동작 규칙을 관리해야 한다</td><td>에이전트가 어떤 방식으로 답변하고, 어떤 한계를 지켜야 하는지 명시해야 하는 경우</td></tr>
+              <tr><td>도구와 권한을 연결해야 한다</td><td>에이전트가 사용할 수 있는 API, 데이터, 앱, 기능, 권한 범위를 사용자가 설정해야 하는 경우</td></tr>
+              <tr><td>자동화 흐름을 구성해야 한다</td><td>사용자가 트리거, 조건, 단계, 액션을 조합해 반복 업무 흐름을 만들어야 하는 경우</td></tr>
+              <tr><td>생성 후 테스트가 필요하다</td><td>설정한 에이전트나 워크플로우가 의도대로 동작하는지 미리 실행하고 검증해야 하는 경우</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 템플릿을 사용하지 않는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 58%" /><col style="width: 42%" /></colgroup>
+            <thead><tr><th>선택하지 않는 경우</th><th>대신 고려할 패턴</th></tr></thead>
+            <tbody>
+              <tr><td>사용자가 AI와 직접 대화하며 즉시 응답을 받아야 한다</td><td>Global Chat Assistant</td></tr>
+              <tr><td>특정 산출물을 작업공간 안에서 AI와 함께 편집해야 한다</td><td>Dedicated Agent Workspace</td></tr>
+              <tr><td>현재 화면을 유지한 채 AI 패널에서 도움을 받아야 한다</td><td>Contextual Agent Panel</td></tr>
+              <tr><td>AI 작업이 백그라운드에서 실행되고 상태만 확인하면 된다</td><td>Background Task Monitor</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Key Characteristics</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>진입 방식</td><td>새 에이전트 생성, 새 워크플로우 생성, 템플릿 선택, 기존 설정 편집</td></tr>
+              <tr><td>입력 방식</td><td>역할, 지시문, 지식 범위, 도구, 권한, 트리거, 조건, 액션, 실패 처리</td></tr>
+              <tr><td>응답 방식</td><td>구성된 에이전트, 자동화 플로우, 테스트 결과, 실행 로그, 오류 안내</td></tr>
+              <tr><td>컨텍스트 활용</td><td>연결된 데이터, 앱 권한, 업무 도구, 사용자 설정, 실행 기록</td></tr>
+              <tr><td>사용자 흐름</td><td>생성 → 설정 → 테스트 → 수정 → 저장·배포·활성화</td></tr>
+              <tr><td>주요 가치</td><td>반복 업무를 사용자가 직접 AI 에이전트나 자동화 흐름으로 구성할 수 있게 함</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">주요 예시 레퍼런스</h3>
+        <p class="spec-subsection__caption">실제 제품에서 Agent/Workflow Builder 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Sana Agent</h3>
+        <p class="spec-subsection__caption">문서 안에서 텍스트를 선택하고 Ask AI를 실행하거나 /AI를 입력해 요약, 번역, 톤 변경, 액션 아이템 추출 등을 수행할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-ref-sana-agent.png" alt="Sana Agent 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Sana Workflow</h3>
+        <p class="spec-subsection__caption">문서 안에서 텍스트를 선택하고 Ask AI를 실행하거나 /AI를 입력해 요약, 번역, 톤 변경, 액션 아이템 추출 등을 수행할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-ref-sana-workflow.png" alt="Sana Workflow 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">OpenAI Agent Builder</h3>
+        <p class="spec-subsection__caption">사용자가 글을 작성하는 입력 환경 안에서 톤, 명확성, 문장 개선 제안을 인라인으로 제공합니다. Grammarly는 여러 작성 환경에서 실시간 제안과 문단 단위 재작성 기능을 제공한다고 설명합니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-ref-openai.png" alt="OpenAI Agent Builder 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="basic-layout-structure">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Basic Layout Structure</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Builder는 사용자가 에이전트나 워크플로우의 동작 방식을 구성하고 검증할 수 있도록, 설정 영역과 테스트 영역을 함께 제공하는 구조를 가집니다. 하위 분기에 따라 Form-based Builder, Workflow Builder, Modal Step Builder, Node Graph Builder로 나뉘지만, 기본적으로는 Builder Header, Configuration Area, Tool / Permission Area, Test Area, Publish / Save Action으로 구성됩니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2"><img src="../assets/images/awb/awb-layout.png" alt="Agent/Workflow Builder 기본 구조 (Builder Header · Configuration · Test · Publish)" loading="lazy" /></div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">레이아웃 원칙</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>원칙</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>설정 구조화</td><td>복잡한 설정을 역할, 지시문, 도구, 권한, 트리거, 액션 등 이해 가능한 단위로 나눕니다.</td></tr>
+              <tr><td>테스트 가능성</td><td>사용자가 저장하거나 배포하기 전에 실제 동작을 미리 확인할 수 있어야 합니다.</td></tr>
+              <tr><td>권한 투명성</td><td>에이전트나 워크플로우가 어떤 데이터와 도구에 접근하는지 명확히 보여줍니다.</td></tr>
+              <tr><td>점진적 설정</td><td>처음부터 모든 설정을 요구하지 않고, 기본값과 템플릿을 통해 빠르게 시작할 수 있어야 합니다.</td></tr>
+              <tr><td>오류 예방</td><td>필수 설정 누락, 권한 부족, 위험한 실행 조건을 사전에 안내해야 합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="variants">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Variants</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Builder는 사용자가 무엇을 구성하는지, 그리고 구성 방식이 폼 중심인지 흐름 중심인지에 따라 하위 UI가 나뉩니다.</p>
+      <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 30%" /><col style="width: 35%" /><col style="width: 35%" /></colgroup>
+            <thead><tr><th>하위 분기</th><th>한 줄 정의</th><th>선택 기준</th></tr></thead>
+            <tbody>
+              <tr><td>Form-based Builder</td><td>에이전트 역할, 지시문, 지식, 도구, 권한을 폼으로 설정</td><td>에이전트의 동작 규칙과 설정값을 구조화된 항목으로 입력해야 할 때</td></tr>
+              <tr><td>Workflow Builder (Step-based)</td><td>트리거, 조건, 액션을 순차 단계로 구성</td><td>업무 흐름이 선형 단계로 진행되고, 각 단계를 순서대로 설정해야 할 때</td></tr>
+              <tr><td>Workflow Builder (Step-based, Modal Type)</td><td>각 단계를 모달에서 집중적으로 설정</td><td>전체 흐름은 단순하지만, 각 단계의 설정 항목이 많아 별도 편집 화면이 필요할 때</td></tr>
+              <tr><td>Workflow Builder (Node Graph Builder)</td><td>노드와 엣지로 분기·병렬·도구 연결을 시각적으로 구성</td><td>분기, 병렬 처리, 여러 도구 연결처럼 복잡한 흐름을 시각적으로 다뤄야 할 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Form-based Builder</h3>
+        <p class="spec-subsection__caption">에이전트의 역할, 지시문, 지식 범위, 도구, 권한을 구조화된 폼으로 설정하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-variant-form.png" alt="Form-based Builder 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Workflow Builder (Step-based)</h3>
+        <p class="spec-subsection__caption">트리거, 조건, 액션을 순차적인 단계로 구성하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-variant-step.png" alt="Workflow Builder Step-based 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Workflow Builder (Step-based, Modal Type)</h3>
+        <p class="spec-subsection__caption">워크플로우의 각 단계를 클릭하면 모달에서 세부 설정을 입력하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-variant-modal.png" alt="Workflow Builder Step-based Modal Type 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Workflow Builder (Node Graph Builder)</h3>
+        <p class="spec-subsection__caption">트리거, 조건, 액션, 도구, 분기, 병렬 흐름을 노드와 연결선으로 구성하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-variant-node-graph.png" alt="Workflow Builder Node Graph Builder 변형" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="interaction">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Interaction</h2>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Trigger - Builder Start</h3>
+        <p class="spec-subsection__caption">사용자가 새 에이전트 만들기, 새 워크플로우 만들기, 템플릿 선택, 기존 설정 편집을 통해 Builder에 진입합니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-trigger.png" alt="Trigger — Builder 진입" loading="lazy" /></div>
+        <p class="spec-image__description">전역 혹은 특정 기능 페이지 내의 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-trigger-builder.png" alt="Trigger — Builder UI 형태" loading="lazy" /></div>
+        <p class="spec-image__description">에이전트 혹은 워크플로우 빌더는 호출된 포인트에 따라 다양한 형태로 나타날 수 있습니다. (에이전트 내 하위 기능으로 존재 or 별도의 독립적 기능 구성 가능)</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Input - Configuration</h3>
+        <p class="spec-subsection__caption">사용자는 역할, 지시문, 지식 범위, 도구, 권한, 트리거, 조건, 액션, 실패 처리 등 실행에 필요한 설정값을 입력합니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-input-form.png" alt="Input — 폼 기반 설정" loading="lazy" /></div>
+        <p class="spec-image__description">에이전트, 워크플로우 동작에 필요한 프롬프트, 권한 등 복합적 정보를 폼 필드의 구성으로 입력 받습니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-input-node.png" alt="Input — 노드 기반 설정" loading="lazy" /></div>
+        <p class="spec-image__description">노드 구성의 경우, 각 블록별 필요한 정보와 조건 등을 폼 필드의 구성으로 입력 받습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Output - Configured Agent or Workflow</h3>
+        <p class="spec-subsection__caption">시스템은 설정된 에이전트 또는 워크플로우 구조를 생성하고, 테스트 가능한 형태로 보여줍니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-output.png" alt="Output — 구성된 에이전트 또는 워크플로우" loading="lazy" /></div>
+        <p class="spec-image__description">입력된 내용을 바탕으로 구성한 항목을 테스트런할 수 있는 미리보기 영역이 제공될 수 있습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Follow up - Test and Publish</h3>
+        <p class="spec-subsection__caption">사용자는 테스트 실행으로 동작을 검증하고, 설정을 수정한 뒤 저장·게시·활성화·복제할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-followup-test.png" alt="Follow up — 테스트 및 게시" loading="lazy" /></div>
+        <p class="spec-image__description">테스트로 동작 검증 후 사용자는 에이전트나 워크플로우를 게시할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/awb/awb-interaction-followup-gallery.png" alt="Follow up — 갤러리 등록" loading="lazy" /></div>
+        <p class="spec-image__description">다른 사람이 사용할 수 있는 에이전트나 워크플로우라면, 접근 가능한 갤러리에 생성한 항목이 추가됩니다.</p>
+      </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

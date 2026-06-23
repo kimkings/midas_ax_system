@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Embedded AI Elements — MIDAS AX Design System</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="index.html" aria-current="page">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Pattern 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">AGENTIC</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="global-chat-assistant.html">Global Chat Assistant<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dedicated-agent-workspace.html">Dedicated Agent Workspace<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">CONTEXTUAL</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="contextual-agent-panel.html">Contextual Agent Panel<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="embedded-ai-elements.html" aria-current="page">Embedded AI Elements<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BACKGROUND</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="background-task-monitor.html">Background Task Monitor<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BUILDER</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="agent-workflow-builder.html">Agent/Workflow Builder<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#overview">Overview</a></li>
+        <li><a class="toc__item" href="#basic-layout-structure">Basic Layout Structure</a></li>
+        <li><a class="toc__item" href="#variants">Variants</a></li>
+        <li><a class="toc__item" href="#interaction">Interaction</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <p class="page-content__eyebrow" data-reveal style="--i: 0">Pattern / Contextual</p>
+      <h1 class="page-content__title" data-reveal style="--i: 0">Embedded AI Elements</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>사용자가 현재 작업 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받는 경량형 UI 패턴입니다. 추천·수정·요약·설명을 작업 맥락 안에 작게 삽입해 제공하고, 결과를 바로 적용하거나 닫을 수 있습니다.</p>
+      </div>
+      <div class="spec-hero" data-reveal style="--i: 2"><img src="../assets/images/eae/eae-hero.png" alt="Embedded AI Elements 기본 화면 목업" loading="lazy" /></div>
+      <div class="spec-figma-link" data-reveal style="--i: 3">
+        <a class="btn-pill btn-pill--md" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=2202-43992&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">피그마에서 보기 ↗</a>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="overview">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Overview</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Embedded AI Elements는 사용자가 현재 작업 중인 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받을 수 있게 하는 경량형 UI 패턴입니다. AI가 독립된 대화 상대처럼 전면에 등장하기보다, 사용자의 작업 맥락 안에 작게 삽입되어 추천, 수정, 요약, 설명, 인사이트를 제공합니다. 사용자는 현재 화면 흐름을 유지한 채 필요한 순간에만 AI의 도움을 받고, 결과를 바로 적용하거나 닫을 수 있습니다. 이 패턴은 AI를 별도 화면이나 패널로 제공하기보다, 기존 제품 화면 안에 자연스럽게 녹여야 할 때 적합합니다.</p>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 분류를 선택하는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 38%" /><col style="width: 62%" /></colgroup>
+            <thead><tr><th>선택 조건</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>현재 화면의 작업 흐름을 유지해야 한다</td><td>사용자가 별도 챗 화면이나 작업공간으로 이동하지 않고, 현재 작업 중인 화면 안에서 AI 도움을 받아야 하는 경우</td></tr>
+              <tr><td>AI 개입 범위가 작고 명확하다</td><td>특정 문장, 필드, 카드, 섹션, 데이터 영역처럼 AI가 도와야 할 대상이 분명한 경우</td></tr>
+              <tr><td>사용자가 짧은 추천이나 수정안을 받아야 한다</td><td>긴 대화보다 요약, 개선, 추천, 설명, 자동 완성처럼 짧고 즉시 적용 가능한 결과가 필요한 경우</td></tr>
+              <tr><td>AI 결과를 바로 적용하거나 무시할 수 있어야 한다</td><td>사용자가 AI 제안을 보고 즉시 적용, 취소, 다시 생성, 상세 보기 중 하나를 선택해야 하는 경우</td></tr>
+              <tr><td>AI가 주인공이 아니라 보조 역할이어야 한다</td><td>제품의 기본 작업 화면이 중심이고, AI는 그 흐름을 방해하지 않는 보조 요소로 작동해야 하는 경우</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 템플릿을 사용하지 않는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 58%" /><col style="width: 42%" /></colgroup>
+            <thead><tr><th>선택하지 않는 경우</th><th>대신 고려할 패턴</th></tr></thead>
+            <tbody>
+              <tr><td>사용자가 AI와 지속적으로 대화하며 요청을 이어가야 한다</td><td>Global Chat Assistant</td></tr>
+              <tr><td>현재 화면을 유지하되 AI와 어느 정도 긴 대화나 반복 요청이 필요하다</td><td>Contextual Agent Panel</td></tr>
+              <tr><td>AI 결과가 문서, 계획, 분석 결과처럼 별도 작업 영역에서 다뤄져야 한다</td><td>Dedicated Agent Workspace 또는 Chat + Canvas Panel</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Key Characteristics</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>진입 방식</td><td>텍스트 선택, 필드 포커스, 버튼 클릭, 섹션 내 AI 아이콘, 자동 추천 노출</td></tr>
+              <tr><td>입력 방식</td><td>선택 텍스트, 현재 필드 값, 현재 섹션 데이터, 짧은 자연어 요청</td></tr>
+              <tr><td>응답 방식</td><td>짧은 제안, 수정안, 요약, 설명, 인사이트, 추천 액션</td></tr>
+              <tr><td>컨텍스트 활용</td><td>현재 입력값, 선택 영역, 주변 콘텐츠, 화면 내 데이터</td></tr>
+              <tr><td>사용자 흐름</td><td>대상 선택 → AI 제안 확인 → 적용 또는 취소 → 필요 시 다시 요청</td></tr>
+              <tr><td>주요 가치</td><td>기존 작업 흐름을 유지하면서 필요한 순간에만 AI 도움을 제공</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">주요 예시 레퍼런스</h3>
+        <p class="spec-subsection__caption">실제 제품에서 Embedded AI Elements 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Grammarly</h3>
+        <p class="spec-subsection__caption">사용자가 LinkedIn, 이메일, 문서 등에서 글을 작성하는 중에 AI 입력창이나 제안 패널을 띄워 문장을 생성·수정·개선할 수 있습니다. 작성 중인 위치를 벗어나지 않고 Improve it, Simplify it, Shorten it, Adjust tone 같은 빠른 액션을 제공하며, 생성된 결과를 바로 삽입하거나 다시 표현할 수 있습니다. Grammarly는 문장의 명확성, 톤, 길이, 형식성을 조정하는 AI 작성 보조 기능을 제공한다고 설명합니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-ref-grammarly.png" alt="Grammarly 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Notion AI</h3>
+        <p class="spec-subsection__caption">사용자가 Notion 문서 안에서 텍스트를 선택하거나 /AI를 입력해 현재 문맥에 맞는 AI 도움을 호출할 수 있습니다. 선택된 문장이나 문단 바로 아래에 AI 입력창과 액션 메뉴가 노출되며, Improve writing, Fix spelling &amp; grammar, Make longer, Make shorter, Change tone처럼 선택 텍스트에 직접 적용 가능한 작업을 제공합니다. Notion은 사용자가 텍스트를 선택해 Ask AI를 실행하거나 /AI를 입력해 요약, 핵심 내용 추출, 액션 아이템 추출, 번역, 톤 변경 등을 수행할 수 있다고 안내합니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-ref-notion.png" alt="Notion AI 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="basic-layout-structure">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Basic Layout Structure</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Embedded AI Elements는 화면 전체를 차지하지 않고, 기존 UI 안의 특정 대상 근처에 작게 삽입되는 구조를 가집니다. 하위 분기에 따라 Inline Popover 또는 Insight Block으로 나뉘지만, 기본적으로는 Target Area, AI Entry Point, AI Result Area, Action Area로 구성됩니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2"><img src="../assets/images/eae/eae-layout.png" alt="Embedded AI Elements 기본 구조 (Target Area · AI Entry Point · AI Result Area)" loading="lazy" /></div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">레이아웃 원칙</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>원칙</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>작업 흐름 보존</td><td>AI 요소는 기존 화면을 대체하지 않고, 사용자가 하던 작업 위에 자연스럽게 얹혀야 합니다.</td></tr>
+              <tr><td>대상 명확성</td><td>AI가 어떤 텍스트, 필드, 데이터, 섹션을 기준으로 제안하는지 명확해야 합니다.</td></tr>
+              <tr><td>경량성</td><td>긴 대화나 복잡한 설정 없이 짧은 제안과 빠른 액션 중심으로 구성합니다.</td></tr>
+              <tr><td>즉시 적용성</td><td>결과를 읽고 끝나는 것이 아니라, 사용자가 바로 적용하거나 무시할 수 있어야 합니다.</td></tr>
+              <tr><td>방해 최소화</td><td>자동 노출되는 경우에도 사용자의 입력이나 탐색을 방해하지 않아야 합니다.</td></tr>
+              <tr><td>확장 가능성</td><td>짧은 결과로 부족한 경우, 상세 보기나 패널형 UI로 확장될 수 있어야 합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="variants">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Variants</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Embedded AI Elements는 AI가 화면에 나타나는 위치와 결과를 보여주는 방식에 따라 하위 UI가 나뉩니다.</p>
+      <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 24%" /><col style="width: 38%" /><col style="width: 38%" /></colgroup>
+            <thead><tr><th>하위 분기</th><th>한 줄 정의</th><th>선택 기준</th></tr></thead>
+            <tbody>
+              <tr><td>Inline Popover</td><td>선택 영역이나 입력 필드 근처에 작게 뜨는 AI 도움 UI</td><td>사용자가 특정 텍스트나 필드에 대해 짧은 수정, 요약, 변환, 추천을 받아야 할 때</td></tr>
+              <tr><td>Insight Block</td><td>기존 화면 안에 AI 결과를 정보 블록 형태로 노출하는 UI</td><td>사용자가 대화 없이도 화면 안에서 AI 인사이트, 추천, 요약을 확인해야 할 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Inline Popover</h3>
+        <p class="spec-subsection__caption">사용자가 특정 텍스트, 입력 필드, 객체를 선택했을 때 해당 위치 근처에 작은 AI 컨테이너를 띄워 빠른 도움을 제공하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-variant-inline-popover.png" alt="Inline Popover 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Insight Block</h3>
+        <p class="spec-subsection__caption">기존 화면의 특정 영역 안에 AI가 생성한 요약, 추천, 설명, 경고, 인사이트를 블록 형태로 표시하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-variant-insight-block.png" alt="Insight Block 변형" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="interaction">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Interaction</h2>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Trigger - Contextual AI Call</h3>
+        <p class="spec-subsection__caption">사용자가 텍스트를 선택하거나, 입력 필드에 포커스하거나, 화면 내 AI 아이콘 또는 추천 영역을 통해 AI 도움을 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-interaction-trigger.png" alt="Trigger — Contextual AI 호출" loading="lazy" /></div>
+        <p class="spec-image__description">사용자가 특정 페이지에 진입하거나, 혹은 버튼 등의 상호작용을 통해 Assistant UI를 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-interaction-trigger-space.png" alt="Trigger — Assistant UI" loading="lazy" /></div>
+        <p class="spec-image__description">호출된 Assistant UI는 목적과 맥락에 따라 형태가 상이하며, 목적에 부합하는 상호작용 방식을 갖습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Input - Local Context</h3>
+        <p class="spec-subsection__caption">AI는 사용자가 선택한 텍스트, 입력 중인 값, 현재 섹션 데이터, 주변 콘텐츠를 기준으로 요청 맥락을 파악합니다. 필요한 경우 사용자가 짧은 자연어 요청을 추가로 입력할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-interaction-input.png" alt="Input — AI 블록 사전 입력" loading="lazy" /></div>
+        <p class="spec-image__description">요약 등의 정보를 제공해주는 AI 블록의 경우, 프롬프트 및 참고 데이터가 사전에 입력되어 있는 상태입니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-interaction-input-inline.png" alt="Input — 인라인 Assistant 입력" loading="lazy" /></div>
+        <p class="spec-image__description">인라인으로 도움을 주는 Assistant의 경우 입력은 다양한 형식으로 구성될 수 있습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Output - Embedded Suggestion</h3>
+        <p class="spec-subsection__caption">AI는 수정안, 요약, 추천, 설명, 인사이트처럼 현재 화면 안에서 바로 판단 가능한 짧은 결과를 제공합니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-interaction-output.png" alt="Output — Embedded Suggestion" loading="lazy" /></div>
+        <p class="spec-image__description">추천, 요약, 인사이트와 같은 내용들은 기본적으로는 자연어로 출력됩니다. 기능과 LLM이 사용하는 도구에 따라 시각화 표현 등으로 확장될 수 있습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Follow up - Apply or Dismiss</h3>
+        <p class="spec-subsection__caption">사용자는 AI 제안을 적용하거나, 취소하거나, 다시 생성하거나, 상세 보기로 확장할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/eae/eae-interaction-followup.png" alt="Follow up — 적용 또는 취소" loading="lazy" /></div>
+        <p class="spec-image__description">제안에 대한 재요청(Reroll)을 수행할 수 있으며, 기능 및 맥락에 따라 적용/취소 등 추가적인 액션을 설계할 수 있습니다.</p>
+      </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

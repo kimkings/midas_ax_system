@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contextual Agent Panel — MIDAS AX Design System</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="index.html" aria-current="page">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Pattern 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">AGENTIC</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="global-chat-assistant.html">Global Chat Assistant<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dedicated-agent-workspace.html">Dedicated Agent Workspace<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">CONTEXTUAL</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="contextual-agent-panel.html" aria-current="page">Contextual Agent Panel<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="embedded-ai-elements.html">Embedded AI Elements<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BACKGROUND</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="background-task-monitor.html">Background Task Monitor<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BUILDER</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="agent-workflow-builder.html">Agent/Workflow Builder<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#overview">Overview</a></li>
+        <li><a class="toc__item" href="#basic-layout-structure">Basic Layout Structure</a></li>
+        <li><a class="toc__item" href="#variants">Variants</a></li>
+        <li><a class="toc__item" href="#interaction">Interaction</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <p class="page-content__eyebrow" data-reveal style="--i: 0">Pattern / Contextual</p>
+      <h1 class="page-content__title" data-reveal style="--i: 0">Contextual Agent Panel</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 화면 맥락을 기준으로 AI와 상호작용하는 UI 패턴입니다. 보고 있는 화면·선택 객체·문서·데이터를 기준으로 질문하고, 필요한 경우 결과를 현재 화면에 반영합니다.</p>
+      </div>
+      <div class="spec-hero" data-reveal style="--i: 2"><img src="../assets/images/cap/cap-hero.png" alt="Contextual Agent Panel 기본 화면 목업" loading="lazy" /></div>
+      <div class="spec-figma-link" data-reveal style="--i: 3">
+        <a class="btn-pill btn-pill--md" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=2002-4357&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">피그마에서 보기 ↗</a>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="overview">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Overview</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Contextual Agent Panel은 사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 AI와 상호작용할 수 있게 하는 UI 패턴입니다. AI는 독립된 전역 챗처럼 동작하기보다, 사용자가 보고 있는 화면·선택 객체·문서·데이터를 기준으로 도움을 제공합니다. 사용자는 현재 작업 화면을 벗어나지 않고 AI에게 질문하거나, 요약·분석·추천·다음 액션을 요청하고, 필요한 경우 결과를 원래 화면에 반영할 수 있습니다. 이 패턴은 사용자의 주 작업 화면은 유지하면서, AI와 어느 정도 지속적인 대화나 반복 요청이 필요한 경우에 적합합니다.</p>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 분류를 선택하는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 38%" /><col style="width: 62%" /></colgroup>
+            <thead><tr><th>선택 조건</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>현재 화면을 유지해야 한다</td><td>별도 챗 화면이나 작업공간으로 이동하지 않고, 현재 화면을 보면서 AI 도움을 받아야 하는 경우</td></tr>
+              <tr><td>AI가 현재 화면 맥락에 강하게 의존한다</td><td>고객 상세, 문서, 목표, 회의록, 데이터 테이블 등 현재 화면의 정보가 AI 응답의 주요 기준이 되는 경우</td></tr>
+              <tr><td>짧은 제안보다 지속적인 대화가 필요하다</td><td>단일 인라인 제안이 아니라, 질문과 후속 요청을 이어가며 도움을 받아야 하는 경우</td></tr>
+              <tr><td>메인 화면과 AI 응답을 함께 봐야 한다</td><td>사용자가 원본 데이터나 작업 화면을 확인하면서 AI 답변을 비교하거나 검토해야 하는 경우</td></tr>
+              <tr><td>AI 결과를 현재 화면에 적용할 수 있어야 한다</td><td>요약, 추천, 수정안, 액션 제안을 원래 화면이나 데이터에 반영해야 하는 경우</td></tr>
+              <tr><td>화면 단위 보조 에이전트가 필요하다</td><td>제품 전역 챗이 아니라 특정 화면이나 업무 흐름에 맞는 AI 보조 경험이 필요한 경우</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 템플릿을 사용하지 않는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 62%" /><col style="width: 38%" /></colgroup>
+            <thead><tr><th>선택하지 않는 경우</th><th>대신 고려할 패턴</th></tr></thead>
+            <tbody>
+              <tr><td>서비스 어디서든 공통 AI를 호출하는 전역 챗이 필요하다</td><td>Global Chat Assistant</td></tr>
+              <tr><td>특정 작업이나 산출물을 완성하기 위한 전용 작업공간이 필요하다</td><td>Dedicated Agent Workspace</td></tr>
+              <tr><td>특정 텍스트나 필드 주변에서 짧게 AI 제안을 받으면 된다</td><td>Embedded AI Elements</td></tr>
+              <tr><td>AI 작업이 백그라운드에서 실행되고 사용자는 상태만 확인하면 된다</td><td>Background Task Monitor</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Key Characteristics</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>진입 방식</td><td>화면 내 AI 버튼, 우측 패널 열기, 선택 객체 기반 호출, 추천 질문, 오버레이 호출</td></tr>
+              <tr><td>입력 방식</td><td>자연어 질문, 현재 화면 기준 요청, 선택 객체 기반 요청, 후속 질문</td></tr>
+              <tr><td>응답 방식</td><td>화면 맥락 기반 요약, 분석, 추천, 설명, 다음 액션, 적용 가능한 제안</td></tr>
+              <tr><td>컨텍스트 활용</td><td>현재 페이지, 선택 객체, 문서, 테이블, 고객 정보, 목표 정보, 회의록 등</td></tr>
+              <tr><td>사용자 흐름</td><td>화면 확인 → AI 패널 호출 → 맥락 기반 질문 → 응답 확인 → 적용 또는 후속 질문</td></tr>
+              <tr><td>주요 가치</td><td>현재 작업 흐름을 유지하면서 화면 맥락에 맞는 AI 도움 제공</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">주요 예시 레퍼런스</h3>
+        <p class="spec-subsection__caption">실제 제품에서 Contextual Agent Panel 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Atlassian Rovo Chat</h3>
+        <p class="spec-subsection__caption">Confluence, Jira, Jira Service Management, Jira Product Discovery, Bitbucket 안에서 호출할 수 있는 AI Chat입니다. 현재 사용자가 보고 있는 페이지나 업무 맥락을 유지한 채 우측 패널에서 질문하고, 답변 안에 출처를 표시해 사용자가 원문 근거를 확인할 수 있습니다. 특히 Confluence 문서 옆에서 질문을 던지고, 문서 내용 기반 답변과 citation을 함께 보여주는 구조는 Side Agent Panel의 대표적인 사례로 볼 수 있습니다. Atlassian도 Rovo Chat을 Jira, Confluence 등에서 작업 흐름을 방해하지 않고 사용할 수 있다고 설명합니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-ref-atlassian.png" alt="Atlassian Rovo Chat 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Google Workspace Gemini Side Panel</h3>
+        <p class="spec-subsection__caption">Gmail, Docs, Sheets, Slides, Drive 등 현재 사용 중인 Workspace 앱 안에서 사이드 패널로 호출되어 요약, 분석, 콘텐츠 생성을 지원합니다. 사용자가 앱을 전환하지 않고 현재 문서·메일·파일 맥락을 유지한 채 AI 도움을 받을 수 있다는 점에서 Contextual Agent Panel의 대표 사례로 볼 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-ref-google.png" alt="Google Workspace Gemini Side Panel 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Microsoft 365 Copilot Chat</h3>
+        <p class="spec-subsection__caption">Word, Excel, PowerPoint, Outlook, OneNote 같은 Microsoft 365 앱 안에서 문서나 메일 옆에 Copilot Chat을 열어 사용할 수 있습니다. 사용자는 현재 작업 중인 문서·메일·스프레드시트를 보면서 요약, 작성, 분석, 수정 요청을 입력하고, Copilot은 앱 맥락에 맞는 응답과 추천 프롬프트를 제공합니다. Microsoft는 Copilot Chat이 일부 Microsoft 365 앱에서 side-by-side 방식으로 제공된다고 설명합니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-ref-microsoft.png" alt="Microsoft 365 Copilot Chat 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="basic-layout-structure">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Basic Layout Structure</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Contextual Agent Panel은 사용자가 현재 화면을 유지하면서 AI 도움을 받을 수 있도록, 메인 화면 옆이나 위에 AI 패널을 배치하는 구조를 가집니다. 하위 분기에 따라 Side Agent Panel 또는 Overlay Panel로 나뉘지만, 기본적으로는 Main Context Area, Panel Entry Point, Agent Panel, Context Binding Area, Action Area로 구성됩니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2"><img src="../assets/images/cap/cap-layout.png" alt="Contextual Agent Panel 기본 구조 (Main Context Area · Agent Panel · Context Binding)" loading="lazy" /></div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">레이아웃 원칙</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>원칙</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>화면 맥락 보존</td><td>AI 패널이 열려도 사용자가 원래 화면의 정보와 작업 흐름을 유지할 수 있어야 합니다.</td></tr>
+              <tr><td>패널과 본문 역할 분리</td><td>메인 화면은 원본 작업 공간, 패널은 AI 보조 공간으로 역할이 명확해야 합니다.</td></tr>
+              <tr><td>컨텍스트 명확성</td><td>AI가 어떤 화면, 객체, 데이터 기준으로 답변하는지 표시해야 합니다.</td></tr>
+              <tr><td>지속 대화 가능성</td><td>사용자가 후속 질문이나 수정 요청을 이어갈 수 있도록 대화 흐름을 유지해야 합니다.</td></tr>
+              <tr><td>적용 가능성</td><td>AI 응답이 단순 안내에서 끝나지 않고, 현재 화면의 작업이나 데이터에 연결될 수 있어야 합니다.</td></tr>
+              <tr><td>공간 점유 최소화</td><td>패널은 충분한 정보를 담되, 메인 화면을 과도하게 가리거나 작업을 방해하지 않아야 합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="variants">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Variants</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Contextual Agent Panel은 AI 패널을 화면에 고정하는지, 임시로 띄우는지에 따라 하위 UI가 나뉩니다.</p>
+      <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 26%" /><col style="width: 37%" /><col style="width: 37%" /></colgroup>
+            <thead><tr><th>하위 분기</th><th>한 줄 정의</th><th>선택 기준</th></tr></thead>
+            <tbody>
+              <tr><td>Side Agent Panel</td><td>메인 화면 옆에 고정된 측면 패널로 AI 도움을 제공</td><td>사용자가 현재 화면과 AI 응답을 동시에 보며 지속적으로 상호작용해야 할 때</td></tr>
+              <tr><td>Overlay Panel</td><td>현재 화면 위에 임시 레이어로 AI 도움을 제공하는 UI</td><td>화면 이동 없이 짧고 집중적인 AI 작업을 처리해야 하지만, 고정 패널까지는 필요 없을 때</td></tr>
+            </tbody>
+          </table>
+        </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Side Agent Panel</h3>
+        <p class="spec-subsection__caption">메인 화면을 유지한 채 우측 또는 측면에 AI 패널을 고정해, 현재 화면 맥락을 기준으로 질문과 응답을 이어가는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-variant-side.png" alt="Side Agent Panel 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Overlay Panel</h3>
+        <p class="spec-subsection__caption">현재 화면 위에 임시 패널을 띄워, 짧고 집중적인 AI 요청을 처리하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-variant-overlay.png" alt="Overlay Panel 변형" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="interaction">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Interaction</h2>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Trigger - Contextual Panel Call</h3>
+        <p class="spec-subsection__caption">사용자가 현재 화면의 AI 버튼, 선택 객체, 추천 질문, 패널 열기 버튼을 통해 AI 패널을 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-interaction-trigger.png" alt="Trigger — Contextual Panel 호출" loading="lazy" /></div>
+        <p class="spec-image__description">특정 기능 페이지 내의 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-interaction-trigger-space.png" alt="Trigger — Contextual Panel UI" loading="lazy" /></div>
+        <p class="spec-image__description">호출된 AI Assistant는 기존 연속된 사용 흐름을 끊지 않으며 나타납니다. UI는 자연어 기반 상호작용을 기반으로 하며, 기존 기능의 상호작용을 고려한 최소한의 사이즈를 갖습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Input - Screen-bound Request</h3>
+        <p class="spec-subsection__caption">사용자는 현재 화면, 선택 객체, 문서, 데이터 맥락을 기준으로 자연어 질문이나 요청을 입력합니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-interaction-input.png" alt="Input — 화면 맥락 기반 요청" loading="lazy" /></div>
+        <p class="spec-image__description">사용자는 Composer와 상호작용하여 질문, 요청, 명령, 조건 등을 자연어로 입력합니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Output - Contextual Response</h3>
+        <p class="spec-subsection__caption">AI는 현재 화면 맥락에 기반한 요약, 설명, 분석, 추천, 다음 액션을 패널 안에 제공합니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-interaction-output.png" alt="Output — 맥락 기반 응답" loading="lazy" /></div>
+        <p class="spec-image__description">사용자의 요청사항에 따라 대화 기반의 응답을 제공합니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Follow up - Apply or Continue</h3>
+        <p class="spec-subsection__caption">사용자는 AI 응답을 현재 화면에 적용하거나, 관련 화면으로 이동하거나, 후속 질문을 이어갈 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-interaction-followup.png" alt="Follow up — 후속 질문" loading="lazy" /></div>
+        <p class="spec-image__description">사용자가 자연어로 후속 질문을 요청할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/cap/cap-interaction-followup-action.png" alt="Follow up — 적용 및 액션" loading="lazy" /></div>
+        <p class="spec-image__description">후속 요청에 대한 자연어 응답을 전달하며, 추가적으로 기능에 따라 기존 페이지의 정보 추가/변경/삭제 등의 액션을 수행할 수 있습니다.</p>
+      </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

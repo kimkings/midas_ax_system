@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    document.documentElement.setAttribute("data-theme", "light");
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <title>Spark Studio · F · Pixel Kitsch</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/sandbox.css" />
+  <link rel="stylesheet" href="../css/sandbox-f.css" />
+</head>
+<body class="sbf">
+
+  <!-- 떠다니는 픽셀 스티커들 -->
+  <span class="sbf-sticker sbf-sticker--1">★ NEW</span>
+  <span class="sbf-sticker sbf-sticker--2">♥</span>
+  <span class="sbf-sticker sbf-sticker--3">✦</span>
+  <span class="sbf-sticker sbf-sticker--4">★</span>
+
+  <aside class="sb-switcher" aria-label="시안 전환">
+    <a class="sb-switcher__compare" href="index.html" aria-label="비교 갤러리로">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+    </a>
+    <a class="sb-switcher__item" href="a.html">A</a>
+    <a class="sb-switcher__item" href="b.html">B</a>
+    <a class="sb-switcher__item" href="c.html">C</a>
+    <span class="sb-switcher__div" aria-hidden="true"></span>
+    <a class="sb-switcher__item" href="d.html">D</a>
+    <a class="sb-switcher__item" href="e.html">E</a>
+    <a class="sb-switcher__item is-active" href="f.html" aria-current="page">F</a>
+  </aside>
+
+  <header class="gnb">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="index.html">
+        <span>SPARK · F</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a class="btn-text" href="index.html">← BACK</a>
+        <a href="#features">Features</a>
+        <a href="#demo">Demo</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="sbf-hero">
+      <div class="sbf-hero__eyebrow">★ NEW · v2.0 ★</div>
+      <h1 class="sbf-hero__title">Build AI agents<br/>in <em>minutes</em>.</h1>
+      <p class="sbf-hero__lead">노코드 비주얼 빌더로 AI 에이전트를 설계하고,<br/>실제 사용자 환경에 곧바로 배포하세요.</p>
+      <div class="sbf-hero__cta">
+        <a class="sbf-btn sbf-btn--pink" href="#pricing">START FREE →</a>
+        <a class="sbf-btn sbf-btn--ghost" href="#demo">WATCH DEMO</a>
+      </div>
+    </section>
+
+    <section class="sbf-section" id="features">
+      <div class="sbf-section__head">
+        <div class="sbf-section__tag">FEATURES</div>
+        <h2 class="sbf-section__title">왜 <em>SPARK</em><br/>인가요</h2>
+      </div>
+      <div class="sbf-features">
+        <article class="sbf-feature">
+          <div class="sbf-feature__corner">★</div>
+          <div class="sbf-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          </div>
+          <h3 class="sbf-feature__title">VISUAL<br/>BUILDER</h3>
+          <p class="sbf-feature__desc">드래그 앤 드롭으로 워크플로우 설계! 실시간으로 동작 확인 가능 ♥</p>
+        </article>
+        <article class="sbf-feature">
+          <div class="sbf-feature__corner">♥</div>
+          <div class="sbf-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/></svg>
+          </div>
+          <h3 class="sbf-feature__title">MULTI<br/>MODEL</h3>
+          <p class="sbf-feature__desc">Claude · GPT · Gemini 등 6종 모델 한곳에서! 비교하고 라우팅 ★</p>
+        </article>
+        <article class="sbf-feature">
+          <div class="sbf-feature__corner">✦</div>
+          <div class="sbf-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square" stroke-linejoin="miter"><path d="M12 2 4 6v6c0 5 3.4 9.4 8 10 4.6-.6 8-5 8-10V6l-8-4z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="sbf-feature__title">PROD<br/>READY</h3>
+          <p class="sbf-feature__desc">SOC 2 인증! 자동 로깅! 99.9% SLA로 안심하고 배포 ♪</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbf-section" id="demo">
+      <div class="sbf-section__head">
+        <div class="sbf-section__tag">DEMO</div>
+        <h2 class="sbf-section__title">5MIN <em>AGENT</em></h2>
+      </div>
+      <div class="sbf-demo">
+        <div class="sbf-demo__copy">
+          <h3>대화로 설명<br/>→ 에이전트 완성!</h3>
+          <p>"고객 문의에 응답하고 환불 정책을 안내하는 봇" 한 줄이면 충분 ♥</p>
+          <ul class="sbf-demo__list">
+            <li>자연어로 에이전트 정의</li>
+            <li>실시간 테스트 환경 제공</li>
+            <li>한번 클릭으로 웹 · Slack · API 배포</li>
+          </ul>
+        </div>
+        <div class="sbf-chat" aria-hidden="true">
+          <div class="sbf-chat__msg sbf-chat__msg--bot">안녕! 어떤 에이전트 만들까?</div>
+          <div class="sbf-chat__msg sbf-chat__msg--user">고객 문의 봇 ㄱㄱ</div>
+          <div class="sbf-chat__msg sbf-chat__msg--bot">환불·배송·일반 3 카테고리로 분류할게!</div>
+          <div class="sbf-chat__msg sbf-chat__msg--user">좋아 그렇게!</div>
+          <div class="sbf-chat__msg sbf-chat__msg--bot">완료! ★★★</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sbf-section" id="pricing">
+      <div class="sbf-section__head">
+        <div class="sbf-section__tag">PRICING</div>
+        <h2 class="sbf-section__title"><em>PICK ONE</em></h2>
+      </div>
+      <div class="sbf-pricing">
+        <article class="sbf-price">
+          <h3 class="sbf-price__name">STARTER</h3>
+          <div class="sbf-price__amount"><strong>₩0</strong><span>/월</span></div>
+          <p class="sbf-price__desc">개인 프로젝트와 학습용 ♥</p>
+          <ul class="sbf-price__list">
+            <li>1,000 메시지</li>
+            <li>에이전트 3개</li>
+            <li>커뮤니티 지원</li>
+          </ul>
+          <div class="sbf-price__cta"><a class="sbf-btn sbf-btn--ghost" href="#">START FREE</a></div>
+        </article>
+        <article class="sbf-price sbf-price--featured">
+          <span class="sbf-price__badge">★ HOT! ★</span>
+          <h3 class="sbf-price__name">PRO</h3>
+          <div class="sbf-price__amount"><strong>₩39K</strong><span>/월</span></div>
+          <p class="sbf-price__desc">소규모 팀과 본격 서비스 ★</p>
+          <ul class="sbf-price__list">
+            <li>100,000 메시지</li>
+            <li>에이전트 무제한</li>
+            <li>Slack · API 배포</li>
+            <li>24h 이메일 지원</li>
+          </ul>
+          <div class="sbf-price__cta"><a class="sbf-btn sbf-btn--pink" href="#">GO PRO</a></div>
+        </article>
+        <article class="sbf-price">
+          <h3 class="sbf-price__name">ENT</h3>
+          <div class="sbf-price__amount"><strong>맞춤</strong></div>
+          <p class="sbf-price__desc">대규모 조직과 고급 보안 ♦</p>
+          <ul class="sbf-price__list">
+            <li>메시지 무제한</li>
+            <li>SSO · SAML · SOC 2</li>
+            <li>전담 매니저</li>
+            <li>99.9% SLA 보장</li>
+          </ul>
+          <div class="sbf-price__cta"><a class="sbf-btn sbf-btn--ghost" href="#">CONTACT</a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbf-section" id="faq">
+      <div class="sbf-section__head">
+        <div class="sbf-section__tag">FAQ</div>
+        <h2 class="sbf-section__title"><em>Q&A</em></h2>
+      </div>
+      <div class="sbf-faq">
+        <article class="sbf-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbf-faq__summary">
+            <h3 class="sbf-faq__q">코딩 몰라도 사용 가능?</h3>
+            <button class="sbf-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbf-faq__a">YES! 비주얼 빌더 기반이라 한 줄 코드 없이도 본격 에이전트 제작 가능 ♥</p>
+        </article>
+        <article class="sbf-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbf-faq__summary">
+            <h3 class="sbf-faq__q">어떤 AI 모델 지원?</h3>
+            <button class="sbf-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbf-faq__a">Claude · GPT · Gemini · Mistral · Cohere · Ollama 6종 이상! ★</p>
+        </article>
+        <article class="sbf-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbf-faq__summary">
+            <h3 class="sbf-faq__q">회사 데이터 안전?</h3>
+            <button class="sbf-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbf-faq__a">전송·저장 시 모두 암호화. SOC 2 Type II 인증 완료 ✦</p>
+        </article>
+        <article class="sbf-faq__item" onclick="this.classList.toggle('is-open')">
+          <div class="sbf-faq__summary">
+            <h3 class="sbf-faq__q">언제든 플랜 변경?</h3>
+            <button class="sbf-faq__toggle" type="button" aria-label="펼치기">+</button>
+          </div>
+          <p class="sbf-faq__a">언제든 업/다운그레이드 OK! 변경 즉시 반영 ♪</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="sbf-section">
+      <div class="sbf-cta">
+        <h2>★ START NOW ★<br/>FREE FOREVER ♥</h2>
+        <p>신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜</p>
+        <a class="sbf-btn" href="#">GET STARTED →</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 SPARK · SANDBOX</span>
+      <span class="footer__badge">F · PIXEL</span>
+    </div>
+  </footer>
+
+</body>
+</html>

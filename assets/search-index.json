@@ -1,0 +1,3723 @@
+{
+  "generatedAt": "2026-06-23T11:11:39.575Z",
+  "count": 413,
+  "docs": [
+    {
+      "id": 0,
+      "url": "components/avatar.html",
+      "group": "Components",
+      "page": "Avatar",
+      "title": "Avatar",
+      "section": "",
+      "text": "발화 주체를 시각적으로 표시하는 작은 원형 컴포넌트입니다. 사용자(이니셜·프로필 사진)와 AI(시스템 로고·gradient)를 즉시 구분하고, System(공지·자동화)는 별도 회색 톤으로 표현합니다. 채팅 인터페이스의 시각적 리듬을 만들고 위계를 명확히 합니다. 홍 A B +3"
+    },
+    {
+      "id": 1,
+      "url": "components/avatar.html#anatomy",
+      "group": "Components",
+      "page": "Avatar",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Circle container + Image / Initials / Icon 슬롯. Status dot 으로 온라인·자리비움 상태를 표현할 수 있으며, 그룹 사용 시 -10px overlap 으로 stack 표현. 1. Container (circle) 2. Image 3. Initials fallback 4. AI icon 5. Status dot 6. Size SM / MD / LG 7. Group stack 8. Bord"
+    },
+    {
+      "id": 2,
+      "url": "components/avatar.html#usage",
+      "group": "Components",
+      "page": "Avatar",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 3,
+      "url": "components/avatar.html#usage",
+      "group": "Components",
+      "page": "Avatar",
+      "title": "Subject Types",
+      "section": "Subject Types",
+      "text": "홍 User AI System User 는 gradient + 이니셜 또는 프로필 사진. AI 는 시스템 로고 또는 단색 + icon. System 은 grey fill + 시스템 글리프. 세 타입이 한 화면에서 서로 구분되도록 컬러·아이콘을 분리."
+    },
+    {
+      "id": 4,
+      "url": "components/avatar.html#usage",
+      "group": "Components",
+      "page": "Avatar",
+      "title": "Stack & Repetition",
+      "section": "Stack & Repetition",
+      "text": "A B C +5 연속된 같은 발화자의 메시지에는 첫 메시지에만 avatar 를 표시하고 이후는 생략합니다. 다중 사용자 표시는 stack 으로 overlap 처리하여 공간을 절약합니다."
+    },
+    {
+      "id": 5,
+      "url": "components/avatar.html#how-to-use",
+      "group": "Components",
+      "page": "Avatar",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "첫 메시지 두 번째 메시지 — avatar 생략 Do 발화 직전 메시지 옆에만 avatar 를 표시합니다. 연속된 같은 발화자에게는 반복하지 않습니다. 메시지 1 메시지 2 — avatar 반복 Don't 모든 메시지마다 avatar 를 반복 표시하지 않습니다. 시각 노이즈와 공간 낭비입니다."
+    },
+    {
+      "id": 6,
+      "url": "components/button.html",
+      "group": "Components",
+      "page": "Button",
+      "title": "Button",
+      "section": "",
+      "text": "사용자 액션의 기본 단위입니다. Primary / Secondary / Ghost 세 가지 변형으로 화면 안의 액션 위계를 명확히 합니다. AX 인터페이스에서는 '전송', '재생성', '중지', '취소' 같은 핵심 액션에 사용하고, 화면당 Primary 는 하나만 두어 사용자의 다음 행동을 명확히 안내합니다. Save changes Cancel Learn more"
+    },
+    {
+      "id": 7,
+      "url": "components/button.html#anatomy",
+      "group": "Components",
+      "page": "Button",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "라벨이 필수이며 leading / trailing 아이콘을 선택적으로 추가할 수 있습니다. 패딩 14/22, radius 12 가 기본이며 변형에 따라 fill 과 border 가 달라집니다. Add item 1. Label 2. Leading icon 3. Trailing icon 4. Padding 5. Radius 6. Background fill 7. Border 8. Default state 9. Hover state"
+    },
+    {
+      "id": 8,
+      "url": "components/button.html#usage",
+      "group": "Components",
+      "page": "Button",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 9,
+      "url": "components/button.html#usage",
+      "group": "Components",
+      "page": "Button",
+      "title": "Priority Variants",
+      "section": "Priority Variants",
+      "text": "Primary Secondary Ghost Primary 는 화면당 1개, 가장 중요한 액션에만 사용. Secondary 는 보조 액션, Ghost 는 부차적·인라인 액션. 우선순위가 시각 위계에 그대로 반영됩니다."
+    },
+    {
+      "id": 10,
+      "url": "components/button.html#usage",
+      "group": "Components",
+      "page": "Button",
+      "title": "Sizes",
+      "section": "Sizes",
+      "text": "Small Medium Large SM / MD / LG 세 사이즈를 컨텍스트에 맞게 사용합니다. 같은 화면 안에서는 한 사이즈로 통일하여 시각 위계를 일정하게 유지합니다."
+    },
+    {
+      "id": 11,
+      "url": "components/button.html#how-to-use",
+      "group": "Components",
+      "page": "Button",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "Cancel Save Do 우선순위에 맞게 Primary / Secondary / Ghost 를 사용합니다. Save Submit Confirm Don't 한 화면에 Primary 버튼을 2개 이상 두지 않습니다. 사용자의 액션이 분산됩니다."
+    },
+    {
+      "id": 12,
+      "url": "components/card.html",
+      "group": "Components",
+      "page": "Card",
+      "title": "Card",
+      "section": "",
+      "text": "콘텐츠를 그룹화하는 기본 컨테이너입니다. 미디어 + 본문 영역 구조로 Grid, Carousel 등 다양한 레이아웃에서 재사용됩니다. AI 응답 안의 추천 카드, 사이드 패널의 인사이트 카드, 대시보드의 통계 카드 등 다양한 컨텍스트에 적용됩니다. Insight Summary 최근 7일 간 사용자 활동 패턴 분석 결과 — 전환율 12% 증가"
+    },
+    {
+      "id": 13,
+      "url": "components/card.html#anatomy",
+      "group": "Components",
+      "page": "Card",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "썸네일 상단/좌측 + 본문(heading + caption) + 선택적 footer(액션·메타) 구조. radius 24 / 1px subtle border / surface-elevated bg 가 기본입니다. Heading Caption text describing the content 1. Thumbnail 2. Overlay caption 3. Heading 4. Caption 5. Footer 6. Action but"
+    },
+    {
+      "id": 14,
+      "url": "components/card.html#usage",
+      "group": "Components",
+      "page": "Card",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 15,
+      "url": "components/card.html#usage",
+      "group": "Components",
+      "page": "Card",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Default Elevated Default 는 일반 카드. Elevated 는 그림자로 강조. Outlined 는 보더만, bg 없음. 같은 화면에서 한 변형으로 통일합니다."
+    },
+    {
+      "id": 16,
+      "url": "components/card.html#usage",
+      "group": "Components",
+      "page": "Card",
+      "title": "Text Ellipsis",
+      "section": "Text Ellipsis",
+      "text": "긴 제목은 최대 두 줄까지 표시되고 나머지는 말줄임 처리됩니다. 한 줄 캡션은 한 줄 너비에서 잘립니다. Heading 최대 2줄, Caption 최대 1줄. 초과 시 말줄임(...)으로 카드 높이를 균일하게 유지합니다."
+    },
+    {
+      "id": 17,
+      "url": "components/card.html#how-to-use",
+      "group": "Components",
+      "page": "Card",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "A B C Do 카드를 Grid / Carousel 형태로 배열하여 화면을 효율적으로 활용합니다. Caption 이 Heading 처럼 강조됨 Heading 이 약하게 Don't Heading 과 Caption 의 위계를 임의로 바꾸지 않습니다. 정보 위계가 흐려집니다."
+    },
+    {
+      "id": 18,
+      "url": "components/code-block.html",
+      "group": "Components",
+      "page": "Code Block",
+      "title": "Code Block",
+      "section": "",
+      "text": "AI 응답의 코드를 표시하는 monospace 블록입니다. 언어 감지 · syntax highlighting · 복사 액션을 포함하며 짧은 inline code 와 긴 multi-line code 두 형태를 구분합니다. 긴 줄은 가로 스크롤, 한 번의 클릭으로 전체 복사를 지원해 사용자가 결과를 즉시 활용할 수 있게 합니다. typescript // AX 토큰 시스템 const tokens = { 'label-strong' :"
+    },
+    {
+      "id": 19,
+      "url": "components/code-block.html#anatomy",
+      "group": "Components",
+      "page": "Code Block",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Head (언어 라벨 + 복사 버튼) + Body (코드) 두 영역. Body 는 monospace 폰트, 어두운 배경, syntax highlight 가 기본입니다. 다크 모드 어디서나 항상 같은 다크 톤을 유지하여 코드의 가독성을 보장합니다. tsx function Button () { return < button >Click</ button >; } 1. Container 2. Language tag 3. Copy but"
+    },
+    {
+      "id": 20,
+      "url": "components/code-block.html#usage",
+      "group": "Components",
+      "page": "Code Block",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 21,
+      "url": "components/code-block.html#usage",
+      "group": "Components",
+      "page": "Code Block",
+      "title": "Inline vs Block",
+      "section": "Inline vs Block",
+      "text": "변수 labelStrong 은 강조 텍스트 컬러를 의미합니다. inline code — 본문 내부 Inline code 는 본문 안에 짧은 변수명·함수명 표기용으로 작은 monospace fill 만. Block code 는 여러 줄 예시 코드용으로 head + syntax highlight + copy 풀스펙."
+    },
+    {
+      "id": 22,
+      "url": "components/code-block.html#usage",
+      "group": "Components",
+      "page": "Code Block",
+      "title": "Long Lines",
+      "section": "Long Lines",
+      "text": "javascript const veryLongVariableNameThatScrolls = \"긴 줄은 가로 스크롤로 처리\" ; 한 줄이 컨테이너 너비를 초과하면 가로 스크롤(overflow-x: auto)로 처리. wrap 처리는 코드의 들여쓰기·줄바꿈 의미를 왜곡할 수 있어 권장하지 않습니다."
+    },
+    {
+      "id": 23,
+      "url": "components/code-block.html#how-to-use",
+      "group": "Components",
+      "page": "Code Block",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "copy copy ( 'done!' ) Do 한 번 클릭으로 코드 블록 전체를 복사할 수 있는 버튼을 제공합니다. x Don't 짧은 inline code 를 block 으로 표시하지 않습니다. 위계가 흐려집니다."
+    },
+    {
+      "id": 24,
+      "url": "components/icon-button.html",
+      "group": "Components",
+      "page": "Icon Button",
+      "title": "Icon Button",
+      "section": "",
+      "text": "라벨 없이 아이콘만으로 액션을 표현하는 컴팩트 버튼입니다. AI 응답 위 인라인 액션(복사·재생성·좋아요·싫어요), 툴바 액션, 모달 닫기 등에 사용합니다. 단독 사용 시 반드시 aria-label 로 의미를 전달합니다."
+    },
+    {
+      "id": 25,
+      "url": "components/icon-button.html#anatomy",
+      "group": "Components",
+      "page": "Icon Button",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "정사각 컨테이너 + 18px 아이콘 + 8/10/12 radius 가 기본 anatomy 입니다. Variants 는 Filled / Tinted / Ghost 셋으로, 컨텍스트에 맞춰 강조 정도를 조절합니다. 1. Container 2. Icon (18-20px) 3. Background 4. Border 5. Hover bg 6. Pressed bg 7. Disabled 8. Tooltip (선택) 9. Size SM / "
+    },
+    {
+      "id": 26,
+      "url": "components/icon-button.html#usage",
+      "group": "Components",
+      "page": "Icon Button",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 27,
+      "url": "components/icon-button.html#usage",
+      "group": "Components",
+      "page": "Icon Button",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Filled 는 강한 강조, Tinted (fill-normal bg) 는 중간, Ghost 는 약한 강조. 같은 툴바 안에서는 한 가지 변형으로 통일합니다."
+    },
+    {
+      "id": 28,
+      "url": "components/icon-button.html#usage",
+      "group": "Components",
+      "page": "Icon Button",
+      "title": "Touch Target",
+      "section": "Touch Target",
+      "text": "최소 터치 영역 44×44 px 를 보장합니다. 아이콘이 24px 더라도 컨테이너는 40px 이상으로 유지하여 모바일·태블릿 환경의 사용성을 확보합니다."
+    },
+    {
+      "id": 29,
+      "url": "components/icon-button.html#how-to-use",
+      "group": "Components",
+      "page": "Icon Button",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "aria-label=\"Copy to clipboard\" Do 단독 아이콘 버튼에는 반드시 aria-label 또는 tooltip 으로 의미를 전달합니다. aria-label 누락 — 의미 전달 X Don't 라벨 없는 아이콘 버튼에 aria-label 을 빠뜨리지 않습니다. 스크린리더에서 '버튼' 이라고만 읽힙니다."
+    },
+    {
+      "id": 30,
+      "url": "components/index.html",
+      "group": "Components",
+      "page": "Components",
+      "title": "Components",
+      "section": "",
+      "text": "AI 챗 기반 AX 인터페이스를 짓는 재사용 가능한 UI 블록입니다. Actions / Inputs / Chat / Surface / Feedback 다섯 그룹으로 분류되며, 각 컴포넌트는 Foundation 토큰을 참조하여 일관된 인터랙션·시각 언어를 유지합니다."
+    },
+    {
+      "id": 31,
+      "url": "components/index.html#actions",
+      "group": "Components",
+      "page": "Components",
+      "title": "Actions",
+      "section": "Actions",
+      "text": "Primary Ghost 자세히 보기"
+    },
+    {
+      "id": 32,
+      "url": "components/index.html#actions",
+      "group": "Components",
+      "page": "Components",
+      "title": "Button",
+      "section": "Button",
+      "text": "Primary / Secondary / Ghost — 사용자 액션의 기본 단위. 자세히 보기"
+    },
+    {
+      "id": 33,
+      "url": "components/index.html#actions",
+      "group": "Components",
+      "page": "Components",
+      "title": "Icon Button",
+      "section": "Icon Button",
+      "text": "라벨 없이 아이콘만으로 — 복사·재생성·툴바 액션. Summarize Translate 자세히 보기"
+    },
+    {
+      "id": 34,
+      "url": "components/index.html#actions",
+      "group": "Components",
+      "page": "Components",
+      "title": "Suggestion Chip",
+      "section": "Suggestion Chip",
+      "text": "AI 가 제안하는 다음 액션 — pill 형태 즉시 실행."
+    },
+    {
+      "id": 35,
+      "url": "components/index.html#inputs",
+      "group": "Components",
+      "page": "Components",
+      "title": "Inputs",
+      "section": "Inputs",
+      "text": "Ask anything... 자세히 보기"
+    },
+    {
+      "id": 36,
+      "url": "components/index.html#inputs",
+      "group": "Components",
+      "page": "Components",
+      "title": "Text Composer",
+      "section": "Text Composer",
+      "text": "AI 프롬프트 입력의 핵심 — 첨부 · 음성 · 전송 · 중지. Email name@co.com 자세히 보기"
+    },
+    {
+      "id": 37,
+      "url": "components/index.html#inputs",
+      "group": "Components",
+      "page": "Components",
+      "title": "Text Field",
+      "section": "Text Field",
+      "text": "폼·설정 화면용 — label · helper · error 4-state."
+    },
+    {
+      "id": 38,
+      "url": "components/index.html#chat",
+      "group": "Components",
+      "page": "Components",
+      "title": "Chat",
+      "section": "Chat",
+      "text": "User AI 자세히 보기"
+    },
+    {
+      "id": 39,
+      "url": "components/index.html#chat",
+      "group": "Components",
+      "page": "Components",
+      "title": "Message Bubble",
+      "section": "Message Bubble",
+      "text": "사용자·AI 발화 구분 컨테이너 — 정렬·radius·streaming. A 자세히 보기"
+    },
+    {
+      "id": 40,
+      "url": "components/index.html#chat",
+      "group": "Components",
+      "page": "Components",
+      "title": "Avatar",
+      "section": "Avatar",
+      "text": "발화 주체 표시 — User / AI / System. 자세히 보기"
+    },
+    {
+      "id": 41,
+      "url": "components/index.html#chat",
+      "group": "Components",
+      "page": "Components",
+      "title": "Streaming Indicator",
+      "section": "Streaming Indicator",
+      "text": "AI 생성 중 모션 — typing dots / cursor / pulse. ts const a = 'b' 자세히 보기"
+    },
+    {
+      "id": 42,
+      "url": "components/index.html#chat",
+      "group": "Components",
+      "page": "Components",
+      "title": "Code Block",
+      "section": "Code Block",
+      "text": "AI 응답의 코드 표시 — syntax highlight + copy."
+    },
+    {
+      "id": 43,
+      "url": "components/index.html#surface",
+      "group": "Components",
+      "page": "Components",
+      "title": "Surface",
+      "section": "Surface",
+      "text": "Card Container 자세히 보기"
+    },
+    {
+      "id": 44,
+      "url": "components/index.html#surface",
+      "group": "Components",
+      "page": "Components",
+      "title": "Card",
+      "section": "Card",
+      "text": "콘텐츠를 그룹화하는 기본 컨테이너. Dialog 자세히 보기"
+    },
+    {
+      "id": 45,
+      "url": "components/index.html#surface",
+      "group": "Components",
+      "page": "Components",
+      "title": "Modal",
+      "section": "Modal",
+      "text": "중요 정보·결정 요구 — backdrop + ESC + focus trap."
+    },
+    {
+      "id": 46,
+      "url": "components/index.html#feedback",
+      "group": "Components",
+      "page": "Components",
+      "title": "Feedback",
+      "section": "Feedback",
+      "text": "Streaming Done 자세히 보기"
+    },
+    {
+      "id": 47,
+      "url": "components/index.html#feedback",
+      "group": "Components",
+      "page": "Components",
+      "title": "Status Badge",
+      "section": "Status Badge",
+      "text": "AI 상태 표시 — Streaming / Pending / Success / Error."
+    },
+    {
+      "id": 48,
+      "url": "components/message-bubble.html",
+      "group": "Components",
+      "page": "Message Bubble",
+      "title": "Message Bubble",
+      "section": "",
+      "text": "사용자와 AI 의 발화를 시각적으로 구분하는 채팅 메시지 컨테이너입니다. 발화 주체에 따라 정렬·배경·radius 가 달라지며 markdown 응답, 코드 블록, 인용, streaming 등 다양한 컨텐츠를 포함합니다. tail radius(4px)로 발화 주체의 위치를 시각적으로 가리킵니다. 디자인 토큰 사용 방법을 알려줘 시맨틱 토큰은 의미 기반으로 정의되어 컴포넌트가 모드 전환에 자동 적응합니다. 예를 들어... 예시도 "
+    },
+    {
+      "id": 49,
+      "url": "components/message-bubble.html#anatomy",
+      "group": "Components",
+      "page": "Message Bubble",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Container + Sender alignment + Background + Tail radius. 사용자 메시지는 오른쪽 정렬·dark fill, AI 메시지는 왼쪽 정렬·light fill 로 즉시 구분됩니다. AI 응답이 여기에 표시됩니다. 충분히 긴 텍스트도 자연스럽게 줄바꿈됩니다. 1. Container 2. Sender alignment 3. Background 4. Tail radius (4) 5. Text co"
+    },
+    {
+      "id": 50,
+      "url": "components/message-bubble.html#usage",
+      "group": "Components",
+      "page": "Message Bubble",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 51,
+      "url": "components/message-bubble.html#usage",
+      "group": "Components",
+      "page": "Message Bubble",
+      "title": "Sender Differentiation",
+      "section": "Sender Differentiation",
+      "text": "사용자 메시지 AI 응답 메시지 User 는 오른쪽 / inverse-background / 우하단 tail radius 4. AI 는 왼쪽 / fill-normal / 좌하단 tail radius 4. 정렬·컬러·tail 셋이 함께 발화 주체를 명확히 합니다."
+    },
+    {
+      "id": 52,
+      "url": "components/message-bubble.html#usage",
+      "group": "Components",
+      "page": "Message Bubble",
+      "title": "Long-form Content",
+      "section": "Long-form Content",
+      "text": "긴 응답은 max-width 로 70 글자 안에 유지되어 가독성을 확보합니다. markdown · code block · 인용 모두 같은 bubble 안에 자연스럽게 표시됩니다. AI 응답이 길어지면 max-width 를 70 글자 이내로 유지하여 가독성을 확보합니다. markdown rendering 시 heading · list · code block · quote 모두 같은 bubble 안에 자연스럽게 표시."
+    },
+    {
+      "id": 53,
+      "url": "components/message-bubble.html#how-to-use",
+      "group": "Components",
+      "page": "Message Bubble",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "질문 응답 Do 발화 주체별 정렬·컬러·tail radius 의 일관성을 유지합니다. 중앙 정렬 — 발화 주체 불명확 tail radius 일관성 없음 Don't 사용자와 AI 메시지의 시각 위계를 비슷하게 만들지 않습니다. 발화 주체 구분이 흐려집니다."
+    },
+    {
+      "id": 54,
+      "url": "components/modal.html",
+      "group": "Components",
+      "page": "Modal",
+      "title": "Modal",
+      "section": "",
+      "text": "중요 정보 표시 또는 사용자 결정을 요구하는 오버레이 컨테이너입니다. 배경을 dim 처리하여 본문과 분리하고, ESC · 배경 클릭 · 닫기 버튼 세 가지 경로로 닫을 수 있습니다. 포커스를 모달 내부에 가두는 focus-trap 으로 키보드 접근성을 보장합니다. 변경사항을 저장할까요? 저장하지 않고 닫으면 작성한 내용이 사라집니다. 취소 저장"
+    },
+    {
+      "id": 55,
+      "url": "components/modal.html#anatomy",
+      "group": "Components",
+      "page": "Modal",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Backdrop + Container 구조. 헤더(제목+닫기), 본문, 푸터(액션) 세 영역으로 구성. 등장 시 fade-in + scale 0.96→1, 퇴장 역순. Header Body content Cancel OK 1. Backdrop (dim) 2. Container 3. Header 4. Body 5. Footer 6. Close button 7. ESC key 8. Focus trap 9. Width SM/MD/L"
+    },
+    {
+      "id": 56,
+      "url": "components/modal.html#usage",
+      "group": "Components",
+      "page": "Modal",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 57,
+      "url": "components/modal.html#usage",
+      "group": "Components",
+      "page": "Modal",
+      "title": "Sizing",
+      "section": "Sizing",
+      "text": "SM MD LG Small (400px) 확인 다이얼로그, Medium (600px) 폼, Large (900px) 콘텐츠 미리보기. 모바일에선 항상 full-width fallback."
+    },
+    {
+      "id": 58,
+      "url": "components/modal.html#usage",
+      "group": "Components",
+      "page": "Modal",
+      "title": "Dismiss",
+      "section": "Dismiss",
+      "text": "ESC · 클릭 · 닫기 세 경로 모두 지원 ESC · 배경 클릭 · 닫기 버튼 세 경로 모두 지원. 데이터 손실 위험이 있는 모달은 confirm 으로 한 번 더 확인."
+    },
+    {
+      "id": 59,
+      "url": "components/modal.html#how-to-use",
+      "group": "Components",
+      "page": "Modal",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "계정 삭제 되돌릴 수 없습니다. Do 사용자의 즉각 결정이 필요한 핵심 액션에만 모달을 사용합니다. 중첩 모달 1 중첩 모달 2 Don't 모달 위에 모달을 중첩하지 않습니다. 컨텍스트 혼란과 z-index 충돌이 발생합니다."
+    },
+    {
+      "id": 60,
+      "url": "components/status-badge.html",
+      "group": "Components",
+      "page": "Status Badge",
+      "title": "Status Badge",
+      "section": "",
+      "text": "AI 작업 상태(생성 중·완료·오류·대기)를 짧고 명확하게 표시합니다. 패널 헤더·메시지 인라인·리스트 아이템 등에서 시스템 상태를 한 눈에 파악할 수 있게 하며, 색·아이콘·텍스트 세 시그널을 함께 사용해 색맹 사용자도 정보를 잃지 않도록 합니다. Generating Completed Failed Pending"
+    },
+    {
+      "id": 61,
+      "url": "components/status-badge.html#anatomy",
+      "group": "Components",
+      "page": "Status Badge",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Dot/Icon + Label + Pill container. 컬러는 카테고리에 맞춰(streaming=blue, success=green, error=red, pending=yellow), Streaming 상태일 때만 dot pulse 애니메이션이 동작합니다. Streaming 1. Dot / Icon 2. Label 3. Pill radius 4. Soft variant 5. Solid variant 6. Streamin"
+    },
+    {
+      "id": 62,
+      "url": "components/status-badge.html#usage",
+      "group": "Components",
+      "page": "Status Badge",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 63,
+      "url": "components/status-badge.html#usage",
+      "group": "Components",
+      "page": "Status Badge",
+      "title": "Status States",
+      "section": "Status States",
+      "text": "Streaming Pending Success Error Streaming (생성 중) · Pending (대기) · Success (완료) · Error (실패). 각 상태는 컬러 + dot 형태로 분리되어 한 화면 안에서 즉시 구분됩니다."
+    },
+    {
+      "id": 64,
+      "url": "components/status-badge.html#usage",
+      "group": "Components",
+      "page": "Status Badge",
+      "title": "Pulse",
+      "section": "Pulse",
+      "text": "Streaming pulse animation (1.4s) Streaming 상태에서만 dot 이 1.4초 주기로 pulse 애니메이션. 완료·오류·대기 상태에서는 정적 dot 으로 시각 노이즈를 줄입니다."
+    },
+    {
+      "id": 65,
+      "url": "components/status-badge.html#how-to-use",
+      "group": "Components",
+      "page": "Status Badge",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "Failed Do 색 + 아이콘/텍스트를 함께 사용하여 색맹 사용자에게도 정보를 보장합니다. Don't 색만으로 의미를 전달하지 않습니다. 색맹·저시력 사용자가 정보를 잃습니다."
+    },
+    {
+      "id": 66,
+      "url": "components/streaming-indicator.html",
+      "group": "Components",
+      "page": "Streaming Indicator",
+      "title": "Streaming Indicator",
+      "section": "",
+      "text": "AI 응답 생성 중임을 표현하는 모션 인디케이터입니다. 점멸하는 점 3개(typing dots), 점진적으로 채워지는 텍스트(streaming cursor), 또는 spinner 형태로 사용합니다. 사용자에게 시스템이 작동 중임을 알려 응답을 기다리는 인내심을 만듭니다. AI thinking — typing dots"
+    },
+    {
+      "id": 67,
+      "url": "components/streaming-indicator.html#anatomy",
+      "group": "Components",
+      "page": "Streaming Indicator",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "여러 dot 의 stagger 애니메이션 또는 깜빡이는 cursor 가 기본 형태. duration, easing, stagger 시점을 모션 토큰에 맞춰 사용합니다. 응답이 도착하면 즉시 제거되어 사용자 경험이 끊기지 않도록 합니다. 1. Dot / Cursor 2. Animation 3. Color (label-strong) 4. Position 5. Stagger 150ms 6. Duration 1.2s 7. Easing"
+    },
+    {
+      "id": 68,
+      "url": "components/streaming-indicator.html#usage",
+      "group": "Components",
+      "page": "Streaming Indicator",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 69,
+      "url": "components/streaming-indicator.html#usage",
+      "group": "Components",
+      "page": "Streaming Indicator",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Dots 생각 중 Cursor Typing dots 는 메시지 도착 전(사고 중), Streaming cursor 는 응답 도착 중(타이핑), Pulse 는 백그라운드 작업. 컨텍스트에 맞는 한 가지 형태를 일관되게 사용합니다."
+    },
+    {
+      "id": 70,
+      "url": "components/streaming-indicator.html#usage",
+      "group": "Components",
+      "page": "Streaming Indicator",
+      "title": "Placement",
+      "section": "Placement",
+      "text": "Message bubble 내부에 inline 으로 둘 수도, standalone 으로 패널 위에 띄울 수도 있습니다. 응답 도착이 시작되면 즉시 제거하여 사용자 경험이 끊기지 않도록 합니다."
+    },
+    {
+      "id": 71,
+      "url": "components/streaming-indicator.html#how-to-use",
+      "group": "Components",
+      "page": "Streaming Indicator",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "AI 응답이 도착하기 시작했습니다 Do 응답 도착이 시작되면 streaming indicator 를 즉시 제거합니다. 너무 짧은 응답에도 indicator Don't 너무 빠른 응답("
+    },
+    {
+      "id": 72,
+      "url": "components/suggestion-chip.html",
+      "group": "Components",
+      "page": "Suggestion Chip",
+      "title": "Suggestion Chip",
+      "section": "",
+      "text": "AI 가 제안하는 다음 액션을 표현하는 pill 형태 컴포넌트입니다. '이걸 시도해보세요' 같은 후속 질문, 빠른 답변 옵션, 추천 prompt 에 사용합니다. 클릭 즉시 액션이 실행되어 사용자의 발화 부담을 줄입니다. Summarize Translate to English Explain code Make it shorter Suggest examples"
+    },
+    {
+      "id": 73,
+      "url": "components/suggestion-chip.html#anatomy",
+      "group": "Components",
+      "page": "Suggestion Chip",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Label + (선택)Leading icon + pill radius 가 기본 구조입니다. Filled 와 Outline 두 변형이 있으며 Group 안에서 한 가지로 통일합니다. Add more context 1. Label 2. Leading icon 3. Pill radius (99) 4. Padding (10/16) 5. Background 6. Border 7. Hover state 8. Selected state 9"
+    },
+    {
+      "id": 74,
+      "url": "components/suggestion-chip.html#usage",
+      "group": "Components",
+      "page": "Suggestion Chip",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 75,
+      "url": "components/suggestion-chip.html#usage",
+      "group": "Components",
+      "page": "Suggestion Chip",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Outline Outline Filled Filled Outline 추천 · Filled 선택됨 Outline 은 추천·선택지, Filled 는 활성 필터·선택됨 상태. 같은 그룹 안에서는 한 가지 변형으로 통일하여 시각 노이즈를 줄입니다."
+    },
+    {
+      "id": 76,
+      "url": "components/suggestion-chip.html#usage",
+      "group": "Components",
+      "page": "Suggestion Chip",
+      "title": "Group Layout",
+      "section": "Group Layout",
+      "text": "3-4개 적정 한 줄 안에 간결하게 한 화면에 4-6개 이내가 적정. 더 많아지면 가로 스크롤 또는 '더보기'로 묶습니다. 줄바꿈 시 한 줄당 3-4개를 권장합니다."
+    },
+    {
+      "id": 77,
+      "url": "components/suggestion-chip.html#how-to-use",
+      "group": "Components",
+      "page": "Suggestion Chip",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "Translate Summarize Continue writing Do 짧은 동사구로 다음 액션을 명확히 표시합니다. Chip 1 Chip 2 Chip 3 Chip 4 Chip 5 Chip 6 Chip 7 Chip 8 Don't 너무 많은 chip 을 한 번에 노출하지 않습니다. 선택 부담을 줄여야 합니다."
+    },
+    {
+      "id": 78,
+      "url": "components/text-composer.html",
+      "group": "Components",
+      "page": "Text Composer",
+      "title": "Text Composer",
+      "section": "",
+      "text": "AI 프롬프트 입력의 핵심 컴포넌트입니다. 사용자가 자연어로 AI 와 대화하는 입구이며, 파일 첨부 · 음성 입력 · 전송 · 중지 등 AX 특유의 액션을 통합합니다. 멀티라인 입력과 Enter 전송 / Shift+Enter 줄바꿈 / Esc 취소 등 키보드 단축키를 지원합니다. 어떤 도움이 필요하신가요?"
+    },
+    {
+      "id": 79,
+      "url": "components/text-composer.html#anatomy",
+      "group": "Components",
+      "page": "Text Composer",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Input area + Action bar (좌측 tools / 우측 send) 구조. 생성 중에는 Send 가 Stop 으로 전환되어 사용자가 언제든 응답을 중단할 수 있습니다. 디자인 시스템에 대해 알려줘 1. Input area 2. Placeholder 3. Attach (📎) 4. Voice (🎤) 5. Send / Stop 6. Char counter 7. Model selector 8. Slash menu 9."
+    },
+    {
+      "id": 80,
+      "url": "components/text-composer.html#usage",
+      "group": "Components",
+      "page": "Text Composer",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 81,
+      "url": "components/text-composer.html#usage",
+      "group": "Components",
+      "page": "Text Composer",
+      "title": "States",
+      "section": "States",
+      "text": "디자인 토큰 사용 방법을 설명해줘 Idle / Composing / Sending / Streaming / Error 다섯 상태. Streaming 중에는 Send 가 Stop 으로 바뀌고, 사용자가 다시 입력하면 새 turn 으로 처리됩니다."
+    },
+    {
+      "id": 82,
+      "url": "components/text-composer.html#usage",
+      "group": "Components",
+      "page": "Text Composer",
+      "title": "Keyboard Shortcuts",
+      "section": "Keyboard Shortcuts",
+      "text": "Enter 전송 · Shift+Enter 줄바꿈 Enter 전송 · Shift+Enter 줄바꿈 · Esc 입력 취소 · / slash 메뉴 · @ mention. 자주 쓰는 단축키는 placeholder 또는 tooltip 으로 노출합니다."
+    },
+    {
+      "id": 83,
+      "url": "components/text-composer.html#how-to-use",
+      "group": "Components",
+      "page": "Text Composer",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "생성 중... Do 생성 중에는 Send 버튼을 Stop 으로 전환해 사용자가 언제든 중단할 수 있게 합니다. 생성 중 — 입력 비활성화 Don't 생성 중이라고 input 자체를 비활성화하지 않습니다. 다음 메시지를 미리 작성할 수 있게 둡니다."
+    },
+    {
+      "id": 84,
+      "url": "components/text-field.html",
+      "group": "Components",
+      "page": "Text Field",
+      "title": "Text Field",
+      "section": "",
+      "text": "짧은 텍스트 입력 컨트롤입니다. 폼·설정 화면에서 사용하며 label · helper · error 4-state 를 지원합니다. 입력 의도와 형식을 placeholder 가 아닌 label 로 명시하여 입력 시점에도 컨텍스트가 유지되도록 합니다. Email address name@company.com 알림을 받을 이메일 주소를 입력해주세요"
+    },
+    {
+      "id": 85,
+      "url": "components/text-field.html#anatomy",
+      "group": "Components",
+      "page": "Text Field",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Label 상단, Helper / Error 하단 배치. focus 시 보더 컬러·두께 변경, error 시 status-negative 컬러로 명확히 표시합니다. Email * name@company.com 필수 입력 항목 1. Label 2. Input 3. Placeholder 4. Helper 5. Error 6. Required * 7. Leading icon 8. Trailing icon 9. Counter 10. "
+    },
+    {
+      "id": 86,
+      "url": "components/text-field.html#usage",
+      "group": "Components",
+      "page": "Text Field",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 87,
+      "url": "components/text-field.html#usage",
+      "group": "Components",
+      "page": "Text Field",
+      "title": "Input Types",
+      "section": "Input Types",
+      "text": "Email user@example.com type=\"email\" — 모바일 키보드 @ 키 노출 email · tel · number 등 적절한 input type 으로 모바일 키보드 자동 전환과 자동완성·검증을 활성화합니다."
+    },
+    {
+      "id": 88,
+      "url": "components/text-field.html#usage",
+      "group": "Components",
+      "page": "Text Field",
+      "title": "Validation Timing",
+      "section": "Validation Timing",
+      "text": "Email invalid-email 올바른 이메일 형식이 아닙니다 에러는 blur 또는 submit 시점에 표시. 사용자가 타이핑 중인 동안에는 가급적 에러를 보이지 않습니다."
+    },
+    {
+      "id": 89,
+      "url": "components/text-field.html#how-to-use",
+      "group": "Components",
+      "page": "Text Field",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "User name 홍길동 Do Label 로 입력 의도를 명시하고, placeholder 는 예시 보조용으로만 사용합니다. User name label 없음 — 입력 시 컨텍스트 사라짐 Don't placeholder 만 두고 label 을 생략하지 않습니다. 입력 시 컨텍스트가 사라져 접근성이 깨집니다."
+    },
+    {
+      "id": 90,
+      "url": "foundation/color-scheme.html",
+      "group": "Foundation",
+      "page": "Color Scheme",
+      "title": "Color Scheme",
+      "section": "",
+      "text": "AX 인터페이스는 사용자, AI, 시스템 세 주체의 발화와 상태를 시각적으로 구분해야 합니다. Color Scheme 은 의미 기반 토큰으로 이 구분을 만들고, 라이트/다크 모드에서 동일하게 작동하도록 설계되어 어떤 컨텍스트에서도 안정적인 정보 위계를 보장합니다. Strong Neutral Alternative Assistive Streaming Positive Negative"
+    },
+    {
+      "id": 91,
+      "url": "foundation/color-scheme.html#anatomy",
+      "group": "Foundation",
+      "page": "Color Scheme",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Label·Surface·Line·Fill·Status 다섯 카테고리로 분리되어 컴포넌트가 의미를 명확히 표현합니다. 모든 토큰은 라이트와 다크 두 모드에서 서로 매핑된 페어로 정의되어 컴포넌트는 별도 분기 없이 작동합니다. label strong surface subtle surface elevated line solid fill normal Label / Strong — 강조 텍스트 Label / Neutral — 본문 텍"
+    },
+    {
+      "id": 92,
+      "url": "foundation/color-scheme.html#usage",
+      "group": "Foundation",
+      "page": "Color Scheme",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 93,
+      "url": "foundation/color-scheme.html#usage",
+      "group": "Foundation",
+      "page": "Color Scheme",
+      "title": "Mode Adaptation",
+      "section": "Mode Adaptation",
+      "text": "Light AI 응답 시맨틱 토큰으로 어떤 컴포넌트도 두 모드를 자연스럽게 지원합니다. Dark AI 응답 시맨틱 토큰으로 어떤 컴포넌트도 두 모드를 자연스럽게 지원합니다. OS 설정 또는 사용자의 명시 선택에 따라 토큰의 실제 값이 자동 전환됩니다. 라이트 → 다크로 전환되더라도 컴포넌트는 토큰 이름만 참조하므로 동일한 의미·위계가 유지됩니다."
+    },
+    {
+      "id": 94,
+      "url": "foundation/color-scheme.html#usage",
+      "group": "Foundation",
+      "page": "Color Scheme",
+      "title": "AX Status Colors",
+      "section": "AX Status Colors",
+      "text": "Generating Completed Failed AI 응답 상태(생성 중·완료·오류)는 색으로 즉시 구분합니다. 사용자는 화면 변화만 보고도 시스템이 무엇을 하는지 알 수 있어야 합니다. 색은 항상 보조 시그널(아이콘·텍스트)과 함께 사용해 색맹·저시력 사용자도 정보를 잃지 않도록 합니다."
+    },
+    {
+      "id": 95,
+      "url": "foundation/color-scheme.html#how-to-use",
+      "group": "Foundation",
+      "page": "Color Scheme",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "label-strong 시맨틱 토큰 사용 컴포넌트가 의미 토큰만 참조하면 모드 전환이 자동으로 작동합니다. Do 시맨틱 토큰(label-strong, surface-elevated)을 사용하여 의미와 모드 적응을 모두 보장합니다. #171719 ← hardcoded Primitive 직접 사용 다크 모드에선 검은 글씨가 그대로 남아 가독성이 깨집니다. Don't Primitive 컬러(#171719)를 컴포넌트에서 직접 사용하"
+    },
+    {
+      "id": 96,
+      "url": "foundation/dimension.html",
+      "group": "Foundation",
+      "page": "Dimension",
+      "title": "Dimension",
+      "section": "",
+      "text": "AX 인터페이스는 짧은 액션 UI 와 긴 AI 응답이 같은 화면에 공존합니다. 8 배수 그리드의 통합 디멘션 시스템은 두 컨텍스트 모두에서 일정한 리듬을 만들고, 비례 관계로 컴포넌트가 자연스럽게 sm/md/lg 변형으로 확장됩니다. Space 2 8 Space 3 12 Space 4 16 Space 5 24 Space 6 40 Space 7 60 Space 8 96"
+    },
+    {
+      "id": 97,
+      "url": "foundation/dimension.html#anatomy",
+      "group": "Foundation",
+      "page": "Dimension",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Space, Radius, Size 세 축이 모두 8의 배수 위에서 작동합니다. 컴포넌트 사이즈가 바뀌면 내부 padding 과 radius 가 비례로 따라가 자연스럽게 sm/md/lg 변형이 만들어집니다. SM · 8 MD · 12 LG · 24 Pill · 99 Space 2 — 8px (인라인 칩 내부) Space 3 — 12px (버튼 vertical padding) Space 4 — 16px (카드 내부 갭) Spac"
+    },
+    {
+      "id": 98,
+      "url": "foundation/dimension.html#usage",
+      "group": "Foundation",
+      "page": "Dimension",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 99,
+      "url": "foundation/dimension.html#usage",
+      "group": "Foundation",
+      "page": "Dimension",
+      "title": "Content Density",
+      "section": "Content Density",
+      "text": "SM MD LG SM 8/12 · MD 12/16 · LG 16/24 (padding / radius) AX 응답이 빠르게 쌓이는 화면(채팅·로그·리스트)에선 compact 디멘션, 일반 폼·설정에선 comfortable 디멘션을 사용합니다. 같은 토큰 시스템 안에서 단계만 다르게 선택하여 둘이 자연스럽게 공존하도록 합니다."
+    },
+    {
+      "id": 100,
+      "url": "foundation/dimension.html#usage",
+      "group": "Foundation",
+      "page": "Dimension",
+      "title": "Proportional Scaling",
+      "section": "Proportional Scaling",
+      "text": "작은 액션 기본 액션 강조 액션 컴포넌트가 커질수록 padding·radius 비례 증가 사이즈가 커지면 padding 과 radius 가 같은 비율로 증가합니다. SM 컴포넌트는 작은 radius, LG 컴포넌트는 큰 radius. 비례가 깨지면 카드와 그 안의 chip 이 같은 radius 를 갖는 어색한 화면이 됩니다."
+    },
+    {
+      "id": 101,
+      "url": "foundation/dimension.html#how-to-use",
+      "group": "Foundation",
+      "page": "Dimension",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "SM 8 MD 12 LG 24 Do 토큰화된 dimension 값(--space-4, --radius-md)을 사용해 비례 관계를 자동으로 유지합니다. 10px ← 14px ← 18px ← Don't 10, 14, 18 같은 비표준 값을 임의로 쓰지 않습니다. 다른 컴포넌트와의 정렬·비례가 깨집니다."
+    },
+    {
+      "id": 102,
+      "url": "foundation/effect.html",
+      "group": "Foundation",
+      "page": "Effect",
+      "title": "Effect",
+      "section": "",
+      "text": "사용자가 시스템의 상태와 위계를 인지하도록 돕는 시각 효과 시스템입니다. AX 인터페이스에선 AI 응답 생성, 상태 전환, 패널 등장 등 비동기 변화가 빈번하므로 elevation·motion 토큰의 일관된 사용이 특히 중요합니다. 0 · Flat 1 · Card 2 · Dropdown 3 · Modal 4 · Toast"
+    },
+    {
+      "id": 103,
+      "url": "foundation/effect.html#anatomy",
+      "group": "Foundation",
+      "page": "Effect",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Elevation 0~4 다섯 단계는 z-축 위계를 표현하고, Duration 3단(fast/normal/slow)과 Easing 4종은 인터랙션 리듬을 만듭니다. 다크 모드에서는 그림자 alpha 가 자동 강화되어 같은 위계감이 유지됩니다. Card Dropdown Modal Elevation 0 — flat Elevation 1 — card Elevation 2 — dropdown Elevation 3 — modal Ele"
+    },
+    {
+      "id": 104,
+      "url": "foundation/effect.html#usage",
+      "group": "Foundation",
+      "page": "Effect",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 105,
+      "url": "foundation/effect.html#usage",
+      "group": "Foundation",
+      "page": "Effect",
+      "title": "Layering",
+      "section": "Layering",
+      "text": "인접한 표면 레이어 간 elevation 차이를 한 단계 이상 두어 시각적 분리감을 만듭니다. 카드(L1) 위의 dropdown(L2), modal(L3) 식으로 위계를 쌓아 올라가며, 같은 위계 요소가 서로 다른 elevation 을 갖지 않도록 합니다."
+    },
+    {
+      "id": 106,
+      "url": "foundation/effect.html#usage",
+      "group": "Foundation",
+      "page": "Effect",
+      "title": "AX Motion",
+      "section": "AX Motion",
+      "text": "AI thinking — stagger 150ms AI 응답 streaming, 패널 등장, 상태 전환 등 AX 특유의 비동기 변화에 모션 토큰을 일관되게 사용합니다. 모션은 단순 장식이 아니라 의미(생성 중·로딩·완료)를 전달하는 도구이며, prefers-reduced-motion 설정을 항상 존중합니다."
+    },
+    {
+      "id": 107,
+      "url": "foundation/effect.html#how-to-use",
+      "group": "Foundation",
+      "page": "Effect",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "Card · 1 Modal · 3 Do 토큰화된 elevation·duration·easing 값을 사용해 인터랙션 리듬을 통일합니다. L4 ← L4 ← L4 ← Don't 장식적 목적의 모션·강한 그림자를 본문에 과도하게 적용하지 않습니다. 인지 부하를 높입니다."
+    },
+    {
+      "id": 108,
+      "url": "foundation/index.html",
+      "group": "Foundation",
+      "page": "Foundation",
+      "title": "Foundation",
+      "section": "",
+      "text": "디자인 시스템의 시각적 기반이 되는 토큰을 정의합니다. 컬러 스킴, 디멘션, 텍스트, 이펙트 네 축으로 원자적 가치를 시맨틱 단위로 정리하여, 모든 컴포넌트와 화면이 일관된 비주얼 언어를 공유하도록 합니다."
+    },
+    {
+      "id": 109,
+      "url": "foundation/index.html#foundation",
+      "group": "Foundation",
+      "page": "Foundation",
+      "title": "Foundation",
+      "section": "Foundation",
+      "text": "자세히 보기"
+    },
+    {
+      "id": 110,
+      "url": "foundation/index.html#foundation",
+      "group": "Foundation",
+      "page": "Foundation",
+      "title": "Color Scheme",
+      "section": "Color Scheme",
+      "text": "라이트/다크 자동 적응 시맨틱 컬러 토큰 — Label / Surface / Line / Status. 자세히 보기"
+    },
+    {
+      "id": 111,
+      "url": "foundation/index.html#foundation",
+      "group": "Foundation",
+      "page": "Foundation",
+      "title": "Dimension",
+      "section": "Dimension",
+      "text": "Size · Space · Radius 통합 디멘션 시스템 — 8 배수 그리드. A a 가 나 자세히 보기"
+    },
+    {
+      "id": 112,
+      "url": "foundation/index.html#foundation",
+      "group": "Foundation",
+      "page": "Foundation",
+      "title": "Text",
+      "section": "Text",
+      "text": "9단계 타입 스케일 — Pretendard Variable + Poppins. 자세히 보기"
+    },
+    {
+      "id": 113,
+      "url": "foundation/index.html#foundation",
+      "group": "Foundation",
+      "page": "Foundation",
+      "title": "Effect",
+      "section": "Effect",
+      "text": "Elevation · Motion · Transition — 인터랙티브 시각 효과."
+    },
+    {
+      "id": 114,
+      "url": "foundation/text.html",
+      "group": "Foundation",
+      "page": "Text",
+      "title": "Text",
+      "section": "",
+      "text": "AX 인터페이스의 절반은 텍스트입니다. AI 응답, 사용자 입력, 인용, 메타데이터 등 다양한 텍스트 유형이 같은 시스템 안에서 일관된 위계로 표현되어야 합니다. Pretendard Variable + Poppins 조합이 한·영 혼용 환경에서도 안정적인 가독성과 시각적 정렬을 제공합니다. Display From Idea to Flow Heading 1 AX 가 만드는 새로운 경험 Heading 3 설계 원칙과 흐름 Body "
+    },
+    {
+      "id": 115,
+      "url": "foundation/text.html#anatomy",
+      "group": "Foundation",
+      "page": "Text",
+      "title": "Anatomy",
+      "section": "Anatomy",
+      "text": "Display → Heading → Body → Label → Caption 다섯 단계 위계 안에 9개 스케일이 정의됩니다. 각 단계는 명확한 사이즈·letter-spacing 으로 시각적 구분을 만들며, 같은 단계는 항상 같은 의미로 사용됩니다. H1 · 600 Heading H3 · 600 Subheading Body · 400 본문 텍스트가 여기 들어갑니다. Caption META · 11 / 0.34 Display 72"
+    },
+    {
+      "id": 116,
+      "url": "foundation/text.html#usage",
+      "group": "Foundation",
+      "page": "Text",
+      "title": "Usage",
+      "section": "Usage",
+      "text": ""
+    },
+    {
+      "id": 117,
+      "url": "foundation/text.html#usage",
+      "group": "Foundation",
+      "page": "Text",
+      "title": "Mixed Script",
+      "section": "Mixed Script",
+      "text": "사용자와 AI Agent 가 함께 작업하는 AX UI 는 Pretendard Variable 로 한·영 혼용 환경에서도 같은 베이스라인을 유지합니다. 한글과 영문이 섞인 문장에서도 동일한 위계와 베이스라인이 유지되도록 Pretendard Variable 을 본문 전역에 적용합니다. 디스플레이 영역만 Poppins 로 분리하여 영문 헤더의 무게감을 표현합니다."
+    },
+    {
+      "id": 118,
+      "url": "foundation/text.html#usage",
+      "group": "Foundation",
+      "page": "Text",
+      "title": "AI Response Streaming",
+      "section": "AI Response Streaming",
+      "text": "사용자 의도를 파악한 다음 적절한 도구를 호출하고 결과를 정리하여 응답합니다 AI 응답은 글자 단위로 점진적으로 채워지는 streaming 표현이 기본입니다. 사용자에게 진행감을 전달하고 응답이 멈춘 듯한 느낌을 방지합니다. Body M 사이즈와 1.5 line-height 가 긴 응답을 읽기에 가장 적합합니다."
+    },
+    {
+      "id": 119,
+      "url": "foundation/text.html#how-to-use",
+      "group": "Foundation",
+      "page": "Text",
+      "title": "How to use",
+      "section": "How to use",
+      "text": "H1 스케일 단계 사용 Body 본문은 Body M 으로 일관되게. Do 위계에 맞는 스케일 단계만 사용합니다. 본문은 Body M, 제목은 Heading 1-3. 19px ← 비표준 사이즈 13px ← 스케일 외 값 Don't 강조를 위해 임의로 폰트 크기·굵기를 변경하지 않습니다. 스케일 외 값은 시스템 일관성을 해칩니다."
+    },
+    {
+      "id": 120,
+      "url": "get-started/ax-template.html",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Agentic",
+      "section": "",
+      "text": "사용자가 AI를 명확한 상호작용 대상으로 인식하고, 자연어로 질문하거나 지시하며 결과를 얻는 유형입니다. 대화, 후속 요청, 결과 생성, 산출물 편집처럼 에이전트와의 상호작용이 경험의 중심에 있습니다."
+    },
+    {
+      "id": 121,
+      "url": "get-started/ax-template.html#agentic",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Global Chat Assistant",
+      "section": "Global Chat Assistant",
+      "text": "Global Chat Assistant는 사용자가 서비스 전역에서 AI를 호출해 질문하거나 요청할 수 있는 공통 대화형 인터페이스입니다. 특정 화면이나 기능에만 종속되지 않고, 사용자가 필요할 때 언제든 AI에게 자연어로 질문하거나 업무 요청을 할 수 있습니다. 답변은 단순 텍스트일 수도 있고, 생성된 결과물, 현재 화면 맥락을 반영한 응답, 후속 액션으로 이어질 수도 있습니다. 이 패턴은 AI를 제품 전체에서 접근 가능한 공"
+    },
+    {
+      "id": 122,
+      "url": "get-started/ax-template.html#agentic",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Dedicated Agent Workspace",
+      "section": "Dedicated Agent Workspace",
+      "text": "Dedicated Agent Workspace는 사용자가 특정 작업이나 산출물을 완성하기 위해 별도의 AI 작업공간에 진입하는 UI 패턴입니다. 사용자는 단순히 AI에게 질문하고 답변을 받는 것이 아니라, 목표·조건·참조 정보 등을 바탕으로 AI와 함께 문서, 계획, 분석 결과, 리포트, 코드, 디자인 산출물 등을 만들어갑니다. 대화는 작업을 지시하고 조정하는 수단이며, 화면의 중심은 최종 결과물이나 작업 진행 과정에 있습니다"
+    },
+    {
+      "id": 123,
+      "url": "get-started/ax-template.html",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Contextual",
+      "section": "",
+      "text": "사용자의 주 작업 화면은 유지되고, 에이전트는 현재 문서, 데이터, 입력 필드, 선택 객체를 기준으로 도움을 제공합니다. AI와 상호작용할 수 있지만, 경험의 중심은 에이전트 자체가 아니라 사용자가 보고 있는 화면과 작업 맥락입니다."
+    },
+    {
+      "id": 124,
+      "url": "get-started/ax-template.html#contextual",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Contextual Agent Panel",
+      "section": "Contextual Agent Panel",
+      "text": "Contextual Agent Panel은 사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 AI와 상호작용할 수 있게 하는 UI 패턴입니다. AI는 독립된 전역 챗처럼 동작하기보다, 사용자가 보고 있는 화면·선택 객체·문서·데이터를 기준으로 도움을 제공합니다. 사용자는 현재 작업 화면을 벗어나지 않고 AI에게 질문하거나, 요약·분석·추천·다음 액션을 요청하고, 필요한 경우 결과를 원래 화면에 반영할 수 있습니다."
+    },
+    {
+      "id": 125,
+      "url": "get-started/ax-template.html#contextual",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Embedded AI Elements",
+      "section": "Embedded AI Elements",
+      "text": "Embedded AI Elements는 사용자가 현재 작업 중인 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받을 수 있게 하는 경량형 UI 패턴입니다. AI가 독립된 대화 상대처럼 전면에 등장하기보다, 사용자의 작업 맥락 안에 작게 삽입되어 추천, 수정, 요약, 설명, 인사이트를 제공합니다. 사용자는 현재 화면 흐름을 유지한 채 필요한 순간에만 AI의 도움을 받고, 결과를 바로 적용하거나 닫"
+    },
+    {
+      "id": 126,
+      "url": "get-started/ax-template.html",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Background",
+      "section": "",
+      "text": "사용자는 에이전트와 계속 대화하지 않고, 작업을 실행한 뒤 진행 상태, 완료 여부, 실패 사유, 결과 진입점을 확인합니다. AI는 화면 전면에서 대화 상대처럼 존재하기보다, 백그라운드에서 작업을 수행하는 실행 주체에 가깝습니다."
+    },
+    {
+      "id": 127,
+      "url": "get-started/ax-template.html#background",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Background Task Monitor",
+      "section": "Background Task Monitor",
+      "text": "Background Task Monitor는 사용자가 AI 작업을 실행한 뒤, 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 사용자는 AI가 작업을 수행하는 동안 계속 대화로 리드하지 않아도 되며, 진행률·단계·대기열·완료 여부·실패 사유를 확인합니다. 작업이 끝나면 사용자는 결과를 열어보거나, 실패한 작업을 재시도하거나, 완료된 결과를 다음 업무로 연결할 수 있습니다. 이 패턴은 AI 작업"
+    },
+    {
+      "id": 128,
+      "url": "get-started/ax-template.html",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Builder",
+      "section": "",
+      "text": "사용자가 AI에게 단순히 요청하는 것이 아니라, AI가 어떤 역할을 수행할지, 어떤 도구와 권한을 사용할지, 어떤 조건과 단계로 실행될지를 설정하는 유형입니다. 생성, 설정, 테스트, 배포 흐름이 중심입니다."
+    },
+    {
+      "id": 129,
+      "url": "get-started/ax-template.html#builder",
+      "group": "Overview",
+      "page": "AX Template Overview",
+      "title": "Agent/Workflow Builder",
+      "section": "Agent/Workflow Builder",
+      "text": "Builder는 사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 사용자는 AI에게 단순히 질문하는 것이 아니라, 에이전트의 역할, 지시문, 지식 범위, 도구, 권한을 설정하거나, 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다. 이 패턴에서 AI는 즉시 응답하는 대화 상대라기보다, 사용자가 정의한 규칙과 흐름에 따라 실행되는 구성 대상입니다. 이 패턴은 제품 안에서 사용자가"
+    },
+    {
+      "id": 130,
+      "url": "get-started/faq.html",
+      "group": "Overview",
+      "page": "FAQ",
+      "title": "FAQ",
+      "section": "",
+      "text": "MIDAS AX System에 대해 자주 묻는 질문을 모았습니다."
+    },
+    {
+      "id": 131,
+      "url": "get-started/index.html",
+      "group": "Overview",
+      "page": "About",
+      "title": "About",
+      "section": "",
+      "text": "AX UI Templates는 AI 에이전트가 제품 안에서 사용자와 만나는 방식을 표준화한 피그마 기반 UI 템플릿 가이드입니다."
+    },
+    {
+      "id": 132,
+      "url": "get-started/index.html#about",
+      "group": "Overview",
+      "page": "About",
+      "title": "만든 사람",
+      "section": "만든 사람",
+      "text": "이 템플릿은 2026년 5~6월, TGC 멤버들이 AX 기능 설계와 제품 적용 과정에서 반복적으로 등장하는 UI 구조를 정리하며 만들었습니다. 여러 제품에서 공통적으로 필요한 AI 상호작용 패턴을 모으고, 피그마에서 바로 활용할 수 있는 형태로 구성하는 것을 목표로 했습니다. 이후 실제 제품 적용 사례와 신규 요구사항을 반영해 지속적으로 업데이트될 예정입니다. 이선영 김성진 이은비 나수민 김준성 양희윤"
+    },
+    {
+      "id": 133,
+      "url": "get-started/index.html#about",
+      "group": "Overview",
+      "page": "About",
+      "title": "개요",
+      "section": "개요",
+      "text": "P1 Agent Kit은 AI 에이전트가 제품 안에서 사용자와 만나는 방식을 정리한 피그마 기반 UI 템플릿 가이드입니다. AI 기능은 제품과 기능의 성격에 따라 다양한 모습으로 나타납니다. 어떤 경우에는 사용자가 에이전트와 직접 대화하며 결과를 만들고, 어떤 경우에는 현재 화면 안에서 필요한 순간에만 도움을 받습니다. 또 어떤 경우에는 사용자가 작업을 실행한 뒤, 에이전트가 백그라운드에서 처리하고 상태만 확인하면 충분합니다."
+    },
+    {
+      "id": 134,
+      "url": "get-started/index.html#about",
+      "group": "Overview",
+      "page": "About",
+      "title": "목적",
+      "section": "목적",
+      "text": "P1 Agent Kit은 기능과 제품에 따라 파편화되기 쉬운 AX 경험을 표준화하기 위한 리소스입니다. 새로운 AX 기능을 만들 때마다 화면 구조와 상호작용 방식을 처음부터 다시 고민하지 않고, 요구사항에 맞는 템플릿을 선택해 빠르게 초안을 구성할 수 있도록 돕습니다. 각 템플릿은 언제 사용해야 하는지, 언제 사용하지 않아야 하는지, 기본 레이아웃은 어떻게 구성되는지, 어떤 하위 UI 분기가 가능한지를 함께 제공합니다. 이를 "
+    },
+    {
+      "id": 135,
+      "url": "get-started/index.html#about",
+      "group": "Overview",
+      "page": "About",
+      "title": "사용 방법",
+      "section": "사용 방법",
+      "text": "피그마 파일에 P1 Agent Kit을 디자인 시스템으로 연결합니다. 이후 만들고자 하는 AX 기능의 성격에 맞는 템플릿 페이지로 이동해, 적합한 컴포넌트 템플릿을 Workspace로 드래그 앤 드롭하여 사용합니다. 각 템플릿은 기본 레이아웃과 주요 UI 블록을 포함하고 있습니다. 사용자는 내부 요소를 swap하거나 옵션을 변경하여 필요한 구성으로 커스터마이징할 수 있습니다. 예를 들어 채팅 입력 영역, 응답 메시지, 컨텍스트"
+    },
+    {
+      "id": 136,
+      "url": "index.html",
+      "group": "Home",
+      "page": "MIDAS AX Design System",
+      "title": "MIDAS AX Design System Design Once. Scale with AX.",
+      "section": "",
+      "text": "사람과 AX가 함께 활용할 수 있도록 패턴, 정책, 구조까지 연결된 디자인 시스템을 구축합니다. 피그마 링크 바로가기 GitHub 바로가기"
+    },
+    {
+      "id": 137,
+      "url": "index.html",
+      "group": "Home",
+      "page": "MIDAS AX Design System",
+      "title": "About",
+      "section": "About",
+      "text": "P1 Agent Kit이 무엇이고 어떻게 쓰는지 — 시스템 소개·사용 가이드·FAQ를 확인하세요."
+    },
+    {
+      "id": 138,
+      "url": "index.html",
+      "group": "Home",
+      "page": "MIDAS AX Design System",
+      "title": "Pattern",
+      "section": "Pattern",
+      "text": "Agentic · Contextual · Background · Builder — AX 경험별 UI 템플릿 패턴을 살펴보세요."
+    },
+    {
+      "id": 139,
+      "url": "index.html",
+      "group": "Home",
+      "page": "MIDAS AX Design System",
+      "title": "Resource",
+      "section": "Resource",
+      "text": "디자인 파일·토큰·문서 등 실무에 바로 활용하는 AX 리소스를 모았습니다."
+    },
+    {
+      "id": 140,
+      "url": "pattern/agent-workflow-builder.html",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Agent/Workflow Builder",
+      "section": "",
+      "text": "사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 역할·지시문·지식·도구·권한을 설정하거나 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다. 피그마에서 보기 ↗"
+    },
+    {
+      "id": 141,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Overview",
+      "section": "Overview",
+      "text": "Builder는 사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 사용자는 AI에게 단순히 질문하는 것이 아니라, 에이전트의 역할, 지시문, 지식 범위, 도구, 권한을 설정하거나, 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다. 이 패턴에서 AI는 즉시 응답하는 대화 상대라기보다, 사용자가 정의한 규칙과 흐름에 따라 실행되는 구성 대상입니다. 이 패턴은 제품 안에서 사용자가"
+    },
+    {
+      "id": 142,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "이 분류를 선택하는 경우",
+      "section": "이 분류를 선택하는 경우",
+      "text": "선택 조건 설명 사용자가 에이전트의 역할을 직접 설정해야 한다 특정 업무를 수행하는 AI의 이름, 목적, 역할, 응답 방식, 지식 범위를 사용자가 정의해야 하는 경우 지시문과 동작 규칙을 관리해야 한다 에이전트가 어떤 방식으로 답변하고, 어떤 한계를 지켜야 하는지 명시해야 하는 경우 도구와 권한을 연결해야 한다 에이전트가 사용할 수 있는 API, 데이터, 앱, 기능, 권한 범위를 사용자가 설정해야 하는 경우 자동화 흐름을 구성"
+    },
+    {
+      "id": 143,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "이 템플릿을 사용하지 않는 경우",
+      "section": "이 템플릿을 사용하지 않는 경우",
+      "text": "선택하지 않는 경우 대신 고려할 패턴 사용자가 AI와 직접 대화하며 즉시 응답을 받아야 한다 Global Chat Assistant 특정 산출물을 작업공간 안에서 AI와 함께 편집해야 한다 Dedicated Agent Workspace 현재 화면을 유지한 채 AI 패널에서 도움을 받아야 한다 Contextual Agent Panel AI 작업이 백그라운드에서 실행되고 상태만 확인하면 된다 Background Task Monit"
+    },
+    {
+      "id": 144,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Key Characteristics",
+      "section": "Key Characteristics",
+      "text": "구분 내용 진입 방식 새 에이전트 생성, 새 워크플로우 생성, 템플릿 선택, 기존 설정 편집 입력 방식 역할, 지시문, 지식 범위, 도구, 권한, 트리거, 조건, 액션, 실패 처리 응답 방식 구성된 에이전트, 자동화 플로우, 테스트 결과, 실행 로그, 오류 안내 컨텍스트 활용 연결된 데이터, 앱 권한, 업무 도구, 사용자 설정, 실행 기록 사용자 흐름 생성 → 설정 → 테스트 → 수정 → 저장·배포·활성화 주요 가치 반복 업무"
+    },
+    {
+      "id": 145,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "주요 예시 레퍼런스",
+      "section": "주요 예시 레퍼런스",
+      "text": "실제 제품에서 Agent/Workflow Builder 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
+    },
+    {
+      "id": 146,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Sana Agent",
+      "section": "Sana Agent",
+      "text": "문서 안에서 텍스트를 선택하고 Ask AI를 실행하거나 /AI를 입력해 요약, 번역, 톤 변경, 액션 아이템 추출 등을 수행할 수 있습니다."
+    },
+    {
+      "id": 147,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Sana Workflow",
+      "section": "Sana Workflow",
+      "text": "문서 안에서 텍스트를 선택하고 Ask AI를 실행하거나 /AI를 입력해 요약, 번역, 톤 변경, 액션 아이템 추출 등을 수행할 수 있습니다."
+    },
+    {
+      "id": 148,
+      "url": "pattern/agent-workflow-builder.html#overview",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "OpenAI Agent Builder",
+      "section": "OpenAI Agent Builder",
+      "text": "사용자가 글을 작성하는 입력 환경 안에서 톤, 명확성, 문장 개선 제안을 인라인으로 제공합니다. Grammarly는 여러 작성 환경에서 실시간 제안과 문단 단위 재작성 기능을 제공한다고 설명합니다."
+    },
+    {
+      "id": 149,
+      "url": "pattern/agent-workflow-builder.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Basic Layout Structure",
+      "section": "Basic Layout Structure",
+      "text": "Builder는 사용자가 에이전트나 워크플로우의 동작 방식을 구성하고 검증할 수 있도록, 설정 영역과 테스트 영역을 함께 제공하는 구조를 가집니다. 하위 분기에 따라 Form-based Builder, Workflow Builder, Modal Step Builder, Node Graph Builder로 나뉘지만, 기본적으로는 Builder Header, Configuration Area, Tool / Permission Ar"
+    },
+    {
+      "id": 150,
+      "url": "pattern/agent-workflow-builder.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "레이아웃 원칙",
+      "section": "레이아웃 원칙",
+      "text": "원칙 설명 설정 구조화 복잡한 설정을 역할, 지시문, 도구, 권한, 트리거, 액션 등 이해 가능한 단위로 나눕니다. 테스트 가능성 사용자가 저장하거나 배포하기 전에 실제 동작을 미리 확인할 수 있어야 합니다. 권한 투명성 에이전트나 워크플로우가 어떤 데이터와 도구에 접근하는지 명확히 보여줍니다. 점진적 설정 처음부터 모든 설정을 요구하지 않고, 기본값과 템플릿을 통해 빠르게 시작할 수 있어야 합니다. 오류 예방 필수 설정 누락"
+    },
+    {
+      "id": 151,
+      "url": "pattern/agent-workflow-builder.html#variants",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Builder는 사용자가 무엇을 구성하는지, 그리고 구성 방식이 폼 중심인지 흐름 중심인지에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Form-based Builder 에이전트 역할, 지시문, 지식, 도구, 권한을 폼으로 설정 에이전트의 동작 규칙과 설정값을 구조화된 항목으로 입력해야 할 때 Workflow Builder (Step-based) 트리거, 조건, 액션을 순차 단계로 구성 업무 흐름이 선형 단"
+    },
+    {
+      "id": 152,
+      "url": "pattern/agent-workflow-builder.html#variants",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Form-based Builder",
+      "section": "Form-based Builder",
+      "text": "에이전트의 역할, 지시문, 지식 범위, 도구, 권한을 구조화된 폼으로 설정하는 UI입니다."
+    },
+    {
+      "id": 153,
+      "url": "pattern/agent-workflow-builder.html#variants",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Workflow Builder (Step-based)",
+      "section": "Workflow Builder (Step-based)",
+      "text": "트리거, 조건, 액션을 순차적인 단계로 구성하는 UI입니다."
+    },
+    {
+      "id": 154,
+      "url": "pattern/agent-workflow-builder.html#variants",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Workflow Builder (Step-based, Modal Type)",
+      "section": "Workflow Builder (Step-based, Modal Type)",
+      "text": "워크플로우의 각 단계를 클릭하면 모달에서 세부 설정을 입력하는 UI입니다."
+    },
+    {
+      "id": 155,
+      "url": "pattern/agent-workflow-builder.html#variants",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Workflow Builder (Node Graph Builder)",
+      "section": "Workflow Builder (Node Graph Builder)",
+      "text": "트리거, 조건, 액션, 도구, 분기, 병렬 흐름을 노드와 연결선으로 구성하는 UI입니다."
+    },
+    {
+      "id": 156,
+      "url": "pattern/agent-workflow-builder.html#interaction",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Interaction",
+      "section": "Interaction",
+      "text": ""
+    },
+    {
+      "id": 157,
+      "url": "pattern/agent-workflow-builder.html#interaction",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Trigger - Builder Start",
+      "section": "Trigger - Builder Start",
+      "text": "사용자가 새 에이전트 만들기, 새 워크플로우 만들기, 템플릿 선택, 기존 설정 편집을 통해 Builder에 진입합니다. 전역 혹은 특정 기능 페이지 내의 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다. 에이전트 혹은 워크플로우 빌더는 호출된 포인트에 따라 다양한 형태로 나타날 수 있습니다. (에이전트 내 하위 기능으로 존재 or 별도의 독립적 기능 구성 가능)"
+    },
+    {
+      "id": 158,
+      "url": "pattern/agent-workflow-builder.html#interaction",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Input - Configuration",
+      "section": "Input - Configuration",
+      "text": "사용자는 역할, 지시문, 지식 범위, 도구, 권한, 트리거, 조건, 액션, 실패 처리 등 실행에 필요한 설정값을 입력합니다. 에이전트, 워크플로우 동작에 필요한 프롬프트, 권한 등 복합적 정보를 폼 필드의 구성으로 입력 받습니다. 노드 구성의 경우, 각 블록별 필요한 정보와 조건 등을 폼 필드의 구성으로 입력 받습니다."
+    },
+    {
+      "id": 159,
+      "url": "pattern/agent-workflow-builder.html#interaction",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Output - Configured Agent or Workflow",
+      "section": "Output - Configured Agent or Workflow",
+      "text": "시스템은 설정된 에이전트 또는 워크플로우 구조를 생성하고, 테스트 가능한 형태로 보여줍니다. 입력된 내용을 바탕으로 구성한 항목을 테스트런할 수 있는 미리보기 영역이 제공될 수 있습니다."
+    },
+    {
+      "id": 160,
+      "url": "pattern/agent-workflow-builder.html#interaction",
+      "group": "Pattern",
+      "page": "Agent/Workflow Builder",
+      "title": "Follow up - Test and Publish",
+      "section": "Follow up - Test and Publish",
+      "text": "사용자는 테스트 실행으로 동작을 검증하고, 설정을 수정한 뒤 저장·게시·활성화·복제할 수 있습니다. 테스트로 동작 검증 후 사용자는 에이전트나 워크플로우를 게시할 수 있습니다. 다른 사람이 사용할 수 있는 에이전트나 워크플로우라면, 접근 가능한 갤러리에 생성한 항목이 추가됩니다."
+    },
+    {
+      "id": 161,
+      "url": "pattern/background-task-monitor.html",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Background Task Monitor",
+      "section": "",
+      "text": "사용자가 실행한 AI 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 진행률·단계·대기열·완료·실패를 추적하고, 완료된 결과를 열거나 실패한 작업을 재시도할 수 있습니다. 피그마에서 보기 ↗"
+    },
+    {
+      "id": 162,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Overview",
+      "section": "Overview",
+      "text": "Background Task Monitor는 사용자가 AI 작업을 실행한 뒤, 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 사용자는 AI가 작업을 수행하는 동안 계속 대화로 리드하지 않아도 되며, 진행률·단계·대기열·완료 여부·실패 사유를 확인합니다. 작업이 끝나면 사용자는 결과를 열어보거나, 실패한 작업을 재시도하거나, 완료된 결과를 다음 업무로 연결할 수 있습니다. 이 패턴은 AI 작업"
+    },
+    {
+      "id": 163,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "이 분류를 선택하는 경우",
+      "section": "이 분류를 선택하는 경우",
+      "text": "선택 조건 설명 AI 작업이 즉시 완료되지 않는다 분석, 생성, 변환, 일괄 처리처럼 시간이 걸리는 작업을 사용자가 기다려야 하는 경우 사용자가 작업 진행 상태를 알아야 한다 작업이 진행 중인지, 완료됐는지, 실패했는지 사용자가 명확히 확인해야 하는 경우 사용자가 다른 일을 하면서 작업을 맡길 수 있어야 한다 AI 작업을 실행한 뒤 현재 화면을 떠나도 작업이 계속 진행되어야 하는 경우 여러 AI 작업을 동시에 관리해야 한다 여"
+    },
+    {
+      "id": 164,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "이 템플릿을 사용하지 않는 경우",
+      "section": "이 템플릿을 사용하지 않는 경우",
+      "text": "선택하지 않는 경우 대신 고려할 패턴 사용자가 AI와 직접 대화하며 즉시 응답을 받아야 한다 Global Chat Assistant 특정 산출물을 작업공간 안에서 AI와 함께 편집해야 한다 Dedicated Agent Workspace 현재 화면을 유지한 채 AI 패널에서 도움을 받아야 한다 Contextual Agent Panel 사용자가 자동화 흐름이나 에이전트 자체를 구성해야 한다 Agent / Workflow Build"
+    },
+    {
+      "id": 165,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Key Characteristics",
+      "section": "Key Characteristics",
+      "text": "구분 내용 진입 방식 AI 작업 실행 버튼, 자동화 실행, 일괄 처리 요청, 백그라운드 생성 요청 입력 방식 작업 대상, 실행 조건, 처리 범위, 우선순위, 참조 데이터 응답 방식 진행률, 단계 상태, 대기열, 완료 알림, 실패 사유, 결과 링크 컨텍스트 활용 실행한 작업 정보, 대상 데이터, 요청 조건, 작업 로그, 이전 실행 기록 사용자 흐름 작업 실행 → 진행 상태 확인 → 완료 또는 실패 확인 → 결과 보기 또는 재시도"
+    },
+    {
+      "id": 166,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "주요 예시 레퍼런스",
+      "section": "주요 예시 레퍼런스",
+      "text": "실제 제품에서 Background Task Monitor 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
+    },
+    {
+      "id": 167,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Zapier Zap History",
+      "section": "Zapier Zap History",
+      "text": "Zapier는 AI 에이전트 UI라기보다 자동화 워크플로우 도구에 가깝지만, 실행·변경 이력을 추적하는 구조를 참고하기 좋습니다. Zap이 게시되거나 켜지는 등 중요한 변경이 시간순으로 쌓이고, 사용자는 특정 기간, 사용자, 변경 유형을 기준으로 히스토리를 확인할 수 있습니다. 백그라운드 작업이나 자동화 실행 결과를 사용자가 나중에 확인하고, 문제 발생 시 이전 상태를 추적해야 하는 경우에 유용한 구조입니다. Zapier는 Z"
+    },
+    {
+      "id": 168,
+      "url": "pattern/background-task-monitor.html#overview",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "GitHub Actions",
+      "section": "GitHub Actions",
+      "text": "GitHub Actions도 AI 에이전트 UI는 아니지만, 다단계 백그라운드 작업의 진행 상태를 보여주는 대표적인 구조입니다. Build, Test, Publish 같은 Job과 Step이 순차적으로 실행되고, 각 단계는 성공, 진행 중, 대기, 실패 상태를 가집니다. 특히 배포 단계에서 승인 대기 상태를 표시하고, 사용자가 승인하거나 거절할 수 있는 구조는 장시간 실행 작업의 상태 모니터링과 개입 지점 설계에 참고하기 좋습"
+    },
+    {
+      "id": 169,
+      "url": "pattern/background-task-monitor.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Basic Layout Structure",
+      "section": "Basic Layout Structure",
+      "text": "Background Task Monitor는 사용자가 실행한 AI 작업의 진행 상태와 결과 진입점을 보여주는 구조를 가집니다. 하위 분기에 따라 Persistent Progress Panel, Task Queue, Completion Notification으로 나뉘지만, 기본적으로는 Task Entry Point, Task Status Area, Progress / Step Area, Result Entry, Recovery "
+    },
+    {
+      "id": 170,
+      "url": "pattern/background-task-monitor.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "레이아웃 원칙",
+      "section": "레이아웃 원칙",
+      "text": "원칙 설명 상태 명확성 작업이 대기 중인지, 진행 중인지, 완료됐는지, 실패했는지 명확히 구분합니다. 비동기성 인지 사용자가 화면을 떠나도 작업이 계속 진행된다는 점을 인지할 수 있어야 합니다. 결과 진입성 완료 후 결과를 열거나 다음 단계로 이동할 수 있는 명확한 진입점을 제공합니다. 실패 복구성 실패 시 사유, 재시도, 조건 수정, 취소 등 복구 경로를 제공합니다. 방해 최소화 진행 상태를 알리되, 사용자의 현재 작업 흐름"
+    },
+    {
+      "id": 171,
+      "url": "pattern/background-task-monitor.html#variants",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Background Task Monitor는 작업 상태를 얼마나 지속적으로 보여줘야 하는지, 여러 작업을 관리해야 하는지, 완료 후 얼마나 강하게 알릴지에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Persistent Progress Panel 화면 안에 작업 진행 상태를 지속적으로 보여주는 UI 사용자가 작업이 진행 중임을 계속 인지해야 할 때 Task Queue 여러 AI 작업의 대기, 진행, 완료, 실"
+    },
+    {
+      "id": 172,
+      "url": "pattern/background-task-monitor.html#variants",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Persistent Progress Panel",
+      "section": "Persistent Progress Panel",
+      "text": "AI 작업이 진행되는 동안 화면 안에 지속적으로 상태를 보여주는 UI입니다."
+    },
+    {
+      "id": 173,
+      "url": "pattern/background-task-monitor.html#variants",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Task Queue",
+      "section": "Task Queue",
+      "text": "여러 AI 작업이 동시에 또는 순차적으로 진행될 때, 작업 목록과 개별 상태를 관리하는 UI입니다."
+    },
+    {
+      "id": 174,
+      "url": "pattern/background-task-monitor.html#variants",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Completion Notification",
+      "section": "Completion Notification",
+      "text": "AI 작업이 완료되었을 때, 사용자에게 짧은 알림과 결과 진입점을 제공하는 UI입니다."
+    },
+    {
+      "id": 175,
+      "url": "pattern/background-task-monitor.html#interaction",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Interaction",
+      "section": "Interaction",
+      "text": ""
+    },
+    {
+      "id": 176,
+      "url": "pattern/background-task-monitor.html#interaction",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Trigger - Background Task Start",
+      "section": "Trigger - Background Task Start",
+      "text": "사용자가 AI 작업 실행, 일괄 처리, 자동화 시작, 생성 요청 등을 통해 백그라운드 작업을 시작합니다. 전역 혹은 특정 기능 페이지 내의 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다."
+    },
+    {
+      "id": 177,
+      "url": "pattern/background-task-monitor.html#interaction",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Input - Task Scope",
+      "section": "Input - Task Scope",
+      "text": "사용자는 작업 대상, 처리 범위, 실행 조건, 참고 데이터, 결과 형식을 지정합니다. 정보는 사전에 입력되어 있거나, 자연어로 사용자가 요청하거나, 복합 필드의 구성 등 다양한 형태로 입력 받습니다."
+    },
+    {
+      "id": 178,
+      "url": "pattern/background-task-monitor.html#interaction",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Output - Task Status",
+      "section": "Output - Task Status",
+      "text": "AI는 진행 중, 대기 중, 완료, 실패, 취소 등 작업 상태와 진행률 또는 단계 정보를 제공합니다. 요청 이후 백그라운드로 동작하는 경우, 처리 상태와 보조 정보를 제공합니다."
+    },
+    {
+      "id": 179,
+      "url": "pattern/background-task-monitor.html#interaction",
+      "group": "Pattern",
+      "page": "Background Task Monitor",
+      "title": "Follow up - Open Result or Recover",
+      "section": "Follow up - Open Result or Recover",
+      "text": "사용자는 완료된 결과를 열거나, 실패한 작업을 재시도하거나, 작업을 취소하고 조건을 수정할 수 있습니다. 완료, 실패, 권한 확인 등 상태에 대한 후속 조치로 결과 확인, 재시도 등 추가적인 액션을 수행할 수 있습니다."
+    },
+    {
+      "id": 180,
+      "url": "pattern/contextual-agent-panel.html",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Contextual Agent Panel",
+      "section": "",
+      "text": "사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 화면 맥락을 기준으로 AI와 상호작용하는 UI 패턴입니다. 보고 있는 화면·선택 객체·문서·데이터를 기준으로 질문하고, 필요한 경우 결과를 현재 화면에 반영합니다. 피그마에서 보기 ↗"
+    },
+    {
+      "id": 181,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Overview",
+      "section": "Overview",
+      "text": "Contextual Agent Panel은 사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 AI와 상호작용할 수 있게 하는 UI 패턴입니다. AI는 독립된 전역 챗처럼 동작하기보다, 사용자가 보고 있는 화면·선택 객체·문서·데이터를 기준으로 도움을 제공합니다. 사용자는 현재 작업 화면을 벗어나지 않고 AI에게 질문하거나, 요약·분석·추천·다음 액션을 요청하고, 필요한 경우 결과를 원래 화면에 반영할 수 있습니다."
+    },
+    {
+      "id": 182,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "이 분류를 선택하는 경우",
+      "section": "이 분류를 선택하는 경우",
+      "text": "선택 조건 설명 현재 화면을 유지해야 한다 별도 챗 화면이나 작업공간으로 이동하지 않고, 현재 화면을 보면서 AI 도움을 받아야 하는 경우 AI가 현재 화면 맥락에 강하게 의존한다 고객 상세, 문서, 목표, 회의록, 데이터 테이블 등 현재 화면의 정보가 AI 응답의 주요 기준이 되는 경우 짧은 제안보다 지속적인 대화가 필요하다 단일 인라인 제안이 아니라, 질문과 후속 요청을 이어가며 도움을 받아야 하는 경우 메인 화면과 AI "
+    },
+    {
+      "id": 183,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "이 템플릿을 사용하지 않는 경우",
+      "section": "이 템플릿을 사용하지 않는 경우",
+      "text": "선택하지 않는 경우 대신 고려할 패턴 서비스 어디서든 공통 AI를 호출하는 전역 챗이 필요하다 Global Chat Assistant 특정 작업이나 산출물을 완성하기 위한 전용 작업공간이 필요하다 Dedicated Agent Workspace 특정 텍스트나 필드 주변에서 짧게 AI 제안을 받으면 된다 Embedded AI Elements AI 작업이 백그라운드에서 실행되고 사용자는 상태만 확인하면 된다 Background Ta"
+    },
+    {
+      "id": 184,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Key Characteristics",
+      "section": "Key Characteristics",
+      "text": "구분 내용 진입 방식 화면 내 AI 버튼, 우측 패널 열기, 선택 객체 기반 호출, 추천 질문, 오버레이 호출 입력 방식 자연어 질문, 현재 화면 기준 요청, 선택 객체 기반 요청, 후속 질문 응답 방식 화면 맥락 기반 요약, 분석, 추천, 설명, 다음 액션, 적용 가능한 제안 컨텍스트 활용 현재 페이지, 선택 객체, 문서, 테이블, 고객 정보, 목표 정보, 회의록 등 사용자 흐름 화면 확인 → AI 패널 호출 → 맥락 기반 "
+    },
+    {
+      "id": 185,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "주요 예시 레퍼런스",
+      "section": "주요 예시 레퍼런스",
+      "text": "실제 제품에서 Contextual Agent Panel 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
+    },
+    {
+      "id": 186,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Atlassian Rovo Chat",
+      "section": "Atlassian Rovo Chat",
+      "text": "Confluence, Jira, Jira Service Management, Jira Product Discovery, Bitbucket 안에서 호출할 수 있는 AI Chat입니다. 현재 사용자가 보고 있는 페이지나 업무 맥락을 유지한 채 우측 패널에서 질문하고, 답변 안에 출처를 표시해 사용자가 원문 근거를 확인할 수 있습니다. 특히 Confluence 문서 옆에서 질문을 던지고, 문서 내용 기반 답변과 citation을 함"
+    },
+    {
+      "id": 187,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Google Workspace Gemini Side Panel",
+      "section": "Google Workspace Gemini Side Panel",
+      "text": "Gmail, Docs, Sheets, Slides, Drive 등 현재 사용 중인 Workspace 앱 안에서 사이드 패널로 호출되어 요약, 분석, 콘텐츠 생성을 지원합니다. 사용자가 앱을 전환하지 않고 현재 문서·메일·파일 맥락을 유지한 채 AI 도움을 받을 수 있다는 점에서 Contextual Agent Panel의 대표 사례로 볼 수 있습니다."
+    },
+    {
+      "id": 188,
+      "url": "pattern/contextual-agent-panel.html#overview",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Microsoft 365 Copilot Chat",
+      "section": "Microsoft 365 Copilot Chat",
+      "text": "Word, Excel, PowerPoint, Outlook, OneNote 같은 Microsoft 365 앱 안에서 문서나 메일 옆에 Copilot Chat을 열어 사용할 수 있습니다. 사용자는 현재 작업 중인 문서·메일·스프레드시트를 보면서 요약, 작성, 분석, 수정 요청을 입력하고, Copilot은 앱 맥락에 맞는 응답과 추천 프롬프트를 제공합니다. Microsoft는 Copilot Chat이 일부 Microsoft 365"
+    },
+    {
+      "id": 189,
+      "url": "pattern/contextual-agent-panel.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Basic Layout Structure",
+      "section": "Basic Layout Structure",
+      "text": "Contextual Agent Panel은 사용자가 현재 화면을 유지하면서 AI 도움을 받을 수 있도록, 메인 화면 옆이나 위에 AI 패널을 배치하는 구조를 가집니다. 하위 분기에 따라 Side Agent Panel 또는 Overlay Panel로 나뉘지만, 기본적으로는 Main Context Area, Panel Entry Point, Agent Panel, Context Binding Area, Action Area로 구성"
+    },
+    {
+      "id": 190,
+      "url": "pattern/contextual-agent-panel.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "레이아웃 원칙",
+      "section": "레이아웃 원칙",
+      "text": "원칙 설명 화면 맥락 보존 AI 패널이 열려도 사용자가 원래 화면의 정보와 작업 흐름을 유지할 수 있어야 합니다. 패널과 본문 역할 분리 메인 화면은 원본 작업 공간, 패널은 AI 보조 공간으로 역할이 명확해야 합니다. 컨텍스트 명확성 AI가 어떤 화면, 객체, 데이터 기준으로 답변하는지 표시해야 합니다. 지속 대화 가능성 사용자가 후속 질문이나 수정 요청을 이어갈 수 있도록 대화 흐름을 유지해야 합니다. 적용 가능성 AI 응"
+    },
+    {
+      "id": 191,
+      "url": "pattern/contextual-agent-panel.html#variants",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Contextual Agent Panel은 AI 패널을 화면에 고정하는지, 임시로 띄우는지에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Side Agent Panel 메인 화면 옆에 고정된 측면 패널로 AI 도움을 제공 사용자가 현재 화면과 AI 응답을 동시에 보며 지속적으로 상호작용해야 할 때 Overlay Panel 현재 화면 위에 임시 레이어로 AI 도움을 제공하는 UI 화면 이동 없이 짧고 집중적인 "
+    },
+    {
+      "id": 192,
+      "url": "pattern/contextual-agent-panel.html#variants",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Side Agent Panel",
+      "section": "Side Agent Panel",
+      "text": "메인 화면을 유지한 채 우측 또는 측면에 AI 패널을 고정해, 현재 화면 맥락을 기준으로 질문과 응답을 이어가는 UI입니다."
+    },
+    {
+      "id": 193,
+      "url": "pattern/contextual-agent-panel.html#variants",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Overlay Panel",
+      "section": "Overlay Panel",
+      "text": "현재 화면 위에 임시 패널을 띄워, 짧고 집중적인 AI 요청을 처리하는 UI입니다."
+    },
+    {
+      "id": 194,
+      "url": "pattern/contextual-agent-panel.html#interaction",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Interaction",
+      "section": "Interaction",
+      "text": ""
+    },
+    {
+      "id": 195,
+      "url": "pattern/contextual-agent-panel.html#interaction",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Trigger - Contextual Panel Call",
+      "section": "Trigger - Contextual Panel Call",
+      "text": "사용자가 현재 화면의 AI 버튼, 선택 객체, 추천 질문, 패널 열기 버튼을 통해 AI 패널을 호출합니다. 특정 기능 페이지 내의 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다. 호출된 AI Assistant는 기존 연속된 사용 흐름을 끊지 않으며 나타납니다. UI는 자연어 기반 상호작용을 기반으로 하며, 기존 기능의 상호작용을 고려한 최소한의 사이즈를 갖습니다."
+    },
+    {
+      "id": 196,
+      "url": "pattern/contextual-agent-panel.html#interaction",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Input - Screen-bound Request",
+      "section": "Input - Screen-bound Request",
+      "text": "사용자는 현재 화면, 선택 객체, 문서, 데이터 맥락을 기준으로 자연어 질문이나 요청을 입력합니다. 사용자는 Composer와 상호작용하여 질문, 요청, 명령, 조건 등을 자연어로 입력합니다."
+    },
+    {
+      "id": 197,
+      "url": "pattern/contextual-agent-panel.html#interaction",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Output - Contextual Response",
+      "section": "Output - Contextual Response",
+      "text": "AI는 현재 화면 맥락에 기반한 요약, 설명, 분석, 추천, 다음 액션을 패널 안에 제공합니다. 사용자의 요청사항에 따라 대화 기반의 응답을 제공합니다."
+    },
+    {
+      "id": 198,
+      "url": "pattern/contextual-agent-panel.html#interaction",
+      "group": "Pattern",
+      "page": "Contextual Agent Panel",
+      "title": "Follow up - Apply or Continue",
+      "section": "Follow up - Apply or Continue",
+      "text": "사용자는 AI 응답을 현재 화면에 적용하거나, 관련 화면으로 이동하거나, 후속 질문을 이어갈 수 있습니다. 사용자가 자연어로 후속 질문을 요청할 수 있습니다. 후속 요청에 대한 자연어 응답을 전달하며, 추가적으로 기능에 따라 기존 페이지의 정보 추가/변경/삭제 등의 액션을 수행할 수 있습니다."
+    },
+    {
+      "id": 199,
+      "url": "pattern/dedicated-agent-workspace.html",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Dedicated Agent Workspace",
+      "section": "",
+      "text": "사용자가 특정 작업이나 산출물을 완성하기 위해 진입하는 전용 AI 작업공간입니다. 목표·조건·참조 정보를 바탕으로 AI와 함께 문서, 계획, 분석 결과, 코드 같은 결과물을 만들고 편집합니다. 피그마에서 보기 ↗"
+    },
+    {
+      "id": 200,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Overview",
+      "section": "Overview",
+      "text": "Dedicated Agent Workspace는 사용자가 특정 작업이나 산출물을 완성하기 위해 별도의 AI 작업공간에 진입하는 UI 패턴입니다. 사용자는 단순히 AI에게 질문하고 답변을 받는 것이 아니라, 목표·조건·참조 정보 등을 바탕으로 AI와 함께 문서, 계획, 분석 결과, 리포트, 코드, 디자인 산출물 등을 만들어갑니다. 대화는 작업을 지시하고 조정하는 수단이며, 화면의 중심은 최종 결과물이나 작업 진행 과정에 있습니다"
+    },
+    {
+      "id": 201,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "이 분류를 선택하는 경우",
+      "section": "이 분류를 선택하는 경우",
+      "text": "선택 조건 설명 특정 작업이나 산출물을 완성해야 한다 사용자가 단순 답변이 아니라 문서, 계획, 분석 결과, 리포트처럼 완성된 결과물을 만들어야 하는 경우 작업 시간이 길거나 반복 수정이 필요하다 한 번의 질문과 답변으로 끝나지 않고, 조건 수정, 재생성, 편집, 검토가 반복되는 경우 결과물을 별도 영역에서 보고 다뤄야 한다 AI 응답이 메시지 안에 머무르기보다, 캔버스나 작업 영역에서 확인·편집·저장되어야 하는 경우 작업 맥"
+    },
+    {
+      "id": 202,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "이 템플릿을 사용하지 않는 경우",
+      "section": "이 템플릿을 사용하지 않는 경우",
+      "text": "선택하지 않는 경우 대신 고려할 패턴 서비스 어디서든 가볍게 AI에게 질문하고 답변을 받으면 충분하다 Global Chat Assistant 현재 화면을 유지한 채 측면에서 AI가 보조하면 충분하다 Contextual Agent Panel 특정 텍스트나 필드 주변에서 짧게 AI 제안을 받으면 된다 Embedded AI Elements AI 작업이 백그라운드에서 실행되고 사용자는 상태만 확인하면 된다 Background Task"
+    },
+    {
+      "id": 203,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Key Characteristics",
+      "section": "Key Characteristics",
+      "text": "구분 내용 진입 방식 작업 시작 버튼, 템플릿 선택, 특정 업무 플로우에서 Workspace 진입 입력 방식 목표, 조건, 요구사항, 참조 데이터, 기존 산출물, 추가 지시 응답 방식 문서 초안, 계획안, 분석 리포트, 코드, 구조화된 결과물, 작업 단계 컨텍스트 활용 작업 목표, 이전 대화, 참조 자료, 사용자 편집 내용, 버전 히스토리 사용자 흐름 작업 시작 → 조건 입력 → 결과 생성 → 편집·수정 → 저장·내보내기 주요"
+    },
+    {
+      "id": 204,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "주요 예시 레퍼런스",
+      "section": "주요 예시 레퍼런스",
+      "text": "실제 제품에서 Dedicated Agent Workspace 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
+    },
+    {
+      "id": 205,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Sana.ai",
+      "section": "Sana.ai",
+      "text": "사용자가 채팅으로 업무 요청을 입력하면, AI가 연결된 지식 소스와 업무 데이터를 바탕으로 문서나 리포트 형태의 산출물을 생성합니다. 생성된 결과는 단순 메시지 응답에 머무르지 않고, 별도 문서 영역에서 확인·편집·공유할 수 있습니다. 특히 좌측의 대화 영역과 우측의 문서 캔버스가 함께 배치된 구조는 Split View형 Dedicated Agent Workspace의 좋은 참고 사례입니다. Sana의 Docs는 AI 생성 결"
+    },
+    {
+      "id": 206,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Canva Magic Studio",
+      "section": "Canva Magic Studio",
+      "text": "사용자가 프롬프트와 이미지 같은 입력 자료를 제공하면, AI가 디자인 초안을 생성하고 이를 Canva 편집 화면에서 바로 수정할 수 있습니다. 결과물이 채팅 메시지가 아니라 실제 디자인 캔버스 위의 편집 가능한 산출물로 전환된다는 점에서 Canvas-first Workspace의 대표 사례로 볼 수 있습니다. Canva는 Magic Studio를 Canva 내부에 통합된 AI 기능 묶음으로 소개하며, 브레인스토밍부터 최종 결과"
+    },
+    {
+      "id": 207,
+      "url": "pattern/dedicated-agent-workspace.html#overview",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Lovable",
+      "section": "Lovable",
+      "text": "사용자가 자연어로 앱이나 웹사이트 요구사항을 입력하면, AI가 실제 UI와 코드 기반 결과물을 생성하고 사용자가 이를 계속 수정·복원·배포할 수 있는 작업공간을 제공합니다. 좌측에는 요청과 변경 이력이, 우측에는 생성된 앱 화면이 배치되어 있어 대화와 결과물을 동시에 다루는 구조를 참고하기 좋습니다. Lovable은 AI 기반 플랫폼으로 앱, 웹사이트, 디지털 제품을 빠르게 만들 수 있다고 소개합니다."
+    },
+    {
+      "id": 208,
+      "url": "pattern/dedicated-agent-workspace.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Basic Layout Structure",
+      "section": "Basic Layout Structure",
+      "text": "Dedicated Agent Workspace는 특정 작업을 완성하기 위한 독립적인 작업 화면 구조를 가집니다. 하위 분기에 따라 Split View 또는 Canvas-first Workspace로 나뉘지만, 기본적으로는 Workspace Header, Instruction / Chat Area, Work Canvas, Action Area로 구성됩니다."
+    },
+    {
+      "id": 209,
+      "url": "pattern/dedicated-agent-workspace.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "레이아웃 원칙",
+      "section": "레이아웃 원칙",
+      "text": "원칙 설명 산출물 중심성 화면의 중심은 AI 대화가 아니라 사용자가 완성하려는 결과물이어야 합니다. 작업 지속성 사용자가 작업을 중단했다가 돌아와도 목표, 결과물, 히스토리가 유지되어야 합니다. 편집 가능성 AI가 만든 결과물은 읽기 전용이 아니라 수정, 재생성, 저장, 내보내기가 가능해야 합니다. 맥락 보존 작업 목표, 참조 자료, 이전 대화, 사용자 수정 내용이 작업공간 안에서 유지되어야 합니다."
+    },
+    {
+      "id": 210,
+      "url": "pattern/dedicated-agent-workspace.html#variants",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Dedicated Agent Workspace는 결과물 작업 영역과 대화 영역을 어떻게 배치하는지에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Canvas-first Workspace 결과물 작업 영역을 중심에 두고, 대화나 지시는 보조적으로 배치 사용자의 주 관심이 대화보다 산출물 편집과 완성에 있을 때 Split View 대화 영역과 결과 작업 영역을 나란히 두고 함께 작업 사용자가 AI와 대화하며 결과"
+    },
+    {
+      "id": 211,
+      "url": "pattern/dedicated-agent-workspace.html#variants",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Canvas-first Workspace (Right)",
+      "section": "Canvas-first Workspace (Right)",
+      "text": "결과물 편집과 완성을 중심으로 하고, AI 대화나 지시는 보조 패널 또는 인라인 액션으로 제공되는 UI입니다."
+    },
+    {
+      "id": 212,
+      "url": "pattern/dedicated-agent-workspace.html#variants",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Canvas-first Workspace (Left)",
+      "section": "Canvas-first Workspace (Left)",
+      "text": "결과물 편집과 완성을 중심으로 하고, AI 대화나 지시는 보조 패널 또는 인라인 액션으로 제공되는 UI입니다."
+    },
+    {
+      "id": 213,
+      "url": "pattern/dedicated-agent-workspace.html#variants",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Split View",
+      "section": "Split View",
+      "text": "대화 영역과 결과 작업 영역을 함께 배치하여, 사용자가 AI에게 지시하고 결과물을 동시에 확인하는 UI입니다."
+    },
+    {
+      "id": 214,
+      "url": "pattern/dedicated-agent-workspace.html#interaction",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Interaction",
+      "section": "Interaction",
+      "text": ""
+    },
+    {
+      "id": 215,
+      "url": "pattern/dedicated-agent-workspace.html#interaction",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Trigger - Workspace Entry",
+      "section": "Trigger - Workspace Entry",
+      "text": "사용자가 특정 작업 시작 버튼, 템플릿 선택, 생성 요청, 기존 산출물 편집 버튼 등을 통해 전용 Workspace에 진입합니다. 전역 에이전트를 호출하는 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다. 호출된 AI Assistant는 별도의 전용 공간(새 탭, 새 창 등)에 UI가 구성됩니다. UI는 자연어 기반 상호작용을 기반으로 하되, 산출물의 비중이 높은 2개의 레이어 구조입니다."
+    },
+    {
+      "id": 216,
+      "url": "pattern/dedicated-agent-workspace.html#interaction",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Input - Goal and Constraints",
+      "section": "Input - Goal and Constraints",
+      "text": "사용자는 만들고자 하는 결과물의 목표, 조건, 참고 자료, 원하는 형식, 수정 요청을 입력합니다. 필요에 따라 기존 산출물, 문서, 데이터, 화면 맥락이 함께 전달될 수 있습니다. 사용자는 Composer와 상호작용하여 질문, 요청, 명령, 조건 등을 자연어로 입력합니다."
+    },
+    {
+      "id": 217,
+      "url": "pattern/dedicated-agent-workspace.html#interaction",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Output - Editable Artifact",
+      "section": "Output - Editable Artifact",
+      "text": "AI는 문서, 계획안, 분석 결과, 코드, 표, 리포트처럼 작업 가능한 산출물을 생성하고 Workspace 안에 표시합니다. 사용자의 요청사항에 따라 대화 기반의 응답을 제공합니다. 구조화된 산출물은 캔버스 패널에서 렌더됩니다."
+    },
+    {
+      "id": 218,
+      "url": "pattern/dedicated-agent-workspace.html#interaction",
+      "group": "Pattern",
+      "page": "Dedicated Agent Workspace",
+      "title": "Follow up - Refine and Complete",
+      "section": "Follow up - Refine and Complete",
+      "text": "사용자는 결과물을 직접 편집하거나 AI에게 수정 요청을 하고, 최종 결과를 저장·공유·적용·내보내기 할 수 있습니다. 사용자가 자연어로 후속 질문을 요청할 수 있습니다. 후속 요청에 대한 산출물을 캔버스에서 렌더하며 산출물을 점진적으로 개선합니다. 필요시 액션 버튼을 통해 저장, 공유 등의 추가적인 액션을 수행할 수 있습니다."
+    },
+    {
+      "id": 219,
+      "url": "pattern/embedded-ai-elements.html",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Embedded AI Elements",
+      "section": "",
+      "text": "사용자가 현재 작업 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받는 경량형 UI 패턴입니다. 추천·수정·요약·설명을 작업 맥락 안에 작게 삽입해 제공하고, 결과를 바로 적용하거나 닫을 수 있습니다. 피그마에서 보기 ↗"
+    },
+    {
+      "id": 220,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Overview",
+      "section": "Overview",
+      "text": "Embedded AI Elements는 사용자가 현재 작업 중인 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받을 수 있게 하는 경량형 UI 패턴입니다. AI가 독립된 대화 상대처럼 전면에 등장하기보다, 사용자의 작업 맥락 안에 작게 삽입되어 추천, 수정, 요약, 설명, 인사이트를 제공합니다. 사용자는 현재 화면 흐름을 유지한 채 필요한 순간에만 AI의 도움을 받고, 결과를 바로 적용하거나 닫"
+    },
+    {
+      "id": 221,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "이 분류를 선택하는 경우",
+      "section": "이 분류를 선택하는 경우",
+      "text": "선택 조건 설명 현재 화면의 작업 흐름을 유지해야 한다 사용자가 별도 챗 화면이나 작업공간으로 이동하지 않고, 현재 작업 중인 화면 안에서 AI 도움을 받아야 하는 경우 AI 개입 범위가 작고 명확하다 특정 문장, 필드, 카드, 섹션, 데이터 영역처럼 AI가 도와야 할 대상이 분명한 경우 사용자가 짧은 추천이나 수정안을 받아야 한다 긴 대화보다 요약, 개선, 추천, 설명, 자동 완성처럼 짧고 즉시 적용 가능한 결과가 필요한 경"
+    },
+    {
+      "id": 222,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "이 템플릿을 사용하지 않는 경우",
+      "section": "이 템플릿을 사용하지 않는 경우",
+      "text": "선택하지 않는 경우 대신 고려할 패턴 사용자가 AI와 지속적으로 대화하며 요청을 이어가야 한다 Global Chat Assistant 현재 화면을 유지하되 AI와 어느 정도 긴 대화나 반복 요청이 필요하다 Contextual Agent Panel AI 결과가 문서, 계획, 분석 결과처럼 별도 작업 영역에서 다뤄져야 한다 Dedicated Agent Workspace 또는 Chat + Canvas Panel"
+    },
+    {
+      "id": 223,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Key Characteristics",
+      "section": "Key Characteristics",
+      "text": "구분 내용 진입 방식 텍스트 선택, 필드 포커스, 버튼 클릭, 섹션 내 AI 아이콘, 자동 추천 노출 입력 방식 선택 텍스트, 현재 필드 값, 현재 섹션 데이터, 짧은 자연어 요청 응답 방식 짧은 제안, 수정안, 요약, 설명, 인사이트, 추천 액션 컨텍스트 활용 현재 입력값, 선택 영역, 주변 콘텐츠, 화면 내 데이터 사용자 흐름 대상 선택 → AI 제안 확인 → 적용 또는 취소 → 필요 시 다시 요청 주요 가치 기존 작업 흐"
+    },
+    {
+      "id": 224,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "주요 예시 레퍼런스",
+      "section": "주요 예시 레퍼런스",
+      "text": "실제 제품에서 Embedded AI Elements 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
+    },
+    {
+      "id": 225,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Grammarly",
+      "section": "Grammarly",
+      "text": "사용자가 LinkedIn, 이메일, 문서 등에서 글을 작성하는 중에 AI 입력창이나 제안 패널을 띄워 문장을 생성·수정·개선할 수 있습니다. 작성 중인 위치를 벗어나지 않고 Improve it, Simplify it, Shorten it, Adjust tone 같은 빠른 액션을 제공하며, 생성된 결과를 바로 삽입하거나 다시 표현할 수 있습니다. Grammarly는 문장의 명확성, 톤, 길이, 형식성을 조정하는 AI 작성 보조 "
+    },
+    {
+      "id": 226,
+      "url": "pattern/embedded-ai-elements.html#overview",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Notion AI",
+      "section": "Notion AI",
+      "text": "사용자가 Notion 문서 안에서 텍스트를 선택하거나 /AI를 입력해 현재 문맥에 맞는 AI 도움을 호출할 수 있습니다. 선택된 문장이나 문단 바로 아래에 AI 입력창과 액션 메뉴가 노출되며, Improve writing, Fix spelling & grammar, Make longer, Make shorter, Change tone처럼 선택 텍스트에 직접 적용 가능한 작업을 제공합니다. Notion은 사용자가 텍스트를 선택해"
+    },
+    {
+      "id": 227,
+      "url": "pattern/embedded-ai-elements.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Basic Layout Structure",
+      "section": "Basic Layout Structure",
+      "text": "Embedded AI Elements는 화면 전체를 차지하지 않고, 기존 UI 안의 특정 대상 근처에 작게 삽입되는 구조를 가집니다. 하위 분기에 따라 Inline Popover 또는 Insight Block으로 나뉘지만, 기본적으로는 Target Area, AI Entry Point, AI Result Area, Action Area로 구성됩니다."
+    },
+    {
+      "id": 228,
+      "url": "pattern/embedded-ai-elements.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "레이아웃 원칙",
+      "section": "레이아웃 원칙",
+      "text": "원칙 설명 작업 흐름 보존 AI 요소는 기존 화면을 대체하지 않고, 사용자가 하던 작업 위에 자연스럽게 얹혀야 합니다. 대상 명확성 AI가 어떤 텍스트, 필드, 데이터, 섹션을 기준으로 제안하는지 명확해야 합니다. 경량성 긴 대화나 복잡한 설정 없이 짧은 제안과 빠른 액션 중심으로 구성합니다. 즉시 적용성 결과를 읽고 끝나는 것이 아니라, 사용자가 바로 적용하거나 무시할 수 있어야 합니다. 방해 최소화 자동 노출되는 경우에도 "
+    },
+    {
+      "id": 229,
+      "url": "pattern/embedded-ai-elements.html#variants",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Embedded AI Elements는 AI가 화면에 나타나는 위치와 결과를 보여주는 방식에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Inline Popover 선택 영역이나 입력 필드 근처에 작게 뜨는 AI 도움 UI 사용자가 특정 텍스트나 필드에 대해 짧은 수정, 요약, 변환, 추천을 받아야 할 때 Insight Block 기존 화면 안에 AI 결과를 정보 블록 형태로 노출하는 UI 사용자가 대화 없이"
+    },
+    {
+      "id": 230,
+      "url": "pattern/embedded-ai-elements.html#variants",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Inline Popover",
+      "section": "Inline Popover",
+      "text": "사용자가 특정 텍스트, 입력 필드, 객체를 선택했을 때 해당 위치 근처에 작은 AI 컨테이너를 띄워 빠른 도움을 제공하는 UI입니다."
+    },
+    {
+      "id": 231,
+      "url": "pattern/embedded-ai-elements.html#variants",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Insight Block",
+      "section": "Insight Block",
+      "text": "기존 화면의 특정 영역 안에 AI가 생성한 요약, 추천, 설명, 경고, 인사이트를 블록 형태로 표시하는 UI입니다."
+    },
+    {
+      "id": 232,
+      "url": "pattern/embedded-ai-elements.html#interaction",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Interaction",
+      "section": "Interaction",
+      "text": ""
+    },
+    {
+      "id": 233,
+      "url": "pattern/embedded-ai-elements.html#interaction",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Trigger - Contextual AI Call",
+      "section": "Trigger - Contextual AI Call",
+      "text": "사용자가 텍스트를 선택하거나, 입력 필드에 포커스하거나, 화면 내 AI 아이콘 또는 추천 영역을 통해 AI 도움을 호출합니다. 사용자가 특정 페이지에 진입하거나, 혹은 버튼 등의 상호작용을 통해 Assistant UI를 호출합니다. 호출된 Assistant UI는 목적과 맥락에 따라 형태가 상이하며, 목적에 부합하는 상호작용 방식을 갖습니다."
+    },
+    {
+      "id": 234,
+      "url": "pattern/embedded-ai-elements.html#interaction",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Input - Local Context",
+      "section": "Input - Local Context",
+      "text": "AI는 사용자가 선택한 텍스트, 입력 중인 값, 현재 섹션 데이터, 주변 콘텐츠를 기준으로 요청 맥락을 파악합니다. 필요한 경우 사용자가 짧은 자연어 요청을 추가로 입력할 수 있습니다. 요약 등의 정보를 제공해주는 AI 블록의 경우, 프롬프트 및 참고 데이터가 사전에 입력되어 있는 상태입니다. 인라인으로 도움을 주는 Assistant의 경우 입력은 다양한 형식으로 구성될 수 있습니다."
+    },
+    {
+      "id": 235,
+      "url": "pattern/embedded-ai-elements.html#interaction",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Output - Embedded Suggestion",
+      "section": "Output - Embedded Suggestion",
+      "text": "AI는 수정안, 요약, 추천, 설명, 인사이트처럼 현재 화면 안에서 바로 판단 가능한 짧은 결과를 제공합니다. 추천, 요약, 인사이트와 같은 내용들은 기본적으로는 자연어로 출력됩니다. 기능과 LLM이 사용하는 도구에 따라 시각화 표현 등으로 확장될 수 있습니다."
+    },
+    {
+      "id": 236,
+      "url": "pattern/embedded-ai-elements.html#interaction",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "Follow up - Apply or Dismiss",
+      "section": "Follow up - Apply or Dismiss",
+      "text": "사용자는 AI 제안을 적용하거나, 취소하거나, 다시 생성하거나, 상세 보기로 확장할 수 있습니다. 제안에 대한 재요청(Reroll)을 수행할 수 있으며, 기능 및 맥락에 따라 적용/취소 등 추가적인 액션을 설계할 수 있습니다."
+    },
+    {
+      "id": 237,
+      "url": "pattern/global-chat-assistant.html",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Global Chat Assistant",
+      "section": "",
+      "text": "서비스 전역에서 사용자가 AI에게 질문하고 요청할 수 있는 공통 대화형 인터페이스입니다. 사용자는 현재 작업 흐름을 크게 벗어나지 않고 AI를 호출할 수 있으며, 질문, 요약, 분석, 생성 요청을 자연어로 입력합니다. 피그마에서 보기 ↗"
+    },
+    {
+      "id": 238,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Overview",
+      "section": "Overview",
+      "text": "Global Chat Assistant는 사용자가 서비스 전역에서 AI를 호출해 질문하거나 요청할 수 있는 공통 대화형 인터페이스입니다. 특정 화면이나 기능에만 종속되지 않고, 사용자가 필요할 때 언제든 AI에게 자연어로 질문하거나 업무 요청을 할 수 있습니다. 답변은 단순 텍스트일 수도 있고, 생성된 결과물, 현재 화면 맥락을 반영한 응답, 후속 액션으로 이어질 수도 있습니다. 이 패턴은 AI를 제품 전체에서 접근 가능한 공"
+    },
+    {
+      "id": 239,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "이 분류를 선택하는 경우",
+      "section": "이 분류를 선택하는 경우",
+      "text": "선택 조건 설명 서비스 어디서든 AI를 호출해야 한다 특정 화면에만 묶이지 않고, 사용자가 전역적으로 AI에게 질문하거나 요청해야 하는 경우 자연어 기반 대화가 핵심이다 버튼 클릭이나 고정된 플로우보다, 사용자가 직접 질문하고 후속 요청을 이어가는 경험이 중요한 경우 요청 범위가 다양하다 요약, 설명, 분석, 생성, 추천 등 여러 유형의 요청을 하나의 AI 진입점에서 처리해야 하는 경우 후속 대화가 이어질 가능성이 높다 첫 답"
+    },
+    {
+      "id": 240,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "이 템플릿을 사용하지 않는 경우",
+      "section": "이 템플릿을 사용하지 않는 경우",
+      "text": "선택하지 않는 경우 대신 고려할 패턴 특정 작업이나 산출물을 완성하기 위한 전용 작업공간이 필요하다 Dedicated Agent Workspace 현재 화면을 유지한 채 측면에서 AI가 지속적으로 보조해야 한다 Contextual Agent Panel 선택한 텍스트나 입력 필드 근처에서만 짧게 AI가 개입하면 된다 Embedded AI Elements 사용자가 AI 작업의 진행 상태를 주로 확인해야 한다 Background T"
+    },
+    {
+      "id": 241,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Key Characteristics",
+      "section": "Key Characteristics",
+      "text": "구분 내용 진입 방식 전역 버튼, 플로팅 버튼, 헤더 아이콘, 단축키, 추천 질문 입력 방식 자연어 질문, 명령, 요청, 조건 입력 응답 방식 텍스트 답변, 구조화된 응답, 결과물 생성, 관련 액션 제안 컨텍스트 활용 현재 화면, 선택 객체, 문서, 데이터 등을 선택적으로 참조 사용자 흐름 질문 → 응답 → 후속 질문 → 재생성 또는 적용 주요 가치 제품 전반에서 일관된 AI 접근성과 대화형 문제 해결 제공"
+    },
+    {
+      "id": 242,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "주요 예시 레퍼런스",
+      "section": "주요 예시 레퍼런스",
+      "text": "실제 제품에서 Global Chat Assistant 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
+    },
+    {
+      "id": 243,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "ChatGPT",
+      "section": "ChatGPT",
+      "text": "사용자가 하나의 전역 대화 화면에서 자연어로 질문하고, AI가 텍스트 답변·구조화된 응답·코드·파일 기반 답변 등을 제공합니다. 최근 대화 목록, 하단 고정 입력창, 파일 첨부, 모델 선택, 음성 입력 등 대화형 AI의 기본 레이아웃 요소를 폭넓게 갖추고 있습니다. Canvas 기능을 통해 단순 대화를 넘어 글쓰기·코딩 결과물을 별도 작업 영역에서 함께 다루는 구조도 제공합니다."
+    },
+    {
+      "id": 244,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Microsoft 365 Copilot Chat",
+      "section": "Microsoft 365 Copilot Chat",
+      "text": "Microsoft 365 안에서 업무용 AI Chat으로 제공되며, 사용자가 자연어로 초안 작성, 요약, 분석, 아이디어 탐색 같은 업무 요청을 입력할 수 있습니다. 추천 프롬프트 카드와 업무 생산성 중심의 시작 화면을 제공해, 사용자가 무엇을 요청할 수 있는지 빠르게 파악하게 합니다."
+    },
+    {
+      "id": 245,
+      "url": "pattern/global-chat-assistant.html#overview",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Sana.ai",
+      "section": "Sana.ai",
+      "text": "기업 내부 지식과 연결된 AI Assistant로, 사용자가 제품 스펙, 정책, 업무 정보에 대해 질문하면 관련 지식 소스를 바탕으로 답변하고 출처를 함께 보여줍니다. 파일을 채팅에 직접 업로드하거나, 지식 소스를 선택해 응답 정확도를 높이는 구조를 제공해 지식 기반 Global Chat Assistant의 사례로 볼 수 있습니다."
+    },
+    {
+      "id": 246,
+      "url": "pattern/global-chat-assistant.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Basic Layout Structure",
+      "section": "Basic Layout Structure",
+      "text": "Global Chat Assistant는 사용자가 서비스 어디서든 AI를 호출하고 대화를 이어갈 수 있도록, 공통적인 대화 화면 구조를 가집니다. 하위 분기에 따라 Canvas나 Context Preview가 추가될 수 있지만, 기본 골격은 Sidebar, Conversation Area, Prompt Composer, Utility Actions로 구성됩니다."
+    },
+    {
+      "id": 247,
+      "url": "pattern/global-chat-assistant.html#basic-layout-structure",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "레이아웃 원칙",
+      "section": "레이아웃 원칙",
+      "text": "원칙 설명 대화 중심성 화면의 중심은 항상 사용자의 요청과 AI 응답이 오가는 대화 영역입니다. 전역 접근성 특정 업무 화면에 종속되지 않고, 서비스 공통 AI 진입점처럼 동작해야 합니다. 입력 지속성 사용자가 언제든 후속 질문을 입력할 수 있도록 Prompt Composer는 하단에 안정적으로 배치합니다. 맥락 확장성 필요에 따라 Canvas Panel이나 Context Preview가 확장될 수 있어야 합니다. 작업 연속성"
+    },
+    {
+      "id": 248,
+      "url": "pattern/global-chat-assistant.html#variants",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Variants",
+      "section": "Variants",
+      "text": "Global Chat Assistant는 응답 결과를 어디까지 다루는지, 현재 맥락을 얼마나 보여줘야 하는지에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Chat Only 질문과 답변 중심의 기본 대화형 UI 별도 작업 영역이나 컨텍스트 미리보기가 필요 없을 때 Chat + Context Preview AI가 참고하는 현재 화면이나 선택 객체를 함께 보여주는 UI AI 답변이 현재 화면, 문서, 데이터 맥락"
+    },
+    {
+      "id": 249,
+      "url": "pattern/global-chat-assistant.html#variants",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Chat Only",
+      "section": "Chat Only",
+      "text": "사용자가 질문하고 AI가 답변하는 가장 기본적인 전역 챗 UI로, 범용 질문, 간단한 설명, 빠른 요약, 짧은 추천에 적합합니다."
+    },
+    {
+      "id": 250,
+      "url": "pattern/global-chat-assistant.html#variants",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Chat + Context Preview",
+      "section": "Chat + Context Preview",
+      "text": "AI가 답변에 참고하는 현재 화면, 선택 객체, 문서, 데이터를 함께 보여주는 UI로, AI 답변이 현재 화면이나 특정 데이터 맥락에 의존하는 경우 보조 패널을 활용합니다."
+    },
+    {
+      "id": 251,
+      "url": "pattern/global-chat-assistant.html#variants",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Chat + Canvas Panel",
+      "section": "Chat + Canvas Panel",
+      "text": "대화 영역과 결과 작업 영역이 함께 제공되는 UI로, AI가 생성한 결과물을 별도 영역에서 확인해야 하는 경우 사용합니다."
+    },
+    {
+      "id": 252,
+      "url": "pattern/global-chat-assistant.html#interaction",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Interaction",
+      "section": "Interaction",
+      "text": ""
+    },
+    {
+      "id": 253,
+      "url": "pattern/global-chat-assistant.html#interaction",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Trigger - Global AI Call",
+      "section": "Trigger - Global AI Call",
+      "text": "사용자가 전역 버튼, 플로팅 버튼, 사이드바, 단축키 등을 통해 AI Assistant를 호출합니다. 전역 에이전트를 호출하는 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다. 호출된 AI Assistant는 별도의 전용 공간(새 탭, 새 창 등)에 UI가 구성됩니다. UI는 자연어 기반 상호작용이 중심이 되는 형태입니다."
+    },
+    {
+      "id": 254,
+      "url": "pattern/global-chat-assistant.html#interaction",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Input - Natural Language Request",
+      "section": "Input - Natural Language Request",
+      "text": "사용자가 질문, 요청, 명령, 조건을 자연어로 입력합니다. 필요에 따라 파일, 현재 화면, 선택 객체 같은 맥락이 함께 포함될 수 있습니다. 사용자는 Composer와 상호작용하여 질문, 요청, 명령, 조건 등을 자연어로 입력합니다."
+    },
+    {
+      "id": 255,
+      "url": "pattern/global-chat-assistant.html#interaction",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Output - Conversational Response",
+      "section": "Output - Conversational Response",
+      "text": "AI가 텍스트 답변, 요약, 추천, 분석 결과, 구조화된 응답 등을 대화 형태로 제공합니다. 사용자의 요청사항에 따라 대화 기반의 응답을 제공합니다."
+    },
+    {
+      "id": 256,
+      "url": "pattern/global-chat-assistant.html#interaction",
+      "group": "Pattern",
+      "page": "Global Chat Assistant",
+      "title": "Follow up - Continue or Act",
+      "section": "Follow up - Continue or Act",
+      "text": "사용자는 후속 질문을 이어가거나, 응답을 복사·다시 생성·저장·적용하는 등 다음 행동을 수행합니다. AI Assistant는 사용자의 요청 맥락에 따른 추천 후속 질문을 제공할 수 있습니다. 이와 별개로 사용자가 자연어로 후속 질문을 요청할 수 있습니다."
+    },
+    {
+      "id": 257,
+      "url": "pattern/index.html",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Pattern",
+      "section": "",
+      "text": "사용자와 AX가 상호작용하는 반복 가능한 경험 구조를 정의합니다. MIDAS AX System의 Pattern은 사용자 · AI · 시스템 간의 역할과 흐름을 구조화한 AX 인터랙션 단위입니다. 각 Pattern은 특정 목적과 상황에 맞는 인터랙션 흐름, 상태 변화, 승인 구조, 컨텍스트 처리 방식 등을 포함합니다."
+    },
+    {
+      "id": 258,
+      "url": "pattern/index.html#agentic",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "AGENTIC",
+      "section": "AGENTIC",
+      "text": "자세히 보기"
+    },
+    {
+      "id": 259,
+      "url": "pattern/index.html#agentic",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Global Chat Assistant",
+      "section": "Global Chat Assistant",
+      "text": "사용자가 명시적으로 AI 와 대화하는 전역 채팅 어시스턴트 패턴. 자세히 보기"
+    },
+    {
+      "id": 260,
+      "url": "pattern/index.html#agentic",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Dedicated Agent Workspace",
+      "section": "Dedicated Agent Workspace",
+      "text": "에이전트 작업에 집중할 수 있는 전용 워크스페이스 패턴."
+    },
+    {
+      "id": 261,
+      "url": "pattern/index.html#contextual",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "CONTEXTUAL",
+      "section": "CONTEXTUAL",
+      "text": "자세히 보기"
+    },
+    {
+      "id": 262,
+      "url": "pattern/index.html#contextual",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Contextual Agent Panel",
+      "section": "Contextual Agent Panel",
+      "text": "사용자의 현재 맥락에 맞춰 보조하는 컨텍스트 에이전트 패널 패턴. 자세히 보기"
+    },
+    {
+      "id": 263,
+      "url": "pattern/index.html#contextual",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Embedded AI Elements",
+      "section": "Embedded AI Elements",
+      "text": "본 작업 흐름 안에 자연스럽게 내장되는 AI 요소 패턴."
+    },
+    {
+      "id": 264,
+      "url": "pattern/index.html#background",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "BACKGROUND",
+      "section": "BACKGROUND",
+      "text": "자세히 보기"
+    },
+    {
+      "id": 265,
+      "url": "pattern/index.html#background",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Background Task Monitor",
+      "section": "Background Task Monitor",
+      "text": "백그라운드에서 실행되는 작업의 상태를 모니터링하는 패턴."
+    },
+    {
+      "id": 266,
+      "url": "pattern/index.html#builder",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "BUILDER",
+      "section": "BUILDER",
+      "text": "자세히 보기"
+    },
+    {
+      "id": 267,
+      "url": "pattern/index.html#builder",
+      "group": "Pattern",
+      "page": "Pattern",
+      "title": "Agent/Workflow Builder",
+      "section": "Agent/Workflow Builder",
+      "text": "사용자가 에이전트와 워크플로우를 직접 설계하는 빌더 패턴."
+    },
+    {
+      "id": 268,
+      "url": "resource/index.html",
+      "group": "Docs",
+      "page": "Resource",
+      "title": "Resource",
+      "section": "",
+      "text": "MIDAS AX System을 활용하는 데 필요한 리소스를 모아둔 공간입니다. 디자인 파일, 토큰, 문서, 가이드 등 실무에 바로 활용할 수 있는 자산을 제공할 예정입니다."
+    },
+    {
+      "id": 269,
+      "url": "resource/index.html#resources",
+      "group": "Docs",
+      "page": "Resource",
+      "title": "Resources",
+      "section": "Resources",
+      "text": "이 페이지의 컨텐츠는 추후 업데이트됩니다. 피그마 시스템 바로가기 GitHub 바로가기 문의 리소스 및 자산 관련 문의는 양희윤 프로, 김준성 프로에게 전달해주세요. 추가로 필요한 리소스가 있다면 언제든 제안 가능합니다. 리소스는 지속적으로 업데이트되며, 제품 운영 과정에 맞춰 확장됩니다."
+    },
+    {
+      "id": 270,
+      "url": "sandbox/a.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Build AI agents in minutes, not months.",
+      "section": "",
+      "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 데모 영상 보기 →"
+    },
+    {
+      "id": 271,
+      "url": "sandbox/a.html#features",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "왜 Spark Studio 인가요",
+      "section": "왜 Spark Studio 인가요",
+      "text": ""
+    },
+    {
+      "id": 272,
+      "url": "sandbox/a.html#features",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Visual Builder",
+      "section": "Visual Builder",
+      "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요."
+    },
+    {
+      "id": 273,
+      "url": "sandbox/a.html#features",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Multi-Model",
+      "section": "Multi-Model",
+      "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요."
+    },
+    {
+      "id": 274,
+      "url": "sandbox/a.html#features",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Production-Ready",
+      "section": "Production-Ready",
+      "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요."
+    },
+    {
+      "id": 275,
+      "url": "sandbox/a.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "5분 안에 동작하는 에이전트",
+      "section": "5분 안에 동작하는 에이전트",
+      "text": ""
+    },
+    {
+      "id": 276,
+      "url": "sandbox/a.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "section": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● 온라인 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로 분류"
+    },
+    {
+      "id": 277,
+      "url": "sandbox/a.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "합리적인 요금제",
+      "section": "합리적인 요금제",
+      "text": ""
+    },
+    {
+      "id": 278,
+      "url": "sandbox/a.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Starter",
+      "section": "Starter",
+      "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 가장 인기"
+    },
+    {
+      "id": 279,
+      "url": "sandbox/a.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Pro",
+      "section": "Pro",
+      "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h 응답) Pro 시작하기"
+    },
+    {
+      "id": 280,
+      "url": "sandbox/a.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Enterprise",
+      "section": "Enterprise",
+      "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기"
+    },
+    {
+      "id": 281,
+      "url": "sandbox/a.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "자주 묻는 질문",
+      "section": "자주 묻는 질문",
+      "text": "코딩을 전혀 몰라도 사용할 수 있나요? 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다. 필요하면 고급 사용자는 코드 블록으로 자유롭게 확장할 수도 있어요. 어떤 AI 모델을 지원하나요? Anthropic Claude, OpenAI GPT, Google Gemini, Mistral, Cohere, 그리고 로컬 LLM (Ollama) 까지 6종 이상의 모델을 지원합니"
+    },
+    {
+      "id": 282,
+      "url": "sandbox/a.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "지금 바로 첫 에이전트를 만들어보세요",
+      "section": "지금 바로 첫 에이전트를 만들어보세요",
+      "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기"
+    },
+    {
+      "id": 283,
+      "url": "sandbox/b.html",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Build AI agents in minutes, not months.",
+      "section": "",
+      "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 데모 영상 보기 →"
+    },
+    {
+      "id": 284,
+      "url": "sandbox/b.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "왜 Spark Studio 인가요",
+      "section": "왜 Spark Studio 인가요",
+      "text": "01 Build"
+    },
+    {
+      "id": 285,
+      "url": "sandbox/b.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Visual Builder",
+      "section": "Visual Builder",
+      "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인합니다. 복잡한 분기와 도구 호출도 시각적으로 한눈에. 02 Model"
+    },
+    {
+      "id": 286,
+      "url": "sandbox/b.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Multi-Model",
+      "section": "Multi-Model",
+      "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅합니다. 태스크별로 최적의 모델을 자동 선택하는 옵션도 제공. 03 Ship"
+    },
+    {
+      "id": 287,
+      "url": "sandbox/b.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Production-Ready",
+      "section": "Production-Ready",
+      "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA. 실험에서 운영까지 끊김 없이. 엔터프라이즈 보안 요구사항도 표준으로 충족."
+    },
+    {
+      "id": 288,
+      "url": "sandbox/b.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "5분 안에 동작하는 에이전트",
+      "section": "5분 안에 동작하는 에이전트",
+      "text": ""
+    },
+    {
+      "id": 289,
+      "url": "sandbox/b.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "section": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● 온라인 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, F"
+    },
+    {
+      "id": 290,
+      "url": "sandbox/b.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "합리적인 요금제",
+      "section": "합리적인 요금제",
+      "text": ""
+    },
+    {
+      "id": 291,
+      "url": "sandbox/b.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Starter",
+      "section": "Starter",
+      "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 가장 인기"
+    },
+    {
+      "id": 292,
+      "url": "sandbox/b.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Pro",
+      "section": "Pro",
+      "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
+    },
+    {
+      "id": 293,
+      "url": "sandbox/b.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "Enterprise",
+      "section": "Enterprise",
+      "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기"
+    },
+    {
+      "id": 294,
+      "url": "sandbox/b.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "자주 묻는 질문",
+      "section": "자주 묻는 질문",
+      "text": "코딩을 전혀 몰라도 사용할 수 있나요? 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다. 어떤 AI 모델을 지원하나요? Claude, GPT, Gemini, Mistral, Cohere, 그리고 로컬 LLM (Ollama) 까지 6종 이상을 지원합니다. 우리 회사 데이터는 안전한가요? 전송 · 저장 시 모두 암호화되며 SOC 2 Type II 인증을 받았습니다. E"
+    },
+    {
+      "id": 295,
+      "url": "sandbox/b.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · B · Asymmetric",
+      "title": "지금 바로 첫 에이전트를 만들어보세요",
+      "section": "지금 바로 첫 에이전트를 만들어보세요",
+      "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기"
+    },
+    {
+      "id": 296,
+      "url": "sandbox/c.html",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Build AI agents in minutes, not months.",
+      "section": "",
+      "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 데모 영상 보기 →"
+    },
+    {
+      "id": 297,
+      "url": "sandbox/c.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "왜 Spark Studio 인가요",
+      "section": "왜 Spark Studio 인가요",
+      "text": ""
+    },
+    {
+      "id": 298,
+      "url": "sandbox/c.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Visual Builder",
+      "section": "Visual Builder",
+      "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요."
+    },
+    {
+      "id": 299,
+      "url": "sandbox/c.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Multi-Model",
+      "section": "Multi-Model",
+      "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요."
+    },
+    {
+      "id": 300,
+      "url": "sandbox/c.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Production-Ready",
+      "section": "Production-Ready",
+      "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요."
+    },
+    {
+      "id": 301,
+      "url": "sandbox/c.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "5분 안에 동작하는 에이전트",
+      "section": "5분 안에 동작하는 에이전트",
+      "text": ""
+    },
+    {
+      "id": 302,
+      "url": "sandbox/c.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "section": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● 온라인 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, F"
+    },
+    {
+      "id": 303,
+      "url": "sandbox/c.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "합리적인 요금제",
+      "section": "합리적인 요금제",
+      "text": ""
+    },
+    {
+      "id": 304,
+      "url": "sandbox/c.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Starter",
+      "section": "Starter",
+      "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 가장 인기"
+    },
+    {
+      "id": 305,
+      "url": "sandbox/c.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Pro",
+      "section": "Pro",
+      "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
+    },
+    {
+      "id": 306,
+      "url": "sandbox/c.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "Enterprise",
+      "section": "Enterprise",
+      "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기"
+    },
+    {
+      "id": 307,
+      "url": "sandbox/c.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "자주 묻는 질문",
+      "section": "자주 묻는 질문",
+      "text": "코딩을 전혀 몰라도 사용할 수 있나요? 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다. 어떤 AI 모델을 지원하나요? Claude, GPT, Gemini, Mistral, Cohere, 그리고 로컬 LLM 까지 6종 이상 지원합니다. 우리 회사 데이터는 안전한가요? 전송 · 저장 시 모두 암호화되며 SOC 2 Type II 인증을 받았습니다. 언제든 플랜을 변경할"
+    },
+    {
+      "id": 308,
+      "url": "sandbox/c.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · C · Inverse Accent",
+      "title": "지금 바로 첫 에이전트를 만들어보세요",
+      "section": "지금 바로 첫 에이전트를 만들어보세요",
+      "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기"
+    },
+    {
+      "id": 309,
+      "url": "sandbox/d.html",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Build AI agents in minutes, not months.",
+      "section": "",
+      "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 → 데모 영상 보기 Features"
+    },
+    {
+      "id": 310,
+      "url": "sandbox/d.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "왜 Spark Studio 인가요",
+      "section": "왜 Spark Studio 인가요",
+      "text": ""
+    },
+    {
+      "id": 311,
+      "url": "sandbox/d.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Visual Builder",
+      "section": "Visual Builder",
+      "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요."
+    },
+    {
+      "id": 312,
+      "url": "sandbox/d.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Multi-Model",
+      "section": "Multi-Model",
+      "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요."
+    },
+    {
+      "id": 313,
+      "url": "sandbox/d.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Production-Ready",
+      "section": "Production-Ready",
+      "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요. Demo"
+    },
+    {
+      "id": 314,
+      "url": "sandbox/d.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "5분 안에 동작하는 에이전트",
+      "section": "5분 안에 동작하는 에이전트",
+      "text": ""
+    },
+    {
+      "id": 315,
+      "url": "sandbox/d.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "section": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● Online 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로"
+    },
+    {
+      "id": 316,
+      "url": "sandbox/d.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "합리적인 요금제",
+      "section": "합리적인 요금제",
+      "text": ""
+    },
+    {
+      "id": 317,
+      "url": "sandbox/d.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Starter",
+      "section": "Starter",
+      "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 Most Popular"
+    },
+    {
+      "id": 318,
+      "url": "sandbox/d.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Pro",
+      "section": "Pro",
+      "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
+    },
+    {
+      "id": 319,
+      "url": "sandbox/d.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "Enterprise",
+      "section": "Enterprise",
+      "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기 FAQ"
+    },
+    {
+      "id": 320,
+      "url": "sandbox/d.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "자주 묻는 질문",
+      "section": "자주 묻는 질문",
+      "text": ""
+    },
+    {
+      "id": 321,
+      "url": "sandbox/d.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "코딩을 전혀 몰라도 사용할 수 있나요?",
+      "section": "코딩을 전혀 몰라도 사용할 수 있나요?",
+      "text": "+ 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다."
+    },
+    {
+      "id": 322,
+      "url": "sandbox/d.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "어떤 AI 모델을 지원하나요?",
+      "section": "어떤 AI 모델을 지원하나요?",
+      "text": "+ Claude, GPT, Gemini, Mistral, Cohere, Ollama 까지 6종 이상의 모델을 지원합니다."
+    },
+    {
+      "id": 323,
+      "url": "sandbox/d.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "우리 회사 데이터는 안전한가요?",
+      "section": "우리 회사 데이터는 안전한가요?",
+      "text": "+ 모든 데이터는 전송 · 저장 시 암호화되며, SOC 2 Type II 인증을 받았습니다."
+    },
+    {
+      "id": 324,
+      "url": "sandbox/d.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "언제든 플랜을 변경할 수 있나요?",
+      "section": "언제든 플랜을 변경할 수 있나요?",
+      "text": "+ 언제든 업그레이드/다운그레이드가 가능하며, 변경 즉시 반영됩니다."
+    },
+    {
+      "id": 325,
+      "url": "sandbox/d.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · D · Glow Dark",
+      "title": "지금 바로 첫 에이전트를 만들어보세요",
+      "section": "지금 바로 첫 에이전트를 만들어보세요",
+      "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기 →"
+    },
+    {
+      "id": 326,
+      "url": "sandbox/e.html",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Build AI agents in minutes .",
+      "section": "",
+      "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 → 데모 영상 보기 Scroll ↓ Features"
+    },
+    {
+      "id": 327,
+      "url": "sandbox/e.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "왜 Spark Studio 인가요",
+      "section": "왜 Spark Studio 인가요",
+      "text": "01"
+    },
+    {
+      "id": 328,
+      "url": "sandbox/e.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Visual Builder",
+      "section": "Visual Builder",
+      "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요. 복잡한 분기와 도구 호출도 시각적으로 한눈에. 02"
+    },
+    {
+      "id": 329,
+      "url": "sandbox/e.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Multi- Model",
+      "section": "Multi- Model",
+      "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요. 태스크별로 최적의 모델을 자동 선택할 수도 있습니다. 03"
+    },
+    {
+      "id": 330,
+      "url": "sandbox/e.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Production- Ready",
+      "section": "Production- Ready",
+      "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요. 실험에서 운영까지 끊김 없이. Demo"
+    },
+    {
+      "id": 331,
+      "url": "sandbox/e.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "5분 안에 동작하는 에이전트",
+      "section": "5분 안에 동작하는 에이전트",
+      "text": ""
+    },
+    {
+      "id": 332,
+      "url": "sandbox/e.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "section": "대화로 설명하면, 에이전트가 만들어집니다.",
+      "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 스크롤하면서 각 단계를 확인하세요 ↓ 1. 첫 인사 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 2. 구조 제안 좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, FAQ DB 와 연결할까요? 좋아 그렇게 해줘 3. 배포 완료 에"
+    },
+    {
+      "id": 333,
+      "url": "sandbox/e.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "합리적인 요금제",
+      "section": "합리적인 요금제",
+      "text": ""
+    },
+    {
+      "id": 334,
+      "url": "sandbox/e.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Starter",
+      "section": "Starter",
+      "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 Most Popular"
+    },
+    {
+      "id": 335,
+      "url": "sandbox/e.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Pro",
+      "section": "Pro",
+      "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
+    },
+    {
+      "id": 336,
+      "url": "sandbox/e.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "Enterprise",
+      "section": "Enterprise",
+      "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기 FAQ"
+    },
+    {
+      "id": 337,
+      "url": "sandbox/e.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "자주 묻는 질문",
+      "section": "자주 묻는 질문",
+      "text": ""
+    },
+    {
+      "id": 338,
+      "url": "sandbox/e.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "코딩을 전혀 몰라도 사용할 수 있나요?",
+      "section": "코딩을 전혀 몰라도 사용할 수 있나요?",
+      "text": "+ 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다."
+    },
+    {
+      "id": 339,
+      "url": "sandbox/e.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "어떤 AI 모델을 지원하나요?",
+      "section": "어떤 AI 모델을 지원하나요?",
+      "text": "+ Claude, GPT, Gemini, Mistral, Cohere, Ollama 까지 6종 이상의 모델을 지원합니다."
+    },
+    {
+      "id": 340,
+      "url": "sandbox/e.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "우리 회사 데이터는 안전한가요?",
+      "section": "우리 회사 데이터는 안전한가요?",
+      "text": "+ 모든 데이터는 전송 · 저장 시 암호화되며, SOC 2 Type II 인증을 받았습니다."
+    },
+    {
+      "id": 341,
+      "url": "sandbox/e.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "언제든 플랜을 변경할 수 있나요?",
+      "section": "언제든 플랜을 변경할 수 있나요?",
+      "text": "+ 언제든 업그레이드/다운그레이드가 가능하며, 변경 즉시 반영됩니다."
+    },
+    {
+      "id": 342,
+      "url": "sandbox/e.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · E · Scroll Playground",
+      "title": "지금 바로 첫 에이전트를 만들어보세요",
+      "section": "지금 바로 첫 에이전트를 만들어보세요",
+      "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기 →"
+    },
+    {
+      "id": 343,
+      "url": "sandbox/f.html",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "Build AI agents in minutes .",
+      "section": "",
+      "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. START FREE → WATCH DEMO FEATURES"
+    },
+    {
+      "id": 344,
+      "url": "sandbox/f.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "왜 SPARK 인가요",
+      "section": "왜 SPARK 인가요",
+      "text": "★"
+    },
+    {
+      "id": 345,
+      "url": "sandbox/f.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "VISUAL BUILDER",
+      "section": "VISUAL BUILDER",
+      "text": "드래그 앤 드롭으로 워크플로우 설계! 실시간으로 동작 확인 가능 ♥ ♥"
+    },
+    {
+      "id": 346,
+      "url": "sandbox/f.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "MULTI MODEL",
+      "section": "MULTI MODEL",
+      "text": "Claude · GPT · Gemini 등 6종 모델 한곳에서! 비교하고 라우팅 ★ ✦"
+    },
+    {
+      "id": 347,
+      "url": "sandbox/f.html#features",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "PROD READY",
+      "section": "PROD READY",
+      "text": "SOC 2 인증! 자동 로깅! 99.9% SLA로 안심하고 배포 ♪ DEMO"
+    },
+    {
+      "id": 348,
+      "url": "sandbox/f.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "5MIN AGENT",
+      "section": "5MIN AGENT",
+      "text": ""
+    },
+    {
+      "id": 349,
+      "url": "sandbox/f.html#demo",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "대화로 설명 → 에이전트 완성!",
+      "section": "대화로 설명 → 에이전트 완성!",
+      "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분 ♥ 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 안녕! 어떤 에이전트 만들까? 고객 문의 봇 ㄱㄱ 환불·배송·일반 3 카테고리로 분류할게! 좋아 그렇게! 완료! ★★★ PRICING"
+    },
+    {
+      "id": 350,
+      "url": "sandbox/f.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "PICK ONE",
+      "section": "PICK ONE",
+      "text": ""
+    },
+    {
+      "id": 351,
+      "url": "sandbox/f.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "STARTER",
+      "section": "STARTER",
+      "text": "₩0 /월 개인 프로젝트와 학습용 ♥ 1,000 메시지 에이전트 3개 커뮤니티 지원 START FREE ★ HOT! ★"
+    },
+    {
+      "id": 352,
+      "url": "sandbox/f.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "PRO",
+      "section": "PRO",
+      "text": "₩39K /월 소규모 팀과 본격 서비스 ★ 100,000 메시지 에이전트 무제한 Slack · API 배포 24h 이메일 지원 GO PRO"
+    },
+    {
+      "id": 353,
+      "url": "sandbox/f.html#pricing",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "ENT",
+      "section": "ENT",
+      "text": "맞춤 대규모 조직과 고급 보안 ♦ 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 CONTACT FAQ"
+    },
+    {
+      "id": 354,
+      "url": "sandbox/f.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "Q&A",
+      "section": "Q&A",
+      "text": ""
+    },
+    {
+      "id": 355,
+      "url": "sandbox/f.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "코딩 몰라도 사용 가능?",
+      "section": "코딩 몰라도 사용 가능?",
+      "text": "+ YES! 비주얼 빌더 기반이라 한 줄 코드 없이도 본격 에이전트 제작 가능 ♥"
+    },
+    {
+      "id": 356,
+      "url": "sandbox/f.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "어떤 AI 모델 지원?",
+      "section": "어떤 AI 모델 지원?",
+      "text": "+ Claude · GPT · Gemini · Mistral · Cohere · Ollama 6종 이상! ★"
+    },
+    {
+      "id": 357,
+      "url": "sandbox/f.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "회사 데이터 안전?",
+      "section": "회사 데이터 안전?",
+      "text": "+ 전송·저장 시 모두 암호화. SOC 2 Type II 인증 완료 ✦"
+    },
+    {
+      "id": 358,
+      "url": "sandbox/f.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "언제든 플랜 변경?",
+      "section": "언제든 플랜 변경?",
+      "text": "+ 언제든 업/다운그레이드 OK! 변경 즉시 반영 ♪"
+    },
+    {
+      "id": 359,
+      "url": "sandbox/f.html#faq",
+      "group": "Docs",
+      "page": "Spark Studio · F · Pixel Kitsch",
+      "title": "★ START NOW ★ FREE FOREVER ♥",
+      "section": "★ START NOW ★ FREE FOREVER ♥",
+      "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 GET STARTED →"
+    },
+    {
+      "id": 360,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Spark Studio 시안 비교 (Sandbox)",
+      "section": "",
+      "text": "동일한 콘텐츠로 만든 6가지 시안입니다. 시스템 안에서 만든 3가지(A/B/C)와 자유롭게 트렌디하게 표현한 3가지(D/E/F)를 비교해보세요."
+    },
+    {
+      "id": 361,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "System · 디자인 시스템 안",
+      "section": "System · 디자인 시스템 안",
+      "text": "토큰 / 컴포넌트 / 모션 모두 시스템 내부에서 표현 Variant A"
+    },
+    {
+      "id": 362,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Modern Minimal",
+      "section": "Modern Minimal",
+      "text": "중앙정렬 균형, 부드러운 페이드 업, 화이트 베이스 SaaS 톤. 보기 Variant B"
+    },
+    {
+      "id": 363,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Asymmetric",
+      "section": "Asymmetric",
+      "text": "좌측정렬 비대칭. 가로 row Features/Pricing, 순수 페이드인. 보기 Variant C"
+    },
+    {
+      "id": 364,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Inverse Accent",
+      "section": "Inverse Accent",
+      "text": "--color-inverse-* 적극 활용. Demo/CTA 전면 너비 배너. 정적. 보기"
+    },
+    {
+      "id": 365,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Free · 자유 표현",
+      "section": "Free · 자유 표현",
+      "text": "시스템 무관, 트렌디한 시각언어와 인터랙션으로 자유롭게 표현 Variant D"
+    },
+    {
+      "id": 366,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "AI Wavy Dark",
+      "section": "AI Wavy Dark",
+      "text": "살아 숨쉬는 블롭이 꿀렁이며 블루↔퍼플 그라데이션이 비치는 다크. 노이즈 그레인 + 글래스모피즘. 보기 Variant E"
+    },
+    {
+      "id": 367,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Scroll Playground",
+      "section": "Scroll Playground",
+      "text": "섹션마다 다른 스크롤 인터랙션: Parallax · Pin&Stack · Sticky Cross-fade · Horizontal Scroll. 보기 Variant F"
+    },
+    {
+      "id": 368,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "Pixel Kitsch",
+      "section": "Pixel Kitsch",
+      "text": "픽셀 폰트(Press Start 2P) + Y2K 컬러 + 하드 픽셀 그림자 + 스티커 데코 + 흔들림 호버. 보기"
+    },
+    {
+      "id": 369,
+      "url": "sandbox/index.html",
+      "group": "Docs",
+      "page": "Spark Studio",
+      "title": "시안 비교표 — System vs Free",
+      "section": "시안 비교표 — System vs Free",
+      "text": "항목 A · Minimal B · Asymmetric C · Inverse D · AI Wavy E · Scroll F · Pixel 그룹 System System System Free Free Free 핵심 기믹 fade-up 가로 row inverse 섹션 꿀렁이는 블롭 스크롤 인터랙션 픽셀 + 스티커 타이포 Pretendard Pretendard Pretendard 그라데이션 텍스트 120px 디스플레이 Press Sta"
+    },
+    {
+      "id": 370,
+      "url": "system.html",
+      "group": "Home",
+      "page": "System Reference",
+      "title": "Design System",
+      "section": "",
+      "text": "MIDAS AX Design System 을 소개하는 이 사이트 자체를 짓기 위해 사용한 디자인 시스템입니다. 사이트의 모든 페이지 (Overview · Foundation · Components · Pattern) 가 여기 정의된 토큰, 레이아웃, 컴포넌트로 만들어졌습니다. 각 항목은 토큰 정의 / 시각 예시 / 마크업 템플릿 / 실제 사용 위치를 함께 표시하며, 라이트·다크 모드에서 동일한 마크업으로 작동합니다."
+    },
+    {
+      "id": 371,
+      "url": "system.html#system",
+      "group": "Home",
+      "page": "System Reference",
+      "title": "System",
+      "section": "System",
+      "text": "자세히 보기"
+    },
+    {
+      "id": 372,
+      "url": "system.html#system",
+      "group": "Home",
+      "page": "System Reference",
+      "title": "Foundation",
+      "section": "Foundation",
+      "text": "색·치수·텍스트·효과 — 컴포넌트가 의존하는 시각 토큰의 단일 소스. 자세히 보기"
+    },
+    {
+      "id": 373,
+      "url": "system.html#system",
+      "group": "Home",
+      "page": "System Reference",
+      "title": "Layout",
+      "section": "Layout",
+      "text": "GNB · SNB · TOC · Footer · Page Grid — 전역 레이아웃 구조. 자세히 보기"
+    },
+    {
+      "id": 374,
+      "url": "system.html#system",
+      "group": "Home",
+      "page": "System Reference",
+      "title": "Components",
+      "section": "Components",
+      "text": "Buttons · Cards · Thumbnails · FAQ — 실제 사용되는 UI 블록."
+    },
+    {
+      "id": 375,
+      "url": "system/audit.html",
+      "group": "Docs",
+      "page": "Audit",
+      "title": "Audit",
+      "section": "",
+      "text": "시스템 일관성 자가 점검표. 토큰 사용 일관성, 카드 변형 분류, 사이트 페이지 매핑."
+    },
+    {
+      "id": 376,
+      "url": "system/audit.html#audit-tokens",
+      "group": "Docs",
+      "page": "Audit",
+      "title": "Token Coverage",
+      "section": "Token Coverage",
+      "text": "영역 토큰 사용 다크 적응 GNB bg + text OK rgba bg + label-strong OK SNB hover/active bg OK fill-hover / fill-pressed OK Cards bg + border OK surface-subtle / line-solid OK rgba 3% 보정 Buttons bg + text OK label-strong / fill-normal OK spec-hero/image "
+    },
+    {
+      "id": 377,
+      "url": "system/audit.html#audit-cards",
+      "group": "Docs",
+      "page": "Audit",
+      "title": "Card / Thumbnail Variants Map",
+      "section": "Card / Thumbnail Variants Map",
+      "text": "컴포넌트 사용처 특징 .gallery-card Overview 페이지 갤러리 hover scale + dark overlay + CTA fade-in-up .p-card 메인(index.html) Pattern 3-up hover scale, 그라데이션 미디어 .spec-hero foundation/components/pattern detail 상단 정적, 427px, hover 없음 .spec-image foundation/"
+    },
+    {
+      "id": 378,
+      "url": "system/audit.html#links",
+      "group": "Docs",
+      "page": "Audit",
+      "title": "Quick Links",
+      "section": "Quick Links",
+      "text": "섹션 경로 Home (main) index.html Overview get-started/index.html Foundation foundation/index.html Components components/index.html Pattern pattern/index.html"
+    },
+    {
+      "id": 379,
+      "url": "system/components.html",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Components",
+      "section": "",
+      "text": "실제 사용자 화면에 렌더되는 재사용 가능한 UI 블록. 모두 토큰 사용 → 라이트·다크 자동 적응. 썸네일 안에서만 쓰이는 demo 헬퍼 (chat, code-block 등) 는 제외됨."
+    },
+    {
+      "id": 380,
+      "url": "system/components.html#pill-button",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Pill Button",
+      "section": "Pill Button",
+      "text": "Hero CTA · Figma 링크 등 핵심 액션. fill-normal bg + label-strong text, hover 시 inverse 색 반전. 3 사이즈 (LG / MD / SM) 지원."
+    },
+    {
+      "id": 381,
+      "url": "system/components.html#pill-button",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Sizes",
+      "section": "Sizes",
+      "text": "Large (Hero CTA) Medium Small 사이즈 클래스 Padding Font 실제 사용처 LG (기본) .btn-pill 16 / 24 16px / 500 Hero CTA (메인) · .spec-section__media-cta (Pattern hover) — 같은 사이즈 MD .btn-pill--md 14 / 22 13px / 500 .gallery-card__cta (Overview hover) — 같은 사이"
+    },
+    {
+      "id": 382,
+      "url": "system/components.html#text-button",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Text Button",
+      "section": "Text Button",
+      "text": "배경 없는 텍스트 버튼. GNB nav 링크와 동일 스타일. 보조 액션 · 인라인 액션에 사용. hover 시 컬러만 label-alternative → label-strong 으로 진해짐. 피그마 바로가기 Get a start Foundation 속성 값 Padding 12 / 10 Font 15px / 600 / 0.144px letter-spacing Color label-alternative → hover: label-"
+    },
+    {
+      "id": 383,
+      "url": "system/components.html#link-button",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Link Button",
+      "section": "Link Button",
+      "text": "Get a start 페이지의 2-col 외부 링크 버튼. radius 12, outline 스타일. 피그마 시스템 바로가기 GitHub 바로가기 <div class=\"link-buttons\"> <a class=\"link-button\" href=\"#\" target=\"_blank\" rel=\"noopener\">Label</a> <a class=\"link-button\" href=\"#\" target=\"_blank\" rel=\"noope"
+    },
+    {
+      "id": 384,
+      "url": "system/components.html#cards",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Gallery Card",
+      "section": "Gallery Card",
+      "text": "Overview 페이지의 카드 그리드. 미디어 + 본문, hover 시 다크 overlay + CTA fade-in-up + 이미지 1.08 scale. 자세히 보기"
+    },
+    {
+      "id": 385,
+      "url": "system/components.html#cards",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Card Title",
+      "section": "Card Title",
+      "text": "Card description — 한 줄 또는 두 줄. <a class=\"gallery-card\" href=\"...\"> <div class=\"gallery-card__media\"> <img src=\"...\" alt=\"\" /> <!-- 또는 .card-demo 라이브 데모 --> <span class=\"gallery-card__cta\">자세히 보기</span> </div> <div class=\"gallery-card__body\""
+    },
+    {
+      "id": 386,
+      "url": "system/components.html#cards",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Pattern Card (Main Home)",
+      "section": "Pattern Card (Main Home)",
+      "text": "메인 페이지의 Pattern 3-up 카드. p-card 클래스 사용. 그라데이션 미디어 + hover scale. <a class=\"p-card\" href=\"...\"> <div class=\"p-card__media\"><img src=\"...\" alt=\"\" /></div> <div class=\"p-card__body\"> <h3 class=\"p-card__title\">Title</h3> <p class=\"p-card__desc\""
+    },
+    {
+      "id": 387,
+      "url": "system/components.html#thumbnails",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Image Thumbnails (Detail Pages)",
+      "section": "Image Thumbnails (Detail Pages)",
+      "text": "Detail 페이지에서 사용하는 이미지 컨테이너 3 종. 클래스 높이 인터랙션 용도 .spec-hero 427px 없음 (정적) 페이지 상단 큰 이미지 .spec-image 270px 없음 (정적) Anatomy/Usage 일반 이미지 영역 .spec-section__media 370px hover 다크 overlay + CTA Pattern detail Figma 링크 카드 <!-- 정적 이미지 영역 --> <div clas"
+    },
+    {
+      "id": 388,
+      "url": "system/components.html#faq",
+      "group": "Docs",
+      "page": "Components",
+      "title": "FAQ Accordion",
+      "section": "FAQ Accordion",
+      "text": "메인 페이지 FAQ. 클릭 시 grid-template-rows 트랜지션으로 부드러운 슬라이드 다운. FAQ 질문 예시 <div class=\"faq\"> <div class=\"faq__item\"> <button class=\"faq__summary\" type=\"button\" aria-expanded=\"false\"> <span class=\"faq__q\">Question</span> <span class=\"faq__icon\"><svg"
+    },
+    {
+      "id": 389,
+      "url": "system/components.html#badges",
+      "group": "Docs",
+      "page": "Components",
+      "title": "Do / Don't Badges",
+      "section": "Do / Don't Badges",
+      "text": "Detail 페이지의 How to use 섹션에서 사용. 상태 컬러 + 아이콘 + 라벨. Do Don't <span class=\"spec-badge spec-badge--do\"><svg>...</svg>Do</span> <span class=\"spec-badge spec-badge--dont\"><svg>...</svg>Don't</span>"
+    },
+    {
+      "id": 390,
+      "url": "system/foundation.html",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Foundation",
+      "section": "",
+      "text": "색·치수·텍스트·효과 — 컴포넌트가 의존하는 시각 토큰의 단일 소스. 각 카테고리는 라이트 / 다크 두 모드의 값을 함께 정의하며, 컴포넌트는 토큰명만 참조하여 모드 전환에 자동 적응합니다."
+    },
+    {
+      "id": 391,
+      "url": "system/foundation.html#color",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Color Scheme",
+      "section": "Color Scheme",
+      "text": "의미 기반 컬러 토큰. 모든 컴포넌트는 이 토큰만 참조하여 모드 전환에 자동 적응합니다. 각 chip 의 위 칸은 라이트 (L) , 아래 칸은 다크 (D) 모드에서의 실제 색상."
+    },
+    {
+      "id": 392,
+      "url": "system/foundation.html#color",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Label (텍스트 컬러)",
+      "section": "Label (텍스트 컬러)",
+      "text": "--color-label-strong L #171719 D #F7F7F8 --color-label-neutral L #2E2F33E0 D #C2C4C8 --color-label-alternative L #37383C9C D #F7F7F89C --color-label-assistive L #37383C47 D #F7F7F847"
+    },
+    {
+      "id": 393,
+      "url": "system/foundation.html#color",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Surface (배경)",
+      "section": "Surface (배경)",
+      "text": "--color-background L #FFFFFF D #121212 --color-surface-elevated L #FFFFFF D #1B1C1E --color-surface-subtle L #F7F7F8 D #F7F7F808 --color-fill-normal L #70737C14 D #F7F7F814 --color-fill-hover L #1717190A D #F7F7F80F --color-fill-pressed L #"
+    },
+    {
+      "id": 394,
+      "url": "system/foundation.html#color",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Inverse",
+      "section": "Inverse",
+      "text": "--color-inverse-background L #1B1C1E D #F7F7F8 --color-inverse-label L #F7F7F8 D #1B1C1E"
+    },
+    {
+      "id": 395,
+      "url": "system/foundation.html#color",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Line",
+      "section": "Line",
+      "text": "--color-line-solid L #EAEBEC D #70737C38 --color-line-subtle L #70737C29 D #70737C29"
+    },
+    {
+      "id": 396,
+      "url": "system/foundation.html#color",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Status",
+      "section": "Status",
+      "text": "--color-status-positive L #00BF40 D #00BF40 --color-status-negative L #FF4242 D #FF4242"
+    },
+    {
+      "id": 397,
+      "url": "system/foundation.html#typography",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Typography",
+      "section": "Typography",
+      "text": "9단계 타입 스케일 + 2개 폰트 패밀리. Pretendard Variable(본문) · Poppins(디스플레이). Display · 72/110% Display H1 · 36/133% Heading 1 H2 · 36/118% Heading 2 H3 · 24/108% Heading 3 Body L · 20/160% Body Large Body M · 17/150% Body Medium — 기본 본문 Body S · 15/14"
+    },
+    {
+      "id": 398,
+      "url": "system/foundation.html#spacing",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Spacing Scale",
+      "section": "Spacing Scale",
+      "text": "8 배수 그리드. 컴포넌트 내부 · 컴포넌트 간 · 섹션 간 동일 시스템 공유. --space-2 8px --space-3 12px --space-4 16px --space-5 24px --space-6 40px --space-8 60px --section-gap 60px"
+    },
+    {
+      "id": 399,
+      "url": "system/foundation.html#radius",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Radius Scale",
+      "section": "Radius Scale",
+      "text": "3단계 모서리 라운드 + pill. 작은 요소는 작은 radius, 큰 컨테이너는 큰 radius. --radius-sm · 8px --radius-md · 12px --radius-lg · 24px pill · 99px"
+    },
+    {
+      "id": 400,
+      "url": "system/foundation.html#effect",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Effect — Elevation & Motion",
+      "section": "Effect — Elevation & Motion",
+      "text": "레이어 위계의 그림자 시스템 + 인터랙션 모션 토큰."
+    },
+    {
+      "id": 401,
+      "url": "system/foundation.html#effect",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Elevation",
+      "section": "Elevation",
+      "text": "0 · flat 1 · card 2 · dropdown 3 · modal 4 · toast"
+    },
+    {
+      "id": 402,
+      "url": "system/foundation.html#effect",
+      "group": "Docs",
+      "page": "Foundation",
+      "title": "Motion",
+      "section": "Motion",
+      "text": "tokens.css 에 CSS 변수로 정의 — var(--duration-normal) · var(--easing-standard) 형식으로 참조. 토큰 값 사용 --duration-fast 120ms 마이크로 인터랙션 (hover bg, focus ring) --duration-normal 240ms 버튼·카드 hover, 메뉴 등장 --duration-slow 400ms 패널·모달 등장, 페이지 전환 --easing-sta"
+    },
+    {
+      "id": 403,
+      "url": "system/layout.html",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "Layout",
+      "section": "",
+      "text": "전역 레이아웃 컴포넌트 (GNB · SNB · TOC · Footer) + 페이지 그리드 3 변형. 모든 페이지가 동일한 레이아웃 구조를 공유하여 시각 일관성과 사용자 익숙함을 유지합니다."
+    },
+    {
+      "id": 404,
+      "url": "system/layout.html#gnb",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "GNB · Global Navigation",
+      "section": "GNB · Global Navigation",
+      "text": "72px sticky 헤더. frosted glass bg (rgba 88% + blur 16). 모든 페이지 상단에 동일하게 적용. 위치: 모든 페이지의 <body> 최상단 · position: sticky; top: 0; z-index: 100; <header class=\"gnb gnb--solid\"> <div class=\"gnb__inner\"> <a class=\"gnb__logo\" href=\"../index.html\"> "
+    },
+    {
+      "id": 405,
+      "url": "system/layout.html#snb",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "SNB · Sub Navigation",
+      "section": "SNB · Sub Navigation",
+      "text": "좌측 sticky 사이드바. 그리드 셀 210 + 내부 wrapper(.snb__inner) 가 좌우 +10 확장 + 우측 30 스크롤바 영역. 구조: .snb (210 시각폭) → .snb__inner (margin -10/-10, padding-right 30, overflow-y auto) → items <aside class=\"snb\" aria-label=\"...\"> <div class=\"snb__inner\"> <a c"
+    },
+    {
+      "id": 406,
+      "url": "system/layout.html#snb",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "4-State Interaction",
+      "section": "4-State Interaction",
+      "text": "State Background Color Arrow Default transparent label-alternative hidden Hover fill-hover (4%) label-strong visible Active [aria-current=\"page\"] fill-hover (4%) label-strong visible Active + Hover fill-pressed (8%) label-strong visible"
+    },
+    {
+      "id": 407,
+      "url": "system/layout.html#toc",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "TOC · Anchor",
+      "section": "TOC · Anchor",
+      "text": "우측 sticky 앵커 (160px). scroll-spy 로 현재 viewport 섹션에 active 표시. 클릭 시 smooth scroll. <aside class=\"toc\" aria-label=\"목차\"> <p class=\"toc__title\">목차</p> <ul class=\"toc__list\"> <li><a class=\"toc__item\" href=\"#section-id\">Section Title</a></li> </u"
+    },
+    {
+      "id": 408,
+      "url": "system/layout.html#footer",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "Footer",
+      "section": "Footer",
+      "text": "80px 높이. 좌측 copyright + 우측 version badge. <footer class=\"footer\"> <div class=\"footer__inner\"> <span>© 2026 MIDAS, Inc.</span> <span class=\"footer__badge\">버전 1.0</span> </div> </footer>"
+    },
+    {
+      "id": 409,
+      "url": "system/layout.html#grid",
+      "group": "Docs",
+      "page": "Layout",
+      "title": "Page Grid · 3 Variants",
+      "section": "Page Grid · 3 Variants",
+      "text": "1400 컨테이너 안의 3가지 컬럼 구조."
+    },
+    {
+      "id": 410,
+      "url": "system/layout.html#grid",
+      "group": "Docs",
+      "page": "Layout",
+      "title": ".page-grid--no-toc (Overview 페이지)",
+      "section": ".page-grid--no-toc (Overview 페이지)",
+      "text": "SNB 210 70 Content 1fr 60"
+    },
+    {
+      "id": 411,
+      "url": "system/layout.html#grid",
+      "group": "Docs",
+      "page": "Layout",
+      "title": ".page-grid--with-toc (Detail 페이지)",
+      "section": ".page-grid--with-toc (Detail 페이지)",
+      "text": "SNB 210 70 Content 1fr 100 TOC 160"
+    },
+    {
+      "id": 412,
+      "url": "system/layout.html#grid",
+      "group": "Docs",
+      "page": "Layout",
+      "title": ".page-grid--full (Main / Home)",
+      "section": ".page-grid--full (Main / Home)",
+      "text": "Full 1400 (display: block)"
+    }
+  ]
+}

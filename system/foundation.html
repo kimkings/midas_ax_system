@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Foundation — MIDAS AX Design System</title>
+
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/system.css" />
+</head>
+<body>
+
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <span class="gnb__logo">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span style="font-size:20px">Design system</span>
+      </span>
+      <nav class="gnb__nav" aria-label="Global">
+        <a class="btn-text" href="#" target="_blank" rel="noopener">피그마 바로가기</a>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-grid page-grid--with-toc">
+
+    <aside class="snb" aria-label="System 네비게이션">
+      <div class="snb__inner">
+        <a class="snb__overview" href="../system.html">
+          <span>Overview</span>
+          <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+        </a>
+        <p class="snb__caption">System</p>
+        <ul class="snb__list">
+        <li><a class="snb__item" href="foundation.html" aria-current="page">Foundation<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="layout.html">Layout<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="components.html">Components<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#color">Color</a></li>
+        <li><a class="toc__item" href="#typography">Typography</a></li>
+        <li><a class="toc__item" href="#spacing">Spacing</a></li>
+        <li><a class="toc__item" href="#radius">Radius</a></li>
+        <li><a class="toc__item" href="#effect">Effect</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <h1 class="page-content__title">Foundation</h1>
+      <div class="page-content__lead">
+        <p>색·치수·텍스트·효과 — 컴포넌트가 의존하는 시각 토큰의 단일 소스.</p>
+        <p>각 카테고리는 라이트 / 다크 두 모드의 값을 함께 정의하며, 컴포넌트는 토큰명만 참조하여 모드 전환에 자동 적응합니다.</p>
+      </div>
+      <hr class="page-content__divider" />
+
+            <section class="sys-section" id="color">
+        <h2 class="sys-section__title">Color Scheme</h2>
+        <p class="sys-section__desc">의미 기반 컬러 토큰. 모든 컴포넌트는 이 토큰만 참조하여 모드 전환에 자동 적응합니다.<br>각 chip 의 <strong>위 칸은 라이트 (L)</strong>, <strong>아래 칸은 다크 (D)</strong> 모드에서의 실제 색상.</p>
+
+        <h3 class="sys-h3">Label (텍스트 컬러)</h3>
+        <div class="sys-color-grid">
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#171719"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F8"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-label-strong</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #171719</span>
+                <span><strong>D</strong> #F7F7F8</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#2E2F33E0"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#C2C4C8"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-label-neutral</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #2E2F33E0</span>
+                <span><strong>D</strong> #C2C4C8</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#37383C9C"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F89C"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-label-alternative</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #37383C9C</span>
+                <span><strong>D</strong> #F7F7F89C</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#37383C47"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F847"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-label-assistive</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #37383C47</span>
+                <span><strong>D</strong> #F7F7F847</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sys-h3">Surface (배경)</h3>
+        <div class="sys-color-grid">
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#FFFFFF"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#121212"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-background</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #FFFFFF</span>
+                <span><strong>D</strong> #121212</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#FFFFFF"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#1B1C1E"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-surface-elevated</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #FFFFFF</span>
+                <span><strong>D</strong> #1B1C1E</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#F7F7F8"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F808"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-surface-subtle</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #F7F7F8</span>
+                <span><strong>D</strong> #F7F7F808</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#70737C14"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F814"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-fill-normal</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #70737C14</span>
+                <span><strong>D</strong> #F7F7F814</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#1717190A"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F80F"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-fill-hover</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #1717190A</span>
+                <span><strong>D</strong> #F7F7F80F</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#17171914"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F81F"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-fill-pressed</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #17171914</span>
+                <span><strong>D</strong> #F7F7F81F</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sys-h3">Inverse</h3>
+        <div class="sys-color-grid">
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#1B1C1E"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#F7F7F8"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-inverse-background</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #1B1C1E</span>
+                <span><strong>D</strong> #F7F7F8</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#F7F7F8"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#1B1C1E"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-inverse-label</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #F7F7F8</span>
+                <span><strong>D</strong> #1B1C1E</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sys-h3">Line</h3>
+        <div class="sys-color-grid">
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#EAEBEC"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#70737C38"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-line-solid</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #EAEBEC</span>
+                <span><strong>D</strong> #70737C38</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#70737C29"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#70737C29"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-line-subtle</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #70737C29</span>
+                <span><strong>D</strong> #70737C29</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="sys-h3">Status</h3>
+        <div class="sys-color-grid">
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#00BF40"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#00BF40"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-status-positive</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #00BF40</span>
+                <span><strong>D</strong> #00BF40</span>
+              </div>
+            </div>
+          </div>
+          <div class="sys-color">
+            <div class="sys-color__chip">
+              <div class="sys-color__chip-light"><div style="background:#FF4242"></div></div>
+              <div class="sys-color__chip-dark"><div style="background:#FF4242"></div></div>
+            </div>
+            <div class="sys-color__info">
+              <span class="sys-color__name">--color-status-negative</span>
+              <div class="sys-color__values">
+                <span><strong>L</strong> #FF4242</span>
+                <span><strong>D</strong> #FF4242</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sys-section" id="typography">
+        <h2 class="sys-section__title">Typography</h2>
+        <p class="sys-section__desc">9단계 타입 스케일 + 2개 폰트 패밀리. Pretendard Variable(본문) · Poppins(디스플레이).</p>
+
+        <div class="sys-block">
+          <div class="sys-type-row"><span class="sys-type-row__meta">Display · 72/110%</span><span class="sys-type-row__sample" style="font-family:var(--font-display);font-size:56px;font-weight:500;letter-spacing:-2px;line-height:1.1">Display</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">H1 · 36/133%</span><span class="sys-type-row__sample" style="font-size:36px;font-weight:700;letter-spacing:-0.97px;line-height:48px">Heading 1</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">H2 · 36/118%</span><span class="sys-type-row__sample" style="font-size:36px;font-weight:600;letter-spacing:-1.09px;line-height:1.18">Heading 2</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">H3 · 24/108%</span><span class="sys-type-row__sample" style="font-size:24px;font-weight:600;letter-spacing:-0.04px;line-height:26px">Heading 3</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">Body L · 20/160%</span><span class="sys-type-row__sample" style="font-size:20px;font-weight:500;letter-spacing:0.14px;line-height:1.6">Body Large</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">Body M · 17/150%</span><span class="sys-type-row__sample" style="font-size:17px;font-weight:400;letter-spacing:0.14px;line-height:1.5">Body Medium — 기본 본문</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">Body S · 15/147%</span><span class="sys-type-row__sample" style="font-size:15px;font-weight:500;letter-spacing:0.14px;line-height:22px">Body Small</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">Label · 14/143%</span><span class="sys-type-row__sample" style="font-size:14px;font-weight:500;letter-spacing:0.2px;line-height:20px">Label</span></div>
+          <div class="sys-type-row"><span class="sys-type-row__meta">Caption · 11/127%</span><span class="sys-type-row__sample" style="font-size:11px;font-weight:600;letter-spacing:0.34px;line-height:1.27;text-transform:uppercase">CAPTION</span></div>
+        </div>
+      </section>
+
+      <section class="sys-section" id="spacing">
+        <h2 class="sys-section__title">Spacing Scale</h2>
+        <p class="sys-section__desc">8 배수 그리드. 컴포넌트 내부 · 컴포넌트 간 · 섹션 간 동일 시스템 공유.</p>
+        <div class="sys-block">
+          <div class="sys-space-row"><span>--space-2</span><div class="sys-space-bar" style="width:8px"></div><span class="sys-space-val">8px</span></div>
+          <div class="sys-space-row"><span>--space-3</span><div class="sys-space-bar" style="width:12px"></div><span class="sys-space-val">12px</span></div>
+          <div class="sys-space-row"><span>--space-4</span><div class="sys-space-bar" style="width:16px"></div><span class="sys-space-val">16px</span></div>
+          <div class="sys-space-row"><span>--space-5</span><div class="sys-space-bar" style="width:24px"></div><span class="sys-space-val">24px</span></div>
+          <div class="sys-space-row"><span>--space-6</span><div class="sys-space-bar" style="width:40px"></div><span class="sys-space-val">40px</span></div>
+          <div class="sys-space-row"><span>--space-8</span><div class="sys-space-bar" style="width:60px"></div><span class="sys-space-val">60px</span></div>
+          <div class="sys-space-row"><span>--section-gap</span><div class="sys-space-bar" style="width:60px"></div><span class="sys-space-val">60px</span></div>
+        </div>
+      </section>
+
+      <section class="sys-section" id="radius">
+        <h2 class="sys-section__title">Radius Scale</h2>
+        <p class="sys-section__desc">3단계 모서리 라운드 + pill. 작은 요소는 작은 radius, 큰 컨테이너는 큰 radius.</p>
+        <div class="sys-block">
+          <div class="sys-radius-row">
+            <div class="sys-radius"><div class="sys-radius__box" style="border-radius:8px"></div><span class="sys-radius__label">--radius-sm · 8px</span></div>
+            <div class="sys-radius"><div class="sys-radius__box" style="border-radius:12px"></div><span class="sys-radius__label">--radius-md · 12px</span></div>
+            <div class="sys-radius"><div class="sys-radius__box" style="border-radius:24px"></div><span class="sys-radius__label">--radius-lg · 24px</span></div>
+            <div class="sys-radius"><div class="sys-radius__box" style="border-radius:99px"></div><span class="sys-radius__label">pill · 99px</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="sys-section" id="effect">
+        <h2 class="sys-section__title">Effect — Elevation & Motion</h2>
+        <p class="sys-section__desc">레이어 위계의 그림자 시스템 + 인터랙션 모션 토큰.</p>
+
+        <h3 class="sys-h3">Elevation</h3>
+        <div class="sys-block" style="padding:0">
+          <div class="sys-elev-row">
+            <div class="sys-elev sys-elev--0"><div class="sys-elev__box"></div><span class="sys-elev__label">0 · flat</span></div>
+            <div class="sys-elev sys-elev--1"><div class="sys-elev__box"></div><span class="sys-elev__label">1 · card</span></div>
+            <div class="sys-elev sys-elev--2"><div class="sys-elev__box"></div><span class="sys-elev__label">2 · dropdown</span></div>
+            <div class="sys-elev sys-elev--3"><div class="sys-elev__box"></div><span class="sys-elev__label">3 · modal</span></div>
+            <div class="sys-elev sys-elev--4"><div class="sys-elev__box"></div><span class="sys-elev__label">4 · toast</span></div>
+          </div>
+        </div>
+
+        <h3 class="sys-h3">Motion</h3>
+        <p class="sys-section__desc" style="margin-top:8px;margin-bottom:12px;font-size:13px">tokens.css 에 CSS 변수로 정의 — <code>var(--duration-normal)</code> · <code>var(--easing-standard)</code> 형식으로 참조.</p>
+        <table class="sys-table">
+          <thead><tr><th>토큰</th><th>값</th><th>사용</th></tr></thead>
+          <tbody>
+            <tr><td><code>--duration-fast</code></td><td><code>120ms</code></td><td>마이크로 인터랙션 (hover bg, focus ring)</td></tr>
+            <tr><td><code>--duration-normal</code></td><td><code>240ms</code></td><td>버튼·카드 hover, 메뉴 등장</td></tr>
+            <tr><td><code>--duration-slow</code></td><td><code>400ms</code></td><td>패널·모달 등장, 페이지 전환</td></tr>
+            <tr><td><code>--easing-standard</code></td><td><code>cubic-bezier(0.33, 1, 0.68, 1)</code></td><td>기본 ease-out</td></tr>
+            <tr><td><code>--easing-emphasized</code></td><td><code>cubic-bezier(0.22, 1, 0.36, 1)</code></td><td>강조 등장 (Hero title)</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">v 1.0</span>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

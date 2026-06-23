@@ -1,0 +1,116 @@
+/* ============================================
+   Base — Body defaults + Typography utility classes
+   Class names match §2 of DESIGN-SYSTEM.md
+   Values verified from Figma forceCode responses.
+   ============================================ */
+
+html {
+  /* TOC 앵커 클릭 시 부드러운 스크롤 */
+  scroll-behavior: smooth;
+  /* 페이지 높이에 따라 스크롤바 유무가 바뀌어도 GNB·컨테이너 위치 고정 */
+  scrollbar-gutter: stable;
+  /* 폼 컨트롤·스크롤바가 테마에 자동 적응하도록 */
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.14px;
+  color: var(--color-label-neutral);
+  background: var(--color-background);
+  /* 테마 토글 시 부드럽게 — 너무 길지 않게 */
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* 앵커 점프 시 GNB 아래 깔리지 않도록 스크롤 margin 보정 */
+[id] {
+  scroll-margin-top: calc(var(--gnb-height) + 32px);
+}
+
+/* ---------- Typography utility classes ---------- */
+
+.t-display {
+  font-size: 72px;
+  line-height: 1.1;
+  font-weight: 600;
+  letter-spacing: -1.58px;
+  color: var(--color-label-strong);
+}
+
+.t-h1 {
+  font-size: 36px;
+  line-height: 1.33;  /* 133% */
+  font-weight: 700;
+  letter-spacing: -0.97px;
+  color: var(--color-label-strong);
+}
+
+.t-h2 {
+  font-size: 36px;
+  line-height: 1.18;
+  font-weight: 600;
+  letter-spacing: -1.09px;
+  color: var(--color-label-strong);
+}
+
+.t-h3 {
+  font-size: 24px;
+  line-height: 1.08;  /* 108% */
+  font-weight: 600;
+  letter-spacing: -0.04px;
+  color: var(--color-label-strong);
+}
+
+.t-body-lg {
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 500;
+  letter-spacing: 0.14px;
+}
+
+.t-body {
+  font-size: 17px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.14px;
+}
+
+.t-body-sm {
+  font-size: 15px;
+  line-height: 1.47;  /* 147% */
+  font-weight: 500;
+  letter-spacing: 0.14px;
+}
+
+.t-label {
+  font-size: 14px;
+  line-height: 1.43;  /* 143% */
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.t-caption {
+  font-size: 11px;
+  line-height: 1.27;  /* 127% */
+  font-weight: 600;
+  letter-spacing: 0.34px;
+  text-transform: uppercase;
+}
+
+/* ---------- Color utility classes (text) ---------- */
+
+.c-strong      { color: var(--color-label-strong); }
+.c-neutral     { color: var(--color-label-neutral); }
+.c-alternative { color: var(--color-label-alternative); }
+.c-assistive   { color: var(--color-label-assistive); }

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Components — MIDAS AX Design System</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="../pattern/index.html">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-grid page-grid--no-toc">
+    <aside class="snb" aria-label="Components 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html" aria-current="page">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">Actions</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="button.html">Button<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="icon-button.html">Icon Button<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="suggestion-chip.html">Suggestion Chip<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">Inputs</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="text-composer.html">Text Composer<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="text-field.html">Text Field<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">Chat</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="message-bubble.html">Message Bubble<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="avatar.html">Avatar<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="streaming-indicator.html">Streaming Indicator<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="code-block.html">Code Block<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">Surface</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="card.html">Card<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="modal.html">Modal<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">Feedback</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="status-badge.html">Status Badge<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <div class="page-content">
+      <h1 class="page-content__title" data-reveal style="--i: 0">Components</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>AI 챗 기반 AX 인터페이스를 짓는 재사용 가능한 UI 블록입니다.</p>
+        <p>Actions / Inputs / Chat / Surface / Feedback 다섯 그룹으로 분류되며,</p>
+        <p>각 컴포넌트는 Foundation 토큰을 참조하여 일관된 인터랙션·시각 언어를 유지합니다.</p>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="gallery-section" id="actions">
+        <h2 class="gallery-section__title" data-reveal style="--i: 0">Actions</h2>
+        <div class="gallery-grid">
+          <a class="gallery-card" href="button.html" data-reveal style="--i: 1">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-frame__row">
+          <button class="demo-btn demo-btn--sm demo-btn--primary">Primary</button>
+          <button class="demo-btn demo-btn--sm demo-btn--ghost">Ghost</button>
+        </div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Button</h3>
+              <p class="gallery-card__desc">Primary / Secondary / Ghost — 사용자 액션의 기본 단위.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="icon-button.html" data-reveal style="--i: 2">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-icon-btn-row" style="gap:6px">
+          <button class="demo-icon-btn" style="width:32px;height:32px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:14px;height:14px"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <button class="demo-icon-btn" style="width:32px;height:32px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:14px;height:14px"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></button>
+          <button class="demo-icon-btn" style="width:32px;height:32px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" style="width:14px;height:14px"><path d="M7 10v12"/></svg></button>
+        </div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Icon Button</h3>
+              <p class="gallery-card__desc">라벨 없이 아이콘만으로 — 복사·재생성·툴바 액션.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="suggestion-chip.html" data-reveal style="--i: 3">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-chips" style="max-width:200px">
+          <span class="demo-chip" style="font-size:11px;padding:6px 10px">Summarize</span>
+          <span class="demo-chip" style="font-size:11px;padding:6px 10px">Translate</span>
+        </div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Suggestion Chip</h3>
+              <p class="gallery-card__desc">AI 가 제안하는 다음 액션 — pill 형태 즉시 실행.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="inputs">
+        <h2 class="gallery-section__title" data-reveal style="--i: 0">Inputs</h2>
+        <div class="gallery-grid">
+          <a class="gallery-card" href="text-composer.html" data-reveal style="--i: 1">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-composer" style="max-width:200px;padding:10px"><div class="demo-composer__input" style="font-size:11px">Ask anything...</div><div class="demo-composer__bar"><div class="demo-composer__tools"></div><button class="demo-composer__send" style="width:24px;height:24px"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:12px;height:12px"><path d="M5 12h14"/></svg></button></div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Text Composer</h3>
+              <p class="gallery-card__desc">AI 프롬프트 입력의 핵심 — 첨부 · 음성 · 전송 · 중지.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="text-field.html" data-reveal style="--i: 2">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-field" style="max-width:180px;gap:4px"><label class="demo-field__label" style="font-size:11px">Email</label><div class="demo-field__input" style="height:32px;font-size:11px;padding:0 10px">name@co.com</div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Text Field</h3>
+              <p class="gallery-card__desc">폼·설정 화면용 — label · helper · error 4-state.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="chat">
+        <h2 class="gallery-section__title" data-reveal style="--i: 0">Chat</h2>
+        <div class="gallery-grid">
+          <a class="gallery-card" href="message-bubble.html" data-reveal style="--i: 1">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-chat" style="max-width:200px;gap:6px"><div class="demo-msg demo-msg--user" style="font-size:11px;padding:6px 10px">User</div><div class="demo-msg demo-msg--ai" style="font-size:11px;padding:6px 10px">AI</div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Message Bubble</h3>
+              <p class="gallery-card__desc">사용자·AI 발화 구분 컨테이너 — 정렬·radius·streaming.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="avatar.html" data-reveal style="--i: 2">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-avatar-row" style="gap:8px"><div class="demo-avatar demo-avatar--sm demo-avatar--user">A</div><div class="demo-avatar demo-avatar--sm demo-avatar--ai"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9.5 9 2 12l7.5 3L12 22l2.5-7L22 12l-7.5-3L12 2z"/></svg></div><div class="demo-avatar demo-avatar--sm demo-avatar--system"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg></div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Avatar</h3>
+              <p class="gallery-card__desc">발화 주체 표시 — User / AI / System.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="streaming-indicator.html" data-reveal style="--i: 3">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-motion" style="gap:6px"><span class="demo-motion__dot" style="width:8px;height:8px"></span><span class="demo-motion__dot" style="width:8px;height:8px"></span><span class="demo-motion__dot" style="width:8px;height:8px"></span></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Streaming Indicator</h3>
+              <p class="gallery-card__desc">AI 생성 중 모션 — typing dots / cursor / pulse.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="code-block.html" data-reveal style="--i: 4">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-code" style="max-width:200px;font-size:10px"><div class="demo-code__head" style="padding:6px 10px;font-size:9px"><span>ts</span></div><div class="demo-code__body" style="padding:8px 10px;line-height:14px"><span class="k">const</span> <span class="f">a</span> = <span class="s">'b'</span></div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Code Block</h3>
+              <p class="gallery-card__desc">AI 응답의 코드 표시 — syntax highlight + copy.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="surface">
+        <h2 class="gallery-section__title" data-reveal style="--i: 0">Surface</h2>
+        <div class="gallery-grid">
+          <a class="gallery-card" href="card.html" data-reveal style="--i: 1">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-card" style="width:180px"><div class="demo-card__media" style="height:60px"></div><div class="demo-card__body" style="padding:10px"><h4 class="demo-card__title" style="font-size:12px">Card</h4><p class="demo-card__desc" style="font-size:10px">Container</p></div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Card</h3>
+              <p class="gallery-card__desc">콘텐츠를 그룹화하는 기본 컨테이너.</p>
+            </div>
+          </a>
+          <a class="gallery-card" href="modal.html" data-reveal style="--i: 2">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-modal" style="width:180px;height:100px"><div class="demo-modal__dialog" style="width:120px;padding:10px"><h4 class="demo-modal__title" style="font-size:11px">Dialog</h4></div></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Modal</h3>
+              <p class="gallery-card__desc">중요 정보·결정 요구 — backdrop + ESC + focus trap.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <section class="gallery-section" id="feedback">
+        <h2 class="gallery-section__title" data-reveal style="--i: 0">Feedback</h2>
+        <div class="gallery-grid">
+          <a class="gallery-card" href="status-badge.html" data-reveal style="--i: 1">
+            <div class="gallery-card__media">
+              <div class="card-demo"><div class="demo-frame__col" style="gap:6px"><span class="demo-status-pill demo-status-pill--streaming" style="font-size:11px;padding:5px 10px"><span class="demo-status-pill__dot" style="width:5px;height:5px"></span>Streaming</span><span class="demo-status-pill demo-status-pill--success" style="font-size:11px;padding:5px 10px"><span class="demo-status-pill__dot" style="width:5px;height:5px"></span>Done</span></div></div>
+              <span class="gallery-card__cta">자세히 보기</span>
+            </div>
+            <div class="gallery-card__body">
+              <h3 class="gallery-card__title">Status Badge</h3>
+              <p class="gallery-card__desc">AI 상태 표시 — Streaming / Pending / Success / Error.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

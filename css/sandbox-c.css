@@ -1,0 +1,247 @@
+/* ============================================
+   Sandbox Variant C — Inverse-forward (Dark Accent 강조)
+   원칙: 디자인 시스템 토큰만 사용.
+   --color-inverse-background / --color-inverse-label 을 적극 활용해
+   "다크 강조 톤" 의 시안을 만든다.
+   (라이트모드: 다크 섹션 강조 / 다크모드: 라이트 섹션 강조 — 토큰 동작 그대로)
+   변화: (1) Hero/Features 가 inverse 섹션, (2) 인터랙션은 scale-up.
+   ============================================ */
+
+/* ---------- Inverse 섹션 유틸 — 시스템 토큰만 ---------- */
+.sbc-inverse {
+  background: var(--color-inverse-background);
+  color: var(--color-inverse-label);
+  border-radius: var(--radius-lg);
+  padding: 80px 60px;
+}
+.sbc-inverse h2,
+.sbc-inverse h3,
+.sbc-inverse p,
+.sbc-inverse .sb-eyebrow {
+  color: var(--color-inverse-label);
+}
+.sbc-inverse .sb-eyebrow {
+  /* fill-normal 은 모드 토큰이라 inverse 위에선 잘 안 보일 수 있음 → opacity 조정 */
+  background: rgba(255, 255, 255, 0.08);
+}
+:root[data-theme="dark"] .sbc-inverse .sb-eyebrow {
+  background: rgba(23, 23, 25, 0.08);
+}
+
+/* Inverse 위 버튼: 시스템 .btn-pill 그대로 두되, 배경/텍스트만 반대로 — 토큰 인버스 사용 */
+.sbc-inverse .btn-pill {
+  background: var(--color-inverse-label);
+  color: var(--color-inverse-background);
+}
+.sbc-inverse .btn-pill:hover {
+  background: var(--color-background);
+  color: var(--color-label-strong);
+}
+.sbc-inverse .btn-text {
+  color: var(--color-inverse-label);
+  opacity: 0.72;
+}
+.sbc-inverse .btn-text:hover {
+  opacity: 1;
+}
+
+/* ---------- Hero 를 inverse 블록 안에 ---------- */
+.sbc-hero {
+  padding-block: 240px;
+  text-align: center;
+}
+.sbc-hero .hero__title,
+.sbc-hero .hero__lead {
+  color: var(--color-inverse-label);
+}
+
+/* ---------- Features: inverse 위에 카드 + 패턴 썸네일 이미지 ---------- */
+.sbc-features-section .p-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  overflow: hidden;
+}
+:root[data-theme="dark"] .sbc-features-section .p-card {
+  background: rgba(23, 23, 25, 0.04);
+  border-color: rgba(23, 23, 25, 0.10);
+}
+.sbc-features-section .p-card__title,
+.sbc-features-section .p-card__desc {
+  color: var(--color-inverse-label);
+}
+/* 미디어 영역의 안쪽 박스 제거 — 이미지가 풀필 */
+.sbc-features-section .p-card__media {
+  background: transparent;
+  padding: 0;
+  display: block;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.sbc-features-section .p-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-normal) var(--easing-standard);
+}
+.sbc-features-section .p-card:hover .p-card__media img {
+  transform: scale(1.04);
+}
+
+/* ---------- 인터랙션: 정적 (애니메이션 없음) ---------- */
+/* C 안은 "고정" 컨셉 — 등장 모션 없이 그대로 노출 */
+.sbc [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Featured Pricing 카드 hover 시 살짝 더 강조 — 시스템 motion 토큰 */
+.sbc .sb-price:hover {
+  transform: scale(1.02);
+}
+.sbc .sb-price--featured:hover {
+  transform: scale(1.04);
+}
+
+/* ---------- 전면 너비 배너 modifier — Demo / CTA 용 ---------- */
+.sbc-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  border-radius: 0;
+}
+.sbc-bleed .sb-demo__grid,
+.sbc-bleed .sb-cta__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--padding-inline);
+}
+/* sb-demo 의 padding 이 좌우 60 인데 bleed 일 땐 위아래만 남기고 좌우는 container 가 처리 */
+.sb-demo.sbc-bleed { padding: 80px 0; }
+.sb-cta.sbc-bleed   { padding: 120px 0; }
+.sb-cta.sbc-bleed .sb-cta__inner { max-width: 720px; }
+
+/* Inverse 섹션이 page-gradient 위에 덮이므로 z-index 조정 */
+.sbc .container.sbc-inverse {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Demo: 좌우 반전 (좌 채팅 / 우 텍스트) ---------- */
+.sbc-demo .sb-demo__grid {
+  grid-template-columns: 1.2fr 1fr;    /* 채팅이 더 큰 비중 */
+}
+.sbc-demo .sb-demo__copy { order: 2; }
+.sbc-demo .sb-chat       { order: 1; }
+/* 채팅을 강조 — 그림자를 시스템 토큰 범위에서 좀 더 두껍게 */
+.sbc-demo .sb-chat {
+  min-height: 420px;
+}
+
+/* ---------- Pricing: Featured 상단 풀폭 + 하단 2-up ----------
+   grid-template-areas 로 DOM 순서와 무관하게 명시 배치.
+   DOM 순서: Starter (1) → Pro Featured (2) → Enterprise (3)
+*/
+.sbc-pricing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "featured featured"
+    "starter  enterprise";
+  gap: 20px;
+}
+.sbc-pricing > .sb-price:nth-child(1)  { grid-area: starter; }
+.sbc-pricing > .sb-price--featured     { grid-area: featured; }
+.sbc-pricing > .sb-price:nth-child(3)  { grid-area: enterprise; }
+
+/* Featured 내부 2분할 — 좌(name/amount/desc/cta), 우(list 2x2)
+   row tracks 명시 + cta 를 마지막 1fr 행에 떨어뜨려 카드 하단 정렬 */
+.sbc-pricing .sb-price--featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto 1fr;
+  grid-template-areas:
+    "name   list"
+    "amount list"
+    "desc   list"
+    "cta    list";
+  gap: 8px 40px;
+  align-items: start;
+  padding: 48px 40px 40px;
+  min-height: 280px;
+}
+.sbc-pricing .sb-price--featured .sb-price__name   { grid-area: name; margin: 0; }
+.sbc-pricing .sb-price--featured .sb-price__amount { grid-area: amount; }
+.sbc-pricing .sb-price--featured .sb-price__desc   { grid-area: desc; min-height: auto; margin: 0; }
+.sbc-pricing .sb-price--featured .sb-price__list   {
+  grid-area: list;
+  margin: 0;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px 24px;
+}
+.sbc-pricing .sb-price--featured .sb-price__cta {
+  grid-area: cta;
+  margin-top: 24px;
+  align-self: end;
+}
+.sbc-pricing .sb-price--featured .sb-price__cta .btn-pill {
+  width: auto;
+  padding-inline: 32px;
+}
+/* 배지를 카드 안쪽 상단으로 가져오기 — 카드 밖으로 튀어나오지 않게 */
+.sbc-pricing .sb-price--featured .sb-price__badge {
+  top: 16px;
+  left: 40px;
+  transform: none;
+}
+
+/* ---------- FAQ: Q.01 / Q.02 번호 배지형 ---------- */
+.sbc-faq .faq__item {
+  position: relative;
+  padding-left: 80px;     /* 번호 자리 확보 */
+}
+.sbc-faq .faq__item::before {
+  content: "Q." counter(sbc-faq, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 24px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--color-label-alternative);
+}
+.sbc-faq { counter-reset: sbc-faq; }
+.sbc-faq .faq__item { counter-increment: sbc-faq; }
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 960px) {
+  .sbc-inverse { padding: 60px 32px; }
+  .sbc-hero { padding-block: 140px; }
+  .sbc-demo .sb-demo__grid { grid-template-columns: 1fr; }
+  .sbc-demo .sb-demo__copy { order: 1; }
+  .sbc-demo .sb-chat       { order: 2; }
+  .sbc-pricing {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "featured"
+      "starter"
+      "enterprise";
+  }
+  .sbc-pricing .sb-price--featured {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "amount"
+      "desc"
+      "list"
+      "cta";
+  }
+  .sbc-pricing .sb-price--featured .sb-price__list {
+    grid-template-columns: 1fr;
+  }
+  .sbc-faq .faq__item { padding-left: 60px; }
+}

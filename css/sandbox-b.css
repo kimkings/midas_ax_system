@@ -1,0 +1,213 @@
+/* ============================================
+   Sandbox Variant B — Asymmetric / Left-aligned
+   원칙: 디자인 시스템 토큰/컴포넌트 100% 재사용.
+   변화는 (1) 레이아웃 비대칭, (2) 컴포넌트 배치(가로), (3) 인터랙션(slide-right) 뿐.
+   ============================================ */
+
+/* ---------- Hero: 좌측 정렬 비대칭 ---------- */
+.sbb-hero {
+  position: relative;
+  padding-block: 200px;
+  text-align: left;
+}
+.sbb-hero .hero__content {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--padding-inline);
+}
+.sbb-hero__inner {
+  max-width: 820px;     /* 비대칭 — 왼쪽 정렬, 한쪽으로만 확장 */
+}
+.sbb-hero .hero__title {
+  text-align: left;
+  font-size: 64px;
+  letter-spacing: -3px;
+}
+.sbb-hero .hero__lead {
+  text-align: left;
+}
+.sbb-hero .hero__cta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  /* 중앙정렬 X — 좌측 그대로 */
+}
+
+/* ---------- 섹션 헤더: 좌측 정렬 + 큰 갭 ---------- */
+.sbb .section__title {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+/* ---------- Features: 1-col 가로 리스트 (3-up 대신) ---------- */
+.sbb-features {
+  display: grid;
+  gap: 24px;
+}
+/* p-card 를 가로 레이아웃으로 재배치 — 좌측 큰 숫자, 우측 텍스트 */
+.sbb-features .p-card {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: center;
+  gap: 60px;
+  padding: 32px;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-line-solid);
+  transition: transform var(--duration-normal) var(--easing-standard);
+}
+.sbb-features .p-card:hover {
+  transform: translateX(8px);     /* 가로 슬라이드 인터랙션 */
+}
+/* 미디어 영역을 큰 숫자 전용 컨테이너로 — 아이콘 박스 제거 */
+.sbb-features .p-card__media {
+  background: transparent;
+  display: grid;
+  place-items: center;
+  aspect-ratio: auto;
+  padding: 0;
+}
+.sbb-features .sb-feature__icon {
+  width: auto;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 600;
+  letter-spacing: -4px;
+  line-height: 0.9;
+  color: var(--color-label-strong);
+}
+.sbb-features .sb-feature__icon svg { display: none; }   /* SVG 숨김 — 텍스트 노출 */
+.sbb-features .p-card__body { padding: 0; }
+.sbb-features .p-card__title { margin-bottom: 12px; }
+
+/* 작은 번호 마커 — 시스템 t-caption 스타일 차용 (신규 컬러 X) */
+.sbb-num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.144px;
+  color: var(--color-label-alternative);
+  margin-bottom: 8px;
+}
+
+/* ---------- 인터랙션: 순수 페이드인 (transform 없음, 더 빠른 타이밍) ---------- */
+.sbb [data-reveal] {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.8s var(--easing-standard);
+  transition-delay: calc(var(--i, 0) * 80ms);
+}
+.sbb [data-reveal].is-revealed {
+  opacity: 1;
+}
+
+/* ---------- Demo: 세로 스택 (위 텍스트, 아래 와이드 채팅) ---------- */
+.sbb-demo .sb-demo__grid {
+  grid-template-columns: 1fr;       /* 2-col → 1-col */
+  gap: 40px;
+}
+.sbb-demo .sb-demo__copy {
+  max-width: 640px;
+}
+/* 채팅을 가로로 와이드하게 — 메시지 폭도 더 넓게 */
+.sbb-demo .sb-chat {
+  min-height: auto;
+}
+.sbb-demo .sb-chat__msg { max-width: 60%; }
+
+/* ---------- Pricing: 1-col 가로 row 테이블형 ---------- */
+.sbb-pricing { grid-template-columns: 1fr; }
+.sbb-pricing .sb-price {
+  /* 명시 grid-area 로 칸 고정 — 배지는 그리드 밖(absolute) */
+  display: grid;
+  grid-template-columns: 200px 1fr 180px 180px;
+  grid-template-areas: "name list amount cta";
+  gap: 40px;
+  align-items: center;
+  padding: 28px 32px;
+  min-height: 96px;            /* 모든 행 동일 높이 */
+}
+.sbb-pricing .sb-price__name   { grid-area: name; margin: 0; }
+.sbb-pricing .sb-price__amount { grid-area: amount; margin: 0; text-align: right; }
+.sbb-pricing .sb-price__amount strong { font-size: 28px; }
+.sbb-pricing .sb-price__desc   { display: none; }
+.sbb-pricing .sb-price__list   {
+  grid-area: list;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  align-items: center;
+}
+.sbb-pricing .sb-price__list li { font-size: 13px; }
+.sbb-pricing .sb-price__cta    { grid-area: cta; margin: 0; }
+
+/* 배지는 그리드 밖에서 floating — 우상단 태그 스타일 */
+.sbb-pricing .sb-price__badge {
+  position: absolute;
+  top: 16px;
+  left: auto;
+  right: 24px;
+  transform: none;
+}
+.sbb-pricing .sb-price--featured {
+  padding-top: 28px;           /* 일반 행과 동일 */
+}
+.sbb-pricing .sb-price:hover {
+  transform: translateX(4px);    /* 가로 슬라이드 인터랙션 통일 */
+}
+
+/* ---------- FAQ: 2-col 그리드 ---------- */
+.sbb-faq {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--color-line-solid);
+  border-bottom: 1px solid var(--color-line-solid);
+}
+/* 시스템 .faq 의 border 효과 무효화 */
+.sbb-faq .faq__item {
+  border-bottom: 1px solid var(--color-line-solid);
+  border-right: 1px solid var(--color-line-solid);
+  padding: 24px 24px;
+}
+.sbb-faq .faq__item:nth-child(2n) { border-right: 0; }
+.sbb-faq .faq__item:nth-last-child(-n+2):not(:nth-child(2n+1):last-child) { border-bottom: 0; }
+.sbb-faq .faq__item:last-child { border-bottom: 0; }
+
+/* ---------- CTA Banner: 좌측 정렬 변형 (sandbox.css 의 .sb-cta 재사용 + override) ---------- */
+.sbb .sb-cta {
+  text-align: left;
+  padding-inline: 60px;
+}
+.sbb .sb-cta__inner {
+  margin: 0;            /* 중앙 정렬 해제 */
+  max-width: 640px;
+}
+
+/* ---------- 반응형 ---------- */
+@media (max-width: 960px) {
+  .sbb-hero { padding-block: 140px; }
+  .sbb-hero .hero__title { font-size: 44px; letter-spacing: -2px; }
+  .sbb-features .p-card { grid-template-columns: 1fr; gap: 20px; }
+  .sbb-pricing .sb-price {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "name"
+      "amount"
+      "list"
+      "cta";
+    gap: 16px;
+  }
+  .sbb-pricing .sb-price__amount { text-align: left; }
+  .sbb-pricing .sb-price__badge { top: 16px; right: 16px; }
+  .sbb-faq { grid-template-columns: 1fr; }
+  .sbb-faq .faq__item { border-right: 0 !important; }
+  .sbb .sb-cta { padding: 60px 32px; }
+}

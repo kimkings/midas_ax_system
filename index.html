@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    /* FOUC 방지 — 스타일 적용 전에 data-theme 먼저 박기 */
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MIDAS AX Design System</title>
+
+  <!-- Pretendard Variable (CDN) -->
+  <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+
+  <!-- Poppins (로고 전용) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+
+  <!-- Project CSS -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- ============== Page-wide gradients (top-right + bottom-left) ============== -->
+  <div class="page-gradient page-gradient--top" aria-hidden="true">
+    <img class="page-gradient__img" src="assets/images/hero-gradient-v2.png" alt="" />
+  </div>
+  <div class="page-gradient page-gradient--bottom" aria-hidden="true">
+    <img class="page-gradient__img" src="assets/images/hero-gradient-bottom.png" alt="" />
+  </div>
+
+  <!-- ============== GNB (transparent variant) ============== -->
+  <header class="gnb gnb--transparent">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="index.html">
+        <img src="assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="get-started/index.html">About</a>
+        <a href="pattern/index.html">Pattern</a>
+        <a href="resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============== Hero ============== -->
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title" data-reveal style="--i: 0">
+          MIDAS AX Design System<br />
+          Design Once. Scale with AX.
+        </h1>
+        <p class="hero__lead" data-reveal style="--i: 1">
+          사람과 AX가 함께 활용할 수 있도록<br />
+          패턴, 정책, 구조까지 연결된 디자인 시스템을 구축합니다.
+        </p>
+        <div class="hero__cta" data-reveal style="--i: 2">
+          <a class="btn-pill" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=2028-3327&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">
+            피그마 링크 바로가기
+          </a>
+          <a class="btn-pill" href="#" target="_blank" rel="noopener">
+            GitHub 바로가기
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============== 둘러보기 (About / Pattern / Resource) ============== -->
+    <section class="container section">
+      <div class="card-grid">
+        <a class="p-card" data-reveal style="--i: 1" href="get-started/index.html">
+          <div class="p-card__media">
+            <img src="assets/images/pattern-agentic.png" alt="" />
+          </div>
+          <div class="p-card__body">
+            <h3 class="p-card__title">About</h3>
+            <p class="p-card__desc">
+              P1 Agent Kit이 무엇이고 어떻게 쓰는지 —<br />
+              시스템 소개·사용 가이드·FAQ를 확인하세요.
+            </p>
+          </div>
+        </a>
+
+        <a class="p-card" data-reveal style="--i: 2" href="pattern/index.html">
+          <div class="p-card__media">
+            <img src="assets/images/pattern-embedded.png" alt="" />
+          </div>
+          <div class="p-card__body">
+            <h3 class="p-card__title">Pattern</h3>
+            <p class="p-card__desc">
+              Agentic · Contextual · Background · Builder —<br />
+              AX 경험별 UI 템플릿 패턴을 살펴보세요.
+            </p>
+          </div>
+        </a>
+
+        <a class="p-card" data-reveal style="--i: 3" href="resource/index.html">
+          <div class="p-card__media">
+            <img src="assets/images/pattern-automation.png" alt="" />
+          </div>
+          <div class="p-card__body">
+            <h3 class="p-card__title">Resource</h3>
+            <p class="p-card__desc">
+              디자인 파일·토큰·문서 등<br />
+              실무에 바로 활용하는 AX 리소스를 모았습니다.
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============== Footer ============== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/theme.js" defer></script>
+  <script src="js/search.js" defer></script>
+</body>
+</html>

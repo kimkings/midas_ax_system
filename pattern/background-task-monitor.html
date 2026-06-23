@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t !== "light" && t !== "dark") {
+          t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        }
+        document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Background Task Monitor — MIDAS AX Design System</title>
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" />
+  <link rel="stylesheet" href="../css/reset.css" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/base.css" />
+  <link rel="stylesheet" href="../css/layout.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+  <header class="gnb gnb--solid">
+    <div class="gnb__inner">
+      <a class="gnb__logo" href="../index.html">
+        <img src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />
+        <span>MIDAS AX System</span>
+      </a>
+      <nav class="gnb__nav" aria-label="Global">
+        <a href="../index.html">Home</a>
+        <a href="../get-started/index.html">About</a>
+        <a href="index.html" aria-current="page">Pattern</a>
+        <a href="../resource/index.html">Resource</a>
+        <div class="gnb__search-wrap" data-state="closed">
+          <button class="gnb__search" type="button" aria-label="검색" aria-expanded="false">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7" />
+              <path d="m20 20-3.5-3.5" />
+            </svg>
+          </button>
+          <div class="gnb__search-panel" role="search">
+            <input class="gnb__search-input" type="text" placeholder="검색어를 입력하세요" aria-label="검색어" autocomplete="off" spellcheck="false" />
+          </div>
+          <div class="gnb__search-results" role="listbox" aria-label="검색 결과" data-state="empty"></div>
+        </div>
+        <button class="gnb__theme" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+          <svg class="gnb__theme-icon gnb__theme-icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2"/><path d="M12 20v2"/>
+            <path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/>
+            <path d="M2 12h2"/><path d="M20 12h2"/>
+            <path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>
+          </svg>
+          <svg class="gnb__theme-icon gnb__theme-icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+  <main class="page-grid page-grid--with-toc">
+    <aside class="snb" aria-label="Pattern 네비게이션">
+      <div class="snb__inner">
+      <a class="snb__overview" href="index.html">
+        <span>Overview</span>
+        <span class="snb__overview-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span>
+      </a>
+      <p class="snb__caption">AGENTIC</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="global-chat-assistant.html">Global Chat Assistant<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="dedicated-agent-workspace.html">Dedicated Agent Workspace<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">CONTEXTUAL</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="contextual-agent-panel.html">Contextual Agent Panel<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+        <li><a class="snb__item" href="embedded-ai-elements.html">Embedded AI Elements<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BACKGROUND</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="background-task-monitor.html" aria-current="page">Background Task Monitor<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      <p class="snb__caption">BUILDER</p>
+      <ul class="snb__list">
+        <li><a class="snb__item" href="agent-workflow-builder.html">Agent/Workflow Builder<span class="snb__item-arrow" aria-hidden="true"><svg viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"><path d="M12.8128 4.9205C13.1512 5.25897 13.1512 5.8077 12.8128 6.14617L8.14613 10.8128C7.80767 11.1513 7.25893 11.1513 6.92047 10.8128C6.582 10.4744 6.582 9.92563 6.92047 9.58717L10.1077 6.40003H0.866667C0.38802 6.40003 0 6.01197 0 5.53337C0 5.0547 0.38802 4.6667 0.866667 4.6667H10.1077L6.92047 1.47949C6.582 1.14104 6.582 0.592293 6.92047 0.25384C7.25893 -0.0846133 7.80767 -0.0846133 8.14613 0.25384L12.8128 4.9205Z"/></svg></span></a></li>
+      </ul>
+      </div>
+    </aside>
+
+    <aside class="toc" aria-label="목차">
+      <p class="toc__title">목차</p>
+      <ul class="toc__list">
+        <li><a class="toc__item" href="#overview">Overview</a></li>
+        <li><a class="toc__item" href="#basic-layout-structure">Basic Layout Structure</a></li>
+        <li><a class="toc__item" href="#variants">Variants</a></li>
+        <li><a class="toc__item" href="#interaction">Interaction</a></li>
+      </ul>
+    </aside>
+
+    <div class="page-content">
+      <p class="page-content__eyebrow" data-reveal style="--i: 0">Pattern / Background</p>
+      <h1 class="page-content__title" data-reveal style="--i: 0">Background Task Monitor</h1>
+      <div class="page-content__lead" data-reveal style="--i: 1">
+        <p>사용자가 실행한 AI 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 진행률·단계·대기열·완료·실패를 추적하고, 완료된 결과를 열거나 실패한 작업을 재시도할 수 있습니다.</p>
+      </div>
+      <div class="spec-hero" data-reveal style="--i: 2"><img src="../assets/images/btm/btm-hero.png" alt="Background Task Monitor 기본 화면 목업" loading="lazy" /></div>
+      <div class="spec-figma-link" data-reveal style="--i: 3">
+        <a class="btn-pill btn-pill--md" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=2002-4365&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">피그마에서 보기 ↗</a>
+      </div>
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="overview">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Overview</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Background Task Monitor는 사용자가 AI 작업을 실행한 뒤, 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 사용자는 AI가 작업을 수행하는 동안 계속 대화로 리드하지 않아도 되며, 진행률·단계·대기열·완료 여부·실패 사유를 확인합니다. 작업이 끝나면 사용자는 결과를 열어보거나, 실패한 작업을 재시도하거나, 완료된 결과를 다음 업무로 연결할 수 있습니다. 이 패턴은 AI 작업이 즉시 끝나지 않거나, 여러 작업이 동시에 실행되거나, 사용자가 다른 화면으로 이동해도 작업 상태를 계속 인지해야 할 때 적합합니다.</p>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 분류를 선택하는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 38%" /><col style="width: 62%" /></colgroup>
+            <thead><tr><th>선택 조건</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>AI 작업이 즉시 완료되지 않는다</td><td>분석, 생성, 변환, 일괄 처리처럼 시간이 걸리는 작업을 사용자가 기다려야 하는 경우</td></tr>
+              <tr><td>사용자가 작업 진행 상태를 알아야 한다</td><td>작업이 진행 중인지, 완료됐는지, 실패했는지 사용자가 명확히 확인해야 하는 경우</td></tr>
+              <tr><td>사용자가 다른 일을 하면서 작업을 맡길 수 있어야 한다</td><td>AI 작업을 실행한 뒤 현재 화면을 떠나도 작업이 계속 진행되어야 하는 경우</td></tr>
+              <tr><td>여러 AI 작업을 동시에 관리해야 한다</td><td>여러 요청이 대기, 실행, 완료, 실패 상태로 쌓이고 목록으로 관리되어야 하는 경우</td></tr>
+              <tr><td>완료 후 결과 진입점이 필요하다</td><td>작업이 끝난 뒤 사용자가 결과 화면, 파일, 리포트, 산출물로 이동해야 하는 경우</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">이 템플릿을 사용하지 않는 경우</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 58%" /><col style="width: 42%" /></colgroup>
+            <thead><tr><th>선택하지 않는 경우</th><th>대신 고려할 패턴</th></tr></thead>
+            <tbody>
+              <tr><td>사용자가 AI와 직접 대화하며 즉시 응답을 받아야 한다</td><td>Global Chat Assistant</td></tr>
+              <tr><td>특정 산출물을 작업공간 안에서 AI와 함께 편집해야 한다</td><td>Dedicated Agent Workspace</td></tr>
+              <tr><td>현재 화면을 유지한 채 AI 패널에서 도움을 받아야 한다</td><td>Contextual Agent Panel</td></tr>
+              <tr><td>사용자가 자동화 흐름이나 에이전트 자체를 구성해야 한다</td><td>Agent / Workflow Builder</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Key Characteristics</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>구분</th><th>내용</th></tr></thead>
+            <tbody>
+              <tr><td>진입 방식</td><td>AI 작업 실행 버튼, 자동화 실행, 일괄 처리 요청, 백그라운드 생성 요청</td></tr>
+              <tr><td>입력 방식</td><td>작업 대상, 실행 조건, 처리 범위, 우선순위, 참조 데이터</td></tr>
+              <tr><td>응답 방식</td><td>진행률, 단계 상태, 대기열, 완료 알림, 실패 사유, 결과 링크</td></tr>
+              <tr><td>컨텍스트 활용</td><td>실행한 작업 정보, 대상 데이터, 요청 조건, 작업 로그, 이전 실행 기록</td></tr>
+              <tr><td>사용자 흐름</td><td>작업 실행 → 진행 상태 확인 → 완료 또는 실패 확인 → 결과 보기 또는 재시도</td></tr>
+              <tr><td>주요 가치</td><td>긴 AI 작업을 사용자가 기다리지 않고도 안정적으로 맡기고 추적할 수 있게 함</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">주요 예시 레퍼런스</h3>
+        <p class="spec-subsection__caption">실제 제품에서 Background Task Monitor 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Zapier Zap History</h3>
+        <p class="spec-subsection__caption">Zapier는 AI 에이전트 UI라기보다 자동화 워크플로우 도구에 가깝지만, 실행·변경 이력을 추적하는 구조를 참고하기 좋습니다. Zap이 게시되거나 켜지는 등 중요한 변경이 시간순으로 쌓이고, 사용자는 특정 기간, 사용자, 변경 유형을 기준으로 히스토리를 확인할 수 있습니다. 백그라운드 작업이나 자동화 실행 결과를 사용자가 나중에 확인하고, 문제 발생 시 이전 상태를 추적해야 하는 경우에 유용한 구조입니다. Zapier는 Zap을 게시할 때마다 새 버전을 만들고, 변경 내역을 검토할 수 있다고 설명합니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-ref-zapier.png" alt="Zapier Zap History 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">GitHub Actions</h3>
+        <p class="spec-subsection__caption">GitHub Actions도 AI 에이전트 UI는 아니지만, 다단계 백그라운드 작업의 진행 상태를 보여주는 대표적인 구조입니다. Build, Test, Publish 같은 Job과 Step이 순차적으로 실행되고, 각 단계는 성공, 진행 중, 대기, 실패 상태를 가집니다. 특히 배포 단계에서 승인 대기 상태를 표시하고, 사용자가 승인하거나 거절할 수 있는 구조는 장시간 실행 작업의 상태 모니터링과 개입 지점 설계에 참고하기 좋습니다. GitHub는 워크플로우 실행이 Job과 Step으로 구성되며 로그와 상태를 확인할 수 있다고 설명하고, 배포 작업은 승인 또는 거절 흐름을 가질 수 있다고 안내합니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-ref-github.png" alt="GitHub Actions 레퍼런스 화면" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="basic-layout-structure">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Basic Layout Structure</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Background Task Monitor는 사용자가 실행한 AI 작업의 진행 상태와 결과 진입점을 보여주는 구조를 가집니다. 하위 분기에 따라 Persistent Progress Panel, Task Queue, Completion Notification으로 나뉘지만, 기본적으로는 Task Entry Point, Task Status Area, Progress / Step Area, Result Entry, Recovery Action으로 구성됩니다.</p>
+        <div class="spec-image" data-reveal style="--i: 2"><img src="../assets/images/btm/btm-layout.png" alt="Background Task Monitor 기본 구조 (Task Status · Progress / Step · Result Entry)" loading="lazy" /></div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">레이아웃 원칙</h3>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 22%" /><col style="width: 78%" /></colgroup>
+            <thead><tr><th>원칙</th><th>설명</th></tr></thead>
+            <tbody>
+              <tr><td>상태 명확성</td><td>작업이 대기 중인지, 진행 중인지, 완료됐는지, 실패했는지 명확히 구분합니다.</td></tr>
+              <tr><td>비동기성 인지</td><td>사용자가 화면을 떠나도 작업이 계속 진행된다는 점을 인지할 수 있어야 합니다.</td></tr>
+              <tr><td>결과 진입성</td><td>완료 후 결과를 열거나 다음 단계로 이동할 수 있는 명확한 진입점을 제공합니다.</td></tr>
+              <tr><td>실패 복구성</td><td>실패 시 사유, 재시도, 조건 수정, 취소 등 복구 경로를 제공합니다.</td></tr>
+              <tr><td>방해 최소화</td><td>진행 상태를 알리되, 사용자의 현재 작업 흐름을 과도하게 방해하지 않아야 합니다.</td></tr>
+              <tr><td>다중 작업 관리</td><td>여러 작업이 있을 경우 개별 작업 상태와 전체 큐 상태를 함께 파악할 수 있어야 합니다.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="variants">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Variants</h2>
+        <p class="spec-section__desc" data-reveal style="--i: 1">Background Task Monitor는 작업 상태를 얼마나 지속적으로 보여줘야 하는지, 여러 작업을 관리해야 하는지, 완료 후 얼마나 강하게 알릴지에 따라 하위 UI가 나뉩니다.</p>
+      <div class="spec-table-wrap">
+          <table class="spec-table">
+            <colgroup><col style="width: 30%" /><col style="width: 35%" /><col style="width: 35%" /></colgroup>
+            <thead><tr><th>하위 분기</th><th>한 줄 정의</th><th>선택 기준</th></tr></thead>
+            <tbody>
+              <tr><td>Persistent Progress Panel</td><td>화면 안에 작업 진행 상태를 지속적으로 보여주는 UI</td><td>사용자가 작업이 진행 중임을 계속 인지해야 할 때</td></tr>
+              <tr><td>Task Queue</td><td>여러 AI 작업의 대기, 진행, 완료, 실패 상태를 목록으로 관리</td><td>여러 작업이 동시에 또는 순차적으로 실행될 때</td></tr>
+              <tr><td>Completion Notification</td><td>작업 완료 후 결과 진입점을 알림으로 제공하는 UI</td><td>작업 중에는 자세한 상태가 필요 없고, 완료 후 알려주면 되는 경우</td></tr>
+            </tbody>
+          </table>
+        </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Persistent Progress Panel</h3>
+        <p class="spec-subsection__caption">AI 작업이 진행되는 동안 화면 안에 지속적으로 상태를 보여주는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-variant-progress.png" alt="Persistent Progress Panel 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Task Queue</h3>
+        <p class="spec-subsection__caption">여러 AI 작업이 동시에 또는 순차적으로 진행될 때, 작업 목록과 개별 상태를 관리하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-variant-queue.png" alt="Task Queue 변형" loading="lazy" /></div>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Completion Notification</h3>
+        <p class="spec-subsection__caption">AI 작업이 완료되었을 때, 사용자에게 짧은 알림과 결과 진입점을 제공하는 UI입니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-variant-notification.png" alt="Completion Notification 변형" loading="lazy" /></div>
+      </div>
+      </section>
+
+      <hr class="page-content__divider" />
+
+      <section class="spec-section" id="interaction">
+        <h2 class="spec-section__title" data-reveal style="--i: 0">Interaction</h2>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Trigger - Background Task Start</h3>
+        <p class="spec-subsection__caption">사용자가 AI 작업 실행, 일괄 처리, 자동화 시작, 생성 요청 등을 통해 백그라운드 작업을 시작합니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-interaction-trigger.png" alt="Trigger — Background Task 시작" loading="lazy" /></div>
+        <p class="spec-image__description">전역 혹은 특정 기능 페이지 내의 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Input - Task Scope</h3>
+        <p class="spec-subsection__caption">사용자는 작업 대상, 처리 범위, 실행 조건, 참고 데이터, 결과 형식을 지정합니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-interaction-input.png" alt="Input — 작업 범위 지정" loading="lazy" /></div>
+        <p class="spec-image__description">정보는 사전에 입력되어 있거나, 자연어로 사용자가 요청하거나, 복합 필드의 구성 등 다양한 형태로 입력 받습니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Output - Task Status</h3>
+        <p class="spec-subsection__caption">AI는 진행 중, 대기 중, 완료, 실패, 취소 등 작업 상태와 진행률 또는 단계 정보를 제공합니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-interaction-output.png" alt="Output — 작업 상태" loading="lazy" /></div>
+        <p class="spec-image__description">요청 이후 백그라운드로 동작하는 경우, 처리 상태와 보조 정보를 제공합니다.</p>
+      </div>
+      <div class="spec-subsection" data-reveal>
+        <h3 class="spec-subsection__title">Follow up - Open Result or Recover</h3>
+        <p class="spec-subsection__caption">사용자는 완료된 결과를 열거나, 실패한 작업을 재시도하거나, 작업을 취소하고 조건을 수정할 수 있습니다.</p>
+        <div class="spec-image"><img src="../assets/images/btm/btm-interaction-followup.png" alt="Follow up — 결과 확인 또는 복구" loading="lazy" /></div>
+        <p class="spec-image__description">완료, 실패, 권한 확인 등 상태에 대한 후속 조치로 결과 확인, 재시도 등 추가적인 액션을 수행할 수 있습니다.</p>
+      </div>
+      </section>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <span>© 2026 MIDAS, Inc.</span>
+      <span class="footer__badge">버전 1.0</span>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.43/dist/flexsearch.bundle.min.js" defer></script>
+  <script src="../js/main.js" defer></script>
+  <script src="../js/search.js" defer></script>
+  <script src="../js/theme.js" defer></script>
+</body>
+</html>

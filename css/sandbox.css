@@ -1,0 +1,468 @@
+/* ============================================
+   Sandbox — Spark Studio 가상 제품 랜딩
+   (디자인 시스템 검증용. 기존 토큰/컴포넌트 최대한 재사용)
+   ============================================ */
+
+/* ---------- Variant Switcher — 우측 플로팅 사이드 토글 ---------- */
+.sb-switcher {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-line-solid);
+  border-radius: var(--radius-md);
+  padding: 6px;
+  box-shadow: 0 8px 24px rgba(23, 23, 25, 0.06);
+}
+.sb-switcher__compare {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  color: var(--color-label-alternative);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard);
+  border-bottom: 1px solid var(--color-line-solid);
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+.sb-switcher__compare svg { width: 14px; height: 14px; }
+.sb-switcher__compare:hover {
+  color: var(--color-label-strong);
+}
+.sb-switcher__item {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-label-alternative);
+  text-decoration: none;
+  transition: background-color var(--duration-fast) var(--easing-standard),
+              color var(--duration-fast) var(--easing-standard);
+}
+.sb-switcher__item:hover {
+  background: var(--color-fill-hover);
+  color: var(--color-label-strong);
+}
+.sb-switcher__item.is-active {
+  background: var(--color-inverse-background);
+  color: var(--color-inverse-label);
+}
+/* 구분선 — System (A/B/C) 와 Free (D/E/F) 구분 */
+.sb-switcher__div {
+  display: block;
+  height: 1px;
+  background: var(--color-line-solid);
+  margin: 4px 6px;
+}
+@media (max-width: 960px) {
+  .sb-switcher {
+    bottom: 24px;
+    right: 24px;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+  }
+  .sb-switcher__compare {
+    border-bottom: 0;
+    border-right: 1px solid var(--color-line-solid);
+    padding-bottom: 0;
+    padding-right: 4px;
+    margin-bottom: 0;
+    margin-right: 4px;
+  }
+  .sb-switcher__div {
+    width: 1px;
+    height: auto;
+    margin: 6px 4px;
+  }
+}
+
+/* ---------- Hero CTA 그룹 — 버튼 2개 가로 배치 (중앙 정렬) ---------- */
+.sb-hero-cta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- Eyebrow / 메타 라벨 ---------- */
+.sb-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--color-fill-normal);
+  color: var(--color-label-neutral);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.18px;
+  margin-bottom: 24px;
+}
+.sb-eyebrow::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-status-positive);
+  box-shadow: 0 0 0 3px rgba(0, 191, 64, 0.18);
+}
+
+/* ---------- Feature 카드 — p-card 보강(아이콘 박스) ---------- */
+.sb-feature .p-card__media {
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-subtle);
+}
+.sb-feature__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  background: var(--color-background);
+  display: grid;
+  place-items: center;
+  color: var(--color-label-strong);
+  box-shadow: 0 1px 0 var(--color-line-solid), 0 8px 24px rgba(23, 23, 25, 0.04);
+  transition: transform var(--duration-normal) var(--easing-standard);
+}
+.sb-feature:hover .sb-feature__icon {
+  transform: translateY(-4px) scale(1.04);
+}
+.sb-feature__icon svg {
+  width: 36px;
+  height: 36px;
+  display: block;
+}
+
+/* ---------- Demo 섹션 — 채팅 UI 목업 ---------- */
+.sb-demo {
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-subtle);
+  padding: 60px;
+  overflow: hidden;
+}
+.sb-demo__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 60px;
+  align-items: center;
+}
+.sb-demo__copy h3 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+  color: var(--color-label-strong);
+  margin: 0 0 16px;
+}
+.sb-demo__copy p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-label-neutral);
+  margin: 0;
+}
+.sb-demo__copy ul {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+.sb-demo__copy li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 15px;
+  color: var(--color-label-neutral);
+  line-height: 1.5;
+}
+.sb-demo__copy li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  border-radius: 50%;
+  background:
+    var(--color-status-positive)
+    no-repeat center/12px url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+}
+
+/* 채팅 UI 프레임 */
+.sb-chat {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-line-solid);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 24px 60px rgba(23, 23, 25, 0.08);
+  min-height: 360px;
+}
+.sb-chat__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-line-solid);
+}
+.sb-chat__avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #3C78FF, #B16CFF);
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+.sb-chat__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-label-strong);
+  line-height: 1.2;
+}
+.sb-chat__status {
+  font-size: 12px;
+  color: var(--color-label-alternative);
+  line-height: 1.2;
+}
+.sb-chat__msg {
+  max-width: 78%;
+  padding: 10px 14px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+}
+.sb-chat__msg--user {
+  align-self: flex-end;
+  background: #1B1C1E;
+  color: #F7F7F8;
+  border-bottom-right-radius: 4px;
+}
+:root[data-theme="dark"] .sb-chat__msg--user {
+  background: #F7F7F8;
+  color: #1B1C1E;
+}
+.sb-chat__msg--bot {
+  align-self: flex-start;
+  background: var(--color-fill-normal);
+  color: var(--color-label-strong);
+  border-bottom-left-radius: 4px;
+}
+.sb-chat__typing {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+  padding: 12px 14px;
+}
+.sb-chat__typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-label-alternative);
+  animation: sb-typing 1.2s ease-in-out infinite;
+}
+.sb-chat__typing span:nth-child(2) { animation-delay: 0.15s; }
+.sb-chat__typing span:nth-child(3) { animation-delay: 0.3s; }
+@keyframes sb-typing {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+  30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* ---------- Pricing ---------- */
+.sb-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+.sb-price {
+  position: relative;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-line-solid);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--duration-normal) var(--easing-standard),
+              box-shadow var(--duration-normal) var(--easing-standard);
+}
+.sb-price:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(23, 23, 25, 0.08);
+}
+/* Featured: 모드와 무관하게 항상 dark accent (high contrast) */
+.sb-price--featured {
+  background: #1B1C1E;
+  border-color: #1B1C1E;
+  color: #F7F7F8;
+}
+.sb-price__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--color-status-positive);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+}
+.sb-price__name {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+  color: var(--color-label-alternative);
+}
+.sb-price--featured .sb-price__name {
+  color: rgba(247, 247, 248, 0.6);
+}
+.sb-price__amount {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+.sb-price__amount strong {
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -1.2px;
+  line-height: 1;
+}
+.sb-price__amount span {
+  font-size: 14px;
+  color: var(--color-label-alternative);
+}
+.sb-price--featured .sb-price__amount span {
+  color: rgba(247, 247, 248, 0.7);
+}
+.sb-price__desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-label-alternative);
+  margin: 0 0 24px;
+  min-height: 42px;
+}
+.sb-price--featured .sb-price__desc {
+  color: rgba(247, 247, 248, 0.75);
+}
+.sb-price__list {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+.sb-price__list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-label-neutral);
+}
+.sb-price--featured .sb-price__list li {
+  color: rgba(247, 247, 248, 0.9);
+}
+.sb-price__list li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  background: no-repeat center/contain url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2300BF40' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><polyline points='20 6 9 17 4 12'/></svg>");
+}
+.sb-price__cta {
+  margin-top: auto;
+}
+.sb-price__cta .btn-pill {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+.sb-price--featured .btn-pill {
+  background: #F7F7F8;
+  color: #1B1C1E;
+}
+.sb-price--featured .btn-pill:hover {
+  background: #fff;
+  color: #1B1C1E;
+}
+
+/* ---------- CTA Banner — 최종 전환 섹션
+   모드 무관하게 항상 dark accent (의도된 시각적 강조)
+   ---------- */
+.sb-cta {
+  background: #1B1C1E;
+  color: #F7F7F8;
+  border-radius: var(--radius-lg);
+  padding: 80px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.sb-cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(60% 80% at 50% 0%, rgba(60, 120, 255, 0.22), transparent 70%);
+  pointer-events: none;
+}
+.sb-cta__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.sb-cta h2 {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+  color: inherit;
+}
+.sb-cta p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: rgba(247, 247, 248, 0.78);
+  margin: 0 0 32px;
+}
+.sb-cta .btn-pill {
+  background: #F7F7F8;
+  color: #1B1C1E;
+}
+.sb-cta .btn-pill:hover {
+  background: #fff;
+  color: #1B1C1E;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .sb-demo { padding: 40px; }
+  .sb-demo__grid { grid-template-columns: 1fr; gap: 40px; }
+  .sb-pricing-grid { grid-template-columns: 1fr; }
+  .sb-cta { padding: 60px 32px; }
+  .sb-cta h2 { font-size: 32px; }
+}
