@@ -27,7 +27,7 @@ const EXCLUDE_DIRS = new Set(["node_modules", "scripts", ".git", "assets", "css"
 /* ===== 폴더 → 섹션 그룹 매핑 ===== */
 const GROUP_MAP = {
   "": "Home",
-  "get-started": "Overview",
+  "about": "About",
   "foundation": "Foundation",
   "components": "Components",
   "pattern": "Pattern",

@@ -148,7 +148,7 @@
     }
 
     // 정렬 순서 고정
-    const order = ["Home", "Overview", "Foundation", "Components", "Pattern", "Docs"];
+    const order = ["Home", "About", "Foundation", "Components", "Pattern", "Docs"];
     const html = order
       .filter((g) => groups[g])
       .map((g) => {
