@@ -2614,6 +2614,10 @@
 /* 패턴 상세 — 피그마 바로가기 버튼 (hero 하단) */
 .spec-figma-link {
   margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
 }
 
 /* ============================================
