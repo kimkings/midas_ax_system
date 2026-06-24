@@ -558,6 +558,7 @@
       const zoomBtn = document.getElementById("dawZoom");
       const lightbox = document.getElementById("dawLightbox");
       const stage = document.getElementById("dawLightboxStage");
+      const control = demo.parentNode ? demo.parentNode.querySelector(".daw-control") : null;
       if (zoomBtn && lightbox && stage) {
         const slot = document.createElement("div");
         slot.style.display = "none";
@@ -568,6 +569,7 @@
           zoomOpen = true;
           demo.parentNode.insertBefore(slot, demo); // 원래 위치 기억
           stage.appendChild(demo);
+          if (control) stage.appendChild(control); // 컨트롤러도 데모 하단에 함께 (리스너 유지)
           demo.classList.add("daw-demo--zoom");
           lightbox.hidden = false;
           document.body.style.overflow = "hidden";
@@ -583,6 +585,7 @@
             if (zoomOpen) return; // 닫는 도중 다시 열렸으면 복원하지 않음
             demo.classList.remove("daw-demo--zoom");
             if (slot.parentNode) slot.parentNode.insertBefore(demo, slot);
+            if (control) demo.after(control); // 컨트롤러를 원래 위치(데모 바로 뒤)로 복원
             if (slot.parentNode) slot.parentNode.removeChild(slot);
             lightbox.hidden = true;
           }, 260);
