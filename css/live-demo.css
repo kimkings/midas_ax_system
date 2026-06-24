@@ -18,7 +18,7 @@
   --d-bubble: #343434;
 
   display: flex;
-  gap: 12px;
+  gap: 0;
   height: 540px;
   margin-top: 24px;
   border: 1px solid var(--d-border);
@@ -107,8 +107,8 @@
 
 /* 라이트박스 안에서 확대된 데모 크기 */
 .gca-demo.gca-demo--zoom {
-  width: min(1180px, 92vw);
-  height: min(820px, 80vh);
+  width: min(1440px, 92vw);
+  height: min(960px, 80vh);
   margin-top: 0;
 }
 
@@ -117,12 +117,12 @@
  * ============================================================ */
 .gca-sb {
   flex: 0 0 auto;
-  width: 220px;
+  width: 240px;
   display: flex;
   flex-direction: column;
   background: var(--d-bg);
-  padding: 8px 6px;
-  gap: 8px;
+  padding: 8px 12px;
+  gap: 16px;
   min-width: 0;
   overflow: hidden;
   transition: width 0.24s ease, padding 0.24s ease, opacity 0.18s ease;
@@ -142,12 +142,18 @@
 .gca-demo.is-sb-collapsed .gca-sb__item { justify-content: center; padding: 9px 0; }
 .gca-demo.is-sb-collapsed .gca-sb__item-label { display: none; }
 /* 최근 대화 영역 통째로 숨김 */
+.gca-demo.is-sb-collapsed .gca-sb__recent,
 .gca-demo.is-sb-collapsed .gca-sb__label,
 .gca-demo.is-sb-collapsed .gca-sb__convos { display: none; }
 /* 사용자: 아바타만 가운데, 하단 고정 */
 .gca-demo.is-sb-collapsed .gca-sb__user { justify-content: center; margin-top: auto; padding: 8px 0; }
 .gca-demo.is-sb-collapsed .gca-sb__user-meta { display: none; }
 
+.gca-sb__top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 .gca-sb__head {
   display: flex;
   align-items: center;
@@ -176,22 +182,25 @@
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border: 0;
   background: none;
   border-radius: 6px;
   color: var(--d-text-2);
   cursor: pointer;
 }
+.gca-sb__collapse svg { width: 24px; height: 24px; }
 .gca-sb__collapse:hover { background: rgba(0, 0, 0, 0.05); }
 
-.gca-sb__fixed { display: flex; flex-direction: column; gap: 1px; padding: 0 2px; }
+.gca-sb__fixed { display: flex; flex-direction: column; gap: 0; padding: 0; }
 .gca-sb__item {
   display: flex;
+  width: 100%;
   align-items: center;
   gap: 10px;
-  padding: 7px 10px;
+  height: 40px;
+  padding: 6px 8px 6px 12px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: 500;
@@ -202,11 +211,31 @@
 .gca-sb__item svg { width: 24px; height: 24px; color: var(--d-text-2); flex: 0 0 24px; }
 .gca-sb__item:hover { background: rgba(0, 0, 0, 0.05); }
 
+.gca-sb__recent {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-height: 0;
+  letter-spacing: 0;
+}
 .gca-sb__label {
-  padding: 8px 12px 4px;
+  padding: 0 16px;
   font-size: 12px;
   font-weight: 600;
   color: var(--d-text-3);
+  vertical-align: middle;
+  letter-spacing: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 16px;
+  height: 20px;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .gca-sb__convos {
@@ -214,12 +243,18 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 1px;
-  padding: 0 2px;
+  gap: 0;
+  padding: 0;
   min-height: 0;
+  height: fit-content;
+  width: 100%;
 }
 .gca-sb__convo {
-  padding: 7px 12px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 40px;
+  padding: 0 16px;
   border-radius: 8px;
   font-size: 14px;
   font-weight: 500;
@@ -342,8 +377,8 @@
   cursor: pointer;
 }
 .gca-icon-btn svg { width: 18px; height: 18px; }
-.gca-main__bar .gca-icon-btn svg { width: 20px; height: 20px; }
-.gca-main__bar .gca-icon-btn svg use { width: 16px; height: 16px; }
+.gca-main__bar .gca-icon-btn svg { width: 28px; height: 28px; }
+.gca-main__bar .gca-icon-btn svg use { width: 28px; height: 28px; }
 .gca-icon-btn:hover { background: rgba(0, 0, 0, 0.05); color: var(--d-text); }
 
 /* ---------- 커스텀 스크롤바 (오버레이 · 컨테이너 hover 시 노출) ---------- */
@@ -580,7 +615,7 @@
   transition: opacity 0.2s ease, background 0.2s ease;
 }
 .gca-input__send svg { width: 20px; height: 20px; }
-.gca-input__send:disabled { background: #e4e4e4; color: #fff; cursor: default; }
+.gca-input__send:disabled { background: #fff; color: #d2d2d2; cursor: default; }
 
 .gca-actionbar { display: flex; align-items: center; gap: 4px; width: 100%; }
 .gca-chip {

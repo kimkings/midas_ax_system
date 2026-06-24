@@ -183,27 +183,31 @@
         <div class="gca-demo" id="gcaDemo" aria-label="Global Chat Assistant 라이브 데모">
           <!-- Sidebar -->
           <aside class="gca-sb">
-            <div class="gca-sb__head">
-              <img class="gca-sb__logo" src="../assets/images/logo-sparkle.png" alt="" />
-              <button class="gca-sb__expand" type="button" aria-label="사이드바 펼치기">
-                <svg aria-hidden="true"><use href="#ic-sidebar"></use></svg>
-              </button>
-              <span class="gca-sb__brand">에이전트</span>
-              <button class="gca-sb__collapse" type="button" aria-label="사이드바 접기">
-                <svg aria-hidden="true"><use href="#ic-sidebar"></use></svg>
-              </button>
+            <div class="gca-sb__top">
+              <div class="gca-sb__head">
+                <img class="gca-sb__logo" src="../assets/images/logo-sparkle.png" alt="" />
+                <button class="gca-sb__expand" type="button" aria-label="사이드바 펼치기">
+                  <svg aria-hidden="true"><use href="#ic-sidebar"></use></svg>
+                </button>
+                <span class="gca-sb__brand">에이전트</span>
+                <button class="gca-sb__collapse" type="button" aria-label="사이드바 접기">
+                  <svg aria-hidden="true"><use href="#ic-sidebar"></use></svg>
+                </button>
+              </div>
+              <nav class="gca-sb__fixed" aria-label="에이전트 메뉴">
+                <span class="gca-sb__item" data-action="new-chat" role="button" tabindex="0" aria-label="새로운 대화" title="새로운 대화"><svg aria-hidden="true"><use href="#ic-edit"></use></svg><span class="gca-sb__item-label">새로운 대화</span></span>
+                <span class="gca-sb__item" title="검색"><svg aria-hidden="true"><use href="#ic-search"></use></svg><span class="gca-sb__item-label">검색</span></span>
+                <span class="gca-sb__item" title="에이전트"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg><span class="gca-sb__item-label">에이전트</span></span>
+                <span class="gca-sb__item" title="워크플로우"><svg aria-hidden="true"><use href="#ic-share"></use></svg><span class="gca-sb__item-label">워크플로우</span></span>
+              </nav>
             </div>
-            <nav class="gca-sb__fixed" aria-label="에이전트 메뉴">
-              <span class="gca-sb__item" data-action="new-chat" role="button" tabindex="0" aria-label="새로운 대화" title="새로운 대화"><svg aria-hidden="true"><use href="#ic-edit"></use></svg><span class="gca-sb__item-label">새로운 대화</span></span>
-              <span class="gca-sb__item" title="검색"><svg aria-hidden="true"><use href="#ic-search"></use></svg><span class="gca-sb__item-label">검색</span></span>
-              <span class="gca-sb__item" title="에이전트"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg><span class="gca-sb__item-label">에이전트</span></span>
-              <span class="gca-sb__item" title="워크플로우"><svg aria-hidden="true"><use href="#ic-share"></use></svg><span class="gca-sb__item-label">워크플로우</span></span>
-            </nav>
-            <p class="gca-sb__label">최근 대화</p>
-            <div class="gca-sb__convos">
-              <span class="gca-sb__convo is-active" data-convo="lead" role="button" tabindex="0">3분기 리드 현황 정리</span>
-              <span class="gca-sb__convo" data-convo="onboarding" role="button" tabindex="0">신규 고객 온보딩 플로우</span>
-              <span class="gca-sb__convo" data-convo="report" role="button" tabindex="0">주간 영업 리포트 초안</span>
+            <div class="gca-sb__recent">
+              <p class="gca-sb__label">최근 대화</p>
+              <div class="gca-sb__convos">
+                <span class="gca-sb__convo is-active" data-convo="lead" role="button" tabindex="0">3분기 리드 현황 정리</span>
+                <span class="gca-sb__convo" data-convo="onboarding" role="button" tabindex="0">신규 고객 온보딩 플로우</span>
+                <span class="gca-sb__convo" data-convo="report" role="button" tabindex="0">주간 영업 리포트 초안</span>
+              </div>
             </div>
             <div class="gca-sb__user">
               <img class="gca-sb__avatar" src="../assets/images/gca/user-avatar.png" alt="사용자 프로필" onerror="this.outerHTML='&lt;span class=\&quot;gca-sb__avatar\&quot; aria-hidden=\&quot;true\&quot;&gt;아&lt;/span&gt;'" />
