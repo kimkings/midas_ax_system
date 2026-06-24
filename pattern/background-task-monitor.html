@@ -411,6 +411,12 @@
       const min = document.getElementById("btmMin");
 
       const check = '<svg aria-hidden="true"><use href="#ic-check"></use></svg>';
+      const SUB_DETAILS = {
+        "CRM 데이터 동기화": "관련 고객·거래 데이터를 최신 상태로 불러옵니다.",
+        "최근 활동 로그 수집": "최근 메일, 미팅, 상담 이력을 함께 수집합니다.",
+        "단계별 전환율 계산": "영업 단계별 흐름과 병목 구간을 계산합니다.",
+        "리드 우선순위 점수 산출": "전환 가능성이 높은 리드를 우선순위로 정렬합니다."
+      };
       const STEPS = [
         { t: "데이터 수집", d: "관련 리드·거래 데이터를 불러옵니다.", subs: ["CRM 데이터 동기화", "최근 활동 로그 수집"] },
         { t: "항목 분석", d: "수집한 데이터의 패턴과 우선순위를 분석합니다.", subs: ["단계별 전환율 계산", "리드 우선순위 점수 산출"] },
@@ -451,13 +457,17 @@
       function addSub(stepEl, text) {
         const se = document.createElement("div");
         se.className = "btm-sub is-loading btm-enter";
-        se.innerHTML = '<span class="btm-spin btm-spin--sm"></span><span>' + text + '</span>';
+        se.innerHTML = '<span class="btm-spin btm-spin--sm"></span>' +
+          '<span class="btm-sub__body"><span class="btm-sub__title">' + text + '</span>' +
+          '<span class="btm-sub__desc">' + (SUB_DETAILS[text] || "진행 중인 세부 작업을 처리합니다.") + '</span></span>';
         stepEl.querySelector(".btm-substeps").appendChild(se); scrollBottom(); return se;
       }
       function finishSub(se) {
-        const label = se.querySelector("span:last-child").textContent;
+        const label = se.querySelector(".btm-sub__title").textContent;
+        const detail = se.querySelector(".btm-sub__desc").textContent;
         se.classList.remove("is-loading"); se.classList.add("is-done");
-        se.innerHTML = check + '<span>' + label + '</span>';
+        se.innerHTML = check + '<span class="btm-sub__body"><span class="btm-sub__title">' + label + '</span>' +
+          '<span class="btm-sub__desc">' + detail + '</span></span>';
       }
 
       // 순차적으로 천천히 단계를 펼쳐 보여주는 스케줄러
