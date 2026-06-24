@@ -245,7 +245,6 @@
 
         </div>
 
-        <!-- Layout controller -->
         <div class="daw-control" role="group" aria-label="패널 레이아웃 전환">
           <div class="daw-seg" id="dawSeg">
             <button class="daw-seg__btn is-active" type="button" data-layout="left">대화 좌측</button>
@@ -254,7 +253,7 @@
           </div>
         </div>
       </div>
-      <div class="spec-figma-link" data-reveal style="--i: 5">
+      <div class="spec-figma-link">
         <button class="btn-pill btn-pill--md" type="button" id="dawZoom" aria-label="라이브 데모 크게 보기">
           <svg aria-hidden="true"><use href="#ic-expand"></use></svg>
           <span>크게 보기</span>
@@ -452,11 +451,11 @@
       const demo = document.getElementById("dawDemo");
       if (!demo) return;
 
-      /* 레이아웃 전환 컨트롤러 (닫힘 → 열림 2단계) */
+      /* 레이아웃 전환 컨트롤러 (페이드아웃 → 레이아웃 변경 → 페이드인) */
       const seg = document.getElementById("dawSeg");
       const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const EXIT_MS = 320;   /* 닫힘 길이 (css와 동기화) */
-      const ENTER_MS = 560;  /* 열림 길이 (css와 동기화) */
+      const EXIT_MS = 360;   /* 페이드아웃 길이 (css와 동기화) */
+      const ENTER_MS = 420;  /* 페이드인 길이 (css와 동기화) */
       let currentLayout = "left";
       let exitTimer = null, enterTimer = null, switching = false;
 
@@ -470,31 +469,39 @@
         enterTimer = setTimeout(() => { demo.classList.remove("daw-demo--anim"); switching = false; }, ENTER_MS + 40);
       }
 
-      seg.addEventListener("click", (e) => {
-        const btn = e.target.closest(".daw-seg__btn");
-        if (!btn) return;
-        const layout = btn.dataset.layout;
-        seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
+      if (seg) {
+        seg.addEventListener("click", (e) => {
+          const btn = e.target.closest(".daw-seg__btn");
+          if (!btn) return;
+          const layout = btn.dataset.layout;
+          if (layout === currentLayout || switching) return;
 
-        clearTimeout(exitTimer);
-        clearTimeout(enterTimer);
+          clearTimeout(exitTimer);
+          clearTimeout(enterTimer);
 
-        /* 모션 최소화 환경 또는 같은 레이아웃 → 닫힘 없이 처리 */
-        if (reduceMotion) { currentLayout = layout; demo.className = baseClass() + " daw-demo--" + layout; switching = false; return; }
-        if (layout === currentLayout && !switching) { playEnter(layout); return; }
+          /* 모션 최소화 환경 → 페이드 없이 즉시 처리 */
+          if (reduceMotion) {
+            currentLayout = layout;
+            demo.className = baseClass() + " daw-demo--" + layout;
+            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
+            switching = false;
+            return;
+          }
 
-        switching = true;
-        /* 1단계: 기존 레이아웃 닫힘 */
-        demo.className = baseClass() + " daw-demo--" + currentLayout;
-        void demo.offsetWidth;
-        demo.classList.add("daw-demo--leaving");
-        exitTimer = setTimeout(() => {
-          /* 2단계: 새 레이아웃 열림 */
-          demo.classList.remove("daw-demo--leaving");
-          currentLayout = layout;
-          playEnter(layout);
-        }, EXIT_MS);
-      });
+          switching = true;
+          /* 1단계: 기존 레이아웃 닫힘 */
+          demo.className = baseClass() + " daw-demo--" + currentLayout;
+          void demo.offsetWidth;
+          demo.classList.add("daw-demo--leaving");
+          exitTimer = setTimeout(() => {
+            /* 2단계: 새 레이아웃 열림 */
+            demo.classList.remove("daw-demo--leaving");
+            currentLayout = layout;
+            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
+            playEnter(layout);
+          }, EXIT_MS);
+        });
+      }
 
       /* 채팅 전송 (GCA 데모 로직 재사용) */
       const form = document.getElementById("dawForm");

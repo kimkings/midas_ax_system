@@ -96,6 +96,10 @@
 <symbol id="ic-dislike" viewBox="0 0 20 20"><g transform="rotate(180 10 10)"><g>
 <path d="M15.6087 8.41242C15.1878 7.91242 14.5712 7.62492 13.917 7.62492H11.9878L12.2503 6.66242C12.4337 5.99159 12.2962 5.29159 11.8753 4.74159C11.4545 4.19159 10.8128 3.87492 10.1212 3.87492H9.87949C9.44199 3.87492 9.03783 4.11242 8.82116 4.49575L7.08366 7.62492H5.08366C4.41699 7.62492 3.87533 8.16659 3.87533 8.83325V14.4999C3.87533 15.1666 4.41699 15.7083 5.08366 15.7083H7.38366L8.44616 16.0624C8.57116 16.1041 8.70033 16.1249 8.82949 16.1249H13.1962C14.2712 16.1249 15.1837 15.3583 15.3712 14.2999L16.092 10.2166C16.2045 9.57075 16.0295 8.91659 15.6087 8.41242ZM5.29199 9.04159H6.79199V14.2916H5.29199V9.04159ZM14.6962 9.97075L13.9753 14.0541C13.9087 14.4333 13.5795 14.7083 13.1962 14.7083H8.86699L8.20866 14.4874V8.51659L10.0003 5.29159H10.1212C10.3712 5.29159 10.6003 5.40409 10.7503 5.60409C10.9003 5.79992 10.9503 6.05409 10.8837 6.29159L10.1337 9.04159H13.917C14.1545 9.04159 14.3712 9.14159 14.5253 9.32492C14.6795 9.50825 14.7378 9.73742 14.7003 9.97075H14.6962Z" fill="currentColor"/>
 </g></g></symbol>
+<symbol id="ic-expand" viewBox="0 0 20 20"><path d="M15.3552 4.64673C15.2396 4.52986 15.1011 4.4381 14.9484 4.37717C14.7957 4.31623 14.632 4.28743 14.4677 4.29258L10.851 4.38006L10.8844 5.79674L13.2593 5.7384L5.73853 13.2384L5.79688 10.8634L4.38019 10.8301L4.29271 14.4509C4.28712 14.6131 4.31423 14.7747 4.37244 14.9261C4.43065 15.0776 4.51877 15.2157 4.63153 15.3324C4.7443 15.4491 4.87941 15.5418 5.02879 15.6051C5.17818 15.6684 5.33878 15.701 5.50103 15.7009H5.5302L9.14683 15.6093L9.11358 14.1968L6.73854 14.2509L14.2386 6.75093L14.1802 9.12592L15.5969 9.15925L15.6843 5.54258C15.6932 5.37873 15.6686 5.21478 15.612 5.06076C15.5554 4.90674 15.468 4.76588 15.3552 4.64673Z" fill="currentColor"/></symbol>
+<symbol id="ic-awb-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.2 2.2 3.2 4.8 3.2 8s-1 5.8-3.2 8M12 4C9.8 6.2 8.8 8.8 8.8 12s1 5.8 3.2 8"/></g></symbol>
+<symbol id="ic-awb-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20V5.8C7 4.8 7.8 4 8.8 4h4.4C14.2 4 15 4.8 15 5.8V20"/><path d="M15 10h2.2c1 0 1.8.8 1.8 1.8V20M5 20h16M10 8h2M10 12h2M10 16h2"/></g></symbol>
+<symbol id="ic-awb-cube" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2 20 8.4v7.2l-8 4.2-8-4.2V8.4l8-4.2Z"/><path d="m4.4 8.7 7.6 4 7.6-4M12 12.7v7"/></g></symbol>
 </defs></svg>
   <header class="gnb gnb--solid">
     <div class="gnb__inner">
@@ -228,14 +232,31 @@
             </div>
           </div>
 
-          <!-- Type 2: Workflow (Node Graph) Builder -->
-          <div class="awb-scene awb-scene--graph">
-            <div class="awb-canvas">
-              <div class="awb-flow" id="awbFlow"><button class="awb-node is-sel" type="button" data-label="트리거" style="--nc:#46d88a"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg></span><span class="awb-node__label">트리거</span></button><span class="awb-edge"></span><button class="awb-node" type="button" data-label="데이터 조회" style="--nc:#2c9cfb"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-search"></use></svg></span><span class="awb-node__label">데이터 조회</span></button><span class="awb-edge"></span><button class="awb-node" type="button" data-label="분석" style="--nc:#8b5cf6"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-llm"></use></svg></span><span class="awb-node__label">분석</span></button><span class="awb-edge"></span><button class="awb-node" type="button" data-label="알림" style="--nc:#ff6b35"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-share"></use></svg></span><span class="awb-node__label">알림</span></button><span class="awb-edge"></span><button class="awb-node" type="button" data-label="완료" style="--nc:#00b8a3"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-check"></use></svg></span><span class="awb-node__label">완료</span></button><span class="awb-edge"></span><button class="awb-node awb-node--add" type="button" id="awbAddNode" aria-label="노드 추가"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-add"></use></svg></span><span class="awb-node__label">추가</span></button></div>
-            </div>
-            <aside class="eae-drawer awb-gdrawer">
+	          <!-- Type 2: Workflow (Node Graph) Builder -->
+	          <div class="awb-scene awb-scene--graph">
+	            <div class="awb-canvas">
+	              <div class="awb-flow" id="awbFlow">
+	                <button class="awb-node is-sel" type="button" data-label="단계 정보 타이틀" style="--nc:#20c997">
+	                  <span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-awb-globe"></use></svg></span>
+	                  <span class="awb-node__meta"><span class="awb-node__label">단계 정보 타이틀</span><span class="awb-node__sub">보조정보</span></span>
+	                </button>
+	                <span class="awb-edge"></span>
+	                <button class="awb-node" type="button" data-label="단계 정보 타이틀" style="--nc:#ff6b2b">
+	                  <span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-awb-building"></use></svg></span>
+	                  <span class="awb-node__meta"><span class="awb-node__label">단계 정보 타이틀</span><span class="awb-node__sub">보조정보</span></span>
+	                </button>
+	                <span class="awb-edge"></span>
+	                <button class="awb-node" type="button" data-label="단계 정보 타이틀" style="--nc:#2ca4fb">
+	                  <span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-awb-cube"></use></svg></span>
+	                  <span class="awb-node__meta"><span class="awb-node__label">단계 정보 타이틀</span><span class="awb-node__sub">보조정보</span></span>
+	                </button>
+	                <span class="awb-edge"></span>
+	                <button class="awb-node awb-node--add" type="button" id="awbAddNode" aria-label="노드 추가"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-add"></use></svg></span></button>
+	              </div>
+	            </div>
+	            <aside class="eae-drawer awb-gdrawer">
               <header class="gca-main__bar">
-                <span class="gca-main__title" id="awbDrawerTitle">트리거 설정</span>
+                <span class="gca-main__title" id="awbDrawerTitle">단계 정보 타이틀 설정</span>
                 <button class="gca-icon-btn" type="button" aria-label="복사"><svg aria-hidden="true"><use href="#ic-copy"></use></svg></button>
                 <button class="gca-icon-btn" type="button" aria-label="더보기"><svg aria-hidden="true"><use href="#ic-more"></use></svg></button>
               </header>
@@ -246,16 +267,30 @@
 
         </div>
 
-        <!-- Type controller -->
-        <div class="daw-control" role="group" aria-label="빌더 타입 전환">
-          <span class="daw-control__label">빌더 타입</span>
-          <div class="daw-seg" id="awbSeg">
-            <button class="daw-seg__btn is-active" type="button" data-scene="form">Form Builder</button>
-            <button class="daw-seg__btn" type="button" data-scene="graph">Workflow Builder</button>
-          </div>
-        </div>
-      </div>
-      <hr class="page-content__divider" />
+	        <div class="daw-control" role="group" aria-label="빌더 타입 전환">
+	          <div class="daw-seg" id="awbSeg">
+	            <button class="daw-seg__btn is-active" type="button" data-scene="form">Form Builder</button>
+	            <button class="daw-seg__btn" type="button" data-scene="graph">Workflow Builder</button>
+	          </div>
+	        </div>
+	      </div>
+	      <div class="spec-figma-link">
+	        <button class="btn-pill btn-pill--md" type="button" id="awbZoom" aria-label="라이브 데모 크게 보기">
+	          <svg aria-hidden="true"><use href="#ic-expand"></use></svg>
+	          <span>크게 보기</span>
+	        </button>
+	      </div>
+
+	      <div class="gca-lightbox" id="awbLightbox" hidden>
+	        <div class="gca-lightbox__backdrop" data-close></div>
+	        <div class="gca-lightbox__dialog" role="dialog" aria-modal="true" aria-label="Live Demo 크게 보기">
+	          <button class="gca-lightbox__close" type="button" data-close aria-label="닫기">
+	            <svg aria-hidden="true" viewBox="0 0 20 20" width="20" height="20"><path d="M5 5L15 15M15 5L5 15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+	          </button>
+	          <div class="gca-lightbox__stage" id="awbLightboxStage"></div>
+	        </div>
+	      </div>
+	      <hr class="page-content__divider" />
 
       <section class="spec-section" id="overview">
         <h2 class="spec-section__title" data-reveal style="--i: 0">Overview</h2>
@@ -446,13 +481,37 @@
 
       /* 타입 전환 */
       const seg = document.getElementById("awbSeg");
-      seg.addEventListener("click", (e) => {
-        const btn = e.target.closest(".daw-seg__btn");
-        if (!btn) return;
-        demo.classList.remove("awb-demo--form", "awb-demo--graph");
-        demo.classList.add("awb-demo--" + btn.dataset.scene);
-        seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-      });
+      if (seg) {
+        const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+        let sceneSwitching = false;
+        let sceneTimer = 0;
+        seg.addEventListener("click", (e) => {
+          const btn = e.target.closest(".daw-seg__btn");
+          if (!btn) return;
+          const nextScene = btn.dataset.scene;
+          if (demo.classList.contains("awb-demo--" + nextScene) || sceneSwitching) return;
+          window.clearTimeout(sceneTimer);
+          if (reduceMotion) {
+            demo.classList.remove("awb-demo--form", "awb-demo--graph");
+            demo.classList.add("awb-demo--" + nextScene);
+            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
+            return;
+          }
+          sceneSwitching = true;
+          demo.classList.add("awb-demo--scene-out");
+          sceneTimer = window.setTimeout(() => {
+            demo.classList.remove("awb-demo--form", "awb-demo--graph", "awb-demo--scene-out");
+            demo.classList.add("awb-demo--" + nextScene, "awb-demo--scene-in");
+            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
+            requestAnimationFrame(() => {
+              demo.classList.remove("awb-demo--scene-in");
+              sceneTimer = window.setTimeout(() => {
+                sceneSwitching = false;
+              }, 460);
+            });
+          }, 420);
+        });
+      }
 
       /* Type 1: 테스트 대화 전송 */
       const form = document.getElementById("awbForm");
@@ -496,8 +555,8 @@
       const flow = document.getElementById("awbFlow");
       const drawerTitle = document.getElementById("awbDrawerTitle");
       const addBtn = document.getElementById("awbAddNode");
-      const PALETTE = ["#46d88a", "#2c9cfb", "#8b5cf6", "#ff6b35", "#00b8a3", "#f59e0b"];
-      const ADD_ICONS = ["sparkle", "search", "llm", "share", "check", "copy"];
+	      const PALETTE = ["#20c997", "#ff6b2b", "#2ca4fb", "#7c5cff"];
+	      const ADD_ICONS = ["awb-globe", "awb-building", "awb-cube"];
       let addCount = 0;
       flow.addEventListener("click", (e) => {
         const node = e.target.closest(".awb-node");
@@ -509,19 +568,61 @@
       addBtn.addEventListener("click", () => {
         addCount += 1;
         const label = "새 단계 " + addCount;
-        const c = PALETTE[addCount % PALETTE.length];
-        const ic = ADD_ICONS[addCount % ADD_ICONS.length];
-        const edge = document.createElement("span"); edge.className = "awb-edge";
-        const node = document.createElement("button");
-        node.type = "button"; node.className = "awb-node awb-enter"; node.dataset.label = label;
-        node.style.setProperty("--nc", c);
-        node.innerHTML = '<span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-' + ic + '"></use></svg></span>' +
-          '<span class="awb-node__label">' + label + '</span>';
-        flow.insertBefore(edge, addBtn);
-        flow.insertBefore(node, addBtn);
-        node.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      });
-    })();
+	        const c = PALETTE[addCount % PALETTE.length];
+	        const ic = ADD_ICONS[addCount % ADD_ICONS.length];
+	        const edge = document.createElement("span"); edge.className = "awb-edge";
+	        const node = document.createElement("button");
+	        node.type = "button"; node.className = "awb-node awb-enter"; node.dataset.label = label;
+	        node.style.setProperty("--nc", c);
+	        node.innerHTML = '<span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-' + ic + '"></use></svg></span>' +
+	          '<span class="awb-node__meta"><span class="awb-node__label">' + label + '</span><span class="awb-node__sub">보조정보</span></span>';
+	        flow.insertBefore(node, addBtn);
+	        flow.insertBefore(edge, addBtn);
+	        node.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+	      });
+
+	      const zoomBtn = document.getElementById("awbZoom");
+	      const lightbox = document.getElementById("awbLightbox");
+	      const stage = document.getElementById("awbLightboxStage");
+	      const control = demo.parentNode ? demo.parentNode.querySelector(".daw-control") : null;
+	      if (zoomBtn && lightbox && stage) {
+	        const slot = document.createElement("div");
+	        slot.style.display = "none";
+	        let zoomOpen = false;
+	        function openZoom() {
+	          if (zoomOpen) return;
+	          zoomOpen = true;
+	          demo.parentNode.insertBefore(slot, demo);
+	          stage.appendChild(demo);
+	          if (control) stage.appendChild(control);
+	          demo.classList.add("awb-demo--zoom");
+	          lightbox.hidden = false;
+	          document.body.style.overflow = "hidden";
+	          requestAnimationFrame(() => lightbox.classList.add("is-open"));
+	        }
+	        function closeZoom() {
+	          if (!zoomOpen) return;
+	          zoomOpen = false;
+	          lightbox.classList.remove("is-open");
+	          document.body.style.overflow = "";
+	          setTimeout(() => {
+	            if (zoomOpen) return;
+	            demo.classList.remove("awb-demo--zoom");
+	            if (slot.parentNode) slot.parentNode.insertBefore(demo, slot);
+	            if (control) demo.after(control);
+	            if (slot.parentNode) slot.parentNode.removeChild(slot);
+	            lightbox.hidden = true;
+	          }, 260);
+	        }
+	        zoomBtn.addEventListener("click", openZoom);
+	        lightbox.addEventListener("click", (e) => {
+	          if (e.target.closest("[data-close]")) closeZoom();
+	        });
+	        document.addEventListener("keydown", (e) => {
+	          if (e.key === "Escape" && zoomOpen) closeZoom();
+	        });
+	      }
+	    })();
   </script>
 </body>
 </html>

@@ -189,8 +189,8 @@ body > footer {
 .page-grid--no-toc > .page-content { grid-column: 3; grid-row: 1; }
 
 .page-grid--with-toc {
-  /* 220 SNB-cell | 60 gap | fill content | 100 gap | 160 anchor */
-  grid-template-columns: calc(var(--snb-width) + 40px) 60px 1fr 100px var(--toc-width);
+  /* 220 SNB-cell | 60 gap | 960 content | 100 gap | 160 anchor */
+  grid-template-columns: calc(var(--snb-width) + 40px) 60px minmax(0, 960px) 100px var(--toc-width);
 }
 .page-grid--with-toc > .snb         { grid-column: 1; grid-row: 1; }
 .page-grid--with-toc > .page-content { grid-column: 3; grid-row: 1; }

@@ -5,8 +5,8 @@
 
 :root {
   /* ---------- Layout ---------- */
-  --container-max:  1400px;
-  --padding-inline: 0;  /* 기본: 1400+ viewport는 여백 0 (margin-auto가 처리) */
+  --container-max:  1560px;
+  --padding-inline: 0;  /* 기본: 넓은 viewport는 여백 0 (margin-auto가 처리) */
   --snb-width:      180px;
   --toc-width:      160px;
   --gnb-height:     72px;
