@@ -1036,6 +1036,16 @@
   box-shadow: -20px 0 48px -20px rgba(16, 24, 40, 0.3);
 }
 
+/* 모드 전환: 레이아웃 점프를 안쪽 컨텐츠 페이드로 가림 */
+.cap-demo--switching .cap-main,
+.cap-demo--switching .cap-panel {
+  transition: opacity 0.18s var(--easing-standard);
+}
+/* 전환 중에는 패널 슬라이드(margin/transform) 비활성화 → 위치 교체는 페이드 뒤에서 즉시 */
+.cap-demo--switching .cap-panel { transition-property: opacity; }
+.cap-demo--switch-out .cap-main,
+.cap-demo--switch-out .cap-panel { opacity: 0; }
+
 /* 좁은 화면: 패널을 전체 폭으로 */
 @media (max-width: 720px) {
   .cap-panel, .cap-demo--overlay .cap-panel { width: 100%; flex-basis: 100%; }

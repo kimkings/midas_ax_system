@@ -455,18 +455,18 @@
           if (demo.classList.contains("cap-demo--" + nextMode) || modeSwitching) return;
           window.clearTimeout(modeTimer);
           modeSwitching = true;
-          /* 현재 모드에서 패널을 먼저 닫고, 닫힌 뒤 모드를 교체 */
-          const wasOpen = demo.classList.contains("is-open");
-          demo.classList.remove("is-open");
-          const swap = () => {
-            demo.classList.remove("cap-demo--split", "cap-demo--overlay");
+          /* 안쪽 컨텐츠를 페이드아웃 → 보이지 않는 동안 모드/닫힘 교체 → 페이드인 */
+          demo.classList.add("cap-demo--switching", "cap-demo--switch-out");
+          modeTimer = window.setTimeout(() => {
+            demo.classList.remove("is-open", "cap-demo--split", "cap-demo--overlay");
             demo.classList.add("cap-demo--" + nextMode);
             seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-            modeSwitching = false;
-          };
-          /* 열려 있었으면 닫힘 트랜지션(0.28s)을 기다렸다가 교체 */
-          if (wasOpen) modeTimer = window.setTimeout(swap, 300);
-          else swap();
+            demo.classList.remove("cap-demo--switch-out");
+            modeTimer = window.setTimeout(() => {
+              demo.classList.remove("cap-demo--switching");
+              modeSwitching = false;
+            }, 200);
+          }, 180);
         });
       }
 
