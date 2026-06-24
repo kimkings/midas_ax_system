@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/components.css" />
+  <link rel="stylesheet" href="../css/live-demo.css" />
 </head>
 <body>
   <header class="gnb gnb--solid">
@@ -109,7 +110,98 @@
         <p>서비스 전역에서 사용자가 AI에게 질문하고 요청할 수 있는 공통 대화형 인터페이스입니다. 사용자는 현재 작업 흐름을 크게 벗어나지 않고 AI를 호출할 수 있으며, 질문, 요약, 분석, 생성 요청을 자연어로 입력합니다.</p>
       </div>
       <div class="spec-hero" data-reveal style="--i: 2"><img src="../assets/images/gca/gca-hero.png" alt="Global Chat Assistant 기본 대화 화면 목업" loading="lazy" /></div>
-      <div class="spec-figma-link" data-reveal style="--i: 3">
+      <div class="gca-demo-block" data-reveal style="--i: 3">
+        <p class="gca-demo-eyebrow">Live Demo</p>
+        <div class="gca-demo" id="gcaDemo" aria-label="Global Chat Assistant 라이브 데모">
+          <!-- Sidebar -->
+          <aside class="gca-sb">
+            <div class="gca-sb__head">
+              <span class="gca-sb__logo" aria-hidden="true"></span>
+              <span class="gca-sb__brand">에이전트</span>
+              <button class="gca-sb__collapse" type="button" aria-label="사이드바 접기">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M9 4v16"/></svg>
+              </button>
+            </div>
+            <nav class="gca-sb__fixed" aria-label="에이전트 메뉴">
+              <span class="gca-sb__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>새로운 대화</span>
+              <span class="gca-sb__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>검색</span>
+              <span class="gca-sb__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.7L18.5 9l-4.6 1.3L12 15l-1.9-4.7L5.5 9l4.6-1.3Z"/></svg>에이전트</span>
+              <span class="gca-sb__item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="12" r="2.5"/><path d="M8.5 6H13a3 3 0 0 1 3 3v0M8.5 18H13a3 3 0 0 0 3-3v0"/></svg>워크플로우</span>
+            </nav>
+            <p class="gca-sb__label">최근 대화</p>
+            <div class="gca-sb__convos">
+              <span class="gca-sb__convo is-active">3분기 리드 현황 정리</span>
+              <span class="gca-sb__convo">신규 고객 온보딩 플로우</span>
+              <span class="gca-sb__convo">주간 영업 리포트 초안</span>
+            </div>
+            <div class="gca-sb__user">
+              <span class="gca-sb__avatar" aria-hidden="true">아</span>
+              <span class="gca-sb__user-meta">
+                <span class="gca-sb__user-name">김아율</span>
+                <span class="gca-sb__user-team">HR기획팀</span>
+              </span>
+            </div>
+          </aside>
+
+          <!-- Main -->
+          <div class="gca-main">
+            <header class="gca-main__bar">
+              <span class="gca-main__title">3분기 리드 현황 정리</span>
+              <button class="gca-icon-btn" type="button" aria-label="제목 편집"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>
+              <button class="gca-icon-btn" type="button" aria-label="더보기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+            </header>
+
+            <div class="gca-chat" id="gcaChat">
+              <div class="gca-msg gca-msg--user">
+                <div class="gca-bubble">이번 분기 주요 리드 현황 표로 정리해줘</div>
+              </div>
+
+              <div class="gca-msg gca-msg--assistant">
+                <span class="gca-status"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>완료</span>
+                <p class="gca-msg__text">이번 분기 주요 리드 현황입니다. 리드 단계와 매출 기여 가능성, 관심 제품을 기준으로 정리했어요.</p>
+                <div class="gca-table-wrap">
+                  <table class="gca-table">
+                    <thead><tr><th>고객명</th><th>리드 단계</th><th>매출 기여 가능성</th><th>관심 제품</th></tr></thead>
+                    <tbody>
+                      <tr><td>마이다스아이티</td><td>제안서 발송</td><td><span class="gca-table__tag gca-table__tag--high">높음</span></td><td>클라우드 솔루션</td></tr>
+                      <tr><td>스마트웍스</td><td>초기 접촉</td><td><span class="gca-table__tag gca-table__tag--mid">중간</span></td><td>ERP 시스템</td></tr>
+                      <tr><td>이노파워</td><td>미팅 완료</td><td><span class="gca-table__tag gca-table__tag--mid">중간</span></td><td>백업 솔루션</td></tr>
+                      <tr><td>블루테크</td><td>미팅 완료</td><td><span class="gca-table__tag gca-table__tag--mid">중간</span></td><td>머신러닝 플랫폼</td></tr>
+                      <tr><td>그린소프트</td><td>계약 협상 중</td><td><span class="gca-table__tag gca-table__tag--mid">중간</span></td><td>스마트워크 시스템</td></tr>
+                      <tr><td>하이넥스트</td><td>미팅 완료</td><td><span class="gca-table__tag gca-table__tag--low">낮음</span></td><td>HR 데이터 분석</td></tr>
+                      <tr><td>오렌지넷</td><td>미팅 완료</td><td><span class="gca-table__tag gca-table__tag--mid">중간</span></td><td>데이터 시각화 툴</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="gca-actions">
+                  <button class="gca-icon-btn" type="button" aria-label="복사"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg></button>
+                  <button class="gca-icon-btn" type="button" aria-label="좋아요"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11"/><path d="M7 10 11 3a2 2 0 0 1 2.8 2.5L13 9h5.5a2 2 0 0 1 2 2.4l-1.3 6A2 2 0 0 1 17 21H7"/></svg></button>
+                  <button class="gca-icon-btn" type="button" aria-label="싫어요"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M17 14V3"/><path d="M17 14l-4 7a2 2 0 0 1-2.8-2.5L11 15H5.5a2 2 0 0 1-2-2.4l1.3-6A2 2 0 0 1 7 3h10"/></svg></button>
+                  <button class="gca-icon-btn" type="button" aria-label="다시 생성"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-2.6-6.4"/><path d="M21 4v4h-4"/></svg></button>
+                  <button class="gca-icon-btn" type="button" aria-label="더보기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gca-composer">
+              <div class="gca-composer__inner">
+                <form class="gca-input" id="gcaForm" autocomplete="off">
+                  <span class="gca-input__llm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 4.7L18.5 9l-4.6 1.3L12 15l-1.9-4.7L5.5 9l4.6-1.3Z"/><path d="M19 15l.7 1.8L21.5 18l-1.8.7L19 21l-.7-2.3L16.5 18l1.8-.5Z"/></svg></span>
+                  <input class="gca-input__field" id="gcaField" type="text" placeholder="무엇이든 물어보세요." aria-label="메시지 입력" />
+                  <button class="gca-input__send" id="gcaSend" type="submit" aria-label="전송" disabled><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg></button>
+                </form>
+                <div class="gca-actionbar">
+                  <button class="gca-chip" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="M5 12h14"/></svg>파일 첨부</button>
+                  <button class="gca-chip" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5 12.5 20a4.5 4.5 0 0 1-6.4-6.4l8.5-8.5a3 3 0 0 1 4.2 4.2l-8.5 8.5a1.5 1.5 0 0 1-2.1-2.1l7.8-7.8"/></svg>파일 첨부</button>
+                  <span class="gca-actionbar__spacer"></span>
+                  <button class="gca-model" type="button">Claude Sonnet 4.5<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="spec-figma-link" data-reveal style="--i: 4">
         <a class="btn-pill btn-pill--md" href="https://www.figma.com/design/AlFh9X3Z9J2BQoqY9FXtfn/P1-Agent-Kit?node-id=0-1&p=f&t=YueDPBO8CyxSlJrO-11" target="_blank" rel="noopener">피그마에서 보기 ↗</a>
       </div>
       <hr class="page-content__divider" />
@@ -287,5 +379,83 @@
   <script src="../js/main.js" defer></script>
   <script src="../js/search.js" defer></script>
   <script src="../js/theme.js" defer></script>
+
+  <!-- ============== Global Chat Assistant 라이브 데모 인터랙션 ============== -->
+  <script>
+    (function () {
+      const form = document.getElementById("gcaForm");
+      const field = document.getElementById("gcaField");
+      const send = document.getElementById("gcaSend");
+      const chat = document.getElementById("gcaChat");
+      if (!form || !field || !send || !chat) return;
+
+      const REPLIES = [
+        "요청하신 내용을 정리했어요. 추가로 특정 고객이나 단계만 필터링해서 보여드릴 수도 있어요. (데모 응답)",
+        "좋은 질문이에요. 관련 데이터를 기준으로 핵심만 요약하면 다음과 같아요. 더 깊게 분석할 항목이 있으면 알려주세요. (데모 응답)",
+        "정리해 봤어요. 이 결과를 표나 리포트 형태로 내보내거나, 다음 액션으로 연결할 수 있어요. (데모 응답)"
+      ];
+      let replyIdx = 0;
+
+      const scrollDown = () => { chat.scrollTop = chat.scrollHeight; };
+
+      function appendUser(text) {
+        const el = document.createElement("div");
+        el.className = "gca-msg gca-msg--user gca-msg--enter";
+        const bubble = document.createElement("div");
+        bubble.className = "gca-bubble";
+        bubble.textContent = text;
+        el.appendChild(bubble);
+        chat.appendChild(el);
+        scrollDown();
+      }
+
+      function showThinking() {
+        const el = document.createElement("div");
+        el.className = "gca-thinking gca-thinking--enter";
+        el.innerHTML = '생각중<span class="gca-thinking__dots"><span></span><span></span><span></span></span>';
+        chat.appendChild(el);
+        scrollDown();
+        return el;
+      }
+
+      function appendAssistant(text) {
+        const el = document.createElement("div");
+        el.className = "gca-msg gca-msg--assistant gca-msg--enter";
+        const status = document.createElement("span");
+        status.className = "gca-status";
+        status.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m20 6-11 11-5-5"/></svg>완료';
+        const p = document.createElement("p");
+        p.className = "gca-msg__text";
+        p.textContent = text;
+        el.append(status, p);
+        chat.appendChild(el);
+        scrollDown();
+      }
+
+      field.addEventListener("input", () => {
+        send.disabled = field.value.trim().length === 0;
+      });
+
+      let busy = false;
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const text = field.value.trim();
+        if (!text || busy) return;
+        busy = true;
+        appendUser(text);
+        field.value = "";
+        send.disabled = true;
+
+        const thinking = showThinking();
+        const delay = 900 + Math.random() * 700;
+        setTimeout(() => {
+          thinking.remove();
+          appendAssistant(REPLIES[replyIdx % REPLIES.length]);
+          replyIdx += 1;
+          busy = false;
+        }, delay);
+      });
+    })();
+  </script>
 </body>
 </html>
