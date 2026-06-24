@@ -890,6 +890,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  gap: 6px;
   padding: 16px 24px;
   border-radius: 999px;
   background: var(--color-fill-normal);
@@ -921,6 +922,14 @@
   /* Figma 1:4720 v1 hover: bg → inverse-background, color → inverse-label */
   background: var(--color-inverse-background);
   color: var(--color-inverse-label);
+}
+
+/* 버튼 내부 아이콘 — 인라인 SVG 기본 크기(300×150) 방지 */
+.btn-pill svg {
+  display: block;
+  width: 16px;
+  height: 16px;
+  flex: none;
 }
 
 /* ============================================
@@ -2617,6 +2626,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 12px;
 }
 

@@ -760,3 +760,185 @@
   .gca-msg--enter,
   .gca-thinking--enter { animation: none; }
 }
+
+/* ============================================================
+ * Dedicated Agent Workspace 데모 — 채팅 패널 + 아웃풋(캔버스) 패널
+ * GCA 데모의 채팅/컴포저 스타일(.gca-*)을 재사용하며,
+ * --d-* 팔레트를 공유한다.
+ * ============================================================ */
+.daw-demo {
+  --d-surface: #ffffff;
+  --d-bg: #f5f5f5;
+  --d-border: #dfdfdf;
+  --d-line: #f0f0f0;
+  --d-text: #343434;
+  --d-text-2: #848484;
+  --d-text-3: #aeaeae;
+  --d-brand: #ff6600;
+  --d-bubble: #343434;
+
+  display: flex;
+  gap: 12px;
+  height: 540px;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid var(--d-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--d-bg);
+  color: var(--d-text);
+  font-family: "Pretendard Variable", Pretendard, system-ui, sans-serif;
+  box-shadow: 0 12px 32px -16px rgba(16, 24, 40, 0.18);
+  user-select: none;
+}
+.daw-demo *, .daw-demo *::before, .daw-demo *::after { box-sizing: border-box; }
+.daw-demo svg { display: block; width: 20px; height: 20px; }
+.daw-demo svg use { color: inherit; }
+
+/* 라이트박스 안에서 확대된 데모 크기 */
+.daw-demo.daw-demo--zoom {
+  width: min(1440px, 92vw);
+  height: min(960px, 80vh);
+  margin: 0;
+}
+
+.daw-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+}
+.daw-panel--chat {
+  flex: 0 0 380px;
+  padding: 0;
+  letter-spacing: 0;
+}
+.daw-panel--output {
+  flex: 1 1 auto;
+  padding: 0;
+}
+
+/* Output / chat 패널 바 아이콘 사이즈 정렬 (24px) */
+.daw-demo .gca-main__bar .gca-icon-btn svg,
+.daw-demo .gca-main__bar .gca-icon-btn svg use { width: 24px; height: 24px; }
+
+/* 레이아웃 변형: 대화 좌측(기본) / 대화 우측 / 스플릿
+ * --left  : 대화(채팅) 왼쪽 · 캔버스(아웃풋) 오른쪽  (DOM 순서 그대로)
+ * --right : 대화 오른쪽 · 캔버스 왼쪽  (row-reverse) */
+.daw-demo--right { flex-direction: row-reverse; }
+.daw-demo--split .daw-panel--chat,
+.daw-demo--split .daw-panel--output { flex: 1 1 0; }
+
+/* ---------- 레이아웃 전환 애니메이션 ----------
+ * 전환 시 기존 레이아웃이 먼저 "닫히고"(--leaving), 이어서 새 레이아웃이 "열린다"(--anim).
+ * 대화 좌측(--left) → 채팅은 좌측에서, 캔버스(아웃풋)는 우측에서 등장
+ * 대화 우측(--right) → 캔버스는 좌측에서, 채팅은 우측에서 등장
+ * 스플릿 레이아웃 → 두 패널이 가운데에서 갈라지며 등장
+ * (--leaving / --anim 클래스는 JS가 단계별로 부여 후 제거) */
+
+/* 닫힘(exit) — 현재 레이아웃 기준, 들어왔던 방향으로 빠져나가며 페이드아웃 */
+.daw-demo--leaving .daw-panel {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.9, 0.3); /* ease-in: 닫히는 느낌 */
+  animation-fill-mode: both;
+}
+.daw-demo--leaving.daw-demo--left .daw-panel--chat { animation-name: daw-exit-to-left; }
+.daw-demo--leaving.daw-demo--left .daw-panel--output { animation-name: daw-exit-to-right; }
+.daw-demo--leaving.daw-demo--right .daw-panel--output { animation-name: daw-exit-to-left; }
+.daw-demo--leaving.daw-demo--right .daw-panel--chat { animation-name: daw-exit-to-right; }
+.daw-demo--leaving.daw-demo--split .daw-panel--chat { animation-name: daw-exit-split-left; }
+.daw-demo--leaving.daw-demo--split .daw-panel--output { animation-name: daw-exit-split-right; }
+
+/* 열림(enter) — 새 레이아웃 기준 */
+.daw-demo--anim .daw-panel {
+  animation-duration: 560ms;
+  animation-timing-function: var(--easing-emphasized, cubic-bezier(0.22, 1, 0.36, 1));
+  animation-fill-mode: both;
+}
+.daw-demo--anim.daw-demo--left .daw-panel--chat { animation-name: daw-enter-from-left; }
+.daw-demo--anim.daw-demo--left .daw-panel--output { animation-name: daw-enter-from-right; }
+.daw-demo--anim.daw-demo--right .daw-panel--output { animation-name: daw-enter-from-left; }
+.daw-demo--anim.daw-demo--right .daw-panel--chat { animation-name: daw-enter-from-right; }
+.daw-demo--anim.daw-demo--split .daw-panel--chat { animation-name: daw-split-left-panel; }
+.daw-demo--anim.daw-demo--split .daw-panel--output { animation-name: daw-split-right-panel; }
+
+@keyframes daw-enter-from-left {
+  from { opacity: 0; transform: translateX(-36px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes daw-enter-from-right {
+  from { opacity: 0; transform: translateX(36px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes daw-exit-to-left {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-36px); }
+}
+@keyframes daw-exit-to-right {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(36px); }
+}
+/* 스플릿: 가운데에서 양옆으로 갈라짐 (split 레이아웃은 채팅=왼쪽 / 캔버스=오른쪽) */
+@keyframes daw-split-left-panel {
+  from { opacity: 0; transform: translateX(28px) scaleX(0.94); transform-origin: right center; }
+  to { opacity: 1; transform: translateX(0) scaleX(1); transform-origin: right center; }
+}
+@keyframes daw-split-right-panel {
+  from { opacity: 0; transform: translateX(-28px) scaleX(0.94); transform-origin: left center; }
+  to { opacity: 1; transform: translateX(0) scaleX(1); transform-origin: left center; }
+}
+/* 스플릿 닫힘: 가운데로 모이며 사라짐 */
+@keyframes daw-exit-split-left {
+  from { opacity: 1; transform: translateX(0) scaleX(1); transform-origin: right center; }
+  to { opacity: 0; transform: translateX(28px) scaleX(0.94); transform-origin: right center; }
+}
+@keyframes daw-exit-split-right {
+  from { opacity: 1; transform: translateX(0) scaleX(1); transform-origin: left center; }
+  to { opacity: 0; transform: translateX(-28px) scaleX(0.94); transform-origin: left center; }
+}
+
+/* 아웃풋(캔버스) 패널 본문 — GCA 채팅 영역(.gca-chat)을 그대로 재사용:
+ * 패딩·사이즈·스크롤(오버레이 스크롤바)·내부 요소 스타일을 동일하게 따른다.
+ * 기본은 비어 있고, 결과물 요소가 들어오면 .gca-msg / .gca-table 등 채팅 규칙을 사용한다. */
+
+/* 레이아웃 컨트롤러 (데모 하단, 사이트 토큰 사용 → 다크모드 대응) */
+.daw-control { margin-top: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; flex-wrap: nowrap; }
+.daw-control__label { font-size: 14px; font-weight: 600; color: var(--color-label-alternative); }
+.daw-seg { display: inline-flex; gap: 2px; padding: 4px; border-radius: var(--radius-md); background: var(--color-fill-normal); }
+.daw-seg__btn {
+  width: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  border: 0;
+  background: none;
+  border-radius: calc(var(--radius-md) - 4px);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-label-alternative);
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.daw-seg__btn:hover { color: var(--color-label-strong); }
+.daw-seg__btn.is-active {
+  background: var(--color-background);
+  color: var(--color-label-strong);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.12);
+}
+
+/* 좁은 화면: 패널을 위/아래로 스택 */
+@media (max-width: 720px) {
+  .daw-demo, .daw-demo--left { flex-direction: column; }
+  .daw-panel--chat { flex: 1 1 50%; }
+  .daw-panel--output { flex: 1 1 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .daw-demo--anim .daw-panel,
+  .daw-demo--leaving .daw-panel { animation: none; }
+}
