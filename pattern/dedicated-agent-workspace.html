@@ -474,14 +474,12 @@
           if (reduceMotion) { setLayout(layout); return; }
 
           switching = true;
-          demo.classList.add("daw-demo--fading");       /* 페이드아웃 */
+          demo.classList.add("daw-demo--fading");       /* 패널만 페이드아웃 */
           setTimeout(() => {
             setLayout(layout);                           /* 보이지 않을 때 레이아웃 교체 */
-            requestAnimationFrame(() => {
-              demo.classList.remove("daw-demo--fading");  /* 페이드인 */
-              switching = false;
-            });
-          }, 170);
+            demo.classList.remove("daw-demo--fading");   /* 그대로 페이드인 (rAF 불필요) */
+            switching = false;
+          }, 180);
         });
       }
 
