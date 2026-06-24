@@ -501,25 +501,25 @@
 
       /* ===== 대화별 콘텐츠 ===== */
       const checkIcon = '<svg aria-hidden="true"><use href="#ic-check"></use></svg>완료';
-      const ASSIST = (inner) => '<div class="gca-msg gca-msg--assistant"><span class="gca-status">' + checkIcon + '</span>' + inner + '</div>';
+      const ASSIST = (lead, rest) => '<div class="gca-msg gca-msg--assistant"><div class="gca-msg__lead"><span class="gca-status">' + checkIcon + '</span><p class="gca-msg__text">' + lead + '</p></div>' + (rest || '') + '</div>';
       const USER = (t) => '<div class="gca-msg gca-msg--user"><div class="gca-bubble">' + t + '</div></div>';
 
       const ONBOARDING_HTML =
         USER("신규 고객 온보딩은 보통 어떻게 진행되나요?") +
         ASSIST(
-          '<p class="gca-msg__text">신규 고객 온보딩은 보통 계약 완료 직후 환영 메일과 계정 생성으로 시작해요. 이후 킥오프 미팅에서 도입 목표와 일정을 맞추고, 환경 설정과 데이터 마이그레이션을 진행합니다. 핵심 기능 교육까지 마친 뒤에는 사용 현황을 점검하면서 고객이 안정적으로 정착하도록 돕는 흐름이에요.</p>' +
+          '신규 고객 온보딩은 보통 계약 완료 직후 환영 메일과 계정 생성으로 시작해요. 이후 킥오프 미팅에서 도입 목표와 일정을 맞추고, 환경 설정과 데이터 마이그레이션을 진행합니다. 핵심 기능 교육까지 마친 뒤에는 사용 현황을 점검하면서 고객이 안정적으로 정착하도록 돕는 흐름이에요.',
           '<div class="gca-actions">' + actionBtns() + '</div>'
         ) +
         USER("킥오프 미팅에서 꼭 다뤄야 할 건 뭐야?") +
         ASSIST(
-          '<p class="gca-msg__text">킥오프에서는 세 가지를 꼭 정리하는 게 좋아요. 첫째, 고객이 기대하는 성공 기준과 도입 목표를 명확히 합의합니다. 둘째, 주요 일정과 마일스톤, 양측 담당자를 확정해요. 셋째, 데이터 이전 범위와 권한 정책처럼 초기 설정에 필요한 정보를 미리 확인해 두면 이후 단계가 훨씬 매끄럽게 진행됩니다.</p>' +
+          '킥오프에서는 세 가지를 꼭 정리하는 게 좋아요. 첫째, 고객이 기대하는 성공 기준과 도입 목표를 명확히 합의합니다. 둘째, 주요 일정과 마일스톤, 양측 담당자를 확정해요. 셋째, 데이터 이전 범위와 권한 정책처럼 초기 설정에 필요한 정보를 미리 확인해 두면 이후 단계가 훨씬 매끄럽게 진행됩니다.',
           '<div class="gca-actions">' + actionBtns() + '</div>'
         );
 
       const REPORT_HTML =
         USER("이번 주 영업 리포트 초안 작성해줘") +
         ASSIST(
-          '<p class="gca-msg__text">이번 주 영업 리포트 초안입니다. 주요 지표를 카드로 정리했어요. 검토 후 수정할 부분을 알려주세요.</p>' +
+          '이번 주 영업 리포트 초안입니다. 주요 지표를 카드로 정리했어요. 검토 후 수정할 부분을 알려주세요.',
           '<div class="gca-cards">' +
           '<div class="gca-card"><p class="gca-card__title">신규 리드 · 32건</p><p class="gca-card__sub">전주 대비 +12%</p></div>' +
           '<div class="gca-card"><p class="gca-card__title">미팅 진행 · 18건</p><p class="gca-card__sub">전주 대비 +5%</p></div>' +
@@ -702,13 +702,16 @@
       function appendAssistant(text) {
         const el = document.createElement("div");
         el.className = "gca-msg gca-msg--assistant gca-msg--enter";
+        const lead = document.createElement("div");
+        lead.className = "gca-msg__lead";
         const status = document.createElement("span");
         status.className = "gca-status";
         status.innerHTML = checkIcon;
         const p = document.createElement("p");
         p.className = "gca-msg__text";
         p.textContent = text;
-        el.append(status, p);
+        lead.append(status, p);
+        el.append(lead);
         chat.appendChild(el);
         scrollDown();
       }
