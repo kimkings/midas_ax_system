@@ -1007,7 +1007,6 @@
 }
 .cap-call svg { width: 20px; height: 20px; }
 .cap-call:hover { transform: translate(-50%, -50%) scale(1.04); box-shadow: 0 10px 28px -8px rgba(16, 24, 40, 0.34); }
-.cap-demo.is-open .cap-call { opacity: 0; pointer-events: none; }
 
 /* 패널 (GCA 채팅 재사용)
  * .gca-main 의 비대칭 패딩(12 12 12 0)을 제거해 플러시 측면 패널로 정렬 */
@@ -1028,23 +1027,13 @@
   position: absolute;
   top: 0; right: 0; bottom: 0;
   flex: none;
-  box-shadow: -20px 0 48px -20px rgba(16, 24, 40, 0.3);
+  box-shadow: none;
   transform: translateX(100%);
-  transition: transform 0.28s ease;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
-.cap-demo--overlay.is-open .cap-panel { transform: translateX(0); }
-
-/* 세그먼트 모드 전환: 기존 slide/margin 동작을 되감지 않고 페이드로 교체 */
-.cap-demo--mode-fade.cap-demo--split .cap-panel,
-.cap-demo--mode-fade.cap-demo--overlay .cap-panel {
-  transition: opacity 0.36s var(--easing-standard), box-shadow 0.36s var(--easing-standard);
-}
-.cap-demo--mode-out .cap-panel,
-.cap-demo--mode-in .cap-panel {
-  opacity: 0;
-}
-.cap-demo--mode-fade.is-open .cap-panel {
-  pointer-events: none;
+.cap-demo--overlay.is-open .cap-panel {
+  transform: translateX(0);
+  box-shadow: -20px 0 48px -20px rgba(16, 24, 40, 0.3);
 }
 
 /* 좁은 화면: 패널을 전체 폭으로 */

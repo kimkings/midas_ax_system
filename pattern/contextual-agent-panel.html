@@ -190,9 +190,9 @@
 
           <!-- Main app area (gray, empty) -->
           <div class="cap-main">
-            <button class="cap-call" type="button" id="capCall" aria-label="AI 패널 호출">
+            <button class="cap-call" type="button" id="capCall" aria-label="패널 호출">
               <svg aria-hidden="true"><use href="#ic-sparkle"></use></svg>
-              <span>AI 패널 호출</span>
+              <span>패널 호출</span>
             </button>
           </div>
 
@@ -443,7 +443,7 @@
       call.addEventListener("click", () => { demo.classList.add("is-open"); });
       close.addEventListener("click", () => { demo.classList.remove("is-open"); });
 
-      /* 모드 전환 (분할 / 오버레이) — 열림 상태 유지 */
+      /* 모드 전환 (분할 / 오버레이) — 전환 시 패널은 닫힌 상태로 시작 */
       const seg = document.getElementById("capSeg");
       if (seg) {
         let modeSwitching = false;
@@ -455,19 +455,18 @@
           if (demo.classList.contains("cap-demo--" + nextMode) || modeSwitching) return;
           window.clearTimeout(modeTimer);
           modeSwitching = true;
-          demo.classList.add("cap-demo--mode-fade", "cap-demo--mode-out");
-          modeTimer = window.setTimeout(() => {
-            demo.classList.remove("cap-demo--split", "cap-demo--overlay", "cap-demo--mode-out");
-            demo.classList.add("cap-demo--" + nextMode, "cap-demo--mode-in");
+          /* 현재 모드에서 패널을 먼저 닫고, 닫힌 뒤 모드를 교체 */
+          const wasOpen = demo.classList.contains("is-open");
+          demo.classList.remove("is-open");
+          const swap = () => {
+            demo.classList.remove("cap-demo--split", "cap-demo--overlay");
+            demo.classList.add("cap-demo--" + nextMode);
             seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-            requestAnimationFrame(() => {
-              demo.classList.remove("cap-demo--mode-in");
-              modeTimer = window.setTimeout(() => {
-                demo.classList.remove("cap-demo--mode-fade");
-                modeSwitching = false;
-              }, 460);
-            });
-          }, 360);
+            modeSwitching = false;
+          };
+          /* 열려 있었으면 닫힘 트랜지션(0.28s)을 기다렸다가 교체 */
+          if (wasOpen) modeTimer = window.setTimeout(swap, 300);
+          else swap();
         });
       }
 
