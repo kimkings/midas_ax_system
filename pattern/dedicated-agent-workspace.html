@@ -451,22 +451,16 @@
       const demo = document.getElementById("dawDemo");
       if (!demo) return;
 
-      /* 레이아웃 전환 컨트롤러 (페이드아웃 → 레이아웃 변경 → 페이드인) */
+      /* 레이아웃 전환 컨트롤러 — 단순 크로스페이드 (페이드아웃 → 교체 → 페이드인) */
       const seg = document.getElementById("dawSeg");
       const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const EXIT_MS = 360;   /* 페이드아웃 길이 (css와 동기화) */
-      const ENTER_MS = 420;  /* 페이드인 길이 (css와 동기화) */
       let currentLayout = "left";
-      let exitTimer = null, enterTimer = null, switching = false;
+      let switching = false;
 
-      const baseClass = () => "daw-demo" + (demo.classList.contains("daw-demo--zoom") ? " daw-demo--zoom" : "");
-
-      function playEnter(layout) {
-        demo.className = baseClass() + " daw-demo--" + layout;
-        void demo.offsetWidth; /* 리플로우 강제 → 애니메이션 재시작 */
-        demo.classList.add("daw-demo--anim");
-        clearTimeout(enterTimer);
-        enterTimer = setTimeout(() => { demo.classList.remove("daw-demo--anim"); switching = false; }, ENTER_MS + 40);
+      function setLayout(layout) {
+        demo.classList.remove("daw-demo--left", "daw-demo--right", "daw-demo--split");
+        demo.classList.add("daw-demo--" + layout);
+        currentLayout = layout;
       }
 
       if (seg) {
@@ -475,31 +469,19 @@
           if (!btn) return;
           const layout = btn.dataset.layout;
           if (layout === currentLayout || switching) return;
+          seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
 
-          clearTimeout(exitTimer);
-          clearTimeout(enterTimer);
-
-          /* 모션 최소화 환경 → 페이드 없이 즉시 처리 */
-          if (reduceMotion) {
-            currentLayout = layout;
-            demo.className = baseClass() + " daw-demo--" + layout;
-            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-            switching = false;
-            return;
-          }
+          if (reduceMotion) { setLayout(layout); return; }
 
           switching = true;
-          /* 1단계: 기존 레이아웃 닫힘 */
-          demo.className = baseClass() + " daw-demo--" + currentLayout;
-          void demo.offsetWidth;
-          demo.classList.add("daw-demo--leaving");
-          exitTimer = setTimeout(() => {
-            /* 2단계: 새 레이아웃 열림 */
-            demo.classList.remove("daw-demo--leaving");
-            currentLayout = layout;
-            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-            playEnter(layout);
-          }, EXIT_MS);
+          demo.classList.add("daw-demo--fading");       /* 페이드아웃 */
+          setTimeout(() => {
+            setLayout(layout);                           /* 보이지 않을 때 레이아웃 교체 */
+            requestAnimationFrame(() => {
+              demo.classList.remove("daw-demo--fading");  /* 페이드인 */
+              switching = false;
+            });
+          }, 170);
         });
       }
 

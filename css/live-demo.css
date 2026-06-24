@@ -899,56 +899,11 @@
 .daw-demo--split .daw-panel--chat,
 .daw-demo--split .daw-panel--output { flex: 1 1 0; }
 
-/* ---------- 레이아웃 전환 애니메이션 ----------
- * 전환 시 아웃풋 패널은 화면에 유지하고, 채팅 패널만 닫힘/열림 모션을 수행한다.
- * (--leaving / --anim 클래스는 JS가 단계별로 부여 후 제거) */
-
-/* 닫힘(exit) — 현재 레이아웃 기준, 채팅 패널만 빠져나가며 페이드아웃 */
-.daw-demo--leaving .daw-panel--chat {
-  animation-duration: 360ms;
-  animation-timing-function: var(--easing-standard, cubic-bezier(0.33, 1, 0.68, 1));
-  animation-fill-mode: both;
-}
-.daw-demo--leaving.daw-demo--left .daw-panel--chat { animation-name: daw-exit-to-left; }
-.daw-demo--leaving.daw-demo--right .daw-panel--chat { animation-name: daw-exit-to-right; }
-.daw-demo--leaving.daw-demo--split .daw-panel--chat { animation-name: daw-exit-split-left; }
-
-/* 열림(enter) — 새 레이아웃 기준, 채팅 패널만 들어온다 */
-.daw-demo--anim .daw-panel--chat {
-  animation-duration: 420ms;
-  animation-timing-function: var(--easing-emphasized, cubic-bezier(0.22, 1, 0.36, 1));
-  animation-fill-mode: both;
-}
-.daw-demo--anim.daw-demo--left .daw-panel--chat { animation-name: daw-enter-from-left; }
-.daw-demo--anim.daw-demo--right .daw-panel--chat { animation-name: daw-enter-from-right; }
-.daw-demo--anim.daw-demo--split .daw-panel--chat { animation-name: daw-split-left-panel; }
-
-@keyframes daw-enter-from-left {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes daw-enter-from-right {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes daw-exit-to-left {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-@keyframes daw-exit-to-right {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
-/* 스플릿: 채팅 패널만 가운데 쪽에서 열림 */
-@keyframes daw-split-left-panel {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-/* 스플릿 닫힘: 채팅 패널만 가운데로 빠지며 사라짐 */
-@keyframes daw-exit-split-left {
-  from { opacity: 1; }
-  to { opacity: 0; }
-}
+/* ---------- 레이아웃 전환: 단순 크로스페이드 ----------
+ * 데모 전체를 짧게 페이드아웃 → 레이아웃 교체(보이지 않을 때) → 페이드인.
+ * 패널이 따로 튀지 않고 함께 부드럽게 전환된다. (JS가 --fading 토글) */
+.daw-demo { transition: opacity 0.16s ease; }
+.daw-demo--fading { opacity: 0; }
 
 /* 아웃풋(캔버스) 패널 본문 — GCA 채팅 영역(.gca-chat)을 그대로 재사용:
  * 패딩·사이즈·스크롤(오버레이 스크롤바)·내부 요소 스타일을 동일하게 따른다.
@@ -991,8 +946,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .daw-demo--anim .daw-panel,
-  .daw-demo--leaving .daw-panel { animation: none; }
+  .daw-demo { transition: none; }
 }
 
 /* ============================================================
