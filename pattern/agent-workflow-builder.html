@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/live-demo.css?v=20260625-form-field-gap" />
+  <link rel="stylesheet" href="../css/live-demo.css?v=20260625-awb-controls2" />
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
@@ -100,6 +100,10 @@
 <symbol id="ic-awb-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.2 2.2 3.2 4.8 3.2 8s-1 5.8-3.2 8M12 4C9.8 6.2 8.8 8.8 8.8 12s1 5.8 3.2 8"/></g></symbol>
 <symbol id="ic-awb-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20V5.8C7 4.8 7.8 4 8.8 4h4.4C14.2 4 15 4.8 15 5.8V20"/><path d="M15 10h2.2c1 0 1.8.8 1.8 1.8V20M5 20h16M10 8h2M10 12h2M10 16h2"/></g></symbol>
 <symbol id="ic-awb-cube" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.2 20 8.4v7.2l-8 4.2-8-4.2V8.4l8-4.2Z"/><path d="m4.4 8.7 7.6 4 7.6-4M12 12.7v7"/></g></symbol>
+<symbol id="ic-awb-heart" viewBox="0 0 24 24"><path d="M12 20.3 4.6 12.9a4.6 4.6 0 0 1 6.5-6.5l.9.9.9-.9a4.6 4.6 0 0 1 6.5 6.5L12 20.3Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-awb-bolt" viewBox="0 0 24 24"><path d="M13 3 5 13h6l-1 8 8-10h-6l1-8Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="ic-grip" viewBox="0 0 20 20"><g fill="currentColor"><circle cx="7.5" cy="5" r="1.4"/><circle cx="12.5" cy="5" r="1.4"/><circle cx="7.5" cy="10" r="1.4"/><circle cx="12.5" cy="10" r="1.4"/><circle cx="7.5" cy="15" r="1.4"/><circle cx="12.5" cy="15" r="1.4"/></g></symbol>
+<symbol id="ic-trash" viewBox="0 0 20 20"><path d="M4.5 5.5h11M8.2 5.5V4.2c0-.5.4-.9.9-.9h1.8c.5 0 .9.4.9.9V5.5M6.2 5.5l.6 9.3c0 .5.5.9 1 .9h4.4c.5 0 .9-.4 1-.9l.6-9.3" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </defs></svg>
   <header class="gnb gnb--solid">
     <div class="gnb__inner">
@@ -189,7 +193,7 @@
       </div>
       <div class="gca-demo-block" data-reveal style="--i: 4">
         <p class="gca-demo-eyebrow">Live Demo</p>
-        <div class="awb-demo awb-demo--form" id="awbDemo" aria-label="Agent/Workflow Builder 라이브 데모">
+        <div class="awb-demo awb-demo--form" id="awbDemo" aria-label="Agent/Workflow Builder 라이브 데모" data-awb-builder>
 
           <!-- Type 1: Form-based Builder (설정 폼 + 테스트 대화) -->
           <div class="awb-scene awb-scene--form">
@@ -199,27 +203,34 @@
                 <button class="gca-icon-btn" type="button" aria-label="복사"><svg aria-hidden="true"><use href="#ic-copy"></use></svg></button>
                 <button class="gca-icon-btn" type="button" aria-label="더보기"><svg aria-hidden="true"><use href="#ic-more"></use></svg></button>
               </header>
-              <div class="eae-drawer__body"><div class="eae-field"><p class="eae-field__label">이름</p><input class="eae-input" type="text" placeholder="에이전트 타이틀" /></div><div class="eae-field"><p class="eae-field__label">에이전트 설명</p><p class="eae-field__hint">이 에이전트가 어떤 도움을 줄 수 있는지 작성해 주세요.</p><textarea class="eae-input eae-input--area" rows="2" placeholder="입력하세요."></textarea></div><div class="eae-field"><p class="eae-field__label">지시사항</p><p class="eae-field__hint">에이전트가 따라야 할 규칙을 작성해 주세요.</p><textarea class="eae-input eae-input--area" rows="2" placeholder="입력하세요."></textarea></div><div class="eae-field"><p class="eae-field__label">모델</p><button class="eae-select" type="button">Claude Sonnet 4.5<svg aria-hidden="true"><use href="#ic-chevrondown"></use></svg></button></div><div class="eae-field"><p class="eae-field__label">지식</p><button class="awb-upload" type="button"><svg aria-hidden="true"><use href="#ic-add"></use></svg>파일 업로드</button></div></div>
-              <footer class="eae-drawer__foot"><button class="eae-btn eae-btn--ghost" type="button">취소</button><button class="eae-btn eae-btn--primary" type="button">만들기</button></footer>
+              <div class="eae-drawer__body">
+                <div class="eae-field"><p class="eae-field__label">이름</p><input class="eae-input" id="awbFName" type="text" placeholder="에이전트 타이틀" /></div>
+                <div class="eae-field"><p class="eae-field__label">에이전트 설명</p><p class="eae-field__hint">이 에이전트가 어떤 도움을 줄 수 있는지 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbFDesc" rows="2" placeholder="입력하세요."></textarea></div>
+                <div class="eae-field"><p class="eae-field__label">지시사항</p><p class="eae-field__hint">에이전트가 따라야 할 규칙을 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbFInst" rows="2" placeholder="입력하세요."></textarea></div>
+                <div class="eae-field"><p class="eae-field__label">모델</p><div class="eae-select-wrap"><button class="eae-select" type="button" data-model aria-expanded="false"><span class="eae-select__val">Claude Sonnet 4.5</span><svg aria-hidden="true"><use href="#ic-chevrondown"></use></svg></button></div></div>
+                <div class="eae-field"><p class="eae-field__label">지식</p><button class="awb-upload" type="button" id="awbFUpload"><svg aria-hidden="true"><use href="#ic-add"></use></svg>파일 업로드</button><div class="awb-files" id="awbFFiles"></div></div>
+                <div class="eae-field"><label class="eae-switch"><span class="eae-ctl-label">응답에 출처 표시<small>참고한 문서 출처를 함께 보여줍니다.</small></span><input type="checkbox" id="awbFCite" checked /><span class="eae-switch__track"></span></label></div>
+              </div>
+              <footer class="eae-drawer__foot"><button class="eae-btn eae-btn--ghost" type="button" id="awbFReset">초기화</button><button class="eae-btn eae-btn--primary" type="button" id="awbFCreate">만들기</button></footer>
             </div>
             <div class="gca-main awb-test">
               <header class="gca-main__bar">
-                <span class="gca-main__title">미리보기</span>
+                <span class="gca-main__title" id="awbFPreviewTitle">미리보기</span>
                 <button class="gca-icon-btn" type="button" aria-label="다시 생성"><svg aria-hidden="true"><use href="#ic-refresh"></use></svg></button>
                 <button class="gca-icon-btn" type="button" aria-label="더보기"><svg aria-hidden="true"><use href="#ic-more"></use></svg></button>
               </header>
               <div class="gca-chat" id="awbChat">
-                <div class="gca-msg gca-msg--user"><div class="gca-bubble">이 에이전트는 무엇을 할 수 있어?</div></div>
-                <div class="gca-msg gca-msg--assistant">
-                  <span class="gca-status"><svg aria-hidden="true"><use href="#ic-check"></use></svg>완료</span>
-                  <p class="gca-msg__text">왼쪽에서 설정한 역할과 지시사항에 따라 동작해요. 설명·지시사항을 입력하고 질문하면 그 설정대로 답변합니다. 오른쪽에서 바로 테스트해 보세요.</p>
+                <div class="awb-test-empty" id="awbFEmpty">
+                  <span class="awb-test-empty__icon"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg></span>
+                  <p class="awb-test-empty__title">아직 에이전트가 없어요</p>
+                  <p class="awb-test-empty__sub">왼쪽에서 <b>이름</b>과 <b>지시사항</b>을 입력하고<br /><b>만들기</b>를 누르면 여기서 바로 테스트할 수 있어요.</p>
                 </div>
               </div>
               <div class="gca-composer">
                 <div class="gca-composer__inner">
                   <form class="gca-input" id="awbForm" autocomplete="off">
                     <span class="gca-input__llm" aria-hidden="true"><svg aria-hidden="true"><use href="#ic-llm"></use></svg></span>
-                    <input class="gca-input__field" id="awbField" type="text" placeholder="에이전트에게 테스트 질문을 해보세요." aria-label="메시지 입력" />
+                    <input class="gca-input__field" id="awbField" type="text" placeholder="먼저 에이전트를 만들어 주세요." aria-label="메시지 입력" disabled />
                     <button class="gca-input__send" id="awbSend" type="submit" aria-label="전송" disabled><svg aria-hidden="true"><use href="#ic-arrowup"></use></svg></button>
                   </form>
                   <div class="gca-actionbar">
@@ -232,45 +243,96 @@
             </div>
           </div>
 
-	          <!-- Type 2: Workflow (Node Graph) Builder -->
-	          <div class="awb-scene awb-scene--graph">
-	            <div class="awb-canvas">
-	              <div class="awb-flow" id="awbFlow">
-	                <button class="awb-node is-sel" type="button" data-label="단계 정보 타이틀" style="--nc:#20c997">
-	                  <span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-awb-globe"></use></svg></span>
-	                  <span class="awb-node__meta"><span class="awb-node__label">단계 정보 타이틀</span><span class="awb-node__sub">보조정보</span></span>
-	                </button>
-	                <span class="awb-edge"></span>
-	                <button class="awb-node" type="button" data-label="단계 정보 타이틀" style="--nc:#ff6b2b">
-	                  <span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-awb-building"></use></svg></span>
-	                  <span class="awb-node__meta"><span class="awb-node__label">단계 정보 타이틀</span><span class="awb-node__sub">보조정보</span></span>
-	                </button>
-	                <span class="awb-edge"></span>
-	                <button class="awb-node" type="button" data-label="단계 정보 타이틀" style="--nc:#2ca4fb">
-	                  <span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-awb-cube"></use></svg></span>
-	                  <span class="awb-node__meta"><span class="awb-node__label">단계 정보 타이틀</span><span class="awb-node__sub">보조정보</span></span>
-	                </button>
-	                <span class="awb-edge"></span>
-	                <button class="awb-node awb-node--add" type="button" id="awbAddNode" aria-label="노드 추가"><span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-add"></use></svg></span></button>
-	              </div>
-	            </div>
-	            <aside class="eae-drawer awb-gdrawer">
+          <!-- Type 2: Workflow Builder (Step-based) -->
+          <div class="awb-scene awb-scene--step">
+            <div class="awb-canvas awb-canvas--step">
+              <div class="awb-steps" id="awbStepList" aria-label="워크플로우 단계"></div>
+            </div>
+            <aside class="eae-drawer awb-gdrawer">
               <header class="gca-main__bar">
-                <span class="gca-main__title" id="awbDrawerTitle">단계 정보 타이틀 설정</span>
+                <span class="gca-main__title" id="awbStepTitle">단계 설정</span>
                 <button class="gca-icon-btn" type="button" aria-label="복사"><svg aria-hidden="true"><use href="#ic-copy"></use></svg></button>
                 <button class="gca-icon-btn" type="button" aria-label="더보기"><svg aria-hidden="true"><use href="#ic-more"></use></svg></button>
               </header>
-              <div class="eae-drawer__body"><div class="eae-field"><p class="eae-field__label">이름</p><input class="eae-input" type="text" placeholder="에이전트 타이틀" /></div><div class="eae-field"><p class="eae-field__label">에이전트 설명</p><p class="eae-field__hint">이 에이전트가 어떤 도움을 줄 수 있는지 작성해 주세요.</p><textarea class="eae-input eae-input--area" rows="2" placeholder="입력하세요."></textarea></div><div class="eae-field"><p class="eae-field__label">지시사항</p><p class="eae-field__hint">에이전트가 따라야 할 규칙을 작성해 주세요.</p><textarea class="eae-input eae-input--area" rows="2" placeholder="입력하세요."></textarea></div><div class="eae-field"><p class="eae-field__label">모델</p><button class="eae-select" type="button">Claude Sonnet 4.5<svg aria-hidden="true"><use href="#ic-chevrondown"></use></svg></button></div><div class="eae-field"><p class="eae-field__label">지식</p><button class="awb-upload" type="button"><svg aria-hidden="true"><use href="#ic-add"></use></svg>파일 업로드</button></div></div>
-              <footer class="eae-drawer__foot"><button class="eae-btn eae-btn--ghost" type="button">취소</button><button class="eae-btn eae-btn--primary" type="button">만들기</button></footer>
+              <div class="eae-drawer__body" id="awbStepBody">
+                <div class="eae-field"><p class="eae-field__label">이름</p><input class="eae-input" id="awbStepName" type="text" placeholder="단계 이름" /></div>
+                <div class="eae-field"><p class="eae-field__label">단계 설명</p><p class="eae-field__hint">이 단계가 어떤 일을 하는지 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbStepDesc" rows="2" placeholder="입력하세요."></textarea></div>
+                <div class="eae-field"><p class="eae-field__label">지시사항</p><p class="eae-field__hint">이 단계에서 따라야 할 규칙을 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbStepInst" rows="2" placeholder="입력하세요."></textarea></div>
+                <div class="eae-field"><p class="eae-field__label">모델</p><div class="eae-select-wrap"><button class="eae-select" type="button" data-model aria-expanded="false"><span class="eae-select__val">Claude Sonnet 4.5</span><svg aria-hidden="true"><use href="#ic-chevrondown"></use></svg></button></div></div>
+                <div class="eae-field"><p class="eae-field__label">실행 조건</p><div class="eae-radio-group" id="awbStepCond" role="radiogroup"><label class="eae-radio"><input type="radio" name="awbStepCond" value="prev" checked /><span class="eae-radio__box"></span><span class="eae-radio__label">이전 단계 완료 시</span></label><label class="eae-radio"><input type="radio" name="awbStepCond" value="cond" /><span class="eae-radio__box"></span><span class="eae-radio__label">조건 충족 시</span></label><label class="eae-radio"><input type="radio" name="awbStepCond" value="manual" /><span class="eae-radio__box"></span><span class="eae-radio__label">수동 실행</span></label></div></div>
+              </div>
+              <footer class="eae-drawer__foot"><button class="eae-btn eae-btn--ghost" type="button" id="awbStepDelete">단계 삭제</button><button class="eae-btn eae-btn--primary" type="button" id="awbStepSave">저장</button></footer>
+            </aside>
+          </div>
+
+          <!-- Type 3: Workflow Builder (Step-based, Modal Type) -->
+          <div class="awb-scene awb-scene--modal">
+            <div class="awb-modal-stage">
+              <div class="awb-modal" id="awbModal" role="dialog" aria-label="워크플로우 설정">
+                <header class="gca-main__bar awb-modal__bar">
+                  <span class="gca-main__title">워크플로우 설정</span>
+                  <button class="gca-icon-btn" type="button" aria-label="복사"><svg aria-hidden="true"><use href="#ic-copy"></use></svg></button>
+                  <button class="gca-icon-btn" type="button" aria-label="더보기"><svg aria-hidden="true"><use href="#ic-more"></use></svg></button>
+                </header>
+                <div class="awb-modal__body">
+                  <div class="awb-modal__list-wrap">
+                    <div class="awb-steps awb-steps--modal" id="awbModalList" aria-label="워크플로우 단계"></div>
+                  </div>
+                  <aside class="awb-modal__config" id="awbModalConfig" aria-hidden="true">
+                    <header class="gca-main__bar">
+                      <span class="gca-main__title" id="awbMTitle">단계 설정</span>
+                      <button class="gca-icon-btn" type="button" id="awbMClose" aria-label="설정 닫기"><svg aria-hidden="true"><use href="#ic-close"></use></svg></button>
+                    </header>
+                    <div class="eae-drawer__body">
+                      <div class="eae-field"><p class="eae-field__label">이름</p><input class="eae-input" id="awbMName" type="text" placeholder="단계 이름" /></div>
+                      <div class="eae-field"><p class="eae-field__label">단계 설명</p><p class="eae-field__hint">이 단계가 어떤 일을 하는지 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbMDesc" rows="2" placeholder="입력하세요."></textarea></div>
+                      <div class="eae-field"><p class="eae-field__label">지시사항</p><p class="eae-field__hint">이 단계에서 따라야 할 규칙을 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbMInst" rows="3" placeholder="입력하세요."></textarea></div>
+                      <div class="eae-field"><p class="eae-field__label">모델</p><div class="eae-select-wrap"><button class="eae-select" type="button" data-model aria-expanded="false"><span class="eae-select__val">Claude Sonnet 4.5</span><svg aria-hidden="true"><use href="#ic-chevrondown"></use></svg></button></div></div>
+                      <div class="eae-field"><p class="eae-field__label">실행 조건</p><div class="eae-radio-group" id="awbMCond" role="radiogroup"><label class="eae-radio"><input type="radio" name="awbMCond" value="prev" checked /><span class="eae-radio__box"></span><span class="eae-radio__label">이전 단계 완료 시</span></label><label class="eae-radio"><input type="radio" name="awbMCond" value="cond" /><span class="eae-radio__box"></span><span class="eae-radio__label">조건 충족 시</span></label><label class="eae-radio"><input type="radio" name="awbMCond" value="manual" /><span class="eae-radio__box"></span><span class="eae-radio__label">수동 실행</span></label></div></div>
+                    </div>
+                  </aside>
+                </div>
+                <footer class="eae-drawer__foot awb-modal__foot"><button class="eae-btn eae-btn--ghost" type="button">취소</button><button class="eae-btn eae-btn--primary" type="button">확인</button></footer>
+              </div>
+            </div>
+          </div>
+
+          <!-- Type 4: Workflow Builder (Node Graph Builder) -->
+          <div class="awb-scene awb-scene--node">
+            <div class="awb-ncanvas" id="awbNodeCanvas" aria-label="노드 그래프 캔버스">
+              <svg class="awb-nedges" id="awbNodeEdges" aria-hidden="true"></svg>
+              <div class="awb-nodes" id="awbNodeLayer"></div>
+              <div class="awb-ntoolbar">
+                <button class="awb-ntool" type="button" id="awbNodeAdd"><svg aria-hidden="true"><use href="#ic-add"></use></svg>노드 추가</button>
+              </div>
+              <p class="awb-nhint">노드를 드래그해 옮기고, 오른쪽 <b>＋</b> 포트를 끌어 다른 노드와 연결하세요.</p>
+            </div>
+            <aside class="eae-drawer awb-gdrawer">
+              <header class="gca-main__bar">
+                <span class="gca-main__title" id="awbNodeTitle">노드 설정</span>
+                <button class="gca-icon-btn" type="button" aria-label="복사"><svg aria-hidden="true"><use href="#ic-copy"></use></svg></button>
+                <button class="gca-icon-btn" type="button" aria-label="더보기"><svg aria-hidden="true"><use href="#ic-more"></use></svg></button>
+              </header>
+              <div class="eae-drawer__body" id="awbNodeBody">
+                <div class="eae-field"><p class="eae-field__label">이름</p><input class="eae-input" id="awbNodeName" type="text" placeholder="노드 이름" /></div>
+                <div class="eae-field"><p class="eae-field__label">노드 타입</p><div class="eae-radio-group eae-radio-group--row" id="awbNodeType" role="radiogroup"><label class="eae-radio"><input type="radio" name="awbNodeTypeR" value="trigger" /><span class="eae-radio__box"></span><span class="eae-radio__label">트리거</span></label><label class="eae-radio"><input type="radio" name="awbNodeTypeR" value="cond" /><span class="eae-radio__box"></span><span class="eae-radio__label">조건</span></label><label class="eae-radio"><input type="radio" name="awbNodeTypeR" value="action" checked /><span class="eae-radio__box"></span><span class="eae-radio__label">액션</span></label><label class="eae-radio"><input type="radio" name="awbNodeTypeR" value="tool" /><span class="eae-radio__box"></span><span class="eae-radio__label">도구</span></label></div></div>
+                <div class="eae-field"><p class="eae-field__label">설명</p><p class="eae-field__hint">이 노드가 어떤 일을 하는지 작성해 주세요.</p><textarea class="eae-input eae-input--area" id="awbNodeDesc" rows="2" placeholder="입력하세요."></textarea></div>
+                <div class="eae-field"><p class="eae-field__label">지시사항</p><textarea class="eae-input eae-input--area" id="awbNodeInst" rows="2" placeholder="입력하세요."></textarea></div>
+                <div class="eae-field"><p class="eae-field__label">모델</p><div class="eae-select-wrap"><button class="eae-select" type="button" data-model aria-expanded="false"><span class="eae-select__val">Claude Sonnet 4.5</span><svg aria-hidden="true"><use href="#ic-chevrondown"></use></svg></button></div></div>
+                <div class="eae-field"><p class="eae-field__label">사용 도구</p><div class="eae-check-group" id="awbNodeTools"><label class="eae-check"><input type="checkbox" value="search" /><span class="eae-check__box"><svg aria-hidden="true"><use href="#ic-check"></use></svg></span><span class="eae-check__label">검색</span></label><label class="eae-check"><input type="checkbox" value="file" /><span class="eae-check__box"><svg aria-hidden="true"><use href="#ic-check"></use></svg></span><span class="eae-check__label">파일</span></label><label class="eae-check"><input type="checkbox" value="api" /><span class="eae-check__box"><svg aria-hidden="true"><use href="#ic-check"></use></svg></span><span class="eae-check__label">API</span></label></div></div>
+              </div>
+              <footer class="eae-drawer__foot"><button class="eae-btn eae-btn--ghost" type="button" id="awbNodeDelete">노드 삭제</button><button class="eae-btn eae-btn--primary" type="button" id="awbNodeSave">저장</button></footer>
             </aside>
           </div>
 
         </div>
 
 	        <div class="daw-control" role="group" aria-label="빌더 타입 전환">
-	          <div class="daw-seg" id="awbSeg">
-	            <button class="daw-seg__btn is-active" type="button" data-scene="form">Form Builder</button>
-	            <button class="daw-seg__btn" type="button" data-scene="graph">Workflow Builder</button>
+	          <div class="daw-seg daw-seg--4" id="awbSeg">
+	            <button class="daw-seg__btn is-active" type="button" data-scene="form">Form</button>
+	            <button class="daw-seg__btn" type="button" data-scene="step">Step</button>
+	            <button class="daw-seg__btn" type="button" data-scene="modal">Modal</button>
+	            <button class="daw-seg__btn" type="button" data-scene="node">Node Graph</button>
 	          </div>
 	        </div>
 	      </div>
@@ -474,155 +536,6 @@
   <script src="../js/main.js" defer></script>
   <script src="../js/search.js" defer></script>
   <script src="../js/theme.js" defer></script>
-  <script>
-    (function () {
-      const demo = document.getElementById("awbDemo");
-      if (!demo) return;
-
-      /* 타입 전환 */
-      const seg = document.getElementById("awbSeg");
-      if (seg) {
-        const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
-        let sceneSwitching = false;
-        let sceneTimer = 0;
-        seg.addEventListener("click", (e) => {
-          const btn = e.target.closest(".daw-seg__btn");
-          if (!btn) return;
-          const nextScene = btn.dataset.scene;
-          if (demo.classList.contains("awb-demo--" + nextScene) || sceneSwitching) return;
-          window.clearTimeout(sceneTimer);
-          if (reduceMotion) {
-            demo.classList.remove("awb-demo--form", "awb-demo--graph");
-            demo.classList.add("awb-demo--" + nextScene);
-            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-            return;
-          }
-          sceneSwitching = true;
-          demo.classList.add("awb-demo--scene-out");
-          sceneTimer = window.setTimeout(() => {
-            demo.classList.remove("awb-demo--form", "awb-demo--graph", "awb-demo--scene-out");
-            demo.classList.add("awb-demo--" + nextScene, "awb-demo--scene-in");
-            seg.querySelectorAll(".daw-seg__btn").forEach((b) => b.classList.toggle("is-active", b === btn));
-            requestAnimationFrame(() => {
-              demo.classList.remove("awb-demo--scene-in");
-              sceneTimer = window.setTimeout(() => {
-                sceneSwitching = false;
-              }, 460);
-            });
-          }, 420);
-        });
-      }
-
-      /* Type 1: 테스트 대화 전송 */
-      const form = document.getElementById("awbForm");
-      const field = document.getElementById("awbField");
-      const send = document.getElementById("awbSend");
-      const chat = document.getElementById("awbChat");
-      const checkIcon = '<svg aria-hidden="true"><use href="#ic-check"></use></svg>완료';
-      const REPLIES = [
-        "설정한 역할과 지시사항을 기준으로 답변을 생성했어요. 설정을 바꾸면 응답도 달라집니다. (데모 응답)",
-        "좋은 질문이에요. 현재 구성된 지식과 도구 범위 안에서 정리해 드렸어요. (데모 응답)",
-        "테스트 결과예요. 만족스러우면 왼쪽 ‘만들기’로 에이전트를 생성할 수 있어요. (데모 응답)"
-      ];
-      let idx = 0, busy = false;
-      const scrollDown = () => { chat.scrollTop = chat.scrollHeight; };
-      field.addEventListener("input", () => { send.disabled = field.value.trim().length === 0; });
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const text = field.value.trim();
-        if (!text || busy) return;
-        busy = true;
-        const u = document.createElement("div");
-        u.className = "gca-msg gca-msg--user gca-msg--enter";
-        const b = document.createElement("div"); b.className = "gca-bubble"; b.textContent = text;
-        u.appendChild(b); chat.appendChild(u);
-        field.value = ""; send.disabled = true; scrollDown();
-        const th = document.createElement("div");
-        th.className = "gca-thinking gca-thinking--enter";
-        th.innerHTML = '생각중<span class="gca-thinking__dots"><span></span><span></span><span></span></span>';
-        chat.appendChild(th); scrollDown();
-        setTimeout(() => {
-          th.remove();
-          const a = document.createElement("div");
-          a.className = "gca-msg gca-msg--assistant gca-msg--enter";
-          a.innerHTML = '<span class="gca-status">' + checkIcon + '</span>';
-          const p = document.createElement("p"); p.className = "gca-msg__text"; p.textContent = REPLIES[idx % REPLIES.length];
-          a.appendChild(p); chat.appendChild(a); idx += 1; busy = false; scrollDown();
-        }, 900 + Math.random() * 600);
-      });
-
-      /* Type 2: 노드 선택 + 노드 추가 */
-      const flow = document.getElementById("awbFlow");
-      const drawerTitle = document.getElementById("awbDrawerTitle");
-      const addBtn = document.getElementById("awbAddNode");
-	      const PALETTE = ["#20c997", "#ff6b2b", "#2ca4fb", "#7c5cff"];
-	      const ADD_ICONS = ["awb-globe", "awb-building", "awb-cube"];
-      let addCount = 0;
-      flow.addEventListener("click", (e) => {
-        const node = e.target.closest(".awb-node");
-        if (!node || node.classList.contains("awb-node--add")) return;
-        flow.querySelectorAll(".awb-node").forEach((n) => n.classList.remove("is-sel"));
-        node.classList.add("is-sel");
-        drawerTitle.textContent = node.dataset.label + " 설정";
-      });
-      addBtn.addEventListener("click", () => {
-        addCount += 1;
-        const label = "새 단계 " + addCount;
-	        const c = PALETTE[addCount % PALETTE.length];
-	        const ic = ADD_ICONS[addCount % ADD_ICONS.length];
-	        const edge = document.createElement("span"); edge.className = "awb-edge";
-	        const node = document.createElement("button");
-	        node.type = "button"; node.className = "awb-node awb-enter"; node.dataset.label = label;
-	        node.style.setProperty("--nc", c);
-	        node.innerHTML = '<span class="awb-node__icon"><svg aria-hidden="true"><use href="#ic-' + ic + '"></use></svg></span>' +
-	          '<span class="awb-node__meta"><span class="awb-node__label">' + label + '</span><span class="awb-node__sub">보조정보</span></span>';
-	        flow.insertBefore(node, addBtn);
-	        flow.insertBefore(edge, addBtn);
-	        node.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-	      });
-
-	      const zoomBtn = document.getElementById("awbZoom");
-	      const lightbox = document.getElementById("awbLightbox");
-	      const stage = document.getElementById("awbLightboxStage");
-	      const control = demo.parentNode ? demo.parentNode.querySelector(".daw-control") : null;
-	      if (zoomBtn && lightbox && stage) {
-	        const slot = document.createElement("div");
-	        slot.style.display = "none";
-	        let zoomOpen = false;
-	        function openZoom() {
-	          if (zoomOpen) return;
-	          zoomOpen = true;
-	          demo.parentNode.insertBefore(slot, demo);
-	          stage.appendChild(demo);
-	          if (control) stage.appendChild(control);
-	          demo.classList.add("awb-demo--zoom");
-	          lightbox.hidden = false;
-	          document.body.style.overflow = "hidden";
-	          requestAnimationFrame(() => lightbox.classList.add("is-open"));
-	        }
-	        function closeZoom() {
-	          if (!zoomOpen) return;
-	          zoomOpen = false;
-	          lightbox.classList.remove("is-open");
-	          document.body.style.overflow = "";
-	          setTimeout(() => {
-	            if (zoomOpen) return;
-	            demo.classList.remove("awb-demo--zoom");
-	            if (slot.parentNode) slot.parentNode.insertBefore(demo, slot);
-	            if (control) demo.after(control);
-	            if (slot.parentNode) slot.parentNode.removeChild(slot);
-	            lightbox.hidden = true;
-	          }, 260);
-	        }
-	        zoomBtn.addEventListener("click", openZoom);
-	        lightbox.addEventListener("click", (e) => {
-	          if (e.target.closest("[data-close]")) closeZoom();
-	        });
-	        document.addEventListener("keydown", (e) => {
-	          if (e.key === "Escape" && zoomOpen) closeZoom();
-	        });
-	      }
-	    })();
-  </script>
+  <script src="../js/awb-builder.js" defer></script>
 </body>
 </html>

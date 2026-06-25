@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-23T12:01:51.723Z",
-  "count": 413,
+  "generatedAt": "2026-06-25T02:25:48.874Z",
+  "count": 414,
   "docs": [
     {
       "id": 0,
@@ -1269,7 +1269,7 @@
       "page": "Agent/Workflow Builder",
       "title": "Agent/Workflow Builder",
       "section": "",
-      "text": "사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 역할·지시문·지식·도구·권한을 설정하거나 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다. 피그마에서 보기 ↗"
+      "text": "사용자가 에이전트나 워크플로우를 직접 구성하고, 테스트하고, 배포할 수 있게 하는 UI 패턴입니다. 역할·지시문·지식·도구·권한을 설정하거나 트리거·조건·액션을 연결해 자동화 흐름을 만듭니다. 피그마에서 보기 ↗ Live Demo 새 에이전트 이름 에이전트 설명 이 에이전트가 어떤 도움을 줄 수 있는지 작성해 주세요. 지시사항 에이전트가 따라야 할 규칙을 작성해 주세요. 모델 Claude Sonnet 4.5 지식 파일 업로드 "
     },
     {
       "id": 141,
@@ -1458,7 +1458,7 @@
       "page": "Background Task Monitor",
       "title": "Background Task Monitor",
       "section": "",
-      "text": "사용자가 실행한 AI 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 진행률·단계·대기열·완료·실패를 추적하고, 완료된 결과를 열거나 실패한 작업을 재시도할 수 있습니다. 피그마에서 보기 ↗"
+      "text": "사용자가 실행한 AI 작업이 백그라운드에서 진행되는 동안 상태를 확인할 수 있게 하는 UI 패턴입니다. 진행률·단계·대기열·완료·실패를 추적하고, 완료된 결과를 열거나 실패한 작업을 재시도할 수 있습니다. 피그마에서 보기 ↗ Live Demo 백그라운드 작업 시작 리드 현황 분석 백그라운드에서 작업을 진행하고 있어요. 자세히 보기 크게 보기"
     },
     {
       "id": 162,
@@ -1629,7 +1629,7 @@
       "page": "Contextual Agent Panel",
       "title": "Contextual Agent Panel",
       "section": "",
-      "text": "사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 화면 맥락을 기준으로 AI와 상호작용하는 UI 패턴입니다. 보고 있는 화면·선택 객체·문서·데이터를 기준으로 질문하고, 필요한 경우 결과를 현재 화면에 반영합니다. 피그마에서 보기 ↗"
+      "text": "사용자가 현재 화면을 유지한 채, 측면 또는 오버레이 패널에서 화면 맥락을 기준으로 AI와 상호작용하는 UI 패턴입니다. 보고 있는 화면·선택 객체·문서·데이터를 기준으로 질문하고, 필요한 경우 결과를 현재 화면에 반영합니다. 피그마에서 보기 ↗ Live Demo 패널 호출 AI 어시스턴트 완료 현재 보고 계신 화면을 기준으로 도와드릴게요. 데이터 요약, 항목 설명, 다음 작업 제안 등 무엇이든 물어보세요. 파일 첨부 링크 첨"
     },
     {
       "id": 181,
@@ -1800,7 +1800,7 @@
       "page": "Dedicated Agent Workspace",
       "title": "Dedicated Agent Workspace",
       "section": "",
-      "text": "사용자가 특정 작업이나 산출물을 완성하기 위해 진입하는 전용 AI 작업공간입니다. 목표·조건·참조 정보를 바탕으로 AI와 함께 문서, 계획, 분석 결과, 코드 같은 결과물을 만들고 편집합니다. 피그마에서 보기 ↗"
+      "text": "사용자가 특정 작업이나 산출물을 완성하기 위해 진입하는 전용 AI 작업공간입니다. 목표·조건·참조 정보를 바탕으로 AI와 함께 문서, 계획, 분석 결과, 코드 같은 결과물을 만들고 편집합니다. 피그마에서 보기 ↗ Live Demo 3분기 영업 리포트 작성 3분기 영업 리드 분석 리포트 초안 작성해줘 완료 오른쪽 아웃풋 패널에 초안을 작성했어요. 리드 현황 요약과 표, 다음 액션을 함께 정리했습니다. 수정할 부분이 있으면 알려주"
     },
     {
       "id": 200,
@@ -1980,10 +1980,19 @@
       "page": "Embedded AI Elements",
       "title": "Embedded AI Elements",
       "section": "",
-      "text": "사용자가 현재 작업 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받는 경량형 UI 패턴입니다. 추천·수정·요약·설명을 작업 맥락 안에 작게 삽입해 제공하고, 결과를 바로 적용하거나 닫을 수 있습니다. 피그마에서 보기 ↗"
+      "text": "사용자가 현재 작업 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받는 경량형 UI 패턴입니다. 추천·수정·요약·설명을 작업 맥락 안에 작게 삽입해 제공하고, 결과를 바로 적용하거나 닫을 수 있습니다. 피그마에서 보기 ↗ Live Demo 정보 입력 제품 소개 문구 AI가 입력된 정보를 바탕으로 소개 문구를 생성합니다. AI로 텍스트 생성 제목 해당 항목에 대한 설명을 입력합니다. 설명 해당 항"
     },
     {
       "id": 220,
+      "url": "pattern/embedded-ai-elements.html",
+      "group": "Pattern",
+      "page": "Embedded AI Elements",
+      "title": "신제품 ‘AX 워크스페이스’ 출시 안내",
+      "section": "신제품 ‘AX 워크스페이스’ 출시 안내",
+      "text": "초안 · 텍스트 블록에 마우스를 올려 AI 추천을 받아보세요 이번에 새롭게 선보이는 AX 워크스페이스는 팀의 반복 업무를 자동화하고, 흩어진 정보를 한 곳에서 관리할 수 있도록 설계되었습니다. AI 브리프 요약 다듬기 복잡한 설정 없이 바로 시작할 수 있으며, 기존에 사용하던 도구들과도 손쉽게 연동됩니다. AI 브리프 요약 다듬기 지금 가입하시면 3개월 무료 체험과 전담 온보딩 지원을 함께 제공해 드립니다. AI 브리프 요약 "
+    },
+    {
+      "id": 221,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -1992,7 +2001,7 @@
       "text": "Embedded AI Elements는 사용자가 현재 작업 중인 화면을 벗어나지 않고, 특정 입력 필드·텍스트·콘텐츠 영역 안에서 AI 도움을 받을 수 있게 하는 경량형 UI 패턴입니다. AI가 독립된 대화 상대처럼 전면에 등장하기보다, 사용자의 작업 맥락 안에 작게 삽입되어 추천, 수정, 요약, 설명, 인사이트를 제공합니다. 사용자는 현재 화면 흐름을 유지한 채 필요한 순간에만 AI의 도움을 받고, 결과를 바로 적용하거나 닫"
     },
     {
-      "id": 221,
+      "id": 222,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2001,7 +2010,7 @@
       "text": "선택 조건 설명 현재 화면의 작업 흐름을 유지해야 한다 사용자가 별도 챗 화면이나 작업공간으로 이동하지 않고, 현재 작업 중인 화면 안에서 AI 도움을 받아야 하는 경우 AI 개입 범위가 작고 명확하다 특정 문장, 필드, 카드, 섹션, 데이터 영역처럼 AI가 도와야 할 대상이 분명한 경우 사용자가 짧은 추천이나 수정안을 받아야 한다 긴 대화보다 요약, 개선, 추천, 설명, 자동 완성처럼 짧고 즉시 적용 가능한 결과가 필요한 경"
     },
     {
-      "id": 222,
+      "id": 223,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2010,7 +2019,7 @@
       "text": "선택하지 않는 경우 대신 고려할 패턴 사용자가 AI와 지속적으로 대화하며 요청을 이어가야 한다 Global Chat Assistant 현재 화면을 유지하되 AI와 어느 정도 긴 대화나 반복 요청이 필요하다 Contextual Agent Panel AI 결과가 문서, 계획, 분석 결과처럼 별도 작업 영역에서 다뤄져야 한다 Dedicated Agent Workspace 또는 Chat + Canvas Panel"
     },
     {
-      "id": 223,
+      "id": 224,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2019,7 +2028,7 @@
       "text": "구분 내용 진입 방식 텍스트 선택, 필드 포커스, 버튼 클릭, 섹션 내 AI 아이콘, 자동 추천 노출 입력 방식 선택 텍스트, 현재 필드 값, 현재 섹션 데이터, 짧은 자연어 요청 응답 방식 짧은 제안, 수정안, 요약, 설명, 인사이트, 추천 액션 컨텍스트 활용 현재 입력값, 선택 영역, 주변 콘텐츠, 화면 내 데이터 사용자 흐름 대상 선택 → AI 제안 확인 → 적용 또는 취소 → 필요 시 다시 요청 주요 가치 기존 작업 흐"
     },
     {
-      "id": 224,
+      "id": 225,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2028,7 +2037,7 @@
       "text": "실제 제품에서 Embedded AI Elements 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
     },
     {
-      "id": 225,
+      "id": 226,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2037,7 +2046,7 @@
       "text": "사용자가 LinkedIn, 이메일, 문서 등에서 글을 작성하는 중에 AI 입력창이나 제안 패널을 띄워 문장을 생성·수정·개선할 수 있습니다. 작성 중인 위치를 벗어나지 않고 Improve it, Simplify it, Shorten it, Adjust tone 같은 빠른 액션을 제공하며, 생성된 결과를 바로 삽입하거나 다시 표현할 수 있습니다. Grammarly는 문장의 명확성, 톤, 길이, 형식성을 조정하는 AI 작성 보조 "
     },
     {
-      "id": 226,
+      "id": 227,
       "url": "pattern/embedded-ai-elements.html#overview",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2046,7 +2055,7 @@
       "text": "사용자가 Notion 문서 안에서 텍스트를 선택하거나 /AI를 입력해 현재 문맥에 맞는 AI 도움을 호출할 수 있습니다. 선택된 문장이나 문단 바로 아래에 AI 입력창과 액션 메뉴가 노출되며, Improve writing, Fix spelling & grammar, Make longer, Make shorter, Change tone처럼 선택 텍스트에 직접 적용 가능한 작업을 제공합니다. Notion은 사용자가 텍스트를 선택해"
     },
     {
-      "id": 227,
+      "id": 228,
       "url": "pattern/embedded-ai-elements.html#basic-layout-structure",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2055,7 +2064,7 @@
       "text": "Embedded AI Elements는 화면 전체를 차지하지 않고, 기존 UI 안의 특정 대상 근처에 작게 삽입되는 구조를 가집니다. 하위 분기에 따라 Inline Popover 또는 Insight Block으로 나뉘지만, 기본적으로는 Target Area, AI Entry Point, AI Result Area, Action Area로 구성됩니다."
     },
     {
-      "id": 228,
+      "id": 229,
       "url": "pattern/embedded-ai-elements.html#basic-layout-structure",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2064,7 +2073,7 @@
       "text": "원칙 설명 작업 흐름 보존 AI 요소는 기존 화면을 대체하지 않고, 사용자가 하던 작업 위에 자연스럽게 얹혀야 합니다. 대상 명확성 AI가 어떤 텍스트, 필드, 데이터, 섹션을 기준으로 제안하는지 명확해야 합니다. 경량성 긴 대화나 복잡한 설정 없이 짧은 제안과 빠른 액션 중심으로 구성합니다. 즉시 적용성 결과를 읽고 끝나는 것이 아니라, 사용자가 바로 적용하거나 무시할 수 있어야 합니다. 방해 최소화 자동 노출되는 경우에도 "
     },
     {
-      "id": 229,
+      "id": 230,
       "url": "pattern/embedded-ai-elements.html#variants",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2073,7 +2082,7 @@
       "text": "Embedded AI Elements는 AI가 화면에 나타나는 위치와 결과를 보여주는 방식에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Inline Popover 선택 영역이나 입력 필드 근처에 작게 뜨는 AI 도움 UI 사용자가 특정 텍스트나 필드에 대해 짧은 수정, 요약, 변환, 추천을 받아야 할 때 Insight Block 기존 화면 안에 AI 결과를 정보 블록 형태로 노출하는 UI 사용자가 대화 없이"
     },
     {
-      "id": 230,
+      "id": 231,
       "url": "pattern/embedded-ai-elements.html#variants",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2082,7 +2091,7 @@
       "text": "사용자가 특정 텍스트, 입력 필드, 객체를 선택했을 때 해당 위치 근처에 작은 AI 컨테이너를 띄워 빠른 도움을 제공하는 UI입니다."
     },
     {
-      "id": 231,
+      "id": 232,
       "url": "pattern/embedded-ai-elements.html#variants",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2091,7 +2100,7 @@
       "text": "기존 화면의 특정 영역 안에 AI가 생성한 요약, 추천, 설명, 경고, 인사이트를 블록 형태로 표시하는 UI입니다."
     },
     {
-      "id": 232,
+      "id": 233,
       "url": "pattern/embedded-ai-elements.html#interaction",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2100,7 +2109,7 @@
       "text": ""
     },
     {
-      "id": 233,
+      "id": 234,
       "url": "pattern/embedded-ai-elements.html#interaction",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2109,7 +2118,7 @@
       "text": "사용자가 텍스트를 선택하거나, 입력 필드에 포커스하거나, 화면 내 AI 아이콘 또는 추천 영역을 통해 AI 도움을 호출합니다. 사용자가 특정 페이지에 진입하거나, 혹은 버튼 등의 상호작용을 통해 Assistant UI를 호출합니다. 호출된 Assistant UI는 목적과 맥락에 따라 형태가 상이하며, 목적에 부합하는 상호작용 방식을 갖습니다."
     },
     {
-      "id": 234,
+      "id": 235,
       "url": "pattern/embedded-ai-elements.html#interaction",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2118,7 +2127,7 @@
       "text": "AI는 사용자가 선택한 텍스트, 입력 중인 값, 현재 섹션 데이터, 주변 콘텐츠를 기준으로 요청 맥락을 파악합니다. 필요한 경우 사용자가 짧은 자연어 요청을 추가로 입력할 수 있습니다. 요약 등의 정보를 제공해주는 AI 블록의 경우, 프롬프트 및 참고 데이터가 사전에 입력되어 있는 상태입니다. 인라인으로 도움을 주는 Assistant의 경우 입력은 다양한 형식으로 구성될 수 있습니다."
     },
     {
-      "id": 235,
+      "id": 236,
       "url": "pattern/embedded-ai-elements.html#interaction",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2127,7 +2136,7 @@
       "text": "AI는 수정안, 요약, 추천, 설명, 인사이트처럼 현재 화면 안에서 바로 판단 가능한 짧은 결과를 제공합니다. 추천, 요약, 인사이트와 같은 내용들은 기본적으로는 자연어로 출력됩니다. 기능과 LLM이 사용하는 도구에 따라 시각화 표현 등으로 확장될 수 있습니다."
     },
     {
-      "id": 236,
+      "id": 237,
       "url": "pattern/embedded-ai-elements.html#interaction",
       "group": "Pattern",
       "page": "Embedded AI Elements",
@@ -2136,16 +2145,16 @@
       "text": "사용자는 AI 제안을 적용하거나, 취소하거나, 다시 생성하거나, 상세 보기로 확장할 수 있습니다. 제안에 대한 재요청(Reroll)을 수행할 수 있으며, 기능 및 맥락에 따라 적용/취소 등 추가적인 액션을 설계할 수 있습니다."
     },
     {
-      "id": 237,
+      "id": 238,
       "url": "pattern/global-chat-assistant.html",
       "group": "Pattern",
       "page": "Global Chat Assistant",
       "title": "Global Chat Assistant",
       "section": "",
-      "text": "서비스 전역에서 사용자가 AI에게 질문하고 요청할 수 있는 공통 대화형 인터페이스입니다. 사용자는 현재 작업 흐름을 크게 벗어나지 않고 AI를 호출할 수 있으며, 질문, 요약, 분석, 생성 요청을 자연어로 입력합니다. LIVE DEMO 에이전트 새로운 대화 검색 에이전트 워크플로우 최근 대화 3분기 리드 현황 정리 신규 고객 온보딩 플로우 주간 영업 리포트 초안 경쟁사 제품 비교 분석 마케팅 캠페인 아이디어 고객 문의 응답 템"
+      "text": "서비스 전역에서 사용자가 AI에게 질문하고 요청할 수 있는 공통 대화형 인터페이스입니다. 사용자는 현재 작업 흐름을 크게 벗어나지 않고 AI를 호출할 수 있으며, 질문, 요약, 분석, 생성 요청을 자연어로 입력합니다. 피그마에서 보기 ↗ Live Demo 에이전트 새로운 대화 검색 에이전트 워크플로우 최근 대화 3분기 리드 현황 정리 신규 고객 온보딩 플로우 주간 영업 리포트 초안 김아율 HR기획팀 3분기 리드 현황 정리 이번"
     },
     {
-      "id": 238,
+      "id": 239,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2154,7 +2163,7 @@
       "text": "Global Chat Assistant는 사용자가 서비스 전역에서 AI를 호출해 질문하거나 요청할 수 있는 공통 대화형 인터페이스입니다. 특정 화면이나 기능에만 종속되지 않고, 사용자가 필요할 때 언제든 AI에게 자연어로 질문하거나 업무 요청을 할 수 있습니다. 답변은 단순 텍스트일 수도 있고, 생성된 결과물, 현재 화면 맥락을 반영한 응답, 후속 액션으로 이어질 수도 있습니다. 이 패턴은 AI를 제품 전체에서 접근 가능한 공"
     },
     {
-      "id": 239,
+      "id": 240,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2163,7 +2172,7 @@
       "text": "선택 조건 설명 서비스 어디서든 AI를 호출해야 한다 특정 화면에만 묶이지 않고, 사용자가 전역적으로 AI에게 질문하거나 요청해야 하는 경우 자연어 기반 대화가 핵심이다 버튼 클릭이나 고정된 플로우보다, 사용자가 직접 질문하고 후속 요청을 이어가는 경험이 중요한 경우 요청 범위가 다양하다 요약, 설명, 분석, 생성, 추천 등 여러 유형의 요청을 하나의 AI 진입점에서 처리해야 하는 경우 후속 대화가 이어질 가능성이 높다 첫 답"
     },
     {
-      "id": 240,
+      "id": 241,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2172,7 +2181,7 @@
       "text": "선택하지 않는 경우 대신 고려할 패턴 특정 작업이나 산출물을 완성하기 위한 전용 작업공간이 필요하다 Dedicated Agent Workspace 현재 화면을 유지한 채 측면에서 AI가 지속적으로 보조해야 한다 Contextual Agent Panel 선택한 텍스트나 입력 필드 근처에서만 짧게 AI가 개입하면 된다 Embedded AI Elements 사용자가 AI 작업의 진행 상태를 주로 확인해야 한다 Background T"
     },
     {
-      "id": 241,
+      "id": 242,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2181,7 +2190,7 @@
       "text": "구분 내용 진입 방식 전역 버튼, 플로팅 버튼, 헤더 아이콘, 단축키, 추천 질문 입력 방식 자연어 질문, 명령, 요청, 조건 입력 응답 방식 텍스트 답변, 구조화된 응답, 결과물 생성, 관련 액션 제안 컨텍스트 활용 현재 화면, 선택 객체, 문서, 데이터 등을 선택적으로 참조 사용자 흐름 질문 → 응답 → 후속 질문 → 재생성 또는 적용 주요 가치 제품 전반에서 일관된 AI 접근성과 대화형 문제 해결 제공"
     },
     {
-      "id": 242,
+      "id": 243,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2190,7 +2199,7 @@
       "text": "실제 제품에서 Global Chat Assistant 패턴이 어떻게 구현되는지 보여주는 대표 사례입니다."
     },
     {
-      "id": 243,
+      "id": 244,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2199,7 +2208,7 @@
       "text": "사용자가 하나의 전역 대화 화면에서 자연어로 질문하고, AI가 텍스트 답변·구조화된 응답·코드·파일 기반 답변 등을 제공합니다. 최근 대화 목록, 하단 고정 입력창, 파일 첨부, 모델 선택, 음성 입력 등 대화형 AI의 기본 레이아웃 요소를 폭넓게 갖추고 있습니다. Canvas 기능을 통해 단순 대화를 넘어 글쓰기·코딩 결과물을 별도 작업 영역에서 함께 다루는 구조도 제공합니다."
     },
     {
-      "id": 244,
+      "id": 245,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2208,7 +2217,7 @@
       "text": "Microsoft 365 안에서 업무용 AI Chat으로 제공되며, 사용자가 자연어로 초안 작성, 요약, 분석, 아이디어 탐색 같은 업무 요청을 입력할 수 있습니다. 추천 프롬프트 카드와 업무 생산성 중심의 시작 화면을 제공해, 사용자가 무엇을 요청할 수 있는지 빠르게 파악하게 합니다."
     },
     {
-      "id": 245,
+      "id": 246,
       "url": "pattern/global-chat-assistant.html#overview",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2217,7 +2226,7 @@
       "text": "기업 내부 지식과 연결된 AI Assistant로, 사용자가 제품 스펙, 정책, 업무 정보에 대해 질문하면 관련 지식 소스를 바탕으로 답변하고 출처를 함께 보여줍니다. 파일을 채팅에 직접 업로드하거나, 지식 소스를 선택해 응답 정확도를 높이는 구조를 제공해 지식 기반 Global Chat Assistant의 사례로 볼 수 있습니다."
     },
     {
-      "id": 246,
+      "id": 247,
       "url": "pattern/global-chat-assistant.html#basic-layout-structure",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2226,7 +2235,7 @@
       "text": "Global Chat Assistant는 사용자가 서비스 어디서든 AI를 호출하고 대화를 이어갈 수 있도록, 공통적인 대화 화면 구조를 가집니다. 하위 분기에 따라 Canvas나 Context Preview가 추가될 수 있지만, 기본 골격은 Sidebar, Conversation Area, Prompt Composer, Utility Actions로 구성됩니다."
     },
     {
-      "id": 247,
+      "id": 248,
       "url": "pattern/global-chat-assistant.html#basic-layout-structure",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2235,7 +2244,7 @@
       "text": "원칙 설명 대화 중심성 화면의 중심은 항상 사용자의 요청과 AI 응답이 오가는 대화 영역입니다. 전역 접근성 특정 업무 화면에 종속되지 않고, 서비스 공통 AI 진입점처럼 동작해야 합니다. 입력 지속성 사용자가 언제든 후속 질문을 입력할 수 있도록 Prompt Composer는 하단에 안정적으로 배치합니다. 맥락 확장성 필요에 따라 Canvas Panel이나 Context Preview가 확장될 수 있어야 합니다. 작업 연속성"
     },
     {
-      "id": 248,
+      "id": 249,
       "url": "pattern/global-chat-assistant.html#variants",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2244,7 +2253,7 @@
       "text": "Global Chat Assistant는 응답 결과를 어디까지 다루는지, 현재 맥락을 얼마나 보여줘야 하는지에 따라 하위 UI가 나뉩니다. 하위 분기 한 줄 정의 선택 기준 Chat Only 질문과 답변 중심의 기본 대화형 UI 별도 작업 영역이나 컨텍스트 미리보기가 필요 없을 때 Chat + Context Preview AI가 참고하는 현재 화면이나 선택 객체를 함께 보여주는 UI AI 답변이 현재 화면, 문서, 데이터 맥락"
     },
     {
-      "id": 249,
+      "id": 250,
       "url": "pattern/global-chat-assistant.html#variants",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2253,7 +2262,7 @@
       "text": "사용자가 질문하고 AI가 답변하는 가장 기본적인 전역 챗 UI로, 범용 질문, 간단한 설명, 빠른 요약, 짧은 추천에 적합합니다."
     },
     {
-      "id": 250,
+      "id": 251,
       "url": "pattern/global-chat-assistant.html#variants",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2262,7 +2271,7 @@
       "text": "AI가 답변에 참고하는 현재 화면, 선택 객체, 문서, 데이터를 함께 보여주는 UI로, AI 답변이 현재 화면이나 특정 데이터 맥락에 의존하는 경우 보조 패널을 활용합니다."
     },
     {
-      "id": 251,
+      "id": 252,
       "url": "pattern/global-chat-assistant.html#variants",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2271,7 +2280,7 @@
       "text": "대화 영역과 결과 작업 영역이 함께 제공되는 UI로, AI가 생성한 결과물을 별도 영역에서 확인해야 하는 경우 사용합니다."
     },
     {
-      "id": 252,
+      "id": 253,
       "url": "pattern/global-chat-assistant.html#interaction",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2280,7 +2289,7 @@
       "text": ""
     },
     {
-      "id": 253,
+      "id": 254,
       "url": "pattern/global-chat-assistant.html#interaction",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2289,7 +2298,7 @@
       "text": "사용자가 전역 버튼, 플로팅 버튼, 사이드바, 단축키 등을 통해 AI Assistant를 호출합니다. 전역 에이전트를 호출하는 버튼, 내비게이션 요소를 통해 AI Assistant를 호출합니다. 호출된 AI Assistant는 별도의 전용 공간(새 탭, 새 창 등)에 UI가 구성됩니다. UI는 자연어 기반 상호작용이 중심이 되는 형태입니다."
     },
     {
-      "id": 254,
+      "id": 255,
       "url": "pattern/global-chat-assistant.html#interaction",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2298,7 +2307,7 @@
       "text": "사용자가 질문, 요청, 명령, 조건을 자연어로 입력합니다. 필요에 따라 파일, 현재 화면, 선택 객체 같은 맥락이 함께 포함될 수 있습니다. 사용자는 Composer와 상호작용하여 질문, 요청, 명령, 조건 등을 자연어로 입력합니다."
     },
     {
-      "id": 255,
+      "id": 256,
       "url": "pattern/global-chat-assistant.html#interaction",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2307,7 +2316,7 @@
       "text": "AI가 텍스트 답변, 요약, 추천, 분석 결과, 구조화된 응답 등을 대화 형태로 제공합니다. 사용자의 요청사항에 따라 대화 기반의 응답을 제공합니다."
     },
     {
-      "id": 256,
+      "id": 257,
       "url": "pattern/global-chat-assistant.html#interaction",
       "group": "Pattern",
       "page": "Global Chat Assistant",
@@ -2316,7 +2325,7 @@
       "text": "사용자는 후속 질문을 이어가거나, 응답을 복사·다시 생성·저장·적용하는 등 다음 행동을 수행합니다. AI Assistant는 사용자의 요청 맥락에 따른 추천 후속 질문을 제공할 수 있습니다. 이와 별개로 사용자가 자연어로 후속 질문을 요청할 수 있습니다."
     },
     {
-      "id": 257,
+      "id": 258,
       "url": "pattern/index.html",
       "group": "Pattern",
       "page": "Pattern",
@@ -2325,7 +2334,7 @@
       "text": "사용자와 AX가 상호작용하는 반복 가능한 경험 구조를 정의합니다. MIDAS AX System의 Pattern은 사용자 · AI · 시스템 간의 역할과 흐름을 구조화한 AX 인터랙션 단위입니다. 각 Pattern은 특정 목적과 상황에 맞는 인터랙션 흐름, 상태 변화, 승인 구조, 컨텍스트 처리 방식 등을 포함합니다."
     },
     {
-      "id": 258,
+      "id": 259,
       "url": "pattern/index.html#agentic",
       "group": "Pattern",
       "page": "Pattern",
@@ -2334,7 +2343,7 @@
       "text": "자세히 보기"
     },
     {
-      "id": 259,
+      "id": 260,
       "url": "pattern/index.html#agentic",
       "group": "Pattern",
       "page": "Pattern",
@@ -2343,7 +2352,7 @@
       "text": "사용자가 명시적으로 AI 와 대화하는 전역 채팅 어시스턴트 패턴. 자세히 보기"
     },
     {
-      "id": 260,
+      "id": 261,
       "url": "pattern/index.html#agentic",
       "group": "Pattern",
       "page": "Pattern",
@@ -2352,7 +2361,7 @@
       "text": "에이전트 작업에 집중할 수 있는 전용 워크스페이스 패턴."
     },
     {
-      "id": 261,
+      "id": 262,
       "url": "pattern/index.html#contextual",
       "group": "Pattern",
       "page": "Pattern",
@@ -2361,7 +2370,7 @@
       "text": "자세히 보기"
     },
     {
-      "id": 262,
+      "id": 263,
       "url": "pattern/index.html#contextual",
       "group": "Pattern",
       "page": "Pattern",
@@ -2370,7 +2379,7 @@
       "text": "사용자의 현재 맥락에 맞춰 보조하는 컨텍스트 에이전트 패널 패턴. 자세히 보기"
     },
     {
-      "id": 263,
+      "id": 264,
       "url": "pattern/index.html#contextual",
       "group": "Pattern",
       "page": "Pattern",
@@ -2379,7 +2388,7 @@
       "text": "본 작업 흐름 안에 자연스럽게 내장되는 AI 요소 패턴."
     },
     {
-      "id": 264,
+      "id": 265,
       "url": "pattern/index.html#background",
       "group": "Pattern",
       "page": "Pattern",
@@ -2388,7 +2397,7 @@
       "text": "자세히 보기"
     },
     {
-      "id": 265,
+      "id": 266,
       "url": "pattern/index.html#background",
       "group": "Pattern",
       "page": "Pattern",
@@ -2397,7 +2406,7 @@
       "text": "백그라운드에서 실행되는 작업의 상태를 모니터링하는 패턴."
     },
     {
-      "id": 266,
+      "id": 267,
       "url": "pattern/index.html#builder",
       "group": "Pattern",
       "page": "Pattern",
@@ -2406,7 +2415,7 @@
       "text": "자세히 보기"
     },
     {
-      "id": 267,
+      "id": 268,
       "url": "pattern/index.html#builder",
       "group": "Pattern",
       "page": "Pattern",
@@ -2415,7 +2424,7 @@
       "text": "사용자가 에이전트와 워크플로우를 직접 설계하는 빌더 패턴."
     },
     {
-      "id": 268,
+      "id": 269,
       "url": "resource/index.html",
       "group": "Docs",
       "page": "Resource",
@@ -2424,7 +2433,7 @@
       "text": "MIDAS AX System을 활용하는 데 필요한 리소스를 모아둔 공간입니다. 디자인 파일, 토큰, 문서, 가이드 등 실무에 바로 활용할 수 있는 자산을 제공할 예정입니다."
     },
     {
-      "id": 269,
+      "id": 270,
       "url": "resource/index.html#resources",
       "group": "Docs",
       "page": "Resource",
@@ -2433,7 +2442,7 @@
       "text": "이 페이지의 컨텐츠는 추후 업데이트됩니다. 피그마 시스템 바로가기 GitHub 바로가기 문의 리소스 및 자산 관련 문의는 양희윤 프로, 김준성 프로에게 전달해주세요. 추가로 필요한 리소스가 있다면 언제든 제안 가능합니다. 리소스는 지속적으로 업데이트되며, 제품 운영 과정에 맞춰 확장됩니다."
     },
     {
-      "id": 270,
+      "id": 271,
       "url": "sandbox/a.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2442,7 +2451,7 @@
       "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 데모 영상 보기 →"
     },
     {
-      "id": 271,
+      "id": 272,
       "url": "sandbox/a.html#features",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2451,7 +2460,7 @@
       "text": ""
     },
     {
-      "id": 272,
+      "id": 273,
       "url": "sandbox/a.html#features",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2460,7 +2469,7 @@
       "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요."
     },
     {
-      "id": 273,
+      "id": 274,
       "url": "sandbox/a.html#features",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2469,7 +2478,7 @@
       "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요."
     },
     {
-      "id": 274,
+      "id": 275,
       "url": "sandbox/a.html#features",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2478,7 +2487,7 @@
       "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요."
     },
     {
-      "id": 275,
+      "id": 276,
       "url": "sandbox/a.html#demo",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2487,7 +2496,7 @@
       "text": ""
     },
     {
-      "id": 276,
+      "id": 277,
       "url": "sandbox/a.html#demo",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2496,7 +2505,7 @@
       "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● 온라인 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로 분류"
     },
     {
-      "id": 277,
+      "id": 278,
       "url": "sandbox/a.html#pricing",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2505,7 +2514,7 @@
       "text": ""
     },
     {
-      "id": 278,
+      "id": 279,
       "url": "sandbox/a.html#pricing",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2514,7 +2523,7 @@
       "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 가장 인기"
     },
     {
-      "id": 279,
+      "id": 280,
       "url": "sandbox/a.html#pricing",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2523,7 +2532,7 @@
       "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h 응답) Pro 시작하기"
     },
     {
-      "id": 280,
+      "id": 281,
       "url": "sandbox/a.html#pricing",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2532,7 +2541,7 @@
       "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기"
     },
     {
-      "id": 281,
+      "id": 282,
       "url": "sandbox/a.html#faq",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2541,7 +2550,7 @@
       "text": "코딩을 전혀 몰라도 사용할 수 있나요? 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다. 필요하면 고급 사용자는 코드 블록으로 자유롭게 확장할 수도 있어요. 어떤 AI 모델을 지원하나요? Anthropic Claude, OpenAI GPT, Google Gemini, Mistral, Cohere, 그리고 로컬 LLM (Ollama) 까지 6종 이상의 모델을 지원합니"
     },
     {
-      "id": 282,
+      "id": 283,
       "url": "sandbox/a.html#faq",
       "group": "Docs",
       "page": "Spark Studio",
@@ -2550,7 +2559,7 @@
       "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기"
     },
     {
-      "id": 283,
+      "id": 284,
       "url": "sandbox/b.html",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2559,7 +2568,7 @@
       "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 데모 영상 보기 →"
     },
     {
-      "id": 284,
+      "id": 285,
       "url": "sandbox/b.html#features",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2568,7 +2577,7 @@
       "text": "01 Build"
     },
     {
-      "id": 285,
+      "id": 286,
       "url": "sandbox/b.html#features",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2577,7 +2586,7 @@
       "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인합니다. 복잡한 분기와 도구 호출도 시각적으로 한눈에. 02 Model"
     },
     {
-      "id": 286,
+      "id": 287,
       "url": "sandbox/b.html#features",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2586,7 +2595,7 @@
       "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅합니다. 태스크별로 최적의 모델을 자동 선택하는 옵션도 제공. 03 Ship"
     },
     {
-      "id": 287,
+      "id": 288,
       "url": "sandbox/b.html#features",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2595,7 +2604,7 @@
       "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA. 실험에서 운영까지 끊김 없이. 엔터프라이즈 보안 요구사항도 표준으로 충족."
     },
     {
-      "id": 288,
+      "id": 289,
       "url": "sandbox/b.html#demo",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2604,7 +2613,7 @@
       "text": ""
     },
     {
-      "id": 289,
+      "id": 290,
       "url": "sandbox/b.html#demo",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2613,7 +2622,7 @@
       "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● 온라인 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, F"
     },
     {
-      "id": 290,
+      "id": 291,
       "url": "sandbox/b.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2622,7 +2631,7 @@
       "text": ""
     },
     {
-      "id": 291,
+      "id": 292,
       "url": "sandbox/b.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2631,7 +2640,7 @@
       "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 가장 인기"
     },
     {
-      "id": 292,
+      "id": 293,
       "url": "sandbox/b.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2640,7 +2649,7 @@
       "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
     },
     {
-      "id": 293,
+      "id": 294,
       "url": "sandbox/b.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2649,7 +2658,7 @@
       "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기"
     },
     {
-      "id": 294,
+      "id": 295,
       "url": "sandbox/b.html#faq",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2658,7 +2667,7 @@
       "text": "코딩을 전혀 몰라도 사용할 수 있나요? 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다. 어떤 AI 모델을 지원하나요? Claude, GPT, Gemini, Mistral, Cohere, 그리고 로컬 LLM (Ollama) 까지 6종 이상을 지원합니다. 우리 회사 데이터는 안전한가요? 전송 · 저장 시 모두 암호화되며 SOC 2 Type II 인증을 받았습니다. E"
     },
     {
-      "id": 295,
+      "id": 296,
       "url": "sandbox/b.html#faq",
       "group": "Docs",
       "page": "Spark Studio · B · Asymmetric",
@@ -2667,7 +2676,7 @@
       "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기"
     },
     {
-      "id": 296,
+      "id": 297,
       "url": "sandbox/c.html",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2676,7 +2685,7 @@
       "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 데모 영상 보기 →"
     },
     {
-      "id": 297,
+      "id": 298,
       "url": "sandbox/c.html#features",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2685,7 +2694,7 @@
       "text": ""
     },
     {
-      "id": 298,
+      "id": 299,
       "url": "sandbox/c.html#features",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2694,7 +2703,7 @@
       "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요."
     },
     {
-      "id": 299,
+      "id": 300,
       "url": "sandbox/c.html#features",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2703,7 +2712,7 @@
       "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요."
     },
     {
-      "id": 300,
+      "id": 301,
       "url": "sandbox/c.html#features",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2712,7 +2721,7 @@
       "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요."
     },
     {
-      "id": 301,
+      "id": 302,
       "url": "sandbox/c.html#demo",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2721,7 +2730,7 @@
       "text": ""
     },
     {
-      "id": 302,
+      "id": 303,
       "url": "sandbox/c.html#demo",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2730,7 +2739,7 @@
       "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● 온라인 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, F"
     },
     {
-      "id": 303,
+      "id": 304,
       "url": "sandbox/c.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2739,7 +2748,7 @@
       "text": ""
     },
     {
-      "id": 304,
+      "id": 305,
       "url": "sandbox/c.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2748,7 +2757,7 @@
       "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 가장 인기"
     },
     {
-      "id": 305,
+      "id": 306,
       "url": "sandbox/c.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2757,7 +2766,7 @@
       "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
     },
     {
-      "id": 306,
+      "id": 307,
       "url": "sandbox/c.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2766,7 +2775,7 @@
       "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기"
     },
     {
-      "id": 307,
+      "id": 308,
       "url": "sandbox/c.html#faq",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2775,7 +2784,7 @@
       "text": "코딩을 전혀 몰라도 사용할 수 있나요? 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다. 어떤 AI 모델을 지원하나요? Claude, GPT, Gemini, Mistral, Cohere, 그리고 로컬 LLM 까지 6종 이상 지원합니다. 우리 회사 데이터는 안전한가요? 전송 · 저장 시 모두 암호화되며 SOC 2 Type II 인증을 받았습니다. 언제든 플랜을 변경할"
     },
     {
-      "id": 308,
+      "id": 309,
       "url": "sandbox/c.html#faq",
       "group": "Docs",
       "page": "Spark Studio · C · Inverse Accent",
@@ -2784,7 +2793,7 @@
       "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기"
     },
     {
-      "id": 309,
+      "id": 310,
       "url": "sandbox/d.html",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2793,7 +2802,7 @@
       "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 → 데모 영상 보기 Features"
     },
     {
-      "id": 310,
+      "id": 311,
       "url": "sandbox/d.html#features",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2802,7 +2811,7 @@
       "text": ""
     },
     {
-      "id": 311,
+      "id": 312,
       "url": "sandbox/d.html#features",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2811,7 +2820,7 @@
       "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요."
     },
     {
-      "id": 312,
+      "id": 313,
       "url": "sandbox/d.html#features",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2820,7 +2829,7 @@
       "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요."
     },
     {
-      "id": 313,
+      "id": 314,
       "url": "sandbox/d.html#features",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2829,7 +2838,7 @@
       "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요. Demo"
     },
     {
-      "id": 314,
+      "id": 315,
       "url": "sandbox/d.html#demo",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2838,7 +2847,7 @@
       "text": ""
     },
     {
-      "id": 315,
+      "id": 316,
       "url": "sandbox/d.html#demo",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2847,7 +2856,7 @@
       "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 S Spark Assistant ● Online 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로"
     },
     {
-      "id": 316,
+      "id": 317,
       "url": "sandbox/d.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2856,7 +2865,7 @@
       "text": ""
     },
     {
-      "id": 317,
+      "id": 318,
       "url": "sandbox/d.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2865,7 +2874,7 @@
       "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 Most Popular"
     },
     {
-      "id": 318,
+      "id": 319,
       "url": "sandbox/d.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2874,7 +2883,7 @@
       "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
     },
     {
-      "id": 319,
+      "id": 320,
       "url": "sandbox/d.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2883,7 +2892,7 @@
       "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기 FAQ"
     },
     {
-      "id": 320,
+      "id": 321,
       "url": "sandbox/d.html#faq",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2892,7 +2901,7 @@
       "text": ""
     },
     {
-      "id": 321,
+      "id": 322,
       "url": "sandbox/d.html#faq",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2901,7 +2910,7 @@
       "text": "+ 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다."
     },
     {
-      "id": 322,
+      "id": 323,
       "url": "sandbox/d.html#faq",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2910,7 +2919,7 @@
       "text": "+ Claude, GPT, Gemini, Mistral, Cohere, Ollama 까지 6종 이상의 모델을 지원합니다."
     },
     {
-      "id": 323,
+      "id": 324,
       "url": "sandbox/d.html#faq",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2919,7 +2928,7 @@
       "text": "+ 모든 데이터는 전송 · 저장 시 암호화되며, SOC 2 Type II 인증을 받았습니다."
     },
     {
-      "id": 324,
+      "id": 325,
       "url": "sandbox/d.html#faq",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2928,7 +2937,7 @@
       "text": "+ 언제든 업그레이드/다운그레이드가 가능하며, 변경 즉시 반영됩니다."
     },
     {
-      "id": 325,
+      "id": 326,
       "url": "sandbox/d.html#faq",
       "group": "Docs",
       "page": "Spark Studio · D · Glow Dark",
@@ -2937,7 +2946,7 @@
       "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기 →"
     },
     {
-      "id": 326,
+      "id": 327,
       "url": "sandbox/e.html",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -2946,7 +2955,7 @@
       "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. 무료로 시작하기 → 데모 영상 보기 Scroll ↓ Features"
     },
     {
-      "id": 327,
+      "id": 328,
       "url": "sandbox/e.html#features",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -2955,7 +2964,7 @@
       "text": "01"
     },
     {
-      "id": 328,
+      "id": 329,
       "url": "sandbox/e.html#features",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -2964,7 +2973,7 @@
       "text": "드래그 앤 드롭으로 워크플로우를 설계하고, 실시간으로 동작을 확인하세요. 복잡한 분기와 도구 호출도 시각적으로 한눈에. 02"
     },
     {
-      "id": 329,
+      "id": 330,
       "url": "sandbox/e.html#features",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -2973,7 +2982,7 @@
       "text": "Claude · GPT · Gemini 등 6종 모델을 한 곳에서 비교하고 라우팅하세요. 태스크별로 최적의 모델을 자동 선택할 수도 있습니다. 03"
     },
     {
-      "id": 330,
+      "id": 331,
       "url": "sandbox/e.html#features",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -2982,7 +2991,7 @@
       "text": "SOC 2 인증 인프라, 자동 로깅, 99.9% SLA 로 안심하고 배포하세요. 실험에서 운영까지 끊김 없이. Demo"
     },
     {
-      "id": 331,
+      "id": 332,
       "url": "sandbox/e.html#demo",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -2991,7 +3000,7 @@
       "text": ""
     },
     {
-      "id": 332,
+      "id": 333,
       "url": "sandbox/e.html#demo",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3000,7 +3009,7 @@
       "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분합니다. Spark Studio 가 워크플로우, 프롬프트, 도구 연결까지 자동 구성합니다. 스크롤하면서 각 단계를 확인하세요 ↓ 1. 첫 인사 안녕하세요! 어떤 에이전트를 만들어볼까요? 고객 문의 자동응답 봇 만들어줘 2. 구조 제안 좋아요. 환불 · 배송 · 일반 문의 3가지 카테고리로 분류하고, FAQ DB 와 연결할까요? 좋아 그렇게 해줘 3. 배포 완료 에"
     },
     {
-      "id": 333,
+      "id": 334,
       "url": "sandbox/e.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3009,7 +3018,7 @@
       "text": ""
     },
     {
-      "id": 334,
+      "id": 335,
       "url": "sandbox/e.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3018,7 +3027,7 @@
       "text": "₩0 /월 개인 프로젝트와 학습용으로 시작하기 좋습니다. 월 1,000회 메시지 에이전트 3개 커뮤니티 지원 무료로 시작 Most Popular"
     },
     {
-      "id": 335,
+      "id": 336,
       "url": "sandbox/e.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3027,7 +3036,7 @@
       "text": "₩39,000 /월 소규모 팀과 본격적인 서비스 운영에 적합합니다. 월 100,000회 메시지 에이전트 무제한 Slack · API 배포 이메일 지원 (24h) Pro 시작하기"
     },
     {
-      "id": 336,
+      "id": 337,
       "url": "sandbox/e.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3036,7 +3045,7 @@
       "text": "맞춤 대규모 조직과 고급 보안 요구사항을 위한 플랜. 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 문의하기 FAQ"
     },
     {
-      "id": 337,
+      "id": 338,
       "url": "sandbox/e.html#faq",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3045,7 +3054,7 @@
       "text": ""
     },
     {
-      "id": 338,
+      "id": 339,
       "url": "sandbox/e.html#faq",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3054,7 +3063,7 @@
       "text": "+ 네. Spark Studio 는 비주얼 빌더 기반이라 한 줄 코드 없이도 본격적인 에이전트를 만들 수 있습니다."
     },
     {
-      "id": 339,
+      "id": 340,
       "url": "sandbox/e.html#faq",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3063,7 +3072,7 @@
       "text": "+ Claude, GPT, Gemini, Mistral, Cohere, Ollama 까지 6종 이상의 모델을 지원합니다."
     },
     {
-      "id": 340,
+      "id": 341,
       "url": "sandbox/e.html#faq",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3072,7 +3081,7 @@
       "text": "+ 모든 데이터는 전송 · 저장 시 암호화되며, SOC 2 Type II 인증을 받았습니다."
     },
     {
-      "id": 341,
+      "id": 342,
       "url": "sandbox/e.html#faq",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3081,7 +3090,7 @@
       "text": "+ 언제든 업그레이드/다운그레이드가 가능하며, 변경 즉시 반영됩니다."
     },
     {
-      "id": 342,
+      "id": 343,
       "url": "sandbox/e.html#faq",
       "group": "Docs",
       "page": "Spark Studio · E · Scroll Playground",
@@ -3090,7 +3099,7 @@
       "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 무료로 시작하기 →"
     },
     {
-      "id": 343,
+      "id": 344,
       "url": "sandbox/f.html",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3099,7 +3108,7 @@
       "text": "노코드 비주얼 빌더로 AI 에이전트를 설계하고, 실제 사용자 환경에 곧바로 배포하세요. START FREE → WATCH DEMO FEATURES"
     },
     {
-      "id": 344,
+      "id": 345,
       "url": "sandbox/f.html#features",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3108,7 +3117,7 @@
       "text": "★"
     },
     {
-      "id": 345,
+      "id": 346,
       "url": "sandbox/f.html#features",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3117,7 +3126,7 @@
       "text": "드래그 앤 드롭으로 워크플로우 설계! 실시간으로 동작 확인 가능 ♥ ♥"
     },
     {
-      "id": 346,
+      "id": 347,
       "url": "sandbox/f.html#features",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3126,7 +3135,7 @@
       "text": "Claude · GPT · Gemini 등 6종 모델 한곳에서! 비교하고 라우팅 ★ ✦"
     },
     {
-      "id": 347,
+      "id": 348,
       "url": "sandbox/f.html#features",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3135,7 +3144,7 @@
       "text": "SOC 2 인증! 자동 로깅! 99.9% SLA로 안심하고 배포 ♪ DEMO"
     },
     {
-      "id": 348,
+      "id": 349,
       "url": "sandbox/f.html#demo",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3144,7 +3153,7 @@
       "text": ""
     },
     {
-      "id": 349,
+      "id": 350,
       "url": "sandbox/f.html#demo",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3153,7 +3162,7 @@
       "text": "\"고객 문의에 응답하고 환불 정책을 안내하는 봇\" 한 줄이면 충분 ♥ 자연어로 에이전트 정의 실시간 테스트 환경 제공 한번 클릭으로 웹 · Slack · API 배포 안녕! 어떤 에이전트 만들까? 고객 문의 봇 ㄱㄱ 환불·배송·일반 3 카테고리로 분류할게! 좋아 그렇게! 완료! ★★★ PRICING"
     },
     {
-      "id": 350,
+      "id": 351,
       "url": "sandbox/f.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3162,7 +3171,7 @@
       "text": ""
     },
     {
-      "id": 351,
+      "id": 352,
       "url": "sandbox/f.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3171,7 +3180,7 @@
       "text": "₩0 /월 개인 프로젝트와 학습용 ♥ 1,000 메시지 에이전트 3개 커뮤니티 지원 START FREE ★ HOT! ★"
     },
     {
-      "id": 352,
+      "id": 353,
       "url": "sandbox/f.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3180,7 +3189,7 @@
       "text": "₩39K /월 소규모 팀과 본격 서비스 ★ 100,000 메시지 에이전트 무제한 Slack · API 배포 24h 이메일 지원 GO PRO"
     },
     {
-      "id": 353,
+      "id": 354,
       "url": "sandbox/f.html#pricing",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3189,7 +3198,7 @@
       "text": "맞춤 대규모 조직과 고급 보안 ♦ 메시지 무제한 SSO · SAML · SOC 2 전담 매니저 99.9% SLA 보장 CONTACT FAQ"
     },
     {
-      "id": 354,
+      "id": 355,
       "url": "sandbox/f.html#faq",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3198,7 +3207,7 @@
       "text": ""
     },
     {
-      "id": 355,
+      "id": 356,
       "url": "sandbox/f.html#faq",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3207,7 +3216,7 @@
       "text": "+ YES! 비주얼 빌더 기반이라 한 줄 코드 없이도 본격 에이전트 제작 가능 ♥"
     },
     {
-      "id": 356,
+      "id": 357,
       "url": "sandbox/f.html#faq",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3216,7 +3225,7 @@
       "text": "+ Claude · GPT · Gemini · Mistral · Cohere · Ollama 6종 이상! ★"
     },
     {
-      "id": 357,
+      "id": 358,
       "url": "sandbox/f.html#faq",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3225,7 +3234,7 @@
       "text": "+ 전송·저장 시 모두 암호화. SOC 2 Type II 인증 완료 ✦"
     },
     {
-      "id": 358,
+      "id": 359,
       "url": "sandbox/f.html#faq",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3234,7 +3243,7 @@
       "text": "+ 언제든 업/다운그레이드 OK! 변경 즉시 반영 ♪"
     },
     {
-      "id": 359,
+      "id": 360,
       "url": "sandbox/f.html#faq",
       "group": "Docs",
       "page": "Spark Studio · F · Pixel Kitsch",
@@ -3243,7 +3252,7 @@
       "text": "신용카드 없이 시작 · 5분 안에 첫 에이전트 배포 · 평생 무료 플랜 GET STARTED →"
     },
     {
-      "id": 360,
+      "id": 361,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3252,7 +3261,7 @@
       "text": "동일한 콘텐츠로 만든 6가지 시안입니다. 시스템 안에서 만든 3가지(A/B/C)와 자유롭게 트렌디하게 표현한 3가지(D/E/F)를 비교해보세요."
     },
     {
-      "id": 361,
+      "id": 362,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3261,7 +3270,7 @@
       "text": "토큰 / 컴포넌트 / 모션 모두 시스템 내부에서 표현 Variant A"
     },
     {
-      "id": 362,
+      "id": 363,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3270,7 +3279,7 @@
       "text": "중앙정렬 균형, 부드러운 페이드 업, 화이트 베이스 SaaS 톤. 보기 Variant B"
     },
     {
-      "id": 363,
+      "id": 364,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3279,7 +3288,7 @@
       "text": "좌측정렬 비대칭. 가로 row Features/Pricing, 순수 페이드인. 보기 Variant C"
     },
     {
-      "id": 364,
+      "id": 365,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3288,7 +3297,7 @@
       "text": "--color-inverse-* 적극 활용. Demo/CTA 전면 너비 배너. 정적. 보기"
     },
     {
-      "id": 365,
+      "id": 366,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3297,7 +3306,7 @@
       "text": "시스템 무관, 트렌디한 시각언어와 인터랙션으로 자유롭게 표현 Variant D"
     },
     {
-      "id": 366,
+      "id": 367,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3306,7 +3315,7 @@
       "text": "살아 숨쉬는 블롭이 꿀렁이며 블루↔퍼플 그라데이션이 비치는 다크. 노이즈 그레인 + 글래스모피즘. 보기 Variant E"
     },
     {
-      "id": 367,
+      "id": 368,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3315,7 +3324,7 @@
       "text": "섹션마다 다른 스크롤 인터랙션: Parallax · Pin&Stack · Sticky Cross-fade · Horizontal Scroll. 보기 Variant F"
     },
     {
-      "id": 368,
+      "id": 369,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3324,7 +3333,7 @@
       "text": "픽셀 폰트(Press Start 2P) + Y2K 컬러 + 하드 픽셀 그림자 + 스티커 데코 + 흔들림 호버. 보기"
     },
     {
-      "id": 369,
+      "id": 370,
       "url": "sandbox/index.html",
       "group": "Docs",
       "page": "Spark Studio",
@@ -3333,7 +3342,7 @@
       "text": "항목 A · Minimal B · Asymmetric C · Inverse D · AI Wavy E · Scroll F · Pixel 그룹 System System System Free Free Free 핵심 기믹 fade-up 가로 row inverse 섹션 꿀렁이는 블롭 스크롤 인터랙션 픽셀 + 스티커 타이포 Pretendard Pretendard Pretendard 그라데이션 텍스트 120px 디스플레이 Press Sta"
     },
     {
-      "id": 370,
+      "id": 371,
       "url": "system.html",
       "group": "Home",
       "page": "System Reference",
@@ -3342,7 +3351,7 @@
       "text": "MIDAS AX Design System 을 소개하는 이 사이트 자체를 짓기 위해 사용한 디자인 시스템입니다. 사이트의 모든 페이지 (Overview · Foundation · Components · Pattern) 가 여기 정의된 토큰, 레이아웃, 컴포넌트로 만들어졌습니다. 각 항목은 토큰 정의 / 시각 예시 / 마크업 템플릿 / 실제 사용 위치를 함께 표시하며, 라이트·다크 모드에서 동일한 마크업으로 작동합니다."
     },
     {
-      "id": 371,
+      "id": 372,
       "url": "system.html#system",
       "group": "Home",
       "page": "System Reference",
@@ -3351,7 +3360,7 @@
       "text": "자세히 보기"
     },
     {
-      "id": 372,
+      "id": 373,
       "url": "system.html#system",
       "group": "Home",
       "page": "System Reference",
@@ -3360,7 +3369,7 @@
       "text": "색·치수·텍스트·효과 — 컴포넌트가 의존하는 시각 토큰의 단일 소스. 자세히 보기"
     },
     {
-      "id": 373,
+      "id": 374,
       "url": "system.html#system",
       "group": "Home",
       "page": "System Reference",
@@ -3369,7 +3378,7 @@
       "text": "GNB · SNB · TOC · Footer · Page Grid — 전역 레이아웃 구조. 자세히 보기"
     },
     {
-      "id": 374,
+      "id": 375,
       "url": "system.html#system",
       "group": "Home",
       "page": "System Reference",
@@ -3378,7 +3387,7 @@
       "text": "Buttons · Cards · Thumbnails · FAQ — 실제 사용되는 UI 블록."
     },
     {
-      "id": 375,
+      "id": 376,
       "url": "system/audit.html",
       "group": "Docs",
       "page": "Audit",
@@ -3387,7 +3396,7 @@
       "text": "시스템 일관성 자가 점검표. 토큰 사용 일관성, 카드 변형 분류, 사이트 페이지 매핑."
     },
     {
-      "id": 376,
+      "id": 377,
       "url": "system/audit.html#audit-tokens",
       "group": "Docs",
       "page": "Audit",
@@ -3396,7 +3405,7 @@
       "text": "영역 토큰 사용 다크 적응 GNB bg + text OK rgba bg + label-strong OK SNB hover/active bg OK fill-hover / fill-pressed OK Cards bg + border OK surface-subtle / line-solid OK rgba 3% 보정 Buttons bg + text OK label-strong / fill-normal OK spec-hero/image "
     },
     {
-      "id": 377,
+      "id": 378,
       "url": "system/audit.html#audit-cards",
       "group": "Docs",
       "page": "Audit",
@@ -3405,7 +3414,7 @@
       "text": "컴포넌트 사용처 특징 .gallery-card Overview 페이지 갤러리 hover scale + dark overlay + CTA fade-in-up .p-card 메인(index.html) Pattern 3-up hover scale, 그라데이션 미디어 .spec-hero foundation/components/pattern detail 상단 정적, 427px, hover 없음 .spec-image foundation/"
     },
     {
-      "id": 378,
+      "id": 379,
       "url": "system/audit.html#links",
       "group": "Docs",
       "page": "Audit",
@@ -3414,7 +3423,7 @@
       "text": "섹션 경로 Home (main) index.html Overview about/index.html Foundation foundation/index.html Components components/index.html Pattern pattern/index.html"
     },
     {
-      "id": 379,
+      "id": 380,
       "url": "system/components.html",
       "group": "Docs",
       "page": "Components",
@@ -3423,7 +3432,7 @@
       "text": "실제 사용자 화면에 렌더되는 재사용 가능한 UI 블록. 모두 토큰 사용 → 라이트·다크 자동 적응. 썸네일 안에서만 쓰이는 demo 헬퍼 (chat, code-block 등) 는 제외됨."
     },
     {
-      "id": 380,
+      "id": 381,
       "url": "system/components.html#pill-button",
       "group": "Docs",
       "page": "Components",
@@ -3432,7 +3441,7 @@
       "text": "Hero CTA · Figma 링크 등 핵심 액션. fill-normal bg + label-strong text, hover 시 inverse 색 반전. 3 사이즈 (LG / MD / SM) 지원."
     },
     {
-      "id": 381,
+      "id": 382,
       "url": "system/components.html#pill-button",
       "group": "Docs",
       "page": "Components",
@@ -3441,7 +3450,7 @@
       "text": "Large (Hero CTA) Medium Small 사이즈 클래스 Padding Font 실제 사용처 LG (기본) .btn-pill 16 / 24 16px / 500 Hero CTA (메인) · .spec-section__media-cta (Pattern hover) — 같은 사이즈 MD .btn-pill--md 14 / 22 13px / 500 .gallery-card__cta (Overview hover) — 같은 사이"
     },
     {
-      "id": 382,
+      "id": 383,
       "url": "system/components.html#text-button",
       "group": "Docs",
       "page": "Components",
@@ -3450,7 +3459,7 @@
       "text": "배경 없는 텍스트 버튼. GNB nav 링크와 동일 스타일. 보조 액션 · 인라인 액션에 사용. hover 시 컬러만 label-alternative → label-strong 으로 진해짐. 피그마 바로가기 Get a start Foundation 속성 값 Padding 12 / 10 Font 15px / 600 / 0.144px letter-spacing Color label-alternative → hover: label-"
     },
     {
-      "id": 383,
+      "id": 384,
       "url": "system/components.html#link-button",
       "group": "Docs",
       "page": "Components",
@@ -3459,7 +3468,7 @@
       "text": "Get a start 페이지의 2-col 외부 링크 버튼. radius 12, outline 스타일. 피그마 시스템 바로가기 GitHub 바로가기 <div class=\"link-buttons\"> <a class=\"link-button\" href=\"#\" target=\"_blank\" rel=\"noopener\">Label</a> <a class=\"link-button\" href=\"#\" target=\"_blank\" rel=\"noope"
     },
     {
-      "id": 384,
+      "id": 385,
       "url": "system/components.html#cards",
       "group": "Docs",
       "page": "Components",
@@ -3468,7 +3477,7 @@
       "text": "Overview 페이지의 카드 그리드. 미디어 + 본문, hover 시 다크 overlay + CTA fade-in-up + 이미지 1.08 scale. 자세히 보기"
     },
     {
-      "id": 385,
+      "id": 386,
       "url": "system/components.html#cards",
       "group": "Docs",
       "page": "Components",
@@ -3477,7 +3486,7 @@
       "text": "Card description — 한 줄 또는 두 줄. <a class=\"gallery-card\" href=\"...\"> <div class=\"gallery-card__media\"> <img src=\"...\" alt=\"\" /> <!-- 또는 .card-demo 라이브 데모 --> <span class=\"gallery-card__cta\">자세히 보기</span> </div> <div class=\"gallery-card__body\""
     },
     {
-      "id": 386,
+      "id": 387,
       "url": "system/components.html#cards",
       "group": "Docs",
       "page": "Components",
@@ -3486,7 +3495,7 @@
       "text": "메인 페이지의 Pattern 3-up 카드. p-card 클래스 사용. 그라데이션 미디어 + hover scale. <a class=\"p-card\" href=\"...\"> <div class=\"p-card__media\"><img src=\"...\" alt=\"\" /></div> <div class=\"p-card__body\"> <h3 class=\"p-card__title\">Title</h3> <p class=\"p-card__desc\""
     },
     {
-      "id": 387,
+      "id": 388,
       "url": "system/components.html#thumbnails",
       "group": "Docs",
       "page": "Components",
@@ -3495,7 +3504,7 @@
       "text": "Detail 페이지에서 사용하는 이미지 컨테이너 3 종. 클래스 높이 인터랙션 용도 .spec-hero 427px 없음 (정적) 페이지 상단 큰 이미지 .spec-image 270px 없음 (정적) Anatomy/Usage 일반 이미지 영역 .spec-section__media 370px hover 다크 overlay + CTA Pattern detail Figma 링크 카드 <!-- 정적 이미지 영역 --> <div clas"
     },
     {
-      "id": 388,
+      "id": 389,
       "url": "system/components.html#faq",
       "group": "Docs",
       "page": "Components",
@@ -3504,7 +3513,7 @@
       "text": "메인 페이지 FAQ. 클릭 시 grid-template-rows 트랜지션으로 부드러운 슬라이드 다운. FAQ 질문 예시 <div class=\"faq\"> <div class=\"faq__item\"> <button class=\"faq__summary\" type=\"button\" aria-expanded=\"false\"> <span class=\"faq__q\">Question</span> <span class=\"faq__icon\"><svg"
     },
     {
-      "id": 389,
+      "id": 390,
       "url": "system/components.html#badges",
       "group": "Docs",
       "page": "Components",
@@ -3513,7 +3522,7 @@
       "text": "Detail 페이지의 How to use 섹션에서 사용. 상태 컬러 + 아이콘 + 라벨. Do Don't <span class=\"spec-badge spec-badge--do\"><svg>...</svg>Do</span> <span class=\"spec-badge spec-badge--dont\"><svg>...</svg>Don't</span>"
     },
     {
-      "id": 390,
+      "id": 391,
       "url": "system/foundation.html",
       "group": "Docs",
       "page": "Foundation",
@@ -3522,7 +3531,7 @@
       "text": "색·치수·텍스트·효과 — 컴포넌트가 의존하는 시각 토큰의 단일 소스. 각 카테고리는 라이트 / 다크 두 모드의 값을 함께 정의하며, 컴포넌트는 토큰명만 참조하여 모드 전환에 자동 적응합니다."
     },
     {
-      "id": 391,
+      "id": 392,
       "url": "system/foundation.html#color",
       "group": "Docs",
       "page": "Foundation",
@@ -3531,7 +3540,7 @@
       "text": "의미 기반 컬러 토큰. 모든 컴포넌트는 이 토큰만 참조하여 모드 전환에 자동 적응합니다. 각 chip 의 위 칸은 라이트 (L) , 아래 칸은 다크 (D) 모드에서의 실제 색상."
     },
     {
-      "id": 392,
+      "id": 393,
       "url": "system/foundation.html#color",
       "group": "Docs",
       "page": "Foundation",
@@ -3540,7 +3549,7 @@
       "text": "--color-label-strong L #171719 D #F7F7F8 --color-label-neutral L #2E2F33E0 D #C2C4C8 --color-label-alternative L #37383C9C D #F7F7F89C --color-label-assistive L #37383C47 D #F7F7F847"
     },
     {
-      "id": 393,
+      "id": 394,
       "url": "system/foundation.html#color",
       "group": "Docs",
       "page": "Foundation",
@@ -3549,7 +3558,7 @@
       "text": "--color-background L #FFFFFF D #121212 --color-surface-elevated L #FFFFFF D #1B1C1E --color-surface-subtle L #F7F7F8 D #F7F7F808 --color-fill-normal L #70737C14 D #F7F7F814 --color-fill-hover L #1717190A D #F7F7F80F --color-fill-pressed L #"
     },
     {
-      "id": 394,
+      "id": 395,
       "url": "system/foundation.html#color",
       "group": "Docs",
       "page": "Foundation",
@@ -3558,7 +3567,7 @@
       "text": "--color-inverse-background L #1B1C1E D #F7F7F8 --color-inverse-label L #F7F7F8 D #1B1C1E"
     },
     {
-      "id": 395,
+      "id": 396,
       "url": "system/foundation.html#color",
       "group": "Docs",
       "page": "Foundation",
@@ -3567,7 +3576,7 @@
       "text": "--color-line-solid L #EAEBEC D #70737C38 --color-line-subtle L #70737C29 D #70737C29"
     },
     {
-      "id": 396,
+      "id": 397,
       "url": "system/foundation.html#color",
       "group": "Docs",
       "page": "Foundation",
@@ -3576,7 +3585,7 @@
       "text": "--color-status-positive L #00BF40 D #00BF40 --color-status-negative L #FF4242 D #FF4242"
     },
     {
-      "id": 397,
+      "id": 398,
       "url": "system/foundation.html#typography",
       "group": "Docs",
       "page": "Foundation",
@@ -3585,7 +3594,7 @@
       "text": "9단계 타입 스케일 + 2개 폰트 패밀리. Pretendard Variable(본문) · Poppins(디스플레이). Display · 72/110% Display H1 · 36/133% Heading 1 H2 · 36/118% Heading 2 H3 · 24/108% Heading 3 Body L · 20/160% Body Large Body M · 17/150% Body Medium — 기본 본문 Body S · 15/14"
     },
     {
-      "id": 398,
+      "id": 399,
       "url": "system/foundation.html#spacing",
       "group": "Docs",
       "page": "Foundation",
@@ -3594,7 +3603,7 @@
       "text": "8 배수 그리드. 컴포넌트 내부 · 컴포넌트 간 · 섹션 간 동일 시스템 공유. --space-2 8px --space-3 12px --space-4 16px --space-5 24px --space-6 40px --space-8 60px --section-gap 60px"
     },
     {
-      "id": 399,
+      "id": 400,
       "url": "system/foundation.html#radius",
       "group": "Docs",
       "page": "Foundation",
@@ -3603,7 +3612,7 @@
       "text": "3단계 모서리 라운드 + pill. 작은 요소는 작은 radius, 큰 컨테이너는 큰 radius. --radius-sm · 8px --radius-md · 12px --radius-lg · 24px pill · 99px"
     },
     {
-      "id": 400,
+      "id": 401,
       "url": "system/foundation.html#effect",
       "group": "Docs",
       "page": "Foundation",
@@ -3612,7 +3621,7 @@
       "text": "레이어 위계의 그림자 시스템 + 인터랙션 모션 토큰."
     },
     {
-      "id": 401,
+      "id": 402,
       "url": "system/foundation.html#effect",
       "group": "Docs",
       "page": "Foundation",
@@ -3621,7 +3630,7 @@
       "text": "0 · flat 1 · card 2 · dropdown 3 · modal 4 · toast"
     },
     {
-      "id": 402,
+      "id": 403,
       "url": "system/foundation.html#effect",
       "group": "Docs",
       "page": "Foundation",
@@ -3630,7 +3639,7 @@
       "text": "tokens.css 에 CSS 변수로 정의 — var(--duration-normal) · var(--easing-standard) 형식으로 참조. 토큰 값 사용 --duration-fast 120ms 마이크로 인터랙션 (hover bg, focus ring) --duration-normal 240ms 버튼·카드 hover, 메뉴 등장 --duration-slow 400ms 패널·모달 등장, 페이지 전환 --easing-sta"
     },
     {
-      "id": 403,
+      "id": 404,
       "url": "system/layout.html",
       "group": "Docs",
       "page": "Layout",
@@ -3639,7 +3648,7 @@
       "text": "전역 레이아웃 컴포넌트 (GNB · SNB · TOC · Footer) + 페이지 그리드 3 변형. 모든 페이지가 동일한 레이아웃 구조를 공유하여 시각 일관성과 사용자 익숙함을 유지합니다."
     },
     {
-      "id": 404,
+      "id": 405,
       "url": "system/layout.html#gnb",
       "group": "Docs",
       "page": "Layout",
@@ -3648,7 +3657,7 @@
       "text": "72px sticky 헤더. frosted glass bg (rgba 88% + blur 16). 모든 페이지 상단에 동일하게 적용. 위치: 모든 페이지의 <body> 최상단 · position: sticky; top: 0; z-index: 100; <header class=\"gnb gnb--solid\"> <div class=\"gnb__inner\"> <a class=\"gnb__logo\" href=\"../index.html\"> "
     },
     {
-      "id": 405,
+      "id": 406,
       "url": "system/layout.html#snb",
       "group": "Docs",
       "page": "Layout",
@@ -3657,7 +3666,7 @@
       "text": "좌측 sticky 사이드바. 그리드 셀 210 + 내부 wrapper(.snb__inner) 가 좌우 +10 확장 + 우측 30 스크롤바 영역. 구조: .snb (210 시각폭) → .snb__inner (margin -10/-10, padding-right 30, overflow-y auto) → items <aside class=\"snb\" aria-label=\"...\"> <div class=\"snb__inner\"> <a c"
     },
     {
-      "id": 406,
+      "id": 407,
       "url": "system/layout.html#snb",
       "group": "Docs",
       "page": "Layout",
@@ -3666,7 +3675,7 @@
       "text": "State Background Color Arrow Default transparent label-alternative hidden Hover fill-hover (4%) label-strong visible Active [aria-current=\"page\"] fill-hover (4%) label-strong visible Active + Hover fill-pressed (8%) label-strong visible"
     },
     {
-      "id": 407,
+      "id": 408,
       "url": "system/layout.html#toc",
       "group": "Docs",
       "page": "Layout",
@@ -3675,7 +3684,7 @@
       "text": "우측 sticky 앵커 (160px). scroll-spy 로 현재 viewport 섹션에 active 표시. 클릭 시 smooth scroll. <aside class=\"toc\" aria-label=\"목차\"> <p class=\"toc__title\">목차</p> <ul class=\"toc__list\"> <li><a class=\"toc__item\" href=\"#section-id\">Section Title</a></li> </u"
     },
     {
-      "id": 408,
+      "id": 409,
       "url": "system/layout.html#footer",
       "group": "Docs",
       "page": "Layout",
@@ -3684,7 +3693,7 @@
       "text": "80px 높이. 좌측 copyright + 우측 version badge. <footer class=\"footer\"> <div class=\"footer__inner\"> <span>© 2026 MIDAS, Inc.</span> <span class=\"footer__badge\">버전 1.0</span> </div> </footer>"
     },
     {
-      "id": 409,
+      "id": 410,
       "url": "system/layout.html#grid",
       "group": "Docs",
       "page": "Layout",
@@ -3693,7 +3702,7 @@
       "text": "1400 컨테이너 안의 3가지 컬럼 구조."
     },
     {
-      "id": 410,
+      "id": 411,
       "url": "system/layout.html#grid",
       "group": "Docs",
       "page": "Layout",
@@ -3702,7 +3711,7 @@
       "text": "SNB 210 70 Content 1fr 60"
     },
     {
-      "id": 411,
+      "id": 412,
       "url": "system/layout.html#grid",
       "group": "Docs",
       "page": "Layout",
@@ -3711,7 +3720,7 @@
       "text": "SNB 210 70 Content 1fr 100 TOC 160"
     },
     {
-      "id": 412,
+      "id": 413,
       "url": "system/layout.html#grid",
       "group": "Docs",
       "page": "Layout",

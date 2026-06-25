@@ -432,7 +432,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body,
 .eae-doc-scroll,
 .btm-steps,
-.awb-canvas {
+.awb-canvas,
+.awb-modal__list-wrap {
   scrollbar-width: thin;
   scrollbar-color: transparent transparent;
   transition: scrollbar-color var(--duration-fast, 120ms) ease;
@@ -442,7 +443,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body:hover,
 .eae-doc-scroll:hover,
 .btm-steps:hover,
-.awb-canvas:hover {
+.awb-canvas:hover,
+.awb-modal__list-wrap:hover {
   scrollbar-color: rgba(52, 52, 52, 0.28) transparent;
 }
 /* webkit — overlay 동작: 트랙/외곽선 없이 thumb 만 컨테이너 위에 표시 */
@@ -451,7 +453,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body::-webkit-scrollbar,
 .eae-doc-scroll::-webkit-scrollbar,
 .btm-steps::-webkit-scrollbar,
-.awb-canvas::-webkit-scrollbar {
+.awb-canvas::-webkit-scrollbar,
+.awb-modal__list-wrap::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
@@ -460,7 +463,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body::-webkit-scrollbar-track,
 .eae-doc-scroll::-webkit-scrollbar-track,
 .btm-steps::-webkit-scrollbar-track,
-.awb-canvas::-webkit-scrollbar-track {
+.awb-canvas::-webkit-scrollbar-track,
+.awb-modal__list-wrap::-webkit-scrollbar-track {
   background: transparent;
 }
 .gca-chat::-webkit-scrollbar-thumb,
@@ -468,7 +472,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body::-webkit-scrollbar-thumb,
 .eae-doc-scroll::-webkit-scrollbar-thumb,
 .btm-steps::-webkit-scrollbar-thumb,
-.awb-canvas::-webkit-scrollbar-thumb {
+.awb-canvas::-webkit-scrollbar-thumb,
+.awb-modal__list-wrap::-webkit-scrollbar-thumb {
   background: transparent;
   border-radius: 8px;
   transition: background var(--duration-fast, 120ms) ease;
@@ -478,7 +483,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body:hover::-webkit-scrollbar-thumb,
 .eae-doc-scroll:hover::-webkit-scrollbar-thumb,
 .btm-steps:hover::-webkit-scrollbar-thumb,
-.awb-canvas:hover::-webkit-scrollbar-thumb {
+.awb-canvas:hover::-webkit-scrollbar-thumb,
+.awb-modal__list-wrap:hover::-webkit-scrollbar-thumb {
   background: rgba(52, 52, 52, 0.28);
 }
 .gca-chat::-webkit-scrollbar-thumb:hover,
@@ -486,7 +492,8 @@ body:has(.gca-lightbox.is-open) > main {
 .eae-drawer__body::-webkit-scrollbar-thumb:hover,
 .eae-doc-scroll::-webkit-scrollbar-thumb:hover,
 .btm-steps::-webkit-scrollbar-thumb:hover,
-.awb-canvas::-webkit-scrollbar-thumb:hover {
+.awb-canvas::-webkit-scrollbar-thumb:hover,
+.awb-modal__list-wrap::-webkit-scrollbar-thumb:hover {
   background: rgba(52, 52, 52, 0.45);
 }
 
@@ -1481,10 +1488,12 @@ body:has(.gca-lightbox.is-open) > main {
 .btm-sub__desc { font-size: 12px; line-height: 16px; font-weight: 500; color: var(--d-text-2); word-break: keep-all; }
 
 /* ============================================================
- * Agent/Workflow Builder 데모 — 2가지 타입
- *   Type 1 Form Builder: 설정 폼(.gca-main) + 테스트 대화(.gca-*)
- *   Type 2 Workflow(Node Graph): 점 격자 캔버스 + 노드 연결 + 설정 드로워(.eae-drawer)
- *   form 필드는 .eae-* , 대화는 .gca-* , 컨트롤러는 .daw-* 재사용
+ * Agent/Workflow Builder 데모 — 4가지 타입
+ *   Form  : 설정 폼(.awb-config) + 테스트 대화(.gca-*) — 만들기 후 대화 활성화
+ *   Step  : 점격자 캔버스 세로 스텝 카드(.awb-step) + 설정 드로워(.eae-drawer) — 드래그 정렬
+ *   Modal : 회색 배경 위 모달(.awb-modal) 안 스텝 카드 — 카드 클릭 시 세부 설정 서브모달
+ *   Node  : 자유 캔버스 노드(.awb-gnode) + SVG 연결선 — 노드 이동·연결
+ *   form 필드는 .eae-*, 대화는 .gca-*, 컨트롤러는 .daw-* 재사용
  * ============================================================ */
 .awb-demo {
   --d-surface: #ffffff;
@@ -1496,6 +1505,7 @@ body:has(.gca-lightbox.is-open) > main {
   --d-text-3: #aeaeae;
   --d-brand: #ff6600;
   --d-bubble: #343434;
+  --awb-dot: radial-gradient(circle, rgba(52, 52, 52, 0.16) 1.1px, transparent 1.1px);
 
   position: relative;
   display: flex;
@@ -1515,14 +1525,14 @@ body:has(.gca-lightbox.is-open) > main {
 .awb-demo svg use { color: inherit; }
 
 .awb-scene { display: none; width: 100%; height: 100%; }
-.awb-demo--form .awb-scene--form { display: flex; }
-.awb-demo--graph .awb-scene--graph { display: flex; }
+.awb-demo--form .awb-scene--form,
+.awb-demo--step .awb-scene--step,
+.awb-demo--node .awb-scene--node { display: flex; }
+.awb-demo--modal .awb-scene--modal { display: block; }
 
-/* Type 1: Form Builder
- * .gca-main 재사용 시 따라오는 회색 배경·비대칭 패딩(12 12 12 0)을 제거하고
- * 흰 패널 + 얇은 구분선 구조로 맞춤 (참고 디자인 awb-variant-form) */
+/* ---------- Type 1: Form Builder ---------- */
 .awb-config { flex: 0 0 340px; border-right: 1px solid var(--d-line); background: var(--d-surface); padding: 0; }
-.awb-test { flex: 1 1 auto; background: var(--d-surface); padding: 0; }
+.awb-test { flex: 1 1 auto; background: var(--d-surface); padding: 0; min-width: 0; }
 .awb-upload {
   display: inline-flex; align-items: center; gap: 6px; align-self: flex-start;
   padding: 9px 14px; border: 1px solid var(--d-border); border-radius: 8px;
@@ -1531,159 +1541,220 @@ body:has(.gca-lightbox.is-open) > main {
 .awb-upload svg { width: 16px; height: 16px; }
 .awb-upload:hover { background: var(--d-bg); }
 
-/* Type 2: Node Graph Builder */
+/* 입력 누락 시 흔들기 */
+.eae-input.is-invalid { border-color: #ff5247; box-shadow: 0 0 0 3px rgba(255, 82, 71, 0.14); }
+.awb-shake { animation: awb-shake 0.4s var(--easing-standard); }
+@keyframes awb-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+/* 테스트 패널 빈 상태 (만들기 전) */
+.awb-test-empty {
+  margin: auto; max-width: 320px;
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+  text-align: center;
+}
+.awb-test-empty__icon {
+  width: 48px; height: 48px; display: grid; place-items: center;
+  border-radius: 14px; background: var(--d-bg); margin-bottom: 2px;
+}
+.awb-test-empty__icon svg { width: 26px; height: 26px; }
+.awb-test-empty__title { margin: 0; font-size: 16px; font-weight: 700; color: var(--d-text); }
+.awb-test-empty__sub { margin: 0; font-size: 14px; font-weight: 500; line-height: 21px; color: var(--d-text-2); word-break: keep-all; }
+.awb-test-empty__sub b { font-weight: 700; color: var(--d-text); }
+
+/* 만들기 전 컴포저 잠금 */
+.awb-demo:not(.is-fcreated) .awb-test .gca-actionbar { opacity: 0.5; pointer-events: none; }
+
+/* ---------- 공용 스텝 카드 (Step / Modal) ---------- */
 .awb-canvas {
-  flex: 1 1 auto;
-  min-width: 0;
-  overflow: auto;
+  flex: 1 1 auto; min-width: 0; overflow: auto;
   background-color: #fbfbfc;
-  background-image: radial-gradient(circle, rgba(52, 52, 52, 0.18) 1.1px, transparent 1.1px);
+  background-image: var(--awb-dot);
   background-size: 18px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 56px 48px;
+  display: flex; align-items: center; justify-content: center;
+  padding: 48px 40px;
 }
-.awb-flow {
-  width: min(560px, 100%);
-  min-width: 360px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.awb-edge {
+.awb-canvas--step { align-items: center; }
+.awb-steps {
   position: relative;
-  flex: 0 0 44px;
-  width: 1px;
-  height: 44px;
-  background: #d9dbdf;
+  width: min(420px, 100%);
+  display: flex; flex-direction: column; gap: 26px;
 }
-.awb-edge::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -1px;
-  width: 7px;
-  height: 7px;
-  border-right: 1px solid #d9dbdf;
-  border-bottom: 1px solid #d9dbdf;
+.awb-steps > *:not(:first-child)::before {
+  content: ""; position: absolute; left: 50%; top: -26px; transform: translateX(-50%);
+  width: 1px; height: 26px; background: #d9dbdf;
+}
+.awb-steps > *:not(:first-child)::after {
+  content: ""; position: absolute; left: 50%; top: -7px;
+  width: 6px; height: 6px; border-right: 1px solid #d9dbdf; border-bottom: 1px solid #d9dbdf;
   transform: translateX(-50%) rotate(45deg);
 }
-.awb-node {
-  width: min(560px, 100%);
-  min-height: 84px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 14px 18px;
-  border: 1px solid #e1e2e4;
-  border-radius: 16px;
-  background: #fff;
-  color: #343434;
-  font-family: inherit;
-  text-align: left;
-  cursor: pointer;
+.awb-steps.is-reordering > *::before,
+.awb-steps.is-reordering > *::after { opacity: 0; }
+
+.awb-step {
+  position: relative;
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; min-height: 76px; padding: 14px 16px;
+  border: 1px solid #e1e2e4; border-radius: 16px; background: #fff;
+  color: var(--d-text); text-align: left; cursor: pointer;
   box-shadow: 0 8px 22px -18px rgba(16, 24, 40, 0.22);
-  transition: border-color 0.16s var(--easing-standard), box-shadow 0.16s var(--easing-standard), transform 0.16s var(--easing-standard);
+  transition: border-color 0.16s var(--easing-standard), box-shadow 0.16s var(--easing-standard), transform 0.18s var(--easing-standard);
 }
-.awb-node__icon {
-  flex: 0 0 56px;
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: var(--nc, #20c997);
-  display: grid;
-  place-items: center;
-  color: #fff;
+.awb-step:hover { border-color: #cfd2d7; box-shadow: 0 12px 26px -20px rgba(16, 24, 40, 0.28); }
+.awb-step.is-sel { padding: 13px 15px; border: 2px solid #343434; box-shadow: none; }
+.awb-step.is-dragging {
+  z-index: 6; cursor: grabbing; transition: none;
+  box-shadow: 0 22px 44px -18px rgba(16, 24, 40, 0.4); border-color: #343434;
 }
-.awb-node__icon svg { width: 28px; height: 28px; }
-.awb-node__meta {
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.awb-step__handle {
+  flex: 0 0 18px; width: 18px; height: 24px; display: grid; place-items: center;
+  color: #c4c7cd; cursor: grab; touch-action: none;
 }
-.awb-node__label {
-  overflow: hidden;
-  color: #343434;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 22px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.awb-step__handle svg { width: 18px; height: 18px; }
+.awb-step:hover .awb-step__handle { color: #9a9da3; }
+.awb-step__icon {
+  flex: 0 0 44px; width: 44px; height: 44px; border-radius: 12px;
+  background: var(--nc, #20c997); display: grid; place-items: center; color: #fff;
 }
-.awb-node__sub {
-  overflow: hidden;
-  color: #70737c;
-  font-size: 15px;
-  font-weight: 500;
-  line-height: 22px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+.awb-step__icon svg { width: 24px; height: 24px; }
+.awb-step__meta { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+.awb-step__label { overflow: hidden; font-size: 15px; font-weight: 700; line-height: 21px; text-overflow: ellipsis; white-space: nowrap; }
+.awb-step__sub { overflow: hidden; color: #70737c; font-size: 13px; font-weight: 500; line-height: 18px; text-overflow: ellipsis; white-space: nowrap; }
+
+.awb-step-add {
+  position: relative; align-self: center;
+  width: 40px; height: 40px; border: 0; border-radius: 999px;
+  background: #f0f1f3; color: #7a7d85; display: grid; place-items: center; cursor: pointer;
+  transition: background 0.15s ease;
 }
-.awb-node:hover {
-  border-color: #cfd2d7;
-  box-shadow: 0 12px 26px -20px rgba(16, 24, 40, 0.28);
-  transform: translateY(-1px);
-}
-.awb-node.is-sel {
-  padding: 13px 17px;
-  border: 2px solid #343434;
-  box-shadow: none;
-}
-.awb-node--add {
-  width: 56px;
-  min-height: 56px;
-  height: 56px;
-  justify-content: center;
-  padding: 0;
-  border: 0;
-  border-radius: 999px;
-  background: #f0f1f3;
-  box-shadow: none;
-}
-.awb-node--add .awb-node__icon {
-  flex: 0 0 56px;
-  width: 56px;
-  height: 56px;
-  border-radius: 999px;
-  background: #f0f1f3;
-  color: #7a7d85;
-}
-.awb-node--add .awb-node__icon svg { width: 22px; height: 22px; }
-.awb-node--add:hover {
-  background: #e9eaed;
-  border-color: transparent;
-  box-shadow: none;
-  transform: none;
-}
-.awb-enter { animation: btm-rise 0.32s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.awb-step-add svg { width: 20px; height: 20px; }
+.awb-step-add:hover { background: #e6e7ea; color: #5f6168; }
+.awb-step--enter { animation: btm-rise 0.32s cubic-bezier(0.22, 1, 0.36, 1) both; }
 
 .awb-gdrawer { flex: 0 0 360px; width: 360px; max-width: 100%; margin-left: 0; }
 
+/* ---------- Type 3: Modal (스텝 + 스플릿 설정) ---------- */
+.awb-scene--modal { position: relative; }
+.awb-modal-stage {
+  position: relative; width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  background: #c9cbcf;
+}
+.awb-modal {
+  width: min(560px, 86%); max-height: 86%;
+  display: flex; flex-direction: column;
+  background: #fff; border-radius: 18px; overflow: hidden;
+  box-shadow: 0 40px 80px -24px rgba(16, 24, 40, 0.45);
+  transition: width 0.32s var(--easing-emphasized);
+}
+.awb-modal.is-split { width: min(880px, 94%); }
+.awb-modal__bar { flex: 0 0 56px; border-bottom: 1px solid #eaeaea; }
+.awb-modal__body { flex: 1 1 auto; display: flex; align-items: stretch; min-height: 0; }
+.awb-modal__list-wrap {
+  flex: 1 1 auto; min-width: 0; overflow: auto;
+  padding: 36px 40px;
+  background-color: #fbfbfc;
+  background-image: var(--awb-dot);
+  background-size: 18px 18px;
+  display: flex; align-items: flex-start; justify-content: center;
+}
+.awb-modal__foot { border-top: 1px solid #eaeaea; }
+.awb-steps--modal { width: min(360px, 100%); }
+
+.awb-modal__config {
+  flex: 0 0 0; width: 0; min-width: 0; overflow: hidden;
+  display: flex; flex-direction: column;
+  border-left: 1px solid #eaeaea; background: #fff;
+  transition: flex-basis 0.32s var(--easing-emphasized), width 0.32s var(--easing-emphasized);
+}
+.awb-modal.is-split .awb-modal__config { flex-basis: 320px; width: 320px; }
+.awb-modal__config .gca-main__bar { flex: 0 0 56px; border-bottom: 1px solid #eaeaea; }
+
+/* ---------- Type 4: Node Graph ---------- */
+.awb-ncanvas {
+  flex: 1 1 auto; min-width: 0; position: relative; overflow: hidden;
+  background-color: #fbfbfc;
+  background-image: var(--awb-dot);
+  background-size: 18px 18px;
+  touch-action: none;
+}
+.awb-nedges { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.awb-nedge { fill: none; stroke: #b9bcc2; stroke-width: 2; }
+.awb-nedge.is-temp { stroke: #8a8f98; stroke-dasharray: 5 5; }
+.awb-nodes { position: absolute; inset: 0; }
+.awb-gnode {
+  position: absolute; width: 96px;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  cursor: grab; touch-action: none;
+}
+.awb-gnode.is-dragging { cursor: grabbing; z-index: 4; }
+.awb-gnode__box {
+  position: relative; width: 64px; height: 64px; border-radius: 18px;
+  background: var(--nc, #20c997); display: grid; place-items: center; color: #fff;
+  box-shadow: 0 10px 24px -12px rgba(16, 24, 40, 0.4);
+  transition: transform 0.14s var(--easing-standard), box-shadow 0.14s var(--easing-standard);
+}
+.awb-gnode__box svg { width: 30px; height: 30px; }
+.awb-gnode:hover .awb-gnode__box { transform: translateY(-1px); }
+.awb-gnode.is-sel .awb-gnode__box { outline: 2px solid #343434; outline-offset: 3px; }
+.awb-gnode__label {
+  max-width: 96px; font-size: 13px; font-weight: 600; color: var(--d-text);
+  text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.awb-gnode__port {
+  position: absolute; top: 50%; width: 16px; height: 16px; border-radius: 50%;
+  background: #fff; border: 2px solid #c4c7cd;
+  transform: translateY(-50%); cursor: crosshair;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+.awb-gnode__port svg { width: 10px; height: 10px; color: #9a9da3; }
+.awb-gnode__port--in { left: -8px; }
+.awb-gnode__port--out { right: -8px; display: grid; place-items: center; }
+.awb-gnode__port--out:hover { border-color: var(--d-brand); background: #fff5ef; }
+.awb-gnode__port--out:hover svg { color: var(--d-brand); }
+.awb-gnode.is-target .awb-gnode__port--in { border-color: var(--d-brand); background: #fff5ef; }
+.awb-gnode--enter { animation: awb-pop 0.28s var(--easing-emphasized) both; }
+
+.awb-ntoolbar { position: absolute; top: 12px; left: 12px; z-index: 3; display: flex; gap: 8px; }
+.awb-ntool {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px;
+  border: 1px solid var(--d-border); border-radius: 999px; background: var(--d-surface);
+  font-family: inherit; font-size: 13px; font-weight: 600; color: var(--d-text); cursor: pointer;
+  box-shadow: 0 6px 18px -10px rgba(16, 24, 40, 0.28);
+}
+.awb-ntool svg { width: 16px; height: 16px; }
+.awb-ntool:hover { background: var(--d-bg); }
+.awb-nhint {
+  position: absolute; left: 0; right: 0; bottom: 12px; margin: 0;
+  text-align: center; font-size: 12px; font-weight: 500; color: var(--d-text-3);
+  pointer-events: none;
+}
+.awb-nhint b { color: var(--d-text-2); }
+
 @media (max-width: 720px) {
-  .awb-demo, .awb-scene--form, .awb-scene--graph { flex-direction: column; }
-  .awb-config { flex: 1 1 45%; border-right: 0; border-bottom: 1px solid var(--d-line); }
-  .awb-test { flex: 1 1 55%; }
-  .awb-canvas { flex: 1 1 50%; padding: 40px 24px; }
-  .awb-flow { width: 100%; min-width: min(320px, 100%); }
-  .awb-node { min-height: 76px; gap: 12px; padding: 12px 14px; }
-  .awb-node.is-sel { padding: 11px 13px; }
-  .awb-node__icon { flex-basis: 48px; width: 48px; height: 48px; border-radius: 12px; }
-  .awb-node__icon svg { width: 24px; height: 24px; }
-  .awb-node__label { font-size: 15px; line-height: 21px; }
-  .awb-node__sub { font-size: 14px; line-height: 20px; }
+  .awb-demo, .awb-scene--form, .awb-scene--step, .awb-scene--node { flex-direction: column; }
+  .awb-config { flex: 1 1 42%; border-right: 0; border-bottom: 1px solid var(--d-line); }
+  .awb-test { flex: 1 1 58%; }
+  .awb-canvas { flex: 1 1 50%; padding: 32px 20px; }
+  .awb-ncanvas { flex: 1 1 50%; }
   .awb-gdrawer { flex: 1 1 50%; width: 100%; }
+  .awb-modal { width: 92%; max-height: 92%; }
 }
 
 /* ============================================================
  * 타입(씬) 전환 — 기존 씬을 페이드아웃한 뒤 새 씬을 페이드인
- *   EAE(드로워/인라인), AWB(폼/그래프) 세그먼트 전환에 적용
+ *   EAE(드로워/인라인), AWB(폼/스텝/모달/노드) 세그먼트 전환에 적용
  * ============================================================ */
 .eae-demo--drawer .eae-scene--drawer,
 .eae-demo--inline .eae-scene--inline,
 .awb-demo--form .awb-scene--form,
-.awb-demo--graph .awb-scene--graph {
+.awb-demo--step .awb-scene--step,
+.awb-demo--modal .awb-scene--modal,
+.awb-demo--node .awb-scene--node {
   opacity: 1;
   transition: opacity 0.42s var(--easing-standard, cubic-bezier(0.33, 1, 0.68, 1));
 }
@@ -1699,7 +1770,9 @@ body:has(.gca-lightbox.is-open) > main {
   .eae-demo--drawer .eae-scene--drawer,
   .eae-demo--inline .eae-scene--inline,
   .awb-demo--form .awb-scene--form,
-  .awb-demo--graph .awb-scene--graph {
+  .awb-demo--step .awb-scene--step,
+  .awb-demo--modal .awb-scene--modal,
+  .awb-demo--node .awb-scene--node {
     transition: none !important;
   }
   .eae-demo--scene-out .eae-scene,
@@ -1707,7 +1780,117 @@ body:has(.gca-lightbox.is-open) > main {
   .awb-demo--scene-out .awb-scene,
   .awb-demo--scene-in .awb-scene,
   .btm-enter,
-  .awb-enter,
+  .awb-step--enter,
+  .awb-gnode--enter,
   .gca-msg--enter,
   .gca-thinking--enter { animation: none !important; }
+}
+
+/* ============================================================
+ * AWB 공용 폼 컨트롤 — 라디오 / 체크박스 / 토글 / 드롭다운 / 파일칩
+ *   Figma 디자인 시스템 입력 컴포넌트(274:8172) 기반
+ * ============================================================ */
+.eae-radio-group, .eae-check-group { display: flex; flex-direction: column; gap: 10px; }
+.eae-radio-group--row { flex-direction: row; flex-wrap: wrap; gap: 8px 16px; }
+.eae-radio, .eae-check {
+  position: relative; display: flex; align-items: center; gap: 10px;
+  cursor: pointer; font-size: 14px; font-weight: 500; line-height: 20px; color: var(--d-text);
+}
+.eae-radio input, .eae-check input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.eae-radio__box, .eae-check__box {
+  flex: 0 0 18px; width: 18px; height: 18px;
+  border: 1.5px solid #c8cacf; background: #fff;
+  display: grid; place-items: center;
+  transition: border-color 0.14s ease, background 0.14s ease;
+}
+.eae-radio__box { border-radius: 50%; }
+.eae-check__box { border-radius: 6px; }
+.eae-radio__box::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #fff; transform: scale(0); transition: transform 0.14s var(--easing-emphasized); }
+.eae-radio input:checked ~ .eae-radio__box { border-color: #376cf2; }
+.eae-radio input:checked ~ .eae-radio__box::after { background: #376cf2; transform: scale(1); }
+.eae-check__box svg { width: 14px; height: 14px; color: #fff; opacity: 0; transform: scale(0.6); transition: opacity 0.12s ease, transform 0.14s var(--easing-emphasized); }
+.eae-check input:checked ~ .eae-check__box { border-color: #376cf2; background: #376cf2; }
+.eae-check input:checked ~ .eae-check__box svg { opacity: 1; transform: scale(1); }
+.eae-radio:hover .eae-radio__box, .eae-check:hover .eae-check__box { border-color: #9a9da3; }
+.eae-radio input:focus-visible ~ .eae-radio__box,
+.eae-check input:focus-visible ~ .eae-check__box { box-shadow: 0 0 0 3px rgba(55, 108, 242, 0.18); }
+.eae-radio__label, .eae-check__label { line-height: 20px; }
+
+/* 토글 스위치 */
+.eae-switch { display: flex; align-items: center; justify-content: space-between; gap: 12px; cursor: pointer; }
+.eae-switch input { position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none; }
+.eae-ctl-label { display: flex; flex-direction: column; gap: 2px; font-size: 14px; font-weight: 500; color: var(--d-text); }
+.eae-ctl-label small { font-size: 12px; font-weight: 500; color: var(--d-text-3); }
+.eae-switch__track {
+  flex: 0 0 40px; width: 40px; height: 24px; border-radius: 999px;
+  background: #d4d6da; position: relative; transition: background 0.16s ease;
+}
+.eae-switch__track::after {
+  content: ""; position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+  border-radius: 50%; background: #fff; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.3);
+  transition: transform 0.16s var(--easing-standard);
+}
+.eae-switch input:checked ~ .eae-switch__track { background: #00bf40; }
+.eae-switch input:checked ~ .eae-switch__track::after { transform: translateX(16px); }
+
+/* 작동하는 드롭다운 (모델) */
+.eae-select-wrap { position: relative; }
+.eae-select__val { flex: 1 1 auto; text-align: left; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.eae-select[aria-expanded="true"] { border-color: var(--d-text-2); color: var(--d-text); }
+.eae-menu {
+  position: absolute; left: 0; right: 0; top: calc(100% + 6px); z-index: 12;
+  padding: 6px; background: #fff; border: 1px solid var(--d-border); border-radius: 12px;
+  box-shadow: 0 14px 32px -10px rgba(16, 24, 40, 0.24);
+  display: flex; flex-direction: column; gap: 1px;
+}
+.eae-menu[hidden] { display: none; }
+.eae-menu__item {
+  display: flex; align-items: center; justify-content: space-between; gap: 8px;
+  padding: 8px 10px; border: 0; background: none; border-radius: 8px;
+  font-family: inherit; font-size: 14px; font-weight: 500; color: var(--d-text);
+  text-align: left; cursor: pointer;
+}
+.eae-menu__item:hover { background: rgba(0, 0, 0, 0.05); }
+.eae-menu__item.is-sel::after {
+  content: ""; flex: 0 0 12px; width: 12px; height: 7px;
+  border-left: 2px solid var(--d-brand); border-bottom: 2px solid var(--d-brand);
+  transform: rotate(-45deg) translateY(-2px);
+}
+
+/* 지식 파일 칩 */
+.awb-files { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.awb-files:empty { margin-top: 0; }
+.awb-file {
+  display: flex; align-items: center; gap: 8px; padding: 8px 10px;
+  border: 1px solid var(--d-border); border-radius: 8px; background: var(--d-surface);
+  font-size: 13px; font-weight: 500; color: var(--d-text);
+  animation: gca-rise 0.26s var(--easing-emphasized) both;
+}
+.awb-file svg { width: 16px; height: 16px; color: var(--d-text-2); flex: 0 0 16px; }
+.awb-file__name { flex: 1 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.awb-file__rm { flex: 0 0 22px; width: 22px; height: 22px; display: grid; place-items: center; border: 0; background: none; border-radius: 6px; color: var(--d-text-3); cursor: pointer; }
+.awb-file__rm svg { width: 14px; height: 14px; }
+.awb-file__rm:hover { background: rgba(0, 0, 0, 0.05); color: var(--d-text); }
+
+/* 노드 도구 배지 (사용 도구 체크박스 → 노드 박스 우상단 점) */
+.awb-gnode__badges { position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); display: flex; gap: 3px; z-index: 2; }
+.awb-gnode__badge { width: 11px; height: 11px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 1px 2px rgba(16, 24, 40, 0.18); }
+
+/* ============================================================
+ * 카드 / 노드 생성·삭제 부드러운 인터랙션
+ * ============================================================ */
+.awb-step {
+  transition: border-color 0.16s var(--easing-standard), box-shadow 0.16s var(--easing-standard),
+    transform 0.18s var(--easing-standard), height 0.26s var(--easing-emphasized),
+    margin 0.26s var(--easing-emphasized), opacity 0.22s ease;
+}
+.awb-step--leave { opacity: 0; transform: scale(0.94); pointer-events: none; }
+.awb-steps.is-animating > *::before,
+.awb-steps.is-animating > *::after { opacity: 0; }
+.awb-gnode { transition: opacity 0.22s ease, transform 0.24s var(--easing-emphasized); }
+.awb-gnode--leave { opacity: 0; transform: scale(0.78); pointer-events: none; }
+.awb-nedge { transition: opacity 0.22s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  .awb-step, .awb-gnode, .awb-nedge { transition: none !important; }
 }
