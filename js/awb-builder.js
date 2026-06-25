@@ -175,7 +175,7 @@
       create.textContent = "만들기";
       chat.innerHTML =
         '<div class="awb-test-empty" id="awbFEmpty">' +
-        '<span class="awb-test-empty__icon"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg></span>' +
+        '<img class="awb-test-empty__icon" src="../assets/images/logo-sparkle.png" alt="" width="30" height="30" />' +
         '<p class="awb-test-empty__title">아직 에이전트가 없어요</p>' +
         '<p class="awb-test-empty__sub">왼쪽에서 <b>이름</b>과 <b>지시사항</b>을 입력하고<br /><b>만들기</b>를 누르면 여기서 바로 테스트할 수 있어요.</p></div>';
     });
@@ -247,7 +247,8 @@
       '<span class="awb-step__handle" data-handle aria-label="순서 변경"><svg aria-hidden="true"><use href="#ic-grip"></use></svg></span>' +
       '<span class="awb-step__icon"><svg aria-hidden="true"><use href="#ic-' + step.icon + '"></use></svg></span>' +
       '<span class="awb-step__meta"><span class="awb-step__label">' + esc(step.name) + '</span>' +
-      '<span class="awb-step__sub">' + esc(step.sub) + '</span></span>'
+      '<span class="awb-step__sub">' + esc(step.sub) + '</span></span>' +
+      '<button class="awb-step__delete" type="button" aria-label="단계 삭제"><svg aria-hidden="true"><use href="#ic-trash"></use></svg></button>'
     );
   }
 
@@ -420,6 +421,20 @@
         render();
       });
     });
+    list.addEventListener("click", (e) => {
+      const btn = e.target.closest(".awb-step__delete");
+      if (!btn || steps.length <= 1) return;
+      e.stopPropagation();
+      const card = btn.closest(".awb-step");
+      const idx = cardIndex(list, card);
+      if (idx < 0) return;
+      collapseRemove(list, card, () => {
+        steps.splice(idx, 1);
+        selected = Math.min(Math.max(0, selected - (idx < selected ? 1 : 0)), steps.length - 1);
+        if (idx === selected) selected = Math.max(0, idx - 1);
+        render();
+      });
+    });
     save && save.addEventListener("click", () => {
       const prev = save.textContent;
       save.textContent = "저장됨 ✓"; save.disabled = true;
@@ -510,6 +525,20 @@
       step.sub = COND_LABEL[step.cond];
       const card = list.querySelectorAll(".awb-step")[selected];
       card && (card.querySelector(".awb-step__sub").textContent = step.sub);
+    });
+    list.addEventListener("click", (e) => {
+      const btn = e.target.closest(".awb-step__delete");
+      if (!btn || steps.length <= 1) return;
+      e.stopPropagation();
+      const card = btn.closest(".awb-step");
+      const idx = cardIndex(list, card);
+      if (idx < 0) return;
+      collapseRemove(list, card, () => {
+        steps.splice(idx, 1);
+        if (selected === idx) closeConfig();
+        else if (idx < selected) selected--;
+        render();
+      });
     });
     mClose && mClose.addEventListener("click", closeConfig);
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && modal.classList.contains("is-split")) closeConfig(); });
