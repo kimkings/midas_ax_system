@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="../css/base.css" />
   <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/components.css" />
-  <link rel="stylesheet" href="../css/live-demo.css" />
+  <link rel="stylesheet" href="../css/live-demo.css?v=20260625-form-field-gap" />
 </head>
 <body>
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
@@ -44,6 +44,16 @@
 <path d="M8.66643 13.8136L8.66643 10.8373C8.66643 10.4708 8.36658 10.171 8.0001 10.171C7.63362 10.171 7.33377 10.4708 7.33377 10.8373L7.33377 13.8136C7.33377 14.18 7.63362 14.4799 8.0001 14.4799C8.36658 14.4799 8.66643 14.18 8.66643 13.8136Z" fill="#2CA4FB"/>
 <path d="M8.66916 5.16511L8.66916 2.18885C8.66916 1.82236 8.36931 1.52252 8.00283 1.52252C7.63635 1.52252 7.3365 1.82236 7.3365 2.18885L7.3365 5.16511C7.3365 5.5316 7.63635 5.83144 8.00283 5.83144C8.36931 5.83144 8.66916 5.5316 8.66916 5.16511Z" fill="#2CA4FB"/>
 </g></symbol>
+<symbol id="ic-ai-sparkle-line" viewBox="0 0 20 20">
+<path d="M10 3.75V6.25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M10 13.75V16.25" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M16.25 10H13.75" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M6.25 10H3.75" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M14.4194 5.58057L12.6516 7.34834" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M7.34839 12.6516L5.58063 14.4194" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M14.4194 14.4194L12.6516 12.6517" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M7.34839 7.34839L5.58063 5.58063" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+</symbol>
 <symbol id="ic-share" viewBox="0 0 20 20"><g>
 <path d="M13.75 11.375C13.0792 11.375 12.475 11.6542 12.0417 12.1042L8.59167 10.3792C8.6125 10.2542 8.625 10.1292 8.625 10C8.625 9.87083 8.6125 9.74583 8.59167 9.62083L12.0417 7.89583C12.475 8.34583 13.0792 8.625 13.75 8.625C15.0583 8.625 16.125 7.55833 16.125 6.25C16.125 4.94167 15.0583 3.875 13.75 3.875C12.4417 3.875 11.375 4.94167 11.375 6.25C11.375 6.37917 11.3875 6.50417 11.4083 6.62917L7.95833 8.35417C7.525 7.90417 6.92083 7.625 6.25 7.625C4.94167 7.625 3.875 8.69167 3.875 10C3.875 11.3083 4.94167 12.375 6.25 12.375C6.92083 12.375 7.525 12.0958 7.95833 11.6458L11.4083 13.3708C11.3875 13.4958 11.375 13.6208 11.375 13.75C11.375 15.0583 12.4417 16.125 13.75 16.125C15.0583 16.125 16.125 15.0583 16.125 13.75C16.125 12.4417 15.0583 11.375 13.75 11.375V11.375ZM13.75 5.29167C14.2792 5.29167 14.7083 5.72083 14.7083 6.25C14.7083 6.77917 14.2792 7.20833 13.75 7.20833C13.2208 7.20833 12.7917 6.77917 12.7917 6.25C12.7917 5.72083 13.2208 5.29167 13.75 5.29167V5.29167ZM6.25 10.9583C5.72083 10.9583 5.29167 10.5292 5.29167 10C5.29167 9.47083 5.72083 9.04167 6.25 9.04167C6.77917 9.04167 7.20833 9.47083 7.20833 10C7.20833 10.5292 6.77917 10.9583 6.25 10.9583ZM13.75 14.7083C13.2208 14.7083 12.7917 14.2792 12.7917 13.75C12.7917 13.2208 13.2208 12.7917 13.75 12.7917C14.2792 12.7917 14.7083 13.2208 14.7083 13.75C14.7083 14.2792 14.2792 14.7083 13.75 14.7083Z" fill="currentColor"/>
 </g></symbol>
@@ -201,7 +211,7 @@
                   <p class="eae-field__label">제품 소개 문구</p>
                   <p class="eae-field__hint">AI가 입력된 정보를 바탕으로 소개 문구를 생성합니다.</p>
                   <div class="eae-slot" id="eaeSlot">
-                    <button class="eae-ai-trigger" id="eaeGen" type="button"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg><span>AI로 텍스트 생성</span></button>
+                    <button class="eae-ai-trigger" id="eaeGen" type="button"><svg aria-hidden="true"><use href="#ic-ai-sparkle-line"></use></svg><span>AI로 텍스트 생성</span></button>
                   </div>
                 </div>
                 <div class="eae-field">
@@ -238,9 +248,9 @@
               <article class="eae-doc">
                 <h2 class="eae-doc__title">신제품 ‘AX 워크스페이스’ 출시 안내</h2>
                 <p class="eae-doc__meta">초안 · 텍스트 블록에 마우스를 올려 AI 추천을 받아보세요</p>
-                <div class="eae-block" data-s1="AX 워크스페이스는 반복 업무 자동화와 통합 정보 관리를 한 번에 제공해, 팀이 더 중요한 일에 집중하도록 돕습니다." data-s2="팀의 반복 업무를 줄이고 흩어진 정보를 하나로 모으는 AX 워크스페이스로, 일하는 방식을 새롭게 정의하세요."><p class="eae-block__text">이번에 새롭게 선보이는 AX 워크스페이스는 팀의 반복 업무를 자동화하고, 흩어진 정보를 한 곳에서 관리할 수 있도록 설계되었습니다.</p><div class="eae-bar" aria-hidden="true"><button class="eae-bar__btn" type="button" data-act="brief"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg>AI 브리프</button><button class="eae-bar__btn" type="button" data-act="summary">요약</button><button class="eae-bar__btn" type="button" data-act="polish">다듬기</button></div></div>
-                <div class="eae-block" data-s1="별도의 복잡한 설정 없이 곧바로 사용할 수 있고, 기존 도구와의 연동도 클릭 몇 번이면 충분합니다." data-s2="설치와 설정에 드는 시간을 없앴습니다. 쓰던 도구를 그대로 연결해 지금 바로 시작하세요."><p class="eae-block__text">복잡한 설정 없이 바로 시작할 수 있으며, 기존에 사용하던 도구들과도 손쉽게 연동됩니다.</p><div class="eae-bar" aria-hidden="true"><button class="eae-bar__btn" type="button" data-act="brief"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg>AI 브리프</button><button class="eae-bar__btn" type="button" data-act="summary">요약</button><button class="eae-bar__btn" type="button" data-act="polish">다듬기</button></div></div>
-                <div class="eae-block" data-s1="지금 가입하시는 분께는 3개월 무료 체험과 1:1 전담 온보딩을 무료로 지원해 드립니다." data-s2="한정 기간 신규 가입 시 3개월 무료 체험과 전담 온보딩 혜택을 함께 받으실 수 있습니다."><p class="eae-block__text">지금 가입하시면 3개월 무료 체험과 전담 온보딩 지원을 함께 제공해 드립니다.</p><div class="eae-bar" aria-hidden="true"><button class="eae-bar__btn" type="button" data-act="brief"><svg aria-hidden="true"><use href="#ic-sparkle"></use></svg>AI 브리프</button><button class="eae-bar__btn" type="button" data-act="summary">요약</button><button class="eae-bar__btn" type="button" data-act="polish">다듬기</button></div></div>
+                <div class="eae-block" data-s1="AX 워크스페이스는 반복 업무 자동화와 통합 정보 관리를 한 번에 제공해, 팀이 더 중요한 일에 집중하도록 돕습니다." data-s2="팀의 반복 업무를 줄이고 흩어진 정보를 하나로 모으는 AX 워크스페이스로, 일하는 방식을 새롭게 정의하세요."><p class="eae-block__text">이번에 새롭게 선보이는 AX 워크스페이스는 팀의 반복 업무를 자동화하고, 흩어진 정보를 한 곳에서 관리할 수 있도록 설계되었습니다.</p><div class="eae-bar" aria-hidden="true"><button class="eae-bar__btn" type="button" data-act="brief"><svg aria-hidden="true"><use href="#ic-ai-sparkle-line"></use></svg>AI 브리프</button><button class="eae-bar__btn" type="button" data-act="summary">요약</button><button class="eae-bar__btn" type="button" data-act="polish">다듬기</button></div></div>
+                <div class="eae-block" data-s1="별도의 복잡한 설정 없이 곧바로 사용할 수 있고, 기존 도구와의 연동도 클릭 몇 번이면 충분합니다." data-s2="설치와 설정에 드는 시간을 없앴습니다. 쓰던 도구를 그대로 연결해 지금 바로 시작하세요."><p class="eae-block__text">복잡한 설정 없이 바로 시작할 수 있으며, 기존에 사용하던 도구들과도 손쉽게 연동됩니다.</p><div class="eae-bar" aria-hidden="true"><button class="eae-bar__btn" type="button" data-act="brief"><svg aria-hidden="true"><use href="#ic-ai-sparkle-line"></use></svg>AI 브리프</button><button class="eae-bar__btn" type="button" data-act="summary">요약</button><button class="eae-bar__btn" type="button" data-act="polish">다듬기</button></div></div>
+                <div class="eae-block" data-s1="지금 가입하시는 분께는 3개월 무료 체험과 1:1 전담 온보딩을 무료로 지원해 드립니다." data-s2="한정 기간 신규 가입 시 3개월 무료 체험과 전담 온보딩 혜택을 함께 받으실 수 있습니다."><p class="eae-block__text">지금 가입하시면 3개월 무료 체험과 전담 온보딩 지원을 함께 제공해 드립니다.</p><div class="eae-bar" aria-hidden="true"><button class="eae-bar__btn" type="button" data-act="brief"><svg aria-hidden="true"><use href="#ic-ai-sparkle-line"></use></svg>AI 브리프</button><button class="eae-bar__btn" type="button" data-act="summary">요약</button><button class="eae-bar__btn" type="button" data-act="polish">다듬기</button></div></div>
               </article>
             </div>
           </div>
@@ -478,11 +488,21 @@
       const slot = document.getElementById("eaeSlot");
       const genBtn = document.getElementById("eaeGen");
       const AI_TEXT = "LLM이 생성한 텍스트 구문이 입력됩니다. 입력된 정보에 대한 요약이나 인사이트를 제공하거나, 페이지에 진입하자마자 핵심 요약을 제공합니다.";
-      const sparkle = '<svg aria-hidden="true"><use href="#ic-sparkle"></use></svg>';
+      const initialTrigger = '<svg aria-hidden="true"><use href="#ic-ai-sparkle-line"></use></svg><span>AI로 텍스트 생성</span>';
+      const sparkle = '<svg aria-hidden="true"><use href="#ic-ai-sparkle-line"></use></svg>';
       const refresh = '<svg aria-hidden="true"><use href="#ic-refresh"></use></svg>';
+      const close = '<svg aria-hidden="true"><use href="#ic-close"></use></svg>';
       function aiHead() {
         return '<div class="eae-ai__head">' + sparkle + '<span class="eae-ai__label">텍스트 라벨</span>' +
-               '<span class="eae-ai__refresh" aria-hidden="true">' + refresh + '</span></div>';
+               '<span class="eae-ai__actions">' +
+               '<span class="eae-ai__action eae-ai__refresh" role="button" tabindex="0" aria-label="다시 생성">' + refresh + '</span>' +
+               '<span class="eae-ai__action eae-ai__close" role="button" tabindex="0" aria-label="닫기">' + close + '</span>' +
+               '</span></div>';
+      }
+      function resetTrigger() {
+        genBtn.className = "eae-ai-trigger";
+        genBtn.setAttribute("aria-label", "AI로 텍스트 생성");
+        genBtn.innerHTML = initialTrigger;
       }
       function renderLoading() {
         genBtn.className = "eae-ai-trigger eae-ai-trigger--card is-loading";
@@ -500,8 +520,22 @@
       }
       if (genBtn) {
         genBtn.addEventListener("click", (e) => {
+          if (e.target.closest(".eae-ai__close")) {
+            resetTrigger();
+            return;
+          }
           if (genBtn.classList.contains("eae-ai-trigger--card") && !e.target.closest(".eae-ai__refresh")) return;
           generate();
+        });
+        genBtn.addEventListener("keydown", (e) => {
+          const action = e.target.closest(".eae-ai__action");
+          if (!action || (e.key !== "Enter" && e.key !== " ")) return;
+          e.preventDefault();
+          if (action.classList.contains("eae-ai__close")) {
+            resetTrigger();
+          } else {
+            generate();
+          }
         });
       }
 
